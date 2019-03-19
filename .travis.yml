@@ -1,0 +1,12 @@
+#.travis.yml
+
+language: node_js
+node_js:
+  - "9.0"
+
+before_script:
+  - npm install -g @angular/cli
+  - npm install
+
+script:
+  - ng build --prod
