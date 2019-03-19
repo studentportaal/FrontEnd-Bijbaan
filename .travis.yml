@@ -7,6 +7,8 @@ before_script:
 script:
 - ng build --prod
 before_install:
+- openssl aes-256-cbc -K $encrypted_f532364904ea_key -iv $encrypted_f532364904ea_iv
+  -in pts6-bijbaan-secret.json.enc -out pts6-bijbaan-secret.json -d
 - openssl aes-256-cbc -K $encrypted_36a051a84034_key -iv $encrypted_36a051a84034_iv
   -in pts6-bijbaan-secret.json.enc -out pts6-bijbaan-secret.json -d
 deploy:
