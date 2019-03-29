@@ -7,18 +7,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialcustomModule } from './materialcustom/materialcustom.module';
 import { UserprofileComponent } from './components/user/userprofile/userprofile.component';
 import { HomeComponent } from './components/general/home/home.component';
+import { RegisterComponent } from './components/user/register/register.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
     UserprofileComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialcustomModule
+    MaterialcustomModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
