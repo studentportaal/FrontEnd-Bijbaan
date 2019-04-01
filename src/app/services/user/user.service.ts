@@ -12,7 +12,7 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
   public getUserById(id: any){
-    const url = `${this.getUserByIdUrl}/${id}`
+    const url = `${this.getUserByIdUrl}/${id}`;
     return this.httpClient.get<any>(url);
   }
 }
