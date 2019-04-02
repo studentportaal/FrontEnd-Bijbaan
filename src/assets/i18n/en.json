@@ -1,0 +1,20 @@
+{
+  "NAVBAR": {
+    "PROFILE": "Profile",
+    "REGISTER": "New account"
+  },
+  "HOME": {
+    "WELCOME.MESSAGE": "Welcome to our job portal. we don't have jobs and we don't have portals"
+  },
+  "REGISTER": {
+    "TITLE": "Register",
+    "FIELD.EMAIL.PLACEHOLDER": "Email",
+    "FIELD.FIRSTNAME.PLACEHOLDER": "First name",
+    "FIELD.LASTNAME.PLACEHOLDER": "Last name",
+    "FIELD.DATE.PLACEHOLDER": "Date of birth",
+    "FIELD.INSTITUTE.PLACEHOLDER": "School or institute",
+    "FIELD.PASSWORD.PLACEHOLDER": "Password",
+    "FIELD.PASSWORDCONFIRM.PLACEHOLDER": "Confirm password",
+    "BUTTON.CONFIRM": "Create account"
+  }
+}
