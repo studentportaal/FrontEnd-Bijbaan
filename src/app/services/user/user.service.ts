@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
 
 
-  private getUserByIdUrl: string = 'http:localhost:9000/';
+  private getUserByIdUrl: string = 'http://localhost:9000/users';
 
   constructor(private httpClient: HttpClient) { }
 

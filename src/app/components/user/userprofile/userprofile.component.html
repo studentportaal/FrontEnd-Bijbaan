@@ -1,15 +1,21 @@
-<div class="container container-sm">
+<div class="container container-sm" *ngIf="user">
 
-  <h1 class="mat-display-1">Henk van Wolken <i class="material-icons">school</i></h1>
+  <h1 class="mat-display-1">{{user.firstName | titlecase}} {{user.lastName}} <i class="material-icons">school</i></h1>
   <mat-list>
-    <mat-list-item><p><b>Naam:</b> Henk</p></mat-list-item>
+    <mat-list-item><p><b>Naam:</b> {{user.firstName}}</p></mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item><p><b>Achternaam:</b> van Wolken</p></mat-list-item>
+    <mat-list-item><p><b>Achternaam:</b> {{user.lastName}}</p></mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item><p><b>Leeftijd:</b> 22</p></mat-list-item>
+    <mat-list-item><p><b>Leeftijd:</b> {{user.dateOfBirth | date}}</p></mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item><p><b>School:</b> Fontys Eindhoven</p></mat-list-item>
+    <mat-list-item><p><b>School:</b> {{user.institute}}</p></mat-list-item>
+    <!-- <mat-divider></mat-divider>
+    <mat-list-item><p><b>Leerjaar:</b> 4</p></mat-list-item> -->
     <mat-divider></mat-divider>
-    <mat-list-item><p><b>Leerjaar:</b> 4</p></mat-list-item>
+    <mat-list-item><p><b>E-mail:</b> {{user.email}}</p></mat-list-item>
+    
   </mat-list>
+</div>
+<div class="container container-sm" *ngIf="!user">
+  Gebruiker niet gevonden. 
 </div>

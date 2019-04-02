@@ -12,7 +12,7 @@ const routes: Routes = [
       
     },
     {
-      path: 'user/view-profile/:id',
+      path: 'user/view-profile/:uuid',
       component: UserprofileComponent,
     }
 ];
