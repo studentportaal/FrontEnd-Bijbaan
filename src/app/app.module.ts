@@ -12,11 +12,14 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import { JobofferlistComponent } from './components/joboffer/Offerslist/jobofferlist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserprofileComponent,
+    HomeComponent,
+    JobofferlistComponent,
     HomeComponent,
     RegisterComponent
   ],
