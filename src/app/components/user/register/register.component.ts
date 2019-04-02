@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
     },
     passwordMatchValidator
   );
-  private user: User = new User();
+  user: User = new User();
 
   constructor(private userService: UserService,
               private snackbar: MatSnackBar,

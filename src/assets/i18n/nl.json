@@ -1,0 +1,20 @@
+{
+  "NAVBAR": {
+    "PROFILE": "Profiel",
+    "REGISTER": "Nieuwe account"
+  },
+  "HOME": {
+    "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal!"
+  },
+  "REGISTER": {
+    "TITLE": "Registreren",
+    "FIELD.EMAIL.PLACEHOLDER": "Email",
+    "FIELD.FIRSTNAME.PLACEHOLDER": "Voornaam",
+    "FIELD.LASTNAME.PLACEHOLDER": "Achternaam",
+    "FIELD.DATE.PLACEHOLDER": "Geboortedatum",
+    "FIELD.INSTITUTE.PLACEHOLDER": "School",
+    "FIELD.PASSWORD.PLACEHOLDER": "Wachtwoord",
+    "FIELD.PASSWORDCONFIRM.PLACEHOLDER": "Wachtwoord bevestigen",
+    "BUTTON.CONFIRM": "Account aanmaken"
+  }
+}
