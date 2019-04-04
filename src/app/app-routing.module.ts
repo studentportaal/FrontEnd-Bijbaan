@@ -3,7 +3,8 @@ import {Routes, RouterModule} from '@angular/router';
 import {UserprofileComponent} from './components/user/userprofile/userprofile.component';
 import {HomeComponent} from './components/general/home/home.component';
 import {JobofferlistComponent} from './components/joboffer/Offerslist/jobofferlist.component';
-import {JobofferComponent} from "./components/joboffer/joboffer/joboffer.component";
+import {JobofferComponent} from "./components/joboffer/joboffer/joboffer.component";import { UserprofileComponent } from './components/user/userprofile/userprofile.component';
+import { RegisterComponent } from "./components/user/register/register.component";
 
 const routes: Routes = [
 
@@ -19,11 +20,27 @@ const routes: Routes = [
     path: 'joboffers/:id',
     component: JobofferComponent,
   }
+    {
+      path: '',
+      component: HomeComponent,
+
+    },
+    {
+      path: 'user/view-profile/:id',
+      component: UserprofileComponent,
+    },
+    {
+      path: 'user/regster',
+      component: RegisterComponent
+    },
+    {
+      path: 'joboffers',
+      component: JobofferlistComponent
+    }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }

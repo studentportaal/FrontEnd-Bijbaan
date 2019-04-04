@@ -9,13 +9,20 @@ import {Observable} from 'rxjs';
 export class JobofferService {
 
   private jobOfferBaseUrl = 'http://localhost:9000/joboffer';
-  constructor(private httpClient: HttpClient) { }
 
-  getAllJobOffers(): Observable<JobOffer[]> {
-    return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl);
+  constructor(private httpClient: HttpClient) {
+  }
+
+  getAllJobOffers(startNr: number, amount: number): Observable<JobOffer[]> {
+    return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}`);
   }
 
   getJobOffer(id : String): Observable<JobOffer> {
     return this.httpClient.get<JobOffer>(this.jobOfferBaseUrl + '/' + id);
   }
+
+  getJobOfferCount() {
+    return this.httpClient.get<string>(this.jobOfferBaseUrl+ '/count');
+  }
+
 }

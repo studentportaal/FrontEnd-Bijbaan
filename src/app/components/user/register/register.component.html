@@ -1,0 +1,65 @@
+<div class="container container-sm">
+
+  <h1 class="mat-display-1">{{'REGISTER.TITLE' | translate}}</h1>
+  <form [formGroup]="form" class="register-form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput required
+             type="email"
+             placeholder="{{'REGISTER.FIELD.EMAIL.PLACEHOLDER' | translate}}"
+             [(ngModel)]="user.email"
+             [ngModelOptions]="{standalone: true}"
+             name="email">
+    </mat-form-field>
+    <mat-form-field >
+      <input matInput required
+             type="text"
+             placeholder="{{'REGISTER.FIELD.FIRSTNAME.PLACEHOLDER' | translate}}"
+             [(ngModel)]="user.firstName"
+             [ngModelOptions]="{standalone: true}"
+             name="firstName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required
+             type="text"
+             placeholder="{{'REGISTER.FIELD.LASTNAME.PLACEHOLDER' | translate}}"
+             [(ngModel)]="user.lastName"
+             [ngModelOptions]="{standalone: true}"
+             name="lastName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required
+             type="date"
+             placeholder="{{'REGISTER.FIELD.DATE.PLACEHOLDER' | translate}}"
+             [(ngModel)]="user.dateOfBirth"
+             [ngModelOptions]="{standalone: true}"
+             name="date">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required
+             type="text"
+             placeholder="{{'REGISTER.FIELD.INSTITUTE.PLACEHOLDER' | translate}}"
+             [(ngModel)]="user.institute"
+             [ngModelOptions]="{standalone: true}"
+             name="institute">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="password"
+             [errorStateMatcher]="passwordErrorMatcher"
+             required
+             type="password"
+             placeholder="{{'REGISTER.FIELD.PASSWORD.PLACEHOLDER' | translate}}"
+             [(ngModel)]="user.password"
+             name="password">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="confirm"
+             [errorStateMatcher]="confirmErrorMatcher"
+             required
+             type="password"
+             placeholder="{{'REGISTER.FIELD.PASSWORDCONFIRM.PLACEHOLDER' | translate}}"
+             name="passwordConfirm">
+      <mat-error>Error: {{ getErrorMessage('confirm') }}</mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary">{{'REGISTER.BUTTON.CONFIRM' | translate}}</button>
+  </form>
+</div>
