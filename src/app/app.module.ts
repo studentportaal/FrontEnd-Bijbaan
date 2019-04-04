@@ -9,6 +9,7 @@ import { MaterialcustomModule } from './materialcustom/materialcustom.module';
 import { UserprofileComponent } from './components/user/userprofile/userprofile.component';
 import { HomeComponent } from './components/general/home/home.component';
 import { JobofferlistComponent } from './components/joboffer/Offerslist/jobofferlist.component';
+import {JobofferComponent} from "./components/joboffer/joboffer/joboffer.component";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { JobofferlistComponent } from './components/joboffer/Offerslist/joboffer
     UserprofileComponent,
     HomeComponent,
     JobofferlistComponent,
+    JobofferComponent,
   ],
   imports: [
     BrowserModule,

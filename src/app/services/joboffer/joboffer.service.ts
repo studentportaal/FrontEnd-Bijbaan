@@ -14,4 +14,8 @@ export class JobofferService {
   getAllJobOffers(): Observable<JobOffer[]> {
     return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl);
   }
+
+  getJobOffer(id : String): Observable<JobOffer> {
+    return this.httpClient.get<JobOffer>(this.jobOfferBaseUrl + '/' + id);
+  }
 }

@@ -3,7 +3,7 @@
     <mat-card-title>Vacatures</mat-card-title>
     <mat-card-content>
       <ul>
-        <li *ngFor="let JobOffer of jobOffers">{{JobOffer.title}}</li>
+        <li *ngFor="let JobOffer of jobOffers"><a href="/joboffers/{{JobOffer.id}}">{{JobOffer.title}}</a></li>
       </ul>
     </mat-card-content>
   </mat-card>
