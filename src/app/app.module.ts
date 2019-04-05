@@ -12,6 +12,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { JobofferlistComponent } from './components/joboffer/Offerslist/jobofferlist.component';
+import {JobofferComponent} from "./components/joboffer/joboffer/joboffer.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { JobofferlistComponent } from './components/joboffer/Offerslist/joboffer
     UserprofileComponent,
     HomeComponent,
     JobofferlistComponent,
+    JobofferComponent,
     HomeComponent,
     RegisterComponent
   ],

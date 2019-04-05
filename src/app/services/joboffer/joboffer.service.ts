@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {JobOffer} from '../../models/JobOffer';
 import {Observable} from 'rxjs';
@@ -15,6 +15,10 @@ export class JobofferService {
 
   getAllJobOffers(startNr: number, amount: number): Observable<JobOffer[]> {
     return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}`);
+  }
+
+  getJobOffer(id : String): Observable<JobOffer> {
+    return this.httpClient.get<JobOffer>(this.jobOfferBaseUrl + '/' + id);
   }
 
   getJobOfferCount() {
