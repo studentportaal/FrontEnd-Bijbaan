@@ -6,6 +6,7 @@ import {HomeComponent} from './components/general/home/home.component';
 import {JobofferlistComponent} from './components/joboffer/Offerslist/jobofferlist.component';
 import {JobofferComponent} from './components/joboffer/joboffer/joboffer.component';
 import {RegisterComponent} from './components/user/register/register.component';
+import {ApplyComponent} from './components/joboffer/apply/apply.component';
 
 
 const routes: Routes = [
@@ -31,12 +32,16 @@ const routes: Routes = [
     component: UserprofileComponent,
   },
   {
-    path: 'user/regster',
+    path: 'user/register',
     component: RegisterComponent
   },
   {
     path: 'joboffers',
     component: JobofferlistComponent
+  },
+  {
+    path: 'joboffers/:id/apply',
+    component: ApplyComponent
   }
 ];
 

@@ -17,11 +17,11 @@ export class JobofferService {
     return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}`);
   }
 
-  getJobOffer(id : String): Observable<JobOffer> {
+  getJobOffer(id: string): Observable<JobOffer> {
     return this.httpClient.get<JobOffer>(this.jobOfferBaseUrl + '/' + id);
   }
 
   getJobOfferCount() {
-    return this.httpClient.get<string>(this.jobOfferBaseUrl + '/count');
+    return this.httpClient.get<string>(this.jobOfferBaseUrl + '/all/count');
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {JobOffer} from "../../../models/JobOffer";
-import {JobofferService} from "../../../services/joboffer/joboffer.service";
-import { ActivatedRoute } from '@angular/router'
+import {JobOffer} from '../../../models/JobOffer';
+import {JobofferService} from '../../../services/joboffer/joboffer.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-joboffer',
@@ -18,7 +18,7 @@ export class JobofferComponent implements OnInit {
     this.getJobOffer(id);
   }
 
-  getJobOffer(id: String) {
+  getJobOffer(id: string) {
     this.jobOfferService.getJobOffer(id).subscribe((offer) => this.joboffer = offer);
   }
 

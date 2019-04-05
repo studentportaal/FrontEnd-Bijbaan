@@ -13,6 +13,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { JobofferlistComponent } from './components/joboffer/Offerslist/jobofferlist.component';
 import {JobofferComponent} from "./components/joboffer/joboffer/joboffer.component";
+import { ApplyComponent } from './components/joboffer/apply/apply.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {JobofferComponent} from "./components/joboffer/joboffer/joboffer.compone
     JobofferlistComponent,
     JobofferComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    ApplyComponent
   ],
   imports: [
     BrowserModule,
