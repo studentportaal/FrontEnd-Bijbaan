@@ -16,5 +16,12 @@
     "FIELD.PASSWORD.PLACEHOLDER": "Password",
     "FIELD.PASSWORDCONFIRM.PLACEHOLDER": "Confirm password",
     "BUTTON.CONFIRM": "Create account"
+  },
+  "USERPROFILE": {
+    "FIELD.FIRSTNAME" : "First name",
+    "FIELD.LASTNAME" : "Last name",
+    "FIELD.DATE" : "Date of birth",
+    "FIELD.INSTITUTE": "Institute",
+    "FIELD.EMAIL" : "Email"
   }
 }
