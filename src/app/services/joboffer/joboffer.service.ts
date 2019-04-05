@@ -18,7 +18,6 @@ export class JobofferService {
   }
 
   getJobOfferCount() {
-    return this.httpClient.get<string>(this.jobOfferBaseUrl+ '/count');
+    return this.httpClient.get<string>(this.jobOfferBaseUrl + '/count');
   }
-
 }
