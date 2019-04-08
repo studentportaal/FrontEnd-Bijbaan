@@ -1,0 +1,21 @@
+<div class="container container-sm">
+  <form class="login-form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput required
+             type="email"
+             placholder="Email"
+             [(ngModel)]="user.email"
+             name="email"
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required
+             type="password"
+             placholder="Password"
+             [(ngModel)]="user.password"
+             name="password"
+      >
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary"> Confirm</button>
+  </form>
+</div>

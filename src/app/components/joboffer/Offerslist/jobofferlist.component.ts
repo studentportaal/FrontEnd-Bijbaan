@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {JobOffer} from '../../../models/JobOffer';
+import {JobOffer} from '../../../domain/JobOffer';
 import {JobofferService} from '../../../services/joboffer/joboffer.service';
 import {PageEvent} from '@angular/material';
 

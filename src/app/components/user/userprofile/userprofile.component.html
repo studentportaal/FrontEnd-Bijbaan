@@ -13,9 +13,13 @@
     <mat-list-item><p><b>Leerjaar:</b> 4</p></mat-list-item> -->
     <mat-divider></mat-divider>
     <mat-list-item><p><b>E-mail:</b> {{user.email}}</p></mat-list-item>
-    
+    <div *ngIf="authenticationService.checkCurrentUser(user)">
+      <button mat-raised-button color="primary">Edit Profile</button>
+    </div>
   </mat-list>
 </div>
+
+
 <div class="container container-sm" *ngIf="!user">
   Gebruiker niet gevonden. 
 </div>

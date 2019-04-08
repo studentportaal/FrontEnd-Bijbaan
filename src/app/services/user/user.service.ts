@@ -8,15 +8,12 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-
-
-  private getUserByIdUrl: string = 'http://localhost:9000/users';
   private baseUrl: string = environment.API_BASE + '/users';
 
   constructor(private httpClient: HttpClient) { }
 
-  public getUserById(id: any){
-    const url = `${this.getUserByIdUrl}/${id}`;
+  public getUserById(id: any) {
+    const url = `${this.baseUrl}/${id}`;
     return this.httpClient.get<any>(url);
   }
 
