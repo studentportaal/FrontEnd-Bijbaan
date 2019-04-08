@@ -1,7 +1,7 @@
 <div class="container container-sm">
 
   <span *ngIf="!joboffer">Loading offer...</span>
-  <ng-container *ngIf="jobOffer">
+  <ng-container *ngIf="joboffer != null">
   <h1 class="mat-display-1">{{joboffer.title}}</h1>
   <mat-list>
     <ng-container *ngIf="joboffer.function">
