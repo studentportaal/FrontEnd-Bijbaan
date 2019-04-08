@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {JobOffer} from "../../../models/JobOffer";
-import {JobofferService} from "../../../services/joboffer/joboffer.service";
+import {JobOffer} from '../../../models/JobOffer';
+import {JobofferService} from '../../../services/joboffer/joboffer.service';
 import { ActivatedRoute } from '@angular/router'
-import {CompanyService} from "../../../services/company/company.service";
-import {Company} from "../../../models/Company";
+import {CompanyService} from '../../../services/company/company.service';
+import {Company} from '../../../models/Company';
 
 @Component({
   selector: 'app-joboffer',
