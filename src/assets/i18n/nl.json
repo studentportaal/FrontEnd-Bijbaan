@@ -1,7 +1,9 @@
 {
   "NAVBAR": {
     "PROFILE": "Profiel",
-    "REGISTER": "Nieuwe account"
+    "REGISTER": "Nieuwe account",
+    "EDITPROFILE": "Profiel aanpassen"
+
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal!"
@@ -18,10 +20,14 @@
     "BUTTON.CONFIRM": "Account aanmaken"
   },
   "USERPROFILE": {
+    "TITLE" : "Profiel",
+    "EDITTITLE" : "Profiel aanpassen",
     "FIELD.FIRSTNAME" : "Voornaam",
     "FIELD.LASTNAME" : "Achternaam",
     "FIELD.DATE" : "Geboortedatum",
     "FIELD.INSTITUTE": "School",
-    "FIELD.EMAIL" : "Email"
+    "FIELD.EMAIL" : "Email",
+    "BUTTON.CONFIRM" : "Aanpassen"
+
   }
 }

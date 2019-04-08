@@ -12,9 +12,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { JobofferlistComponent } from './components/joboffer/Offerslist/jobofferlist.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { UsereditprofileComponent } from './components/user/usereditprofile/usereditprofile.component';
 import { ApplyComponent } from './components/joboffer/apply/apply.component';
 import {JobofferComponent} from  './components/joboffer/joboffer/joboffer.component';
 import {CompanyComponent} from './components/general/company/company/company.component';
+
 
 @NgModule({
   declarations: [
@@ -25,14 +28,15 @@ import {CompanyComponent} from './components/general/company/company/company.com
     JobofferComponent,
     HomeComponent,
     RegisterComponent,
-    CompanyComponent,
+    LoginComponent,
+    UsereditprofileComponent,
     RegisterComponent,
-    ApplyComponent
+    ApplyComponent,
+    CompanyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     BrowserAnimationsModule,
     MaterialcustomModule,
     FormsModule,

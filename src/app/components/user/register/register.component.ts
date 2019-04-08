@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {User} from "../../../domain/User";
-import {FormControl, FormGroup, FormGroupDirective, Validators} from "@angular/forms";
-import {UserService} from "../../../services/user/user.service";
-import {MatSnackBar} from "@angular/material";
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { User } from '../../../domain/User';
+import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { UserService } from '../../../services/user/user.service';
+import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../../../services/authentication/authentication.service';
 
 @Component({
   selector: 'app-register',
@@ -12,6 +13,8 @@ import {Router} from "@angular/router";
 })
 export class RegisterComponent implements OnInit {
 
+  user: User = new User();
+
   form = new FormGroup(
     {
       password: new FormControl('', Validators.minLength(2)),
@@ -19,27 +22,6 @@ export class RegisterComponent implements OnInit {
     },
     passwordMatchValidator
   );
-  user: User = new User();
-
-  constructor(private userService: UserService,
-              private snackbar: MatSnackBar,
-              private router: Router) {
-  }
-
-  ngOnInit() {
-  }
-
-  onSubmit() {
-    this.userService.addUser(this.user).subscribe((response: User)=> {
-     const snackbarRef = this.snackbar.open('Account successfully created', 'dismiss', {
-        duration: 3000
-      });
-
-     snackbarRef.afterDismissed().subscribe(() => {
-       this.router.navigateByUrl('/');
-     });
-    });
-  }
 
   passwordErrorMatcher = {
     isErrorState: (control: FormControl, form: FormGroupDirective): boolean => {
@@ -57,17 +39,39 @@ export class RegisterComponent implements OnInit {
     }
   };
 
+  constructor(private userService: UserService,
+              private snackbar: MatSnackBar,
+              private router: Router) {
+  }
+
+  ngOnInit() {
+  }
+
+  onSubmit() {
+    this.userService.addUser(this.user).subscribe((response: User) => {
+      const snackbarRef = this.snackbar.open('Account successfully created', 'dismiss', {
+        duration: 3000
+      });
+
+      snackbarRef.afterDismissed().subscribe(() => {
+        this.router.navigateByUrl('/');
+      });
+    });
+  }
+
   getErrorMessage(controlName: string) {
     if (this.form.controls[controlName].hasError('minlength')) {
-      return 'Must be at least 2 characters'
+      return 'Must be at least 2 characters';
     }
 
-    return 'Passwords must match'
+    return 'Passwords must match';
   }
 }
 
 function passwordMatchValidator(g: FormGroup) {
   const password = g.get('password').value;
   const confirm = g.get('confirm').value;
-  return password === confirm ? null : {mismatch: true};
+  return password === confirm ? null : { mismatch: true };
 }
+
+
