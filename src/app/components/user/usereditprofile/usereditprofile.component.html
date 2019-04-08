@@ -1,0 +1,54 @@
+
+<div class="container container-sm" *ngIf="user">
+  <h1 class="mat-display-1">{{'USERPROFILE.EDITTITLE' | translate}}</h1>
+  <form class="user-edit-profile-form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput required
+             type="email"
+             placeholder="{{'USERPROFILE.FIELD.EMAIL' | translate}}"
+             [(ngModel)]="authenticationService.user.email"
+             [ngModelOptions]="{standalone: true}"
+             name="email">
+    </mat-form-field>
+    <mat-form-field >
+      <input matInput required
+             type="text"
+             placeholder="{{'USERPROFILE.FIELD.FIRSTNAME' | translate}}"
+             [(ngModel)]="authenticationService.user.firstName"
+             [ngModelOptions]="{standalone: true}"
+             name="firstName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required
+             type="text"
+             placeholder=" {{'USERPROFILE.FIELD.LASTNAME' | translate}}:"
+             [(ngModel)]="authenticationService.user.lastName"
+             [ngModelOptions]="{standalone: true}"
+             name="lastName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required
+             type="date"
+             placeholder="{{'USERPROFILE.FIELD.DATE' | translate}}"
+             [(ngModel)]="authenticationService.user.dateOfBirth"
+             [ngModelOptions]="{standalone: true}"
+             name="date">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required
+             type="text"
+             placeholder="{{'USERPROFILE.FIELD.INSTITUTE' | translate}}"
+             [(ngModel)]="authenticationService.user.institute"
+             [ngModelOptions]="{standalone: true}"
+             name="institute">
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary">{{'USERPROFILE.BUTTON.CONFIRM' | translate}}</button>
+  </form>
+</div>
+
+
+
+
+<div class="container container-sm" *ngIf="!user">
+  Gebruiker niet gevonden. 
+</div>

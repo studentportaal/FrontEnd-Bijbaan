@@ -1,0 +1,33 @@
+{
+  "NAVBAR": {
+    "PROFILE": "Profiel",
+    "REGISTER": "Nieuwe account",
+    "EDITPROFILE": "Profiel aanpassen"
+
+  },
+  "HOME": {
+    "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal!"
+  },
+  "REGISTER": {
+    "TITLE": "Registreren",
+    "FIELD.EMAIL.PLACEHOLDER": "Email",
+    "FIELD.FIRSTNAME.PLACEHOLDER": "Voornaam",
+    "FIELD.LASTNAME.PLACEHOLDER": "Achternaam",
+    "FIELD.DATE.PLACEHOLDER": "Geboortedatum",
+    "FIELD.INSTITUTE.PLACEHOLDER": "School",
+    "FIELD.PASSWORD.PLACEHOLDER": "Wachtwoord",
+    "FIELD.PASSWORDCONFIRM.PLACEHOLDER": "Wachtwoord bevestigen",
+    "BUTTON.CONFIRM": "Account aanmaken"
+  },
+  "USERPROFILE": {
+    "TITLE" : "Profiel",
+    "EDITTITLE" : "Profiel aanpassen",
+    "FIELD.FIRSTNAME" : "Voornaam",
+    "FIELD.LASTNAME" : "Achternaam",
+    "FIELD.DATE" : "Geboortedatum",
+    "FIELD.INSTITUTE": "School",
+    "FIELD.EMAIL" : "Email",
+    "BUTTON.CONFIRM" : "Aanpassen"
+
+  }
+}

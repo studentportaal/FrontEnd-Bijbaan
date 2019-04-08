@@ -1,0 +1,23 @@
+<div class="container container-sm" *ngIf="user">
+
+  <h1 class="mat-display-1">{{user.firstName | titlecase}} {{user.lastName}} <i class="material-icons">school</i></h1>
+  <mat-list>
+    <mat-list-item><p><b> {{'USERPROFILE.FIELD.FIRSTNAME' | translate}}:</b> {{user.firstName | titlecase}}</p></mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><p><b>{{'USERPROFILE.FIELD.LASTNAME' | translate}}:</b> {{user.lastName | titlecase}}</p></mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><p><b>{{'USERPROFILE.FIELD.DATE' | translate}}:</b> {{user.dateOfBirth | date:'dd-MM-yyyy' | titlecase}}</p></mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><p><b>{{'USERPROFILE.FIELD.INSTITUTE' | translate}}:</b> {{user.institute | titlecase}}</p></mat-list-item>
+    <!-- <mat-divider></mat-divider>
+    <mat-list-item><p><b>Leerjaar:</b> 4</p></mat-list-item> -->
+    <mat-divider></mat-divider>
+
+    <mat-list-item><p><b>{{'USERPROFILE.FIELD.EMAIL' | translate}}:</b> {{user.email | titlecase}}</p></mat-list-item>
+  </mat-list>
+</div>
+
+
+<div class="container container-sm" *ngIf="!user">
+  Gebruiker niet gevonden. 
+</div>
