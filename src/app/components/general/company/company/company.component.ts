@@ -18,7 +18,7 @@ export class CompanyComponent implements OnInit {
     this.getCompany(id);
   }
 
-  getCompany(id: String) {
+  getCompany(id: string) {
     this.companyService.getCompany(id).subscribe((company) => this.company = company);
   }
 
