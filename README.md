@@ -1,4 +1,2 @@
-# FrontEnd-Bijbaan
-[![Generic badge](https://img.shields.io/badge/Runs%20on%20my%20machine-Passes-green.svg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-
+# FrontEnd-Bijbaan [![Maintainability](https://api.codeclimate.com/v1/badges/d604d54f3074d2a94905/maintainability)](https://codeclimate.com/github/studentportaal/FrontEnd-Bijbaan/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/d604d54f3074d2a94905/test_coverage)](https://codeclimate.com/github/studentportaal/FrontEnd-Bijbaan/test_coverage) [![Build Status](https://travis-ci.com/studentportaal/FrontEnd-Bijbaan.svg?branch=master)](https://travis-ci.com/studentportaal/FrontEnd-Bijbaan)
 Front end for the bijbaan portaal application.
