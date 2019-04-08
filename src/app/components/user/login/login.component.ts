@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       const user: User = response;
       this.authenticationService.setSession(user);
       const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
-        duration: 3000});
+        duration: 1500});
       snackbarRef.afterDismissed().subscribe(() => {
         this.router.navigateByUrl('/');
       });
