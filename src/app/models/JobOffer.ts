@@ -5,4 +5,5 @@ export class JobOffer {
   information: string;
   function: string;
   salary: number;
+  company: string;
 }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {JobOffer} from "../../../models/JobOffer";
-import {JobofferService} from "../../../services/joboffer/joboffer.service";
+import {JobOffer} from '../../../models/JobOffer';
+import {JobofferService} from '../../../services/joboffer/joboffer.service';
 import { ActivatedRoute } from '@angular/router'
+import {CompanyService} from '../../../services/company/company.service';
+import {Company} from '../../../models/Company';
 
 @Component({
   selector: 'app-joboffer',
@@ -10,8 +12,9 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class JobofferComponent implements OnInit {
   private joboffer: JobOffer;
+  private company: Company;
 
-  constructor(private route: ActivatedRoute, private jobOfferService: JobofferService) { }
+  constructor(private route: ActivatedRoute, private jobOfferService: JobofferService, private companyService: CompanyService) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -19,7 +22,10 @@ export class JobofferComponent implements OnInit {
   }
 
   getJobOffer(id: string) {
-    this.jobOfferService.getJobOffer(id).subscribe((offer) => this.joboffer = offer);
+    this.jobOfferService.getJobOffer(id).subscribe(offer => {
+      this.joboffer = offer;
+      this.companyService.getCompany(offer.company).subscribe(company => this.company = company);
+    });
   }
 
 }

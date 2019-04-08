@@ -8,16 +8,20 @@
     <mat-list-item><p><b>Functie:</b> {{joboffer.function}}</p></mat-list-item>
     <mat-divider></mat-divider>
     </ng-container>
-    <ng-container *ngIf="joboffer.location">
-      <mat-list-item><p><b>Locatie:</b> {{joboffer.location}}</p></mat-list-item>
-      <mat-divider></mat-divider>
-    </ng-container>
     <ng-container *ngIf="joboffer.salary">
       <mat-list-item><p><b>Salaris:</b> {{joboffer.salary}}</p></mat-list-item>
       <mat-divider></mat-divider>
     </ng-container>
     <ng-container *ngIf="joboffer.information">
       <mat-list-item><p><b>Functie:</b> {{joboffer.information}}</p></mat-list-item>
+      <mat-divider></mat-divider>
+    </ng-container>
+    <ng-container *ngIf="joboffer.location">
+      <mat-list-item><p><b>Locatie:</b> {{joboffer.location}}</p></mat-list-item>
+      <mat-divider></mat-divider>
+    </ng-container>
+    <ng-container *ngIf="company">
+      <mat-list-item><p><b>Company: </b> <a routerLink="/company/{{company.id}}">{{company.name}}</a></p></mat-list-item>
       <mat-divider></mat-divider>
     </ng-container>
   </mat-list>
