@@ -1,14 +1,25 @@
 <div class="container container-sm">
 
+  <span *ngIf="!joboffer">Loading offer...</span>
+  <ng-container *ngIf="jobOffer">
   <h1 class="mat-display-1">{{joboffer.title}}</h1>
   <mat-list>
+    <ng-container *ngIf="joboffer.function">
     <mat-list-item><p><b>Functie:</b> {{joboffer.function}}</p></mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item><p><b>Locatie:</b> {{joboffer.location}}</p></mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item><p><b>Salaris:</b> {{joboffer.salary}}</p></mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item><p><b>Informatie:</b> {{joboffer.information}}</p></mat-list-item>
-    <mat-divider></mat-divider>
+    </ng-container>
+    <ng-container *ngIf="joboffer.location">
+      <mat-list-item><p><b>Locatie:</b> {{joboffer.location}}</p></mat-list-item>
+      <mat-divider></mat-divider>
+    </ng-container>
+    <ng-container *ngIf="joboffer.salary">
+      <mat-list-item><p><b>Salaris:</b> {{joboffer.salary}}</p></mat-list-item>
+      <mat-divider></mat-divider>
+    </ng-container>
+    <ng-container *ngIf="joboffer.information">
+      <mat-list-item><p><b>Functie:</b> {{joboffer.information}}</p></mat-list-item>
+      <mat-divider></mat-divider>
+    </ng-container>
   </mat-list>
+  </ng-container>
 </div>
