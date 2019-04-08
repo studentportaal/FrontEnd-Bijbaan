@@ -36,8 +36,8 @@ export class RegisterComponent implements OnInit {
       });
 
      snackbarRef.afterDismissed().subscribe(() => {
-       this.router.navigateByUrl("/")
-     })
+       this.router.navigateByUrl('/');
+     });
     });
   }
 

@@ -1,0 +1,46 @@
+<div class="container container-sm">
+  <h1 class="mat-display-1">Solliciteren</h1>
+  <form class="application-form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput required
+             type="email"
+             placeholder="E-mail"
+             [ngModel]="user.email"
+             [ngModelOptions]="{standalone: true}"
+             name="email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required
+             type="text"
+             placeholder="Voornaam"
+             [ngModel]="user.firstName"
+             [ngModelOptions]="{standalone: true}"
+             name="firstName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required
+             type="text"
+             placeholder="Achternaam"
+             [ngModel]="user.lastName"
+             [ngModelOptions]="{standalone: true}"
+             type="text">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required
+             type="date"
+             placeholder="{{'REGISTER.FIELD.DATE.PLACEHOLDER' | translate}}"
+             [ngModel]="user.dateOfBirth"
+             [ngModelOptions]="{standalone: true}"
+             name="date">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required
+             type="text"
+             placeholder="Instituut"
+             [ngModel]="user.institute"
+             [ngModelOptions]="{standalone: true}"
+             name="institute">
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary">Aanmelden</button>
+  </form>
+</div>
