@@ -14,6 +14,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { JobofferlistComponent } from './components/joboffer/Offerslist/jobofferlist.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { UsereditprofileComponent } from './components/user/usereditprofile/usereditprofile.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoginComponent } from './components/user/login/login.component';
     JobofferlistComponent,
     HomeComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    UsereditprofileComponent
   ],
   imports: [
     BrowserModule,
