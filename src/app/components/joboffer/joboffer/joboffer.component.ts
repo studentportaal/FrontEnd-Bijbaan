@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {JobOffer} from "../../../models/JobOffer";
-import {JobofferService} from "../../../services/joboffer/joboffer.service";
+import {JobOffer} from '../../../models/JobOffer';
+import {JobofferService} from '../../../services/joboffer/joboffer.service';
 import { ActivatedRoute } from '@angular/router'
 
 @Component({
