@@ -27,6 +27,7 @@ export class JobofferService {
   }
 
   applyForJob(u: User, id: string) {
+    console.log(u);
     return this.httpClient.put(this.jobOfferBaseUrl + '/' + id, u);
   }
 }
