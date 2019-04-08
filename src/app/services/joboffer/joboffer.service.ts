@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {JobOffer} from '../../models/JobOffer';
 import {Observable} from 'rxjs';
+import {User} from '../../domain/User';
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +18,15 @@ export class JobofferService {
     return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}`);
   }
 
-  getJobOffer(id : String): Observable<JobOffer> {
+  getJobOffer(id: string): Observable<JobOffer> {
     return this.httpClient.get<JobOffer>(this.jobOfferBaseUrl + '/' + id);
   }
 
   getJobOfferCount() {
-    return this.httpClient.get<string>(this.jobOfferBaseUrl+ '/count');
+    return this.httpClient.get<string>(this.jobOfferBaseUrl + '/all/count');
   }
 
+  applyForJob(u: User, id: string) {
+    return this.httpClient.put(this.jobOfferBaseUrl + '/' + id, u);
+  }
 }

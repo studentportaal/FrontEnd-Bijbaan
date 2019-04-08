@@ -12,6 +12,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { JobofferlistComponent } from './components/joboffer/Offerslist/jobofferlist.component';
+import { ApplyComponent } from './components/joboffer/apply/apply.component';
 import {JobofferComponent} from  './components/joboffer/joboffer/joboffer.component';
 import {CompanyComponent} from './components/general/company/company/company.component';
 
@@ -24,7 +25,9 @@ import {CompanyComponent} from './components/general/company/company/company.com
     JobofferComponent,
     HomeComponent,
     RegisterComponent,
-    CompanyComponent
+    CompanyComponent,
+    RegisterComponent,
+    ApplyComponent
   ],
   imports: [
     BrowserModule,
