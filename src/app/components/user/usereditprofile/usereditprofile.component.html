@@ -6,7 +6,7 @@
       <input matInput required
              type="email"
              placeholder="{{'USERPROFILE.FIELD.EMAIL' | translate}}"
-             [(ngModel)]="user.email"
+             [(ngModel)]="authenticationService.user.email"
              [ngModelOptions]="{standalone: true}"
              name="email">
     </mat-form-field>
@@ -14,7 +14,7 @@
       <input matInput required
              type="text"
              placeholder="{{'USERPROFILE.FIELD.FIRSTNAME' | translate}}"
-             [(ngModel)]="user.firstName"
+             [(ngModel)]="authenticationService.user.firstName"
              [ngModelOptions]="{standalone: true}"
              name="firstName">
     </mat-form-field>
@@ -22,7 +22,7 @@
       <input matInput required
              type="text"
              placeholder=" {{'USERPROFILE.FIELD.LASTNAME' | translate}}:"
-             [(ngModel)]="user.lastName"
+             [(ngModel)]="authenticationService.user.lastName"
              [ngModelOptions]="{standalone: true}"
              name="lastName">
     </mat-form-field>
@@ -30,7 +30,7 @@
       <input matInput required
              type="date"
              placeholder="{{'USERPROFILE.FIELD.DATE' | translate}}"
-             [(ngModel)]="user.dateOfBirth" 
+             [(ngModel)]="authenticationService.user.dateOfBirth"
              [ngModelOptions]="{standalone: true}"
              name="date">
     </mat-form-field>
@@ -38,7 +38,7 @@
       <input matInput required
              type="text"
              placeholder="{{'USERPROFILE.FIELD.INSTITUTE' | translate}}"
-             [(ngModel)]="user.institute"
+             [(ngModel)]="authenticationService.user.institute"
              [ngModelOptions]="{standalone: true}"
              name="institute">
     </mat-form-field>

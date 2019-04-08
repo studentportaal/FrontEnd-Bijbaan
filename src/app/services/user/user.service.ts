@@ -21,4 +21,9 @@ export class UserService {
   public addUser(user: User): Observable<User> {
     return this.httpClient.post<User>(this.baseUrl, user);
   }
-}
+
+   updateUser(user: User) {
+    console.log(user)
+    return this.httpClient.put<User>(this.baseUrl + '/' + user.uuid, user);
+   }
+ }

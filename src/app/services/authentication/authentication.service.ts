@@ -8,6 +8,7 @@ import {environment} from '../../../environments/environment';
   providedIn: 'root'
 })
 export class AuthenticationService {
+  public user: User;
 
   private baseUrl: string = environment.API_BASE + '/users'
   constructor(private httpClient: HttpClient) { }
@@ -18,19 +19,14 @@ export class AuthenticationService {
 
   public setSession(user: User) {
     localStorage.setItem('currentUser', JSON.stringify(user));
+    this.user = user;
   }
 
   public isLoggedIn() {
-    if (JSON.parse(localStorage.getItem('currentUser')) != null) {
-      return false;
-    }
-    return true;
+    return JSON.parse(localStorage.getItem('currentUser')) != null;
   }
 
   public checkCurrentUser(id: string) {
-   if (JSON.parse(localStorage.getItem('currentUser')).id === id) {
-     return true;
-   }
-   return false;
+   return JSON.parse(localStorage.getItem('currentUser')).id === id;
   }
 }
