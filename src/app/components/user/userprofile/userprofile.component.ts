@@ -10,7 +10,6 @@ import {AuthenticationService} from '../../../services/authentication/authentica
 })
 export class UserprofileComponent implements OnInit {
 
-
   private user: any;
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -19,11 +18,11 @@ export class UserprofileComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-      const id = params['uuid'];
+      const id = params.uuid;
+
       this.getUserById(id);
     });
   }
-
 
   getUserById(id: string) {
     this.userService.getUserById(id).subscribe((response: any) => {

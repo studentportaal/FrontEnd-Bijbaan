@@ -16,5 +16,12 @@
     "FIELD.PASSWORD.PLACEHOLDER": "Wachtwoord",
     "FIELD.PASSWORDCONFIRM.PLACEHOLDER": "Wachtwoord bevestigen",
     "BUTTON.CONFIRM": "Account aanmaken"
+  },
+  "USERPROFILE": {
+    "FIELD.FIRSTNAME" : "Voornaam",
+    "FIELD.LASTNAME" : "Achternaam",
+    "FIELD.DATE" : "Geboortedatum",
+    "FIELD.INSTITUTE": "School",
+    "FIELD.EMAIL" : "Email"
   }
 }

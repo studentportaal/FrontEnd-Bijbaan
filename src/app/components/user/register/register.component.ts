@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {User} from '../../../domain/User';
-import {FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
-import {UserService} from '../../../services/user/user.service';
-import {MatSnackBar} from '@angular/material';
-import {Router} from '@angular/router';
-import {AuthenticationService} from '../../../services/authentication/authentication.service';
+import { Component, OnInit } from '@angular/core';
+import { User } from '../../../domain/User';
+import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { UserService } from '../../../services/user/user.service';
+import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../../../services/authentication/authentication.service';
 
 @Component({
   selector: 'app-register',
@@ -13,19 +13,29 @@ import {AuthenticationService} from '../../../services/authentication/authentica
 })
 export class RegisterComponent implements OnInit {
 
+
+
+
   constructor(private userService: UserService,
-              private snackbar: MatSnackBar,
-              private router: Router) {
+    private snackbar: MatSnackBar,
+    private router: Router) {
   }
 
-  form = new FormGroup(
-    {
-      password: new FormControl('', Validators.minLength(2)),
-      confirm: new FormControl('', Validators.minLength(2)),
-    },
-    passwordMatchValidator
-  );
-  user: User = new User();
+  ngOnInit() {
+  }
+
+  onSubmit() {
+    this.userService.addUser(this.user).subscribe((response: User) => {
+      const snackbarRef = this.snackbar.open('Account successfully created', 'dismiss', {
+        duration: 3000
+      });
+
+      snackbarRef.afterDismissed().subscribe(() => {
+        this.router.navigateByUrl('/');
+      });
+    });
+  }
+
 
   passwordErrorMatcher = {
     isErrorState: (control: FormControl, form: FormGroupDirective): boolean => {
@@ -43,20 +53,15 @@ export class RegisterComponent implements OnInit {
     }
   };
 
-  ngOnInit() {
-  }
+  form = new FormGroup(
+    {
+      password: new FormControl('', Validators.minLength(2)),
+      confirm: new FormControl('', Validators.minLength(2)),
+    },
+    passwordMatchValidator
+  );
+  user: User = new User();
 
-  onSubmit() {
-    this.userService.addUser(this.user).subscribe((response: User) => {
-     const snackbarRef = this.snackbar.open('Account successfully created', 'dismiss', {
-        duration: 3000
-      });
-
-     snackbarRef.afterDismissed().subscribe(() => {
-       this.router.navigateByUrl('/');
-     });
-    });
-  }
 
   getErrorMessage(controlName: string) {
     if (this.form.controls[controlName].hasError('minlength')) {
@@ -70,7 +75,7 @@ export class RegisterComponent implements OnInit {
 function passwordMatchValidator(g: FormGroup) {
   const password = g.get('password').value;
   const confirm = g.get('confirm').value;
-  return password === confirm ? null : {mismatch: true};
+  return password === confirm ? null : { mismatch: true };
 }
 
 

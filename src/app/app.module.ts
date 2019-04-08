@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +14,10 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { JobofferlistComponent } from './components/joboffer/Offerslist/jobofferlist.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { UsereditprofileComponent } from './components/user/usereditprofile/usereditprofile.component';
+import { ApplyComponent } from './components/joboffer/apply/apply.component';
+import {JobofferComponent} from  './components/joboffer/joboffer/joboffer.component';
+import {CompanyComponent} from './components/general/company/company/company.component';
+
 
 @NgModule({
   declarations: [
@@ -22,10 +25,13 @@ import { UsereditprofileComponent } from './components/user/usereditprofile/user
     UserprofileComponent,
     HomeComponent,
     JobofferlistComponent,
+    JobofferComponent,
     HomeComponent,
     RegisterComponent,
     LoginComponent,
-    UsereditprofileComponent
+    UsereditprofileComponent,
+    RegisterComponent,
+    ApplyComponent
   ],
   imports: [
     BrowserModule,
