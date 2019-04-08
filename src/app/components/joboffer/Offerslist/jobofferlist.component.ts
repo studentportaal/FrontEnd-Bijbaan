@@ -6,7 +6,7 @@ import {PageEvent} from '@angular/material';
 @Component({
   selector: 'app-joboffer',
   templateUrl: './jobofferlist.component.html',
-  styleUrls: ['./jobofferlist.component.sass']
+  styleUrls: ['./jobofferlist.component.scss']
 })
 export class JobofferlistComponent implements OnInit {
 
