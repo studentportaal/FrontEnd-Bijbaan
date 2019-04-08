@@ -8,6 +8,7 @@ import { LoginComponent } from './components/user/login/login.component';
 import { JobofferComponent } from './components/joboffer/joboffer/joboffer.component';
 import { ApplyComponent } from './components/joboffer/apply/apply.component';
 import { CompanyComponent } from "./components/general/company/company/company.component";
+import { UsereditprofileComponent } from './components/user/usereditprofile/usereditprofile.component';
 
 
 
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'user/register',
     component: RegisterComponent
+  },
+  {
+    path: 'user/edit-profile/:uuid',
+    component: UsereditprofileComponent,
   },
   {
     path: 'joboffers',

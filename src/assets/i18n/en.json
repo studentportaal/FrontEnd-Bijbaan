@@ -1,7 +1,8 @@
 {
   "NAVBAR": {
     "PROFILE": "Profile",
-    "REGISTER": "New account"
+    "REGISTER": "New account",
+    "EDITPROFILE" : "Edit profile"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welcome to our job portal. we don't have jobs and we don't have portals"
@@ -18,10 +19,13 @@
     "BUTTON.CONFIRM": "Create account"
   },
   "USERPROFILE": {
+    "TITLE" : "Profile",
+    "EDITTITLE" : "Edit profile",
     "FIELD.FIRSTNAME" : "First name",
     "FIELD.LASTNAME" : "Last name",
     "FIELD.DATE" : "Date of birth",
     "FIELD.INSTITUTE": "Institute",
-    "FIELD.EMAIL" : "Email"
+    "FIELD.EMAIL" : "Email",
+    "BUTTON.CONFIRM" : "Edit profile"
   }
 }

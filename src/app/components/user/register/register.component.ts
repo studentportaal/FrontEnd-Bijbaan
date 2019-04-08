@@ -13,29 +13,15 @@ import { AuthenticationService } from '../../../services/authentication/authenti
 })
 export class RegisterComponent implements OnInit {
 
+  user: User = new User();
 
-
-
-  constructor(private userService: UserService,
-    private snackbar: MatSnackBar,
-    private router: Router) {
-  }
-
-  ngOnInit() {
-  }
-
-  onSubmit() {
-    this.userService.addUser(this.user).subscribe((response: User) => {
-      const snackbarRef = this.snackbar.open('Account successfully created', 'dismiss', {
-        duration: 3000
-      });
-
-      snackbarRef.afterDismissed().subscribe(() => {
-        this.router.navigateByUrl('/');
-      });
-    });
-  }
-
+  form = new FormGroup(
+    {
+      password: new FormControl('', Validators.minLength(2)),
+      confirm: new FormControl('', Validators.minLength(2)),
+    },
+    passwordMatchValidator
+  );
 
   passwordErrorMatcher = {
     isErrorState: (control: FormControl, form: FormGroupDirective): boolean => {
@@ -53,15 +39,25 @@ export class RegisterComponent implements OnInit {
     }
   };
 
-  form = new FormGroup(
-    {
-      password: new FormControl('', Validators.minLength(2)),
-      confirm: new FormControl('', Validators.minLength(2)),
-    },
-    passwordMatchValidator
-  );
-  user: User = new User();
+  constructor(private userService: UserService,
+              private snackbar: MatSnackBar,
+              private router: Router) {
+  }
 
+  ngOnInit() {
+  }
+
+  onSubmit() {
+    this.userService.addUser(this.user).subscribe((response: User) => {
+      const snackbarRef = this.snackbar.open('Account successfully created', 'dismiss', {
+        duration: 3000
+      });
+
+      snackbarRef.afterDismissed().subscribe(() => {
+        this.router.navigateByUrl('/');
+      });
+    });
+  }
 
   getErrorMessage(controlName: string) {
     if (this.form.controls[controlName].hasError('minlength')) {

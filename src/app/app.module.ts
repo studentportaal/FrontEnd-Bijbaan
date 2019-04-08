@@ -31,7 +31,8 @@ import {CompanyComponent} from './components/general/company/company/company.com
     LoginComponent,
     UsereditprofileComponent,
     RegisterComponent,
-    ApplyComponent
+    ApplyComponent,
+    CompanyComponent,
   ],
   imports: [
     BrowserModule,
