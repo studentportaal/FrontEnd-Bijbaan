@@ -4,8 +4,8 @@ import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular
 import { UserService } from '../../../services/user/user.service';
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
-import {Company} from "../../../domain/Company";
-import {CompanyService} from "../../../services/company/company.service";
+import {Company} from '../../../domain/Company';
+import {CompanyService} from '../../../services/company/company.service';
 
 @Component({
   selector: 'app-register',
