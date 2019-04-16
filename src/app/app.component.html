@@ -9,7 +9,7 @@
     <a mat-stroked-button color="default" title="Profiel inzien" routerLink="/user/view-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
     <a mat-stroked-button color="default" title="Profiel aanpassen" routerLink="/user/edit-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.EDITPROFILE' | translate}}</a>
   </ng-container>
-  <a mat-stroked-button color="default" title="Vacatures" routerLink="/joboffers">Vacatures</a>
+  <a mat-stroked-button color="default" title="Vacatures" routerLink="/joboffers">{{'NAVBAR.JOBOFFERS' | translate}}</a>
   <ng-container *ngIf=!authenticationService.user>
     <a mat-stroked-button color="default" title="Registreren" routerLink="user/register">{{'NAVBAR.REGISTER' | translate}}</a>
     <a mat-stroked-button color="default" title="Vacatures" routerLink="/user/login">Login</a>

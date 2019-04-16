@@ -7,8 +7,9 @@ import { JobofferlistComponent } from './components/joboffer/Offerslist/joboffer
 import { LoginComponent } from './components/user/login/login.component';
 import { JobofferComponent } from './components/joboffer/joboffer/joboffer.component';
 import { ApplyComponent } from './components/joboffer/apply/apply.component';
-import { CompanyComponent } from "./components/general/company/company/company.component";
+import { CompanyComponent } from './components/general/company/company/company.component';
 import { UsereditprofileComponent } from './components/user/usereditprofile/usereditprofile.component';
+import {EditjobofferComponent} from "./components/joboffer/editjoboffer/editjoboffer.component";
 
 
 
@@ -49,7 +50,11 @@ const routes: Routes = [
   },
   {
     path: 'company/:id',
-    component: CompanyComponent,
+    component: CompanyComponent
+  },
+  {
+    path: 'joboffers/edit/:id',
+    component: EditjobofferComponent
   }
 ];
 

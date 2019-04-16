@@ -17,6 +17,7 @@ import { UsereditprofileComponent } from './components/user/usereditprofile/user
 import { ApplyComponent } from './components/joboffer/apply/apply.component';
 import {JobofferComponent} from  './components/joboffer/joboffer/joboffer.component';
 import {CompanyComponent} from './components/general/company/company/company.component';
+import { EditjobofferComponent } from './components/joboffer/editjoboffer/editjoboffer.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import {CompanyComponent} from './components/general/company/company/company.com
     RegisterComponent,
     ApplyComponent,
     CompanyComponent,
+    EditjobofferComponent,
   ],
   imports: [
     BrowserModule,

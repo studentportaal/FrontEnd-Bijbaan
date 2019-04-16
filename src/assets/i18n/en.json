@@ -2,7 +2,8 @@
   "NAVBAR": {
     "PROFILE": "Profile",
     "REGISTER": "New account",
-    "EDITPROFILE" : "Edit profile"
+    "EDITPROFILE" : "Edit profile",
+    "JOBOFFERS": "Joboffers"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welcome to our job portal. we don't have jobs and we don't have portals"
@@ -27,5 +28,19 @@
     "FIELD.INSTITUTE": "Institute",
     "FIELD.EMAIL" : "Email",
     "BUTTON.CONFIRM" : "Edit profile"
+  },
+  "JOBOFFER": {
+    "BUTTON.APPLY": "Apply",
+    "BUTTON.EDIT": "Edit",
+    "LABEL.POSITION": "Position",
+    "LABEL.SALARY": "Salary",
+    "LABEL.JOBDESCRIPTION": "Job Description",
+    "LABEL.LOCATION": "Location",
+    "LABEL.COMPANY": "Company"
+  },
+  "JOBOFFEREDIT": {
+    "BUTTON.CANCEL": "Cancel",
+    "LABEL.TITLE": "Edit job offer",
+    "SNACKBAR.SUCCES.MESSAGE": "Succesfully updated joboffer"
   }
 }
