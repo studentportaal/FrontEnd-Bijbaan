@@ -1,7 +1,4 @@
 {
-  "rulesDirectory": [
-    "node_modules/codelyzer"
-  ],
   "linterOptions": {
     "exclude": ["**/node_modules/**"]
   },
