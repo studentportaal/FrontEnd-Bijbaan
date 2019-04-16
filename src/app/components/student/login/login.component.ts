@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from '../../../domain/User';
+import {Student} from '../../../domain/Student';
 import {MatSnackBar} from '@angular/material';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../../../services/authentication/authentication.service';
+import {Company} from "../../../domain/Company";
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ import {AuthenticationService} from '../../../services/authentication/authentica
 export class LoginComponent implements OnInit {
 
 
-  user: User = new User();
+  user: Student = new Student();
+  company: Company = new Company();
 
   constructor(private authenticationService: AuthenticationService,
               private snackbar: MatSnackBar,
@@ -21,9 +23,22 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
+  companyLogin() {
+    this.authenticationService.login(this.company).subscribe( (response) => {
+      const company: Company = response;
+      this.authenticationService.setSession(company);
+      const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
+        duration: 1500});
+      snackbarRef.afterDismissed().subscribe(() => {
+        this.router.navigateByUrl('/');
+      });
+    });
+
+  }
+
+  studentLogin() {
     this.authenticationService.login(this.user).subscribe( (response) => {
-      const user: User = response;
+      const user: Student = response;
       this.authenticationService.setSession(user);
       const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
         duration: 1500});

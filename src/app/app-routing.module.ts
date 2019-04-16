@@ -1,24 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserprofileComponent } from './components/user/userprofile/userprofile.component';
+import { UserprofileComponent } from './components/student/userprofile/userprofile.component';
 import { HomeComponent } from './components/general/home/home.component';
-import { RegisterComponent } from './components/user/register/register.component';
+import { RegisterComponent } from './components/student/register/register.component';
 import { JobofferlistComponent } from './components/joboffer/Offerslist/jobofferlist.component';
-import { LoginComponent } from './components/user/login/login.component';
+import { LoginComponent } from './components/student/login/login.component';
 import { JobofferComponent } from './components/joboffer/joboffer/joboffer.component';
 import { ApplyComponent } from './components/joboffer/apply/apply.component';
 import { CompanyComponent } from './components/general/company/company/company.component';
-import { UsereditprofileComponent } from './components/user/usereditprofile/usereditprofile.component';
 import { AddjobofferComponent } from './components/joboffer/addjoboffer/addjoboffer.component';
-
-
+import { UsereditprofileComponent } from './components/student/usereditprofile/usereditprofile.component';
 
 const routes: Routes = [
-
   {
     path: '',
     component: HomeComponent,
-
   },
   {
     path: 'user/view-profile/:uuid',
@@ -49,7 +45,7 @@ const routes: Routes = [
     component: AddjobofferComponent,
   },
   {
-    path: 'user/login',
+    path: 'login',
     component: LoginComponent
   },
   {

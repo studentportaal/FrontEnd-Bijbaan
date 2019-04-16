@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from 'src/app/domain/User';
+import {Student} from 'src/app/domain/Student';
 import {ActivatedRoute} from '@angular/router';
 import {UserService} from 'src/app/services/user/user.service';
 import {AuthenticationService} from 'src/app/services/authentication/authentication.service';
@@ -11,10 +11,7 @@ import {AuthenticationService} from 'src/app/services/authentication/authenticat
 })
 export class UsereditprofileComponent implements OnInit {
 
-  user: User = new User();
-
-  constructor(private activatedRoute: ActivatedRoute,
-              private userService: UserService,
+  constructor(private activatedRoute: ActivatedRoute, private userService: UserService,
               private authenticationService: AuthenticationService) {
   }
 

@@ -2,10 +2,18 @@
   "NAVBAR": {
     "PROFILE": "Profile",
     "REGISTER": "New account",
-    "EDITPROFILE" : "Edit profile"
+    "EDITPROFILE" : "Edit profile",
+    "LOGIN": "Login"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals."
+  },
+  "LOGIN": {
+    "FIELD.EMAIL.PLACEHOLDER": "Email",
+    "FIELD.PASSWORD.PLACEHOLDER": "Password",
+    "BUTTON.LOGIN": "Login",
+    "TITLE.STUDENT": "Login as student",
+    "TITLE.COMPANY": "Login as company"
   },
   "REGISTER": {
     "TITLE": "Register",
@@ -16,7 +24,13 @@
     "FIELD.INSTITUTE.PLACEHOLDER": "School or institute",
     "FIELD.PASSWORD.PLACEHOLDER": "Password",
     "FIELD.PASSWORDCONFIRM.PLACEHOLDER": "Confirm password",
-    "BUTTON.CONFIRM": "Create account"
+    "BUTTON.CONFIRM": "Create account",
+    "FIELD.COMPANY.PLACEHOLDER": "Company name",
+    "FIELD.CITY.PLACEHOLDER": "City",
+    "FIELD.POSTAL.PLACEHOLDER": "Postal code",
+    "FIELD.STREET.PLACEHOLDER": "Street name",
+    "FIELD.HOUSE.PLACEHOLDER": "House number",
+    "FIELD.DESCRIPTION.PLACEHOLDER": "Description"
   },
   "USERPROFILE": {
     "TITLE" : "Profile",
