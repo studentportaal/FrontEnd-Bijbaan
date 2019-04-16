@@ -7,6 +7,6 @@ export class Student extends User{
   institute: string;
 
   constructor() {
-    super()
+    super();
   }
 }

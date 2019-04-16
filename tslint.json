@@ -1,9 +1,7 @@
 {
   "extends": "tslint:recommended",
   "linterOptions": {
-    "exclude": [
-      "node_modules/**"
-    ]
+    "exclude": ["node_modules"]
   },
   "rules": {
     "array-type": false,
@@ -62,16 +60,6 @@
       true,
       "single"
     ],
-    "trailing-comma": false,
-    "no-output-on-prefix": true,
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "use-life-cycle-interface": true,
-    "use-pipe-transform-interface": true,
-    "component-class-suffix": true,
-    "directive-class-suffix": true
+    "trailing-comma": false
   }
 }

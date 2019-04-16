@@ -1,16 +1,18 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Student} from '../../domain/Student';
 import {environment} from '../../../environments/environment';
 import {Company} from "../../domain/Company";
 import {User} from "../../domain/User";
+import {UserType} from "../../domain/UserType";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
   public user: User;
+  userType: UserType;
 
   private baseUrlStudent: string = environment.API_BASE + '/users';
   private baseUrlCompany: string = environment.API_BASE + '/company';
@@ -25,10 +27,10 @@ export class AuthenticationService {
     return this.httpClient.post<Company>(this.baseUrlCompany + '/login', company);
   }
 
-  public setSession(user: User) {
+  public setSession(user: User, type: UserType) {
     localStorage.setItem('currentUser', JSON.stringify(user));
     this.user = user;
-    console.log(this.user)
+    this.userType = type;
   }
 
   public isLoggedIn() {
@@ -37,5 +39,13 @@ export class AuthenticationService {
 
   public checkCurrentUser(id: string) {
    return JSON.parse(localStorage.getItem('currentUser')).id === id;
+  }
+
+  public isStudent(): boolean {
+    return this.userType === UserType.STUDENT
+  }
+
+  public isCompany(): boolean {
+    return this.userType === UserType.COMPANY
   }
 }
