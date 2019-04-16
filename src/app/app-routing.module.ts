@@ -7,8 +7,9 @@ import { JobofferlistComponent } from './components/joboffer/Offerslist/joboffer
 import { LoginComponent } from './components/user/login/login.component';
 import { JobofferComponent } from './components/joboffer/joboffer/joboffer.component';
 import { ApplyComponent } from './components/joboffer/apply/apply.component';
-import { CompanyComponent } from "./components/general/company/company/company.component";
+import { CompanyComponent } from './components/general/company/company/company.component';
 import { UsereditprofileComponent } from './components/user/usereditprofile/usereditprofile.component';
+import { AddjobofferComponent } from './components/joboffer/addjoboffer/addjoboffer.component';
 
 
 
@@ -36,12 +37,16 @@ const routes: Routes = [
     component: JobofferlistComponent
   },
   {
-    path: 'joboffers/:id',
+    path: 'joboffers/details/:id',
     component: JobofferComponent,
   },
   {
-    path: 'joboffers/:id/apply',
+    path: 'joboffers/details/:id/apply',
     component: ApplyComponent
+  },
+  {
+    path: 'joboffers/add',
+    component: AddjobofferComponent,
   },
   {
     path: 'user/login',

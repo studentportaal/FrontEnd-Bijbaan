@@ -9,6 +9,7 @@ import {User} from '../../domain/User';
 })
 export class JobofferService {
 
+
   private jobOfferBaseUrl = 'http://localhost:9000/joboffer';
 
   constructor(private httpClient: HttpClient) {
@@ -19,15 +20,19 @@ export class JobofferService {
   }
 
   getJobOffer(id: string): Observable<JobOffer> {
-    return this.httpClient.get<JobOffer>(this.jobOfferBaseUrl + '/' + id);
+    return this.httpClient.get<JobOffer>(this.jobOfferBaseUrl + '/details/' + id);
   }
 
   getJobOfferCount() {
     return this.httpClient.get<string>(this.jobOfferBaseUrl + '/all/count');
   }
 
+  addJobOffer(jobOffer: JobOffer) {
+    return this.httpClient.post<JobOffer>(this.jobOfferBaseUrl, jobOffer);
+  }
+
   applyForJob(u: User, id: string) {
     console.log(u);
-    return this.httpClient.put(this.jobOfferBaseUrl + '/' + id, u);
+    return this.httpClient.put(this.jobOfferBaseUrl + '/details/' + id, u);
   }
 }

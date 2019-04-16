@@ -1,18 +1,18 @@
-<p>
-  <mat-card>
+<div class="container">
+
+
     <mat-card-title>Vacatures</mat-card-title>
     <mat-card-content>
       <ul>
         <li *ngFor="let JobOffer of jobOffers"><a routerLink="{{JobOffer.id}}">{{JobOffer.title}}</a></li>
       </ul>
       <mat-paginator #paginator
-                     [length]="length"
-                     [pageSize]="pageSize"
-                     [pageIndex]="pageIndex"
-                     [pageSizeOptions]="[5, 10, 25, 100]"
-                     (page)="pageEvent = getServerData($event)">
-      </mat-paginator>
-    </mat-card-content>
-  </mat-card>
-</p>
+      [length]="length"
+      [pageSize]="pageSize"
+      [pageIndex]="pageIndex"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      (page)="pageEvent = getServerData($event)">
+    </mat-paginator>
+  </mat-card-content>
+</div>
 

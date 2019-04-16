@@ -5,7 +5,7 @@
     "EDITPROFILE" : "Edit profile"
   },
   "HOME": {
-    "WELCOME.MESSAGE": "Welcome to our job portal. we don't have jobs and we don't have portals"
+    "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals."
   },
   "REGISTER": {
     "TITLE": "Register",
@@ -27,5 +27,19 @@
     "FIELD.INSTITUTE": "Institute",
     "FIELD.EMAIL" : "Email",
     "BUTTON.CONFIRM" : "Edit profile"
+  },
+  "JOBOFFER": {
+    "ADD": {
+      "TITLE" : "Add new job offer",
+      "BUTTON": "Add job offer"
+    },
+    "FIELD": {
+        "LOCATION.PLACEHOLDER": "Location",
+        "TITLE.PLACEHOLDER": "Title",
+        "INFORMATION.PLACEHOLDER": "Information",
+        "FUNCTION.PLACEHOLDER": "Function",
+        "SALARY.PLACEHOLDER": "Salary",
+        "COMPANY.PLACEHOLDER": "Company"
+    }
   }
 }

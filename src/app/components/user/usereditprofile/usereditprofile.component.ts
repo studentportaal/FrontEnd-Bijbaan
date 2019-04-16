@@ -13,7 +13,8 @@ export class UsereditprofileComponent implements OnInit {
 
   user: User = new User();
 
-  constructor(private activatedRoute: ActivatedRoute, private userService: UserService,
+  constructor(private activatedRoute: ActivatedRoute,
+              private userService: UserService,
               private authenticationService: AuthenticationService) {
   }
 

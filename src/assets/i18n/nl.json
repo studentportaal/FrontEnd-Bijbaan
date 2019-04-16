@@ -6,7 +6,7 @@
 
   },
   "HOME": {
-    "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal!"
+    "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal! We hebben geen bijbanen :)"
   },
   "REGISTER": {
     "TITLE": "Registreren",
@@ -29,5 +29,21 @@
     "FIELD.EMAIL" : "Email",
     "BUTTON.CONFIRM" : "Aanpassen"
 
+  },
+  "JOBOFFER": {
+    "ADD": {
+      "TITLE" : "Vacature toevoegen",
+      "BUTTON": "Vacature toevoegen"
+
+    },
+    "FIELD": {
+        "LOCATION.PLACEHOLDER": "Locatie",
+        "TITLE.PLACEHOLDER": "Titel",
+        "INFORMATION.PLACEHOLDER": "Informatie",
+        "FUNCTION.PLACEHOLDER": "Functie",
+        "SALARY.PLACEHOLDER": "Salaris",
+        "COMPANY.PLACEHOLDER": "Bedrijf"
+
+    }
   }
 }
