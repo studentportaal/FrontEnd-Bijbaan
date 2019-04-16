@@ -1,0 +1,47 @@
+<div class="container container-sm">
+  <div class="login-container" id="left-login-container">
+    <h2>{{ 'LOGIN.TITLE.STUDENT' | translate}}</h2>
+    <form class="login-form" (ngSubmit)="studentLogin()">
+      <mat-form-field>
+        <input matInput required
+               type="email"
+               placeholder="{{ 'LOGIN.FIELD.EMAIL.PLACEHOLDER' | translate}}"
+               [(ngModel)]="user.email"
+               name="email"
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput required
+               type="password"
+               placeholder="{{ 'LOGIN.FIELD.PASSWORD.PLACEHOLDER' | translate}}"
+               [(ngModel)]="user.password"
+               name="password"
+        >
+      </mat-form-field>
+      <button class="login-btn" type="submit" mat-raised-button color="primary">{{ 'LOGIN.BUTTON.LOGIN' | translate}}</button>
+    </form>
+  </div>
+  <mat-divider  [vertical]="true"></mat-divider>
+  <div class="login-container">
+    <h2>{{'LOGIN.TITLE.COMPANY' | translate}}</h2>
+    <form class="login-form" (ngSubmit)="companyLogin()">
+      <mat-form-field>
+        <input matInput required
+               type="email"
+               placeholder="{{ 'LOGIN.FIELD.EMAIL.PLACEHOLDER' | translate}}"
+               [(ngModel)]="company.email"
+               name="email"
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput required
+               type="password"
+               placeholder="{{ 'LOGIN.FIELD.PASSWORD.PLACEHOLDER' | translate}}"
+               [(ngModel)]="company.password"
+               name="password"
+        >
+      </mat-form-field>
+      <button class="login-btn" type="submit" mat-raised-button color="primary">{{ 'LOGIN.BUTTON.LOGIN' | translate}}</button>
+    </form>
+  </div>
+</div>

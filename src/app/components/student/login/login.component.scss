@@ -1,0 +1,28 @@
+.container {
+  width: 60%;
+  text-align: center;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.login-container {
+  width: 40%;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.login-btn {
+  width: 10rem;
+  align-self: center;
+}
+
+mat-divider {
+  background-color: grey;
+}

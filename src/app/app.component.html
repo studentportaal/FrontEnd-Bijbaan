@@ -11,8 +11,8 @@
   </ng-container>
   <a mat-stroked-button color="default" title="Vacatures" routerLink="/joboffers">Vacatures</a>
   <ng-container *ngIf=!authenticationService.user>
-    <a mat-stroked-button color="default" title="Registreren" routerLink="user/register">{{'NAVBAR.REGISTER' | translate}}</a>
-    <a mat-stroked-button color="default" title="Vacatures" routerLink="/user/login">Login</a>
+    <a mat-stroked-button color="default" title="Registreren" routerLink="student/register">{{'NAVBAR.REGISTER' | translate}}</a>
+    <a mat-stroked-button color="default" title="{{'NAVBAR.LOGIN' | translate}}" routerLink="/login">{{'NAVBAR.LOGIN' | translate}}</a>
   </ng-container>
 </mat-toolbar>
 
