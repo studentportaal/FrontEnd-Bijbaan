@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   companyLogin() {
-    this.authenticationService.login(this.company).subscribe( (response) => {
+    this.authenticationService.loginAsCompany(this.company).subscribe( (response) => {
       const company: Company = response;
       this.authenticationService.setSession(company);
       const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   studentLogin() {
-    this.authenticationService.login(this.user).subscribe( (response) => {
+    this.authenticationService.loginAsStudent(this.user).subscribe( (response) => {
       const user: Student = response;
       this.authenticationService.setSession(user);
       const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {

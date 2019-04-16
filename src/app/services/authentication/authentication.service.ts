@@ -17,11 +17,11 @@ export class AuthenticationService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public login(student: Student): Observable<Student> {
+  public loginAsStudent(student: Student): Observable<Student> {
     return this.httpClient.post<Student>(this.baseUrlStudent + '/login', student);
   }
 
-  public login(company: Company): Observable<Company> {
+  public loginAsCompany(company: Company): Observable<Company> {
     return this.httpClient.post<Company>(this.baseUrlCompany + '/login', company);
   }
 
