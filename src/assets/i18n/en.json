@@ -36,7 +36,8 @@
     "LABEL.SALARY": "Salary",
     "LABEL.JOBDESCRIPTION": "Job Description",
     "LABEL.LOCATION": "Location",
-    "LABEL.COMPANY": "Company"
+    "LABEL.COMPANY": "Company",
+    "LABEL.TITLE": "Title"
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Cancel",
