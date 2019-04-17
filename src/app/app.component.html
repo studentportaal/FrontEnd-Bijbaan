@@ -8,7 +8,7 @@
 
   <a mat-stroked-button color="default" title="Vacatures" routerLink="/joboffers">{{'NAVBAR.JOBOFFERS' | translate}}</a>
 
-  <ng-container *ngIf="authenticationService.user">
+  <ng-container *ngIf="authenticationService.isLoggedIn()">
 
     <!-- Student links go here -->
     <ng-container *ngIf="authenticationService.isStudent()">
