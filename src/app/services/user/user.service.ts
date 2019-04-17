@@ -3,6 +3,7 @@
  import { environment} from '../../../environments/environment';
  import { Student } from '../../domain/Student';
  import {Observable} from 'rxjs';
+ import {User} from "../../domain/User";
 
  @Injectable({
   providedIn: 'root'
@@ -22,8 +23,7 @@ export class UserService {
     return this.httpClient.post<Student>(this.baseUrl, user);
   }
 
-   updateUser(user: Student) {
-    console.log(user)
+   updateUser(user: User) {
     return this.httpClient.put<Student>(this.baseUrl + '/' + user.uuid, user);
    }
  }

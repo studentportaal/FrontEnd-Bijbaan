@@ -1,18 +1,37 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-toolbar color="primary">
-  <a href="/" >
+  <a href="/">
     <span>{{title | titlecase}}</span>
   </a>
 
   <span class="fill-remaining-space"></span>
-  <ng-container *ngIf="authenticationService.user">
-    <a mat-stroked-button color="default" title="Profiel inzien" routerLink="/user/view-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
-    <a mat-stroked-button color="default" title="Profiel aanpassen" routerLink="/user/edit-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.EDITPROFILE' | translate}}</a>
+
+  <a mat-stroked-button color="default" title="Vacatures" routerLink="/joboffers">{{'NAVBAR.JOBOFFERS' | translate}}</a>
+
+  <ng-container *ngIf="authenticationService.isLoggedIn()">
+
+    <!-- Student links go here -->
+    <ng-container *ngIf="authenticationService.isStudent()">
+      <a mat-stroked-button color="default" title="Profiel inzien"
+         routerLink="/user/view-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
+      <a mat-stroked-button color="default" title="Profiel aanpassen"
+         routerLink="/user/edit-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.EDITPROFILE' | translate}}</a>
+    </ng-container>
+
+    <!-- Company links go here -->
+    <ng-container *ngIf="authenticationService.isCompany()">
+      <a mat-stroked-button color="default" title="Bedrijf inzien" routerLink="/">{{'NAVBAR.PROFILE' | translate}}</a>
+    </ng-container>
+
+    <!-- Generic logged in links go here i.e. 'log out' IF WE HAD ONE -->
   </ng-container>
-  <a mat-stroked-button color="default" title="Vacatures" routerLink="/joboffers">Vacatures</a>
+  
+  <!-- Non logged in links go here -->
   <ng-container *ngIf=!authenticationService.user>
-    <a mat-stroked-button color="default" title="Registreren" routerLink="student/register">{{'NAVBAR.REGISTER' | translate}}</a>
-    <a mat-stroked-button color="default" title="{{'NAVBAR.LOGIN' | translate}}" routerLink="/login">{{'NAVBAR.LOGIN' | translate}}</a>
+    <a mat-stroked-button color="default" title="Registreren"
+       routerLink="/register">{{'NAVBAR.REGISTER' | translate}}</a>
+    <a mat-stroked-button color="default" title="{{'NAVBAR.LOGIN' | translate}}"
+       routerLink="/login">{{'NAVBAR.LOGIN' | translate}}</a>
   </ng-container>
 </mat-toolbar>
 

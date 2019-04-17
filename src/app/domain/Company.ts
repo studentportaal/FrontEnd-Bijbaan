@@ -7,4 +7,8 @@ export class Company extends User {
   houseNumber: number;
   postalCode: string;
   description: string;
+
+  constructor() {
+    super();
+  }
 }

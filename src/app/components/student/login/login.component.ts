@@ -4,6 +4,7 @@ import {MatSnackBar} from '@angular/material';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../../../services/authentication/authentication.service';
 import {Company} from "../../../domain/Company";
+import {UserType} from "../../../domain/UserType";
 
 @Component({
   selector: 'app-login',
@@ -24,9 +25,9 @@ export class LoginComponent implements OnInit {
   }
 
   companyLogin() {
-    this.authenticationService.login(this.company).subscribe( (response) => {
+    this.authenticationService.loginAsCompany(this.company).subscribe( (response) => {
       const company: Company = response;
-      this.authenticationService.setSession(company);
+      this.authenticationService.setSession(company, UserType.COMPANY);
       const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
         duration: 1500});
       snackbarRef.afterDismissed().subscribe(() => {
@@ -37,9 +38,9 @@ export class LoginComponent implements OnInit {
   }
 
   studentLogin() {
-    this.authenticationService.login(this.user).subscribe( (response) => {
+    this.authenticationService.loginAsStudent(this.user).subscribe( (response) => {
       const user: Student = response;
-      this.authenticationService.setSession(user);
+      this.authenticationService.setSession(user, UserType.STUDENT);
       const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
         duration: 1500});
       snackbarRef.afterDismissed().subscribe(() => {

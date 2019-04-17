@@ -3,6 +3,7 @@
     "PROFILE": "Profile",
     "REGISTER": "New account",
     "EDITPROFILE" : "Edit profile",
+    "JOBOFFERS": "Joboffers",
     "LOGIN": "Login"
   },
   "HOME": {
@@ -54,6 +55,19 @@
         "FUNCTION.PLACEHOLDER": "Function",
         "SALARY.PLACEHOLDER": "Salary",
         "COMPANY.PLACEHOLDER": "Company"
-    }
+    },
+    "BUTTON.APPLY": "Apply",
+    "BUTTON.EDIT": "Edit",
+    "LABEL.POSITION": "Position",
+    "LABEL.SALARY": "Salary",
+    "LABEL.JOBDESCRIPTION": "Job Description",
+    "LABEL.LOCATION": "Location",
+    "LABEL.COMPANY": "Company",
+    "LABEL.TITLE": "Title"
+  },
+  "JOBOFFEREDIT": {
+    "BUTTON.CANCEL": "Cancel",
+    "LABEL.TITLE": "Edit job offer",
+    "SNACKBAR.SUCCES.MESSAGE": "Succesfully updated joboffer"
   }
 }

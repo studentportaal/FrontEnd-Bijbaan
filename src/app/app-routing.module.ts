@@ -11,6 +11,7 @@ import { CompanyComponent } from './components/general/company/company/company.c
 import { AddjobofferComponent } from './components/joboffer/addjoboffer/addjoboffer.component';
 import { UsereditprofileComponent } from './components/student/usereditprofile/usereditprofile.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -21,7 +22,7 @@ const routes: Routes = [
     component: UserprofileComponent,
   },
   {
-    path: 'user/register',
+    path: 'register',
     component: RegisterComponent
   },
   {
@@ -50,7 +51,7 @@ const routes: Routes = [
   },
   {
     path: 'company/:id',
-    component: CompanyComponent,
+    component: CompanyComponent
   }
 ];
 
