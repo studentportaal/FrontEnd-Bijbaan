@@ -52,10 +52,6 @@ const routes: Routes = [
   {
     path: 'company/:id',
     component: CompanyComponent
-  },
-  {
-    path: 'joboffers/edit/:id',
-    component: EditjobofferComponent
   }
 ];
 
