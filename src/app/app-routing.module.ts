@@ -8,10 +8,7 @@ import { LoginComponent } from './components/student/login/login.component';
 import { JobofferComponent } from './components/joboffer/joboffer/joboffer.component';
 import { ApplyComponent } from './components/joboffer/apply/apply.component';
 import { CompanyComponent } from './components/general/company/company/company.component';
-import { UsereditprofileComponent } from './components/user/usereditprofile/usereditprofile.component';
-import {EditjobofferComponent} from './components/joboffer/editjoboffer/editjoboffer.component';
-
-
+import {UsereditprofileComponent} from './components/student/usereditprofile/usereditprofile.component';
 
 
 const routes: Routes = [

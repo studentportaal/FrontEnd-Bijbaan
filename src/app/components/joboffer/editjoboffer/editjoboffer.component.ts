@@ -13,7 +13,7 @@ import {MatSnackBar} from '@angular/material';
 export class EditjobofferComponent implements OnInit {
 
   @Input() joboffer: JobOffer;
-  @Input() company: Company
+  @Input() company: Company;
   @Output() editBoolean = new EventEmitter<boolean>();
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -22,7 +22,7 @@ export class EditjobofferComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.joboffer.company = this.company.id;
+    this.joboffer.company = this.company.uuid;
   }
 
   edit() {
