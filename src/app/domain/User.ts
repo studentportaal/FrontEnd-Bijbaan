@@ -1,11 +1,7 @@
 export class User {
-  uuid: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  dateOfBirth: Date;
-  password: string;
-  institute: string;
+  public uuid: string;
+  public email: string;
+  public password: string;
 
   constructor() {}
 }

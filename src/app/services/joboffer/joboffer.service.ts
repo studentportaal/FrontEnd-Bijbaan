@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {JobOffer} from '../../domain/JobOffer';
 import {Observable} from 'rxjs';
-import {User} from '../../domain/User';
+import {Student} from '../../domain/Student';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,7 @@ export class JobofferService {
     return this.httpClient.get<string>(this.jobOfferBaseUrl + '/all/count');
   }
 
-  applyForJob(u: User, id: string) {
+  applyForJob(u: Student, id: string) {
     console.log(u);
     return this.httpClient.patch(this.jobOfferBaseUrl + '/' + id, u);
   }

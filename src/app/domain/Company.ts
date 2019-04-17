@@ -1,9 +1,14 @@
-export class Company {
-  id: string;
+import {User} from "./User";
+
+export class Company extends User {
   name: string;
   city: string;
-  streetname: string;
-  housenumber: number;
-  postalcode: string;
+  streetName: string;
+  houseNumber: number;
+  postalCode: string;
   description: string;
+
+  constructor() {
+    super();
+  }
 }
