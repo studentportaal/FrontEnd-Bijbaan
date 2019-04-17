@@ -2,7 +2,8 @@
   "NAVBAR": {
     "PROFILE": "Profiel",
     "REGISTER": "Nieuwe account",
-    "EDITPROFILE": "Profiel aanpassen"
+    "EDITPROFILE": "Profiel aanpassen",
+    "JOBOFFERS": "Vacatures"
 
   },
   "HOME": {
@@ -28,6 +29,15 @@
     "FIELD.INSTITUTE": "School",
     "FIELD.EMAIL" : "Email",
     "BUTTON.CONFIRM" : "Aanpassen"
+  },
 
+  "JOBOFFER": {
+    "BUTTON.APPLY": "Solliciteren",
+    "BUTTON.EDIT": "Wijzigen",
+    "LABEL.POSITION": "Functie",
+    "LABEL.SALARY": "Salaris",
+    "LABEL.JOBDESCRIPTION": "Taakomschrijving",
+    "LABEL.LOCATION": "Locatie",
+    "LABEL.COMPANY": "Bedrijf"
   }
 }

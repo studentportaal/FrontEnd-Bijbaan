@@ -6,7 +6,7 @@
 
   <span class="fill-remaining-space"></span>
 
-  <a mat-stroked-button color="default" title="Vacatures" routerLink="/joboffers">Vacatures</a>
+  <a mat-stroked-button color="default" title="Vacatures" routerLink="/joboffers">{{'NAVBAR.JOBOFFERS' | translate}}</a>
 
   <ng-container *ngIf="authenticationService.user">
 
@@ -25,7 +25,7 @@
 
     <!-- Generic logged in links go here i.e. 'log out' IF WE HAD ONE -->
   </ng-container>
-
+  
   <!-- Non logged in links go here -->
   <ng-container *ngIf=!authenticationService.user>
     <a mat-stroked-button color="default" title="Registreren"

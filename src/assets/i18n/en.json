@@ -3,6 +3,7 @@
     "PROFILE": "Profile",
     "REGISTER": "New account",
     "EDITPROFILE" : "Edit profile",
+    "JOBOFFERS": "Joboffers",
     "LOGIN": "Login"
   },
   "HOME": {
@@ -41,5 +42,20 @@
     "FIELD.INSTITUTE": "Institute",
     "FIELD.EMAIL" : "Email",
     "BUTTON.CONFIRM" : "Edit profile"
+  },
+  "JOBOFFER": {
+    "BUTTON.APPLY": "Apply",
+    "BUTTON.EDIT": "Edit",
+    "LABEL.POSITION": "Position",
+    "LABEL.SALARY": "Salary",
+    "LABEL.JOBDESCRIPTION": "Job Description",
+    "LABEL.LOCATION": "Location",
+    "LABEL.COMPANY": "Company",
+    "LABEL.TITLE": "Title"
+  },
+  "JOBOFFEREDIT": {
+    "BUTTON.CANCEL": "Cancel",
+    "LABEL.TITLE": "Edit job offer",
+    "SNACKBAR.SUCCES.MESSAGE": "Succesfully updated joboffer"
   }
 }
