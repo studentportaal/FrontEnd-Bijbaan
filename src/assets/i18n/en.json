@@ -2,7 +2,7 @@
   "NAVBAR": {
     "PROFILE": "Profile",
     "REGISTER": "New account",
-    "EDITPROFILE" : "Edit profile",
+    "EDITPROFILE": "Edit profile",
     "JOBOFFERS": "Joboffers",
     "LOGIN": "Login"
   },
@@ -34,27 +34,27 @@
     "FIELD.DESCRIPTION.PLACEHOLDER": "Description"
   },
   "USERPROFILE": {
-    "TITLE" : "Profile",
-    "EDITTITLE" : "Edit profile",
-    "FIELD.FIRSTNAME" : "First name",
-    "FIELD.LASTNAME" : "Last name",
-    "FIELD.DATE" : "Date of birth",
+    "TITLE": "Profile",
+    "EDITTITLE": "Edit profile",
+    "FIELD.FIRSTNAME": "First name",
+    "FIELD.LASTNAME": "Last name",
+    "FIELD.DATE": "Date of birth",
     "FIELD.INSTITUTE": "Institute",
-    "FIELD.EMAIL" : "Email",
-    "BUTTON.CONFIRM" : "Edit profile"
+    "FIELD.EMAIL": "Email",
+    "BUTTON.CONFIRM": "Edit profile"
   },
   "JOBOFFER": {
     "ADD": {
-      "TITLE" : "Add new job offer",
+      "TITLE": "Add new job offer",
       "BUTTON": "Add job offer"
     },
     "FIELD": {
-        "LOCATION.PLACEHOLDER": "Location",
-        "TITLE.PLACEHOLDER": "Title",
-        "INFORMATION.PLACEHOLDER": "Information",
-        "FUNCTION.PLACEHOLDER": "Function",
-        "SALARY.PLACEHOLDER": "Salary",
-        "COMPANY.PLACEHOLDER": "Company"
+      "LOCATION.PLACEHOLDER": "Location",
+      "TITLE.PLACEHOLDER": "Title",
+      "INFORMATION.PLACEHOLDER": "Information",
+      "FUNCTION.PLACEHOLDER": "Function",
+      "SALARY.PLACEHOLDER": "Salary",
+      "COMPANY.PLACEHOLDER": "Company"
     },
     "BUTTON.APPLY": "Apply",
     "BUTTON.EDIT": "Edit",
