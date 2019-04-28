@@ -4,7 +4,9 @@
     "REGISTER": "New account",
     "EDITPROFILE": "Edit profile",
     "JOBOFFERS": "Joboffers",
-    "LOGIN": "Login"
+    "LOGIN": "Login",
+    "LOGOUT": "Log out",
+    "ADDJOBOFFER": "Add joboffer"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals."

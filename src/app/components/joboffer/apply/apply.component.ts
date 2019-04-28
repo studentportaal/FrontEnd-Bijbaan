@@ -24,7 +24,7 @@ export class ApplyComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = this.authenticationService.user;
+    this.user = this.authenticationService.user as Student;
   }
 
   onSubmit() {

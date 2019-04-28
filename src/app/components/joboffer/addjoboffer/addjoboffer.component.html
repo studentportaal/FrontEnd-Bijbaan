@@ -41,14 +41,6 @@
           [ngModelOptions]="{standalone: true}" 
           name="salary">
       </mat-form-field>
-      <mat-form-field>
-          <input matInput required 
-            type="text" 
-            placeholder="{{'JOBOFFER.FIELD.COMPANY.PLACEHOLDER' | translate}}"
-            [(ngModel)]="jobOffer.company" 
-            [ngModelOptions]="{standalone: true}" 
-            name="company">
-        </mat-form-field>
       <button type="submit" mat-raised-button color="primary">{{'JOBOFFER.ADD.BUTTON' | translate}}</button>
 
   </form>

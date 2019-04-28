@@ -4,7 +4,10 @@
     "REGISTER": "Nieuwe account",
     "EDITPROFILE": "Profiel aanpassen",
     "JOBOFFERS": "Vacatures",
-    "LOGIN": "Inloggen"
+    "LOGIN": "Inloggen",
+    "LOGOUT": "Uitloggen",
+    "ADDJOBOFFER": "Vacature toevoegen"
+
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal! We hebben geen bijbanen :)"
