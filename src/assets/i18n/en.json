@@ -51,7 +51,8 @@
     "LABEL.JOBDESCRIPTION": "Job Description",
     "LABEL.LOCATION": "Location",
     "LABEL.COMPANY": "Company",
-    "LABEL.TITLE": "Title"
+    "LABEL.TITLE": "Title",
+    "BUTTON.FILTER.COMPANY": "Filter by company"
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Cancel",

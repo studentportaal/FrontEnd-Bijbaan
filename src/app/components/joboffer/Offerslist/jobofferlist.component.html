@@ -1,6 +1,13 @@
 <p>
   <mat-card>
-    <mat-card-title>Vacatures</mat-card-title>
+    <mat-card-title-group>
+      <mat-card-title>Vacatures</mat-card-title>
+      <mat-card-actions>
+        <button mat-stroked-button (click)="openDialog()">
+          Filter by company
+        </button>
+      </mat-card-actions>
+    </mat-card-title-group>
     <mat-card-content>
       <ul>
         <li *ngFor="let JobOffer of jobOffers"><a routerLink="{{JobOffer.id}}">{{JobOffer.title}}</a></li>

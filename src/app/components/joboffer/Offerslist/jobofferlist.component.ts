@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {JobOffer} from '../../../domain/JobOffer';
 import {JobofferService} from '../../../services/joboffer/joboffer.service';
-import {PageEvent} from '@angular/material';
+import {MatDialog, PageEvent} from '@angular/material';
+import {CompanyfilterdialogComponent} from '../companyfilterdialog/companyfilterdialog.component';
 
 @Component({
   selector: 'app-joboffer',
@@ -16,12 +17,20 @@ export class JobofferlistComponent implements OnInit {
   pageIndex: number;
   pageEvent: PageEvent;
 
-  constructor(private jobOfferService: JobofferService) {
+  constructor(private jobOfferService: JobofferService, private dialog: MatDialog) {
   }
 
   ngOnInit() {
     this.pageSize = 25;
     this.getServerData(null);
+  }
+
+  public openDialog() {
+    const dialogRef = this.dialog.open(CompanyfilterdialogComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+    });
   }
 
   public getServerData(event?: PageEvent) {
@@ -37,7 +46,6 @@ export class JobofferlistComponent implements OnInit {
         }
       );
     });
-
 
     return event;
   }

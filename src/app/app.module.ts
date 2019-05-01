@@ -18,6 +18,7 @@ import { ApplyComponent } from './components/joboffer/apply/apply.component';
 import {JobofferComponent} from  './components/joboffer/joboffer/joboffer.component';
 import {CompanyComponent} from './components/general/company/company/company.component';
 import { EditjobofferComponent } from './components/joboffer/editjoboffer/editjoboffer.component';
+import { CompanyfilterdialogComponent } from './components/joboffer/companyfilterdialog/companyfilterdialog.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { EditjobofferComponent } from './components/joboffer/editjoboffer/editjo
     ApplyComponent,
     CompanyComponent,
     EditjobofferComponent,
+    CompanyfilterdialogComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,9 @@ import { EditjobofferComponent } from './components/joboffer/editjoboffer/editjo
         deps: [ HttpClient ]
       }
     })
+  ],
+  entryComponents: [
+    CompanyfilterdialogComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

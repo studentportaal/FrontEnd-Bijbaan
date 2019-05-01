@@ -38,6 +38,7 @@
     "LABEL.SALARY": "Salaris",
     "LABEL.JOBDESCRIPTION": "Taakomschrijving",
     "LABEL.LOCATION": "Locatie",
-    "LABEL.COMPANY": "Bedrijf"
+    "LABEL.COMPANY": "Bedrijf",
+    "BUTTON.FILTER.COMPANY": "Filter op bedrijf"
   }
 }
