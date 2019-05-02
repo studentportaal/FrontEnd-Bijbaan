@@ -14,8 +14,10 @@ export class JobofferService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAllJobOffers(startNr: number, amount: number): Observable<JobOffer[]> {
-    return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}`);
+  getAllJobOffers(startNr: number, amount: number, companies: string[]): Observable<JobOffer[]> {
+    const companyString = companies.toString()
+    console.log(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&companies=${companyString}`)
+    return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&companies=${companies.toString()}`);
   }
 
   getJobOffer(id: string): Observable<JobOffer> {

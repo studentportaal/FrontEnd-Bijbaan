@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {CompanyService} from "../../../services/company/company.service";
 import {Company} from '../../../domain/Company';
-import {PageEvent} from "@angular/material";
+import {MAT_DIALOG_DATA} from '@angular/material';
+import {FormArray, FormGroup} from '@angular/forms';
+import {DialogData} from '../../../domain/DialogData';
 
 @Component({
   selector: 'app-companyfilterdialog',
@@ -11,34 +13,23 @@ import {PageEvent} from "@angular/material";
 export class CompanyfilterdialogComponent implements OnInit {
 
   private companyList: Company[];
-  length: number;
-  pageSize: number;
-  pageIndex: number;
-  pageEvent: PageEvent;
+  private companyFilter: string[] = new Array();
 
-  constructor(private companyService: CompanyService) { }
+  form = new FormGroup({
+    companies: new FormArray([])
+  });
+
+  constructor(private companyService: CompanyService, @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   ngOnInit() {
     this.companyService.getAllCompanies().subscribe((response) => {
       this.companyList = response;
     });
   }
-  //
-  // public getServerData(event?: PageEvent) {
-  //   this.jobOfferService.getJobOfferCount().subscribe((response) => {
-  //     this.length = +response;
-  //     if (event) {
-  //       this.pageSize = event.pageSize;
-  //       this.pageIndex = event.pageIndex;
-  //     }
-  //     this.jobOfferService.getAllJobOffers((Math.imul(this.pageSize, this.pageIndex)), this.pageSize).subscribe(
-  //       reply => {
-  //         this.jobOffers = reply;
-  //       }
-  //     );
-  //   });
-  //
-  //   return event;
-  // }
+
+  public onChangeEvent(companyName: string) {
+    this.companyFilter.push(companyName);
+    this.data.companies = this.companyFilter;
+  }
 
 }
