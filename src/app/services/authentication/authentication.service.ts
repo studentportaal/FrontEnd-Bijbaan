@@ -42,10 +42,10 @@ export class AuthenticationService {
   }
 
   public isStudent(): boolean {
-    return this.userType === UserType.STUDENT
+    return this.userType === UserType.STUDENT;
   }
 
   public isCompany(): boolean {
-    return this.userType === UserType.COMPANY
+    return this.userType === UserType.COMPANY;
   }
 }
