@@ -3,10 +3,10 @@ import {JobOffer} from '../../../domain/JobOffer';
 import {JobofferService} from '../../../services/joboffer/joboffer.service';
 import {MatDialog, PageEvent} from '@angular/material';
 import {CompanyfilterdialogComponent} from '../companyfilterdialog/companyfilterdialog.component';
-import {Company} from '../../../domain/Company';
+import {AuthenticationService} from '../../../services/authentication/authentication.service';
 
 @Component({
-  selector: 'app-joboffer',
+  selector: 'app-jobofferlist',
   templateUrl: './jobofferlist.component.html',
   styleUrls: ['./jobofferlist.component.scss']
 })
@@ -19,7 +19,7 @@ export class JobofferlistComponent implements OnInit {
   pageIndex: number;
   pageEvent: PageEvent;
 
-  constructor(private jobOfferService: JobofferService, private dialog: MatDialog) {
+  constructor(private jobOfferService: JobofferService, private dialog: MatDialog, private authenticationService: AuthenticationService) {
   }
 
   ngOnInit() {
@@ -29,7 +29,9 @@ export class JobofferlistComponent implements OnInit {
 
   public openDialog() {
     const dialogRef = this.dialog.open(CompanyfilterdialogComponent, {
-      data: {companies: this.companies}
+      data: {companies: this.companies},
+      maxHeight: '750px',
+      minWidth: '500px'
     });
 
     dialogRef.afterClosed().subscribe((result) => {

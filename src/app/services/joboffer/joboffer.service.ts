@@ -15,9 +15,10 @@ export class JobofferService {
   }
 
   getAllJobOffers(startNr: number, amount: number, companies: string[]): Observable<JobOffer[]> {
-    const companyString = companies.toString()
-    console.log(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&companies=${companyString}`)
-    return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&companies=${companies.toString()}`);
+    if (companies !== undefined) {
+      return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&companies=${companies.toString()}`);
+    }
+    return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}`);
   }
 
   getJobOffer(id: string): Observable<JobOffer> {

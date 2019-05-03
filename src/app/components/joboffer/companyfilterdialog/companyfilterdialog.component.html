@@ -1,12 +1,4 @@
-<mat-card>
-  <mat-card-content>
-    <section class="checkbox-section">
-      <div  *ngFor="let company of companyList" id="company">
-        <mat-checkbox (change)="onChangeEvent(company.uuid)" class="checkbox-margin" value="{{company.name}}">{{company.name}}</mat-checkbox>
-      </div>
-    </section>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-stroked-button [mat-dialog-close]="data.companies">Filter</button>
-  </mat-card-actions>
-</mat-card>
+ <div  *ngFor="let company of companyList" id="company">
+   <mat-checkbox (change)="onChangeEvent(company.uuid)" class="checkbox-margin" value="{{company.name}}">{{company.name}}</mat-checkbox>
+ </div>
+ <button mat-stroked-button [mat-dialog-close]="data.companies">Filter</button>
