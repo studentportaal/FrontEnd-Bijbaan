@@ -23,6 +23,7 @@ export class CompanyfilterdialogComponent implements OnInit {
 
   ngOnInit() {
     this.companyService.getAllCompanies().subscribe((response) => {
+      // @ts-ignore
       this.companyList = response;
     });
   }
