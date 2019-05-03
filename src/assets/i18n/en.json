@@ -4,7 +4,8 @@
     "REGISTER": "New account",
     "EDITPROFILE" : "Edit profile",
     "JOBOFFERS": "Joboffers",
-    "LOGIN": "Login"
+    "LOGIN": "Login",
+    "MYJOBOFFERS": "My posted job offers"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welcome to our job portal. we don't have jobs and we don't have portals"
@@ -52,7 +53,8 @@
     "LABEL.LOCATION": "Location",
     "LABEL.COMPANY": "Company",
     "LABEL.TITLE": "Title",
-    "BUTTON.FILTER.COMPANY": "Filter by company"
+    "BUTTON.FILTERCOMPANY": "Filter by company",
+    "DIALOG.FILTER.BUTTON": "Filter"
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Cancel",

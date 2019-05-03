@@ -3,7 +3,8 @@
     "PROFILE": "Profiel",
     "REGISTER": "Nieuwe account",
     "EDITPROFILE": "Profiel aanpassen",
-    "JOBOFFERS": "Vacatures"
+    "JOBOFFERS": "Vacatures",
+    "MYJOBOFFERS": "My posted job offers"
 
   },
   "HOME": {
@@ -39,6 +40,13 @@
     "LABEL.JOBDESCRIPTION": "Taakomschrijving",
     "LABEL.LOCATION": "Locatie",
     "LABEL.COMPANY": "Bedrijf",
-    "BUTTON.FILTER.COMPANY": "Filter op bedrijf"
+    "BUTTON.FILTER.COMPANY": "Filter op bedrijf",
+    "DIALOG.FILTER.BUTTON": "Filter"
+  },
+
+  "JOBOFFEREDIT": {
+    "BUTTON.CANCEL": "Annuleren",
+    "LABEL.TITLE": "Wijzigen",
+    "SNACKBAR.SUCCES.MESSAGE": "Wijzigingen succesvol opgeslagen."
   }
 }

@@ -20,7 +20,11 @@
 
     <!-- Company links go here -->
     <ng-container *ngIf="authenticationService.isCompany()">
-      <a mat-stroked-button color="default" title="Bedrijf inzien" routerLink="/">{{'NAVBAR.PROFILE' | translate}}</a>
+      <button mat-stroked-button [mat-menu-trigger-for]="menu">{{authenticationService.user.email}}</button>
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item color="default" title="Bedrijf inzien" routerLink="/">{{'NAVBAR.PROFILE' | translate}}</a>
+        <a mat-menu-item color="default" title="Mijn vacatures" routerLink="/users/{{authenticationService.user.uuid}}/joboffers">{{'NAVBAR.MYJOBOFFERS' | translate}}</a>
+      </mat-menu>
     </ng-container>
 
     <!-- Generic logged in links go here i.e. 'log out' IF WE HAD ONE -->
