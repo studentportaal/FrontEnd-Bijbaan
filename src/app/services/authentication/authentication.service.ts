@@ -17,10 +17,15 @@ export class AuthenticationService {
   private baseUrlStudent: string = environment.API_BASE + '/users';
   private baseUrlCompany: string = environment.API_BASE + '/company';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
   public loginAsStudent(student: Student): Observable<Student> {
     return this.httpClient.post<Student>(this.baseUrlStudent + '/login', student);
+  }
+
+  public fontysLogin(code: string): Observable<Student> {
+    return this.httpClient.get<Student>('http://localhost:5000/login?authorization=' + code);
   }
 
   public loginAsCompany(company: Company): Observable<Company> {
@@ -38,7 +43,7 @@ export class AuthenticationService {
   }
 
   public checkCurrentUser(id: string) {
-   return JSON.parse(localStorage.getItem('currentUser')).id === id;
+    return JSON.parse(localStorage.getItem('currentUser')).id === id;
   }
 
   public isStudent(): boolean {
