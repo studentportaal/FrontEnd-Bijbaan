@@ -12,7 +12,7 @@ import {MatSnackBar} from "@angular/material";
 export class UsereditprofileComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private userService: UserService,
-              private authenticationService: AuthenticationService, private snackbar: MatSnackBar,
+              public authenticationService: AuthenticationService, private snackbar: MatSnackBar,
               private router: Router) {
   }
 

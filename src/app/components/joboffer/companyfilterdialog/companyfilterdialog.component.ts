@@ -12,8 +12,8 @@ import {DialogData} from '../../../domain/DialogData';
 })
 export class CompanyFilterDialogComponent implements OnInit {
 
-  private companyList: Company[];
-  private companyFilter: string[] = new Array();
+  companyList: Company[];
+  private companyFilter: string[] = [];
 
   constructor(private companyService: CompanyService, @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
