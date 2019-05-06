@@ -38,7 +38,7 @@ export class AuthenticationService {
   }
 
   public checkCurrentUser(id: string) {
-   return JSON.parse(localStorage.getItem('currentUser')).id === id;
+   return this.user.uuid === id;
   }
 
   public isStudent(): boolean {
@@ -47,5 +47,9 @@ export class AuthenticationService {
 
   public isCompany(): boolean {
     return this.userType === UserType.COMPANY;
+  }
+
+  public logout() {
+    localStorage.removeItem('currentUser');
   }
 }

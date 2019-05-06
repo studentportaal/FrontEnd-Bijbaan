@@ -5,10 +5,21 @@
     "EDITPROFILE": "Profiel aanpassen",
     "JOBOFFERS": "Vacatures",
     "MYJOBOFFERS": "My posted job offers"
+    "JOBOFFERS": "Vacatures",
+    "LOGIN": "Inloggen",
+    "LOGOUT": "Uitloggen",
+    "ADDJOBOFFER": "Vacature toevoegen"
 
   },
   "HOME": {
-    "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal!"
+    "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal! We hebben geen bijbanen :)"
+  },
+  "LOGIN": {
+    "FIELD.EMAIL.PLACEHOLDER": "Email",
+    "FIELD.PASSWORD.PLACEHOLDER": "Wachtwoord",
+    "BUTTON.LOGIN": "Inloggen",
+    "TITLE.STUDENT": "Inloggen als student",
+    "TITLE.COMPANY": "Inloggen als bedrijf"
   },
   "REGISTER": {
     "TITLE": "Registreren",
@@ -19,26 +30,52 @@
     "FIELD.INSTITUTE.PLACEHOLDER": "School",
     "FIELD.PASSWORD.PLACEHOLDER": "Wachtwoord",
     "FIELD.PASSWORDCONFIRM.PLACEHOLDER": "Wachtwoord bevestigen",
-    "BUTTON.CONFIRM": "Account aanmaken"
+    "BUTTON.CONFIRM": "Account aanmaken",
+    "FIELD.COMPANY.PLACEHOLDER": "Bedrijfsnaam",
+    "FIELD.CITY.PLACEHOLDER": "Stad",
+    "FIELD.POSTAL.PLACEHOLDER": "Postcode",
+    "FIELD.STREET.PLACEHOLDER": "Straat",
+    "FIELD.HOUSE.PLACEHOLDER": "Huisnummer",
+    "FIELD.DESCRIPTION.PLACEHOLDER": "Beschrijving"
   },
   "USERPROFILE": {
-    "TITLE" : "Profiel",
-    "EDITTITLE" : "Profiel aanpassen",
-    "FIELD.FIRSTNAME" : "Voornaam",
-    "FIELD.LASTNAME" : "Achternaam",
-    "FIELD.DATE" : "Geboortedatum",
+    "TITLE": "Profiel",
+    "EDITTITLE": "Profiel aanpassen",
+    "FIELD.FIRSTNAME": "Voornaam",
+    "FIELD.LASTNAME": "Achternaam",
+    "FIELD.DATE": "Geboortedatum",
     "FIELD.INSTITUTE": "School",
-    "FIELD.EMAIL" : "Email",
-    "BUTTON.CONFIRM" : "Aanpassen"
+    "FIELD.EMAIL": "Email",
+    "BUTTON.CONFIRM": "Aanpassen"
   },
-
   "JOBOFFER": {
+    "ADD": {
+      "TITLE": "Vacature toevoegen",
+      "BUTTON": "Vacature toevoegen"
+    },
+    "FIELD": {
+      "LOCATION.PLACEHOLDER": "Locatie",
+      "TITLE.PLACEHOLDER": "Titel",
+      "INFORMATION.PLACEHOLDER": "Informatie",
+      "FUNCTION.PLACEHOLDER": "Functie",
+      "SALARY.PLACEHOLDER": "Salaris",
+      "COMPANY.PLACEHOLDER": "Bedrijf"
+    },
     "BUTTON.APPLY": "Solliciteren",
     "BUTTON.EDIT": "Wijzigen",
     "LABEL.POSITION": "Functie",
     "LABEL.SALARY": "Salaris",
     "LABEL.JOBDESCRIPTION": "Taakomschrijving",
     "LABEL.LOCATION": "Locatie",
+    "LABEL.COMPANY": "Bedrijf",
+    "LABEL.TITLE": "Titel"
+  },
+  "JOBOFFEREDIT": {
+    "BUTTON.CANCEL": "Annuleren",
+    "LABEL.TITLE": "Aanpassen vacature",
+    "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast"
+    "TITLE.APPLICANTS": "Sollicitanten",
+    "BUTTON.VIEW.PROFILE": "Bekijk profiel"
     "LABEL.COMPANY": "Bedrijf",
     "BUTTON.FILTER.COMPANY": "Filter op bedrijf",
     "DIALOG.FILTER.BUTTON": "Filter"

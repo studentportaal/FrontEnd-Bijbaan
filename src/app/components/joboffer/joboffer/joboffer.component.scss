@@ -1,3 +1,15 @@
 a {
   color: black;
 }
+
+.profile-btn {
+  margin-left: 10rem;
+  justify-self: flex-end;
+}
+
+.applicant-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}

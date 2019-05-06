@@ -13,9 +13,9 @@
     <!-- Student links go here -->
     <ng-container *ngIf="authenticationService.isStudent()">
       <a mat-stroked-button color="default" title="Profiel inzien"
-         routerLink="/user/view-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
+        routerLink="/user/view-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
       <a mat-stroked-button color="default" title="Profiel aanpassen"
-         routerLink="/user/edit-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.EDITPROFILE' | translate}}</a>
+        routerLink="/user/edit-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.EDITPROFILE' | translate}}</a>
     </ng-container>
 
     <!-- Company links go here -->
@@ -24,18 +24,21 @@
       <mat-menu #menu="matMenu">
         <a mat-menu-item color="default" title="Bedrijf inzien" routerLink="/">{{'NAVBAR.PROFILE' | translate}}</a>
         <a mat-menu-item color="default" title="Mijn vacatures" routerLink="/users/{{authenticationService.user.uuid}}/joboffers">{{'NAVBAR.MYJOBOFFERS' | translate}}</a>
+        <a mat-stroked-button color="default" title="Vacature toevoegen" routerLink="/joboffers/add">{{'NAVBAR.ADDJOBOFFER' | translate}}</a>
       </mat-menu>
     </ng-container>
 
     <!-- Generic logged in links go here i.e. 'log out' IF WE HAD ONE -->
+    <a mat-stroked-button color="default" title="{{'NAVBAR.LOGOUT' | translate}}" routerLink="/login">{{'NAVBAR.LOGOUT' | translate}}</a>
+
   </ng-container>
-  
+
   <!-- Non logged in links go here -->
   <ng-container *ngIf=!authenticationService.user>
     <a mat-stroked-button color="default" title="Registreren"
-       routerLink="/register">{{'NAVBAR.REGISTER' | translate}}</a>
+      routerLink="/register">{{'NAVBAR.REGISTER' | translate}}</a>
     <a mat-stroked-button color="default" title="{{'NAVBAR.LOGIN' | translate}}"
-       routerLink="/login">{{'NAVBAR.LOGIN' | translate}}</a>
+      routerLink="/login">{{'NAVBAR.LOGIN' | translate}}</a>
   </ng-container>
 </mat-toolbar>
 

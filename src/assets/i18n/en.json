@@ -4,8 +4,7 @@
     "REGISTER": "New account",
     "EDITPROFILE" : "Edit profile",
     "JOBOFFERS": "Joboffers",
-    "LOGIN": "Login",
-    "MYJOBOFFERS": "My posted job offers"
+    "LOGIN": "Login"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welcome to our job portal. we don't have jobs and we don't have portals"
@@ -35,16 +34,28 @@
     "FIELD.DESCRIPTION.PLACEHOLDER": "Description"
   },
   "USERPROFILE": {
-    "TITLE" : "Profile",
-    "EDITTITLE" : "Edit profile",
-    "FIELD.FIRSTNAME" : "First name",
-    "FIELD.LASTNAME" : "Last name",
-    "FIELD.DATE" : "Date of birth",
+    "TITLE": "Profile",
+    "EDITTITLE": "Edit profile",
+    "FIELD.FIRSTNAME": "First name",
+    "FIELD.LASTNAME": "Last name",
+    "FIELD.DATE": "Date of birth",
     "FIELD.INSTITUTE": "Institute",
-    "FIELD.EMAIL" : "Email",
-    "BUTTON.CONFIRM" : "Edit profile"
+    "FIELD.EMAIL": "Email",
+    "BUTTON.CONFIRM": "Edit profile"
   },
   "JOBOFFER": {
+    "ADD": {
+      "TITLE": "Add new job offer",
+      "BUTTON": "Add job offer"
+    },
+    "FIELD": {
+      "LOCATION.PLACEHOLDER": "Location",
+      "TITLE.PLACEHOLDER": "Title",
+      "INFORMATION.PLACEHOLDER": "Information",
+      "FUNCTION.PLACEHOLDER": "Function",
+      "SALARY.PLACEHOLDER": "Salary",
+      "COMPANY.PLACEHOLDER": "Company"
+    },
     "BUTTON.APPLY": "Apply",
     "BUTTON.EDIT": "Edit",
     "LABEL.POSITION": "Position",
@@ -55,6 +66,9 @@
     "LABEL.TITLE": "Title",
     "BUTTON.FILTERCOMPANY": "Filter by company",
     "DIALOG.FILTER.BUTTON": "Filter"
+    "LABEL.TITLE": "Title",
+    "TITLE.APPLICANTS": "Applicants",
+    "BUTTON.VIEW.PROFILE": "View profile"
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Cancel",

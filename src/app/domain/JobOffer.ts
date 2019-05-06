@@ -1,3 +1,5 @@
+import {Student} from "./Student";
+
 export class JobOffer {
   id: string;
   location: string;
@@ -6,4 +8,5 @@ export class JobOffer {
   function: string;
   salary: number;
   company: string;
+  applicants: Student[];
 }

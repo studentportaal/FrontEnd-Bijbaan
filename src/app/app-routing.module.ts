@@ -8,16 +8,16 @@ import { LoginComponent } from './components/student/login/login.component';
 import { JobofferComponent } from './components/joboffer/joboffer/joboffer.component';
 import { ApplyComponent } from './components/joboffer/apply/apply.component';
 import { CompanyComponent } from './components/general/company/company/company.component';
+import { AddjobofferComponent } from './components/joboffer/addjoboffer/addjoboffer.component';
+import { UsereditprofileComponent } from './components/student/usereditprofile/usereditprofile.component';
 import {UsereditprofileComponent} from './components/student/usereditprofile/usereditprofile.component';
 import {OwnjoboffersComponent} from "./components/joboffer/ownjoboffers/ownjoboffers.component";
 
 
 const routes: Routes = [
-
   {
     path: '',
     component: HomeComponent,
-
   },
   {
     path: 'user/view-profile/:uuid',
@@ -36,12 +36,16 @@ const routes: Routes = [
     component: JobofferlistComponent
   },
   {
-    path: 'joboffers/:id',
+    path: 'joboffers/details/:id',
     component: JobofferComponent,
   },
   {
-    path: 'joboffers/:id/apply',
+    path: 'joboffers/details/:id/apply',
     component: ApplyComponent
+  },
+  {
+    path: 'joboffers/add',
+    component: AddjobofferComponent,
   },
   {
     path: 'login',
