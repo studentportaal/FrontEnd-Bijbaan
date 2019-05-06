@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {JobOffer} from '../../domain/JobOffer';
 import {Observable} from 'rxjs';
 import {Student} from '../../domain/Student';
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import {Student} from '../../domain/Student';
 export class JobofferService {
 
 
-  private jobOfferBaseUrl = 'http://localhost:9000/joboffer';
+  private jobOfferBaseUrl = environment.API_BASE + '/joboffer';
 
   constructor(private httpClient: HttpClient) {
   }
