@@ -11,5 +11,5 @@ before_script:
 script:
   - ng build --prod
   
-  notifications:
+notifications:
   slack: git-gud-workspace:ENPyEfwTZtAjfFDdgmJeTWe1
