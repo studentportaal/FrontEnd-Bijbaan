@@ -1,5 +1,5 @@
 
-<div class="container container-sm" *ngIf="user">
+<div class="container container-sm" *ngIf="authenticationService.user">
   <h1 class="mat-display-1">{{'USERPROFILE.EDITTITLE' | translate}}</h1>
   <form class="user-edit-profile-form" (ngSubmit)="onSubmit()">
     <mat-form-field>
@@ -46,9 +46,6 @@
   </form>
 </div>
 
-
-
-
-<div class="container container-sm" *ngIf="!user">
+<div class="container container-sm" *ngIf="!authenticationService.user">
   Gebruiker niet gevonden. 
 </div>

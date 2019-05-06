@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../../domain/User';
+import { Student } from '../../../domain/Student';
 import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { UserService } from '../../../services/user/user.service';
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../../../services/authentication/authentication.service';
+import {Company} from '../../../domain/Company';
+import {CompanyService} from '../../../services/company/company.service';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,8 @@ import { AuthenticationService } from '../../../services/authentication/authenti
 })
 export class RegisterComponent implements OnInit {
 
-  user: User = new User();
+  student: Student = new Student();
+  company: Company = new Company();
 
   form = new FormGroup(
     {
@@ -40,6 +42,7 @@ export class RegisterComponent implements OnInit {
   };
 
   constructor(private userService: UserService,
+              private companyService: CompanyService,
               private snackbar: MatSnackBar,
               private router: Router) {
   }
@@ -47,8 +50,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
-    this.userService.addUser(this.user).subscribe((response: User) => {
+  registerStudent() {
+    this.userService.addUser(this.student).subscribe((response: Student) => {
       const snackbarRef = this.snackbar.open('Account successfully created', 'dismiss', {
         duration: 3000
       });
@@ -57,6 +60,19 @@ export class RegisterComponent implements OnInit {
         this.router.navigateByUrl('/');
       });
     });
+  }
+
+  registerCompany() {
+    this.companyService.addComapny(this.company).subscribe((response: Student) => {
+      const snackbarRef = this.snackbar.open('Account successfully created', 'dismiss', {
+        duration: 3000
+      });
+
+      snackbarRef.afterDismissed().subscribe(() => {
+        this.router.navigateByUrl('/');
+      });
+    });
+
   }
 
   getErrorMessage(controlName: string) {

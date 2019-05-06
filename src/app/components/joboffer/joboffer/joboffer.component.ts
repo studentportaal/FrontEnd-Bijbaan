@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {JobofferService} from '../../../services/joboffer/joboffer.service';
 import { ActivatedRoute } from '@angular/router';
 import {CompanyService} from '../../../services/company/company.service';
-import {Company} from '../../../models/Company';
+import {Company} from '../../../domain/Company';
 import {JobOffer} from '../../../domain/JobOffer';
 import {AuthenticationService} from '../../../services/authentication/authentication.service';
 
@@ -14,6 +14,7 @@ import {AuthenticationService} from '../../../services/authentication/authentica
 export class JobofferComponent implements OnInit {
   private joboffer: JobOffer;
   private company: Company;
+  private editBoolean = false;
 
   constructor(private route: ActivatedRoute,
               private jobOfferService: JobofferService,
@@ -27,9 +28,18 @@ export class JobofferComponent implements OnInit {
 
   getJobOffer(id: string) {
     this.jobOfferService.getJobOffer(id).subscribe(offer => {
+      console.log(offer);
       this.joboffer = offer;
       this.companyService.getCompany(offer.company).subscribe(company => this.company = company);
     });
+  }
+
+  edit() {
+    this.editBoolean = true;
+  }
+
+  receiveBoolean($boolean) {
+    this.editBoolean = $boolean;
   }
 
 }

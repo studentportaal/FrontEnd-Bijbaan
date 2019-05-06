@@ -1,0 +1,149 @@
+<div class="container container-sm">
+
+  <h1 class="mat-display-1">{{'REGISTER.TITLE' | translate}}</h1>
+  <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z0">
+    <mat-tab label="Student">
+      <form [formGroup]="form" class="register-form" (ngSubmit)="registerStudent()">
+        <mat-form-field>
+          <input matInput required
+                 type="email"
+                 placeholder="{{'REGISTER.FIELD.EMAIL.PLACEHOLDER' | translate}}"
+                 [(ngModel)]="student.email"
+                 [ngModelOptions]="{standalone: true}"
+                 name="email">
+        </mat-form-field>
+        <mat-form-field >
+          <input matInput required
+                 type="text"
+                 placeholder="{{'REGISTER.FIELD.FIRSTNAME.PLACEHOLDER' | translate}}"
+                 [(ngModel)]="student.firstName"
+                 [ngModelOptions]="{standalone: true}"
+                 name="firstName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput required
+                 type="text"
+                 placeholder="{{'REGISTER.FIELD.LASTNAME.PLACEHOLDER' | translate}}"
+                 [(ngModel)]="student.lastName"
+                 [ngModelOptions]="{standalone: true}"
+                 name="lastName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput required
+                 type="date"
+                 placeholder="{{'REGISTER.FIELD.DATE.PLACEHOLDER' | translate}}"
+                 [(ngModel)]="student.dateOfBirth"
+                 [ngModelOptions]="{standalone: true}"
+                 name="date">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput required
+                 type="text"
+                 placeholder="{{'REGISTER.FIELD.INSTITUTE.PLACEHOLDER' | translate}}"
+                 [(ngModel)]="student.institute"
+                 [ngModelOptions]="{standalone: true}"
+                 name="institute">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="password"
+                 [errorStateMatcher]="passwordErrorMatcher"
+                 required
+                 type="password"
+                 placeholder="{{'REGISTER.FIELD.PASSWORD.PLACEHOLDER' | translate}}"
+                 [(ngModel)]="student.password"
+                 name="password">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="confirm"
+                 [errorStateMatcher]="confirmErrorMatcher"
+                 required
+                 type="password"
+                 placeholder="{{'REGISTER.FIELD.PASSWORDCONFIRM.PLACEHOLDER' | translate}}"
+                 name="passwordConfirm">
+          <mat-error>Error: {{ getErrorMessage('confirm') }}</mat-error>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary">{{'REGISTER.BUTTON.CONFIRM' | translate}}</button>
+      </form>
+    </mat-tab>
+    <mat-tab label="Company">
+      <form [formGroup]="form" class="register-form" (ngSubmit)="registerCompany()">
+        <mat-form-field>
+          <input matInput required
+                 type="email"
+                 placeholder="{{'REGISTER.FIELD.EMAIL.PLACEHOLDER' | translate}}"
+                 [(ngModel)]="company.email"
+                 [ngModelOptions]="{standalone: true}"
+                 name="email">
+        </mat-form-field>
+        <mat-form-field >
+          <input matInput required
+                 type="text"
+                 placeholder="{{'REGISTER.FIELD.COMPANY.PLACEHOLDER' | translate}}"
+                 [(ngModel)]="company.name"
+                 [ngModelOptions]="{standalone: true}"
+                 name="companyName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput required
+                 type="text"
+                 placeholder="{{'REGISTER.FIELD.CITY.PLACEHOLDER' | translate}}"
+                 [(ngModel)]="company.city"
+                 [ngModelOptions]="{standalone: true}"
+                 name="city">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput required
+                 type="text"
+                 placeholder="{{'REGISTER.FIELD.STREET.PLACEHOLDER' | translate}}"
+                 [(ngModel)]="company.streetName"
+                 [ngModelOptions]="{standalone: true}"
+                 name="streetName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput required
+                 type="number"
+                 placeholder="{{'REGISTER.FIELD.HOUSE.PLACEHOLDER' | translate}}"
+                 [(ngModel)]="company.houseNumber"
+                 [ngModelOptions]="{standalone: true}"
+                 name="houseNumber">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput required
+                 type="text"
+                 placeholder="{{'REGISTER.FIELD.POSTAL.PLACEHOLDER' | translate}}"
+                 [(ngModel)]="company.postalCode"
+                 [ngModelOptions]="{standalone: true}"
+                 name="postalCode">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput required
+                 type="text"
+                 placeholder="{{'REGISTER.FIELD.DESCRIPTION.PLACEHOLDER' | translate}}"
+                 [(ngModel)]="company.description"
+                 [ngModelOptions]="{standalone: true}"
+                 name="description">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="password"
+                 [errorStateMatcher]="passwordErrorMatcher"
+                 required
+                 type="password"
+                 placeholder="{{'REGISTER.FIELD.PASSWORD.PLACEHOLDER' | translate}}"
+                 [(ngModel)]="company.password"
+                 name="password">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="confirm"
+                 [errorStateMatcher]="confirmErrorMatcher"
+                 required
+                 type="password"
+                 placeholder="{{'REGISTER.FIELD.PASSWORDCONFIRM.PLACEHOLDER' | translate}}"
+                 name="passwordConfirm">
+          <mat-error>Error: {{ getErrorMessage('confirm') }}</mat-error>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary">{{'REGISTER.BUTTON.CONFIRM' | translate}}</button>
+      </form>
+    </mat-tab>
+  </mat-tab-group>
+</div>

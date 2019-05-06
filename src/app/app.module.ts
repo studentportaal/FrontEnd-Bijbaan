@@ -4,19 +4,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialcustomModule } from './materialcustom/materialcustom.module';
-import { UserprofileComponent } from './components/user/userprofile/userprofile.component';
+import { UserprofileComponent } from './components/student/userprofile/userprofile.component';
 import { HomeComponent } from './components/general/home/home.component';
-import { RegisterComponent } from './components/user/register/register.component';
+import { RegisterComponent } from './components/student/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { JobofferlistComponent } from './components/joboffer/Offerslist/jobofferlist.component';
-import { LoginComponent } from './components/user/login/login.component';
-import { UsereditprofileComponent } from './components/user/usereditprofile/usereditprofile.component';
+import { LoginComponent } from './components/student/login/login.component';
+import { UsereditprofileComponent } from './components/student/usereditprofile/usereditprofile.component';
 import { ApplyComponent } from './components/joboffer/apply/apply.component';
-import {JobofferComponent} from  './components/joboffer/joboffer/joboffer.component';
+import {JobofferComponent} from './components/joboffer/joboffer/joboffer.component';
 import {CompanyComponent} from './components/general/company/company/company.component';
+import { AddjobofferComponent } from './components/joboffer/addjoboffer/addjoboffer.component';
+import { EditjobofferComponent } from './components/joboffer/editjoboffer/editjoboffer.component';
+import {CompanyFilterDialogComponent} from './components/joboffer/companyfilterdialog/companyfilterdialog.component';
+import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjoboffers.component';
 
 
 @NgModule({
@@ -33,6 +37,10 @@ import {CompanyComponent} from './components/general/company/company/company.com
     RegisterComponent,
     ApplyComponent,
     CompanyComponent,
+    AddjobofferComponent,
+    EditjobofferComponent,
+    CompanyFilterDialogComponent,
+    OwnjoboffersComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +57,9 @@ import {CompanyComponent} from './components/general/company/company/company.com
         deps: [ HttpClient ]
       }
     })
+  ],
+  entryComponents: [
+    CompanyFilterDialogComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

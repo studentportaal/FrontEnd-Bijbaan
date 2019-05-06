@@ -2,10 +2,22 @@
   "NAVBAR": {
     "PROFILE": "Profile",
     "REGISTER": "New account",
-    "EDITPROFILE" : "Edit profile"
+    "EDITPROFILE" : "Edit profile",
+    "JOBOFFERS": "Joboffers",
+    "LOGIN": "Login",
+    "LOGOUT": "Log out",
+    "MYJOBOFFERS": "My posted job offers",
+    "ADDJOBOFFER": "Add job offer"
   },
   "HOME": {
-    "WELCOME.MESSAGE": "Welcome to our job portal. we don't have jobs and we don't have portals"
+    "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals"
+  },
+  "LOGIN": {
+    "FIELD.EMAIL.PLACEHOLDER": "Email",
+    "FIELD.PASSWORD.PLACEHOLDER": "Password",
+    "BUTTON.LOGIN": "Login",
+    "TITLE.STUDENT": "Login as student",
+    "TITLE.COMPANY": "Login as company"
   },
   "REGISTER": {
     "TITLE": "Register",
@@ -16,16 +28,53 @@
     "FIELD.INSTITUTE.PLACEHOLDER": "School or institute",
     "FIELD.PASSWORD.PLACEHOLDER": "Password",
     "FIELD.PASSWORDCONFIRM.PLACEHOLDER": "Confirm password",
-    "BUTTON.CONFIRM": "Create account"
+    "BUTTON.CONFIRM": "Create account",
+    "FIELD.COMPANY.PLACEHOLDER": "Company name",
+    "FIELD.CITY.PLACEHOLDER": "City",
+    "FIELD.POSTAL.PLACEHOLDER": "Postal code",
+    "FIELD.STREET.PLACEHOLDER": "Street name",
+    "FIELD.HOUSE.PLACEHOLDER": "House number",
+    "FIELD.DESCRIPTION.PLACEHOLDER": "Description"
   },
   "USERPROFILE": {
-    "TITLE" : "Profile",
-    "EDITTITLE" : "Edit profile",
-    "FIELD.FIRSTNAME" : "First name",
-    "FIELD.LASTNAME" : "Last name",
-    "FIELD.DATE" : "Date of birth",
+    "TITLE": "Profile",
+    "EDITTITLE": "Edit profile",
+    "FIELD.FIRSTNAME": "First name",
+    "FIELD.LASTNAME": "Last name",
+    "FIELD.DATE": "Date of birth",
     "FIELD.INSTITUTE": "Institute",
-    "FIELD.EMAIL" : "Email",
-    "BUTTON.CONFIRM" : "Edit profile"
+    "FIELD.EMAIL": "Email",
+    "BUTTON.CONFIRM": "Edit profile"
+  },
+  "JOBOFFER": {
+    "ADD": {
+      "TITLE": "Add new job offer",
+      "BUTTON": "Add job offer"
+    },
+    "FIELD": {
+      "LOCATION.PLACEHOLDER": "Location",
+      "TITLE.PLACEHOLDER": "Title",
+      "INFORMATION.PLACEHOLDER": "Information",
+      "FUNCTION.PLACEHOLDER": "Function",
+      "SALARY.PLACEHOLDER": "Salary",
+      "COMPANY.PLACEHOLDER": "Company"
+    },
+    "BUTTON.APPLY": "Apply",
+    "BUTTON.EDIT": "Edit",
+    "LABEL.POSITION": "Position",
+    "LABEL.SALARY": "Salary",
+    "LABEL.JOBDESCRIPTION": "Job Description",
+    "LABEL.LOCATION": "Location",
+    "LABEL.COMPANY": "Company",
+    "LABEL.TITLE": "Title",
+    "BUTTON.FILTERCOMPANY": "Filter by company",
+    "DIALOG.FILTER.BUTTON": "Filter",
+    "TITLE.APPLICANTS": "Applicants",
+    "BUTTON.VIEW.PROFILE": "View profile"
+  },
+  "JOBOFFEREDIT": {
+    "BUTTON.CANCEL": "Cancel",
+    "LABEL.TITLE": "Edit job offer",
+    "SNACKBAR.SUCCES.MESSAGE": "Succesfully updated joboffer"
   }
 }

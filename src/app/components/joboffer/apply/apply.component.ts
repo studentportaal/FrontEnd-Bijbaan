@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {JobofferService} from '../../../services/joboffer/joboffer.service';
-import {User} from '../../../domain/User';
+import {Student} from '../../../domain/Student';
 import {ActivatedRoute, Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material";
 import {AuthenticationService} from "../../../services/authentication/authentication.service";
@@ -12,7 +12,7 @@ import {AuthenticationService} from "../../../services/authentication/authentica
 })
 export class ApplyComponent implements OnInit {
 
-  user: User;
+  user: Student;
   id: string;
 
   constructor(private route: ActivatedRoute,
@@ -24,7 +24,7 @@ export class ApplyComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = this.authenticationService.user;
+    this.user = this.authenticationService.user as Student;
   }
 
   onSubmit() {

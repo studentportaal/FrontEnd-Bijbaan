@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from 'src/app/domain/User';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from 'src/app/services/user/user.service';
 import {AuthenticationService} from 'src/app/services/authentication/authentication.service';
+import {MatSnackBar} from "@angular/material";
 
 @Component({
   selector: 'app-usereditprofile',
@@ -11,17 +11,22 @@ import {AuthenticationService} from 'src/app/services/authentication/authenticat
 })
 export class UsereditprofileComponent implements OnInit {
 
-  user: User = new User();
-
   constructor(private activatedRoute: ActivatedRoute, private userService: UserService,
-              private authenticationService: AuthenticationService) {
+              private authenticationService: AuthenticationService, private snackbar: MatSnackBar,
+              private router: Router) {
   }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    this.userService.updateUser(this.authenticationService.user).subscribe((response) => console.log('done'));
+    this.userService.updateUser(this.authenticationService.user).subscribe((response) => {
+      const snackbarRef = this.snackbar.open('Edit successfully', 'dismiss', {
+        duration: 1000});
+      snackbarRef.afterDismissed().subscribe(() => {
+        this.router.navigateByUrl('/');
+      });
+    });
   }
 
 }
