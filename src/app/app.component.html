@@ -24,7 +24,7 @@
       <mat-menu #menu="matMenu">
         <a mat-menu-item color="default" title="Bedrijf inzien" routerLink="/">{{'NAVBAR.PROFILE' | translate}}</a>
         <a mat-menu-item color="default" title="Mijn vacatures" routerLink="/users/{{authenticationService.user.uuid}}/joboffers">{{'NAVBAR.MYJOBOFFERS' | translate}}</a>
-        <a mat-stroked-button color="default" title="Vacature toevoegen" routerLink="/joboffers/add">{{'NAVBAR.ADDJOBOFFER' | translate}}</a>
+        <a mat-menu-item color="default" title="Vacature toevoegen" routerLink="/joboffers/add">{{'NAVBAR.ADDJOBOFFER' | translate}}</a>
       </mat-menu>
     </ng-container>
 

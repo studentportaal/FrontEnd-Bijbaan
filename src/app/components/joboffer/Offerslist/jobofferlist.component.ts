@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {JobOffer} from '../../../domain/JobOffer';
 import {JobofferService} from '../../../services/joboffer/joboffer.service';
 import {MatDialog, PageEvent} from '@angular/material';
-import {CompanyfilterdialogComponent} from '../companyfilterdialog/companyfilterdialog.component';
+import {CompanyFilterDialogComponent} from '../companyfilterdialog/companyfilterdialog.component';
 import {AuthenticationService} from '../../../services/authentication/authentication.service';
 
 @Component({
@@ -28,7 +28,7 @@ export class JobofferlistComponent implements OnInit {
   }
 
   public openDialog() {
-    const dialogRef = this.dialog.open(CompanyfilterdialogComponent, {
+    const dialogRef = this.dialog.open(CompanyFilterDialogComponent, {
       data: {companies: this.companies},
       maxHeight: '750px',
       minWidth: '500px'

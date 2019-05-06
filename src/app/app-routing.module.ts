@@ -10,7 +10,6 @@ import { ApplyComponent } from './components/joboffer/apply/apply.component';
 import { CompanyComponent } from './components/general/company/company/company.component';
 import { AddjobofferComponent } from './components/joboffer/addjoboffer/addjoboffer.component';
 import { UsereditprofileComponent } from './components/student/usereditprofile/usereditprofile.component';
-import {UsereditprofileComponent} from './components/student/usereditprofile/usereditprofile.component';
 import {OwnjoboffersComponent} from "./components/joboffer/ownjoboffers/ownjoboffers.component";
 
 
