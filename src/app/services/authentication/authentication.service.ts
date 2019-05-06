@@ -12,12 +12,25 @@ import {UserType} from "../../domain/UserType";
 })
 export class AuthenticationService {
   public user: User;
-  userType: UserType;
+  public userType: UserType;
 
   private baseUrlStudent: string = environment.API_BASE + '/users';
   private baseUrlCompany: string = environment.API_BASE + '/company';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    const userType = JSON.parse(localStorage.getItem('currentUserType'));
+
+    console.log(user);
+    console.log(userType);
+
+    if(user === null || user === undefined) {
+      return;
+    }
+
+    this.user = user;
+    this.userType = userType;
+  }
 
   public loginAsStudent(student: Student): Observable<Student> {
     return this.httpClient.post<Student>(this.baseUrlStudent + '/login', student);
@@ -29,6 +42,8 @@ export class AuthenticationService {
 
   public setSession(user: User, type: UserType) {
     localStorage.setItem('currentUser', JSON.stringify(user));
+    localStorage.setItem('currentUserType', JSON.stringify(type));
+
     this.user = user;
     this.userType = type;
   }
@@ -51,5 +66,6 @@ export class AuthenticationService {
 
   public logout() {
     localStorage.removeItem('currentUser');
+    localStorage.removeItem('currentUserType')
   }
 }
