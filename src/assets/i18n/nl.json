@@ -72,5 +72,7 @@
     "BUTTON.CANCEL": "Annuleren",
     "LABEL.TITLE": "Aanpassen vacature",
     "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast"
+    "TITLE.APPLICANTS": "Sollicitanten",
+    "BUTTON.VIEW.PROFILE": "Bekijk profiel"
   }
 }
