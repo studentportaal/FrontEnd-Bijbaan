@@ -21,4 +21,8 @@ export class CompanyService {
     return this.httpClient.get<Company>(this.companyBaseURL + '/' + id);
   }
 
+  getAllCompanies(): Observable<Company> {
+    return this.httpClient.get<Company>(this.companyBaseURL);
+  }
+
 }

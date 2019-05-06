@@ -2,14 +2,15 @@
   "NAVBAR": {
     "PROFILE": "Profile",
     "REGISTER": "New account",
-    "EDITPROFILE": "Edit profile",
+    "EDITPROFILE" : "Edit profile",
     "JOBOFFERS": "Joboffers",
     "LOGIN": "Login",
     "LOGOUT": "Log out",
-    "ADDJOBOFFER": "Add joboffer"
+    "MYJOBOFFERS": "My posted job offers",
+    "ADDJOBOFFER": "Add job offer"
   },
   "HOME": {
-    "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals."
+    "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals"
   },
   "LOGIN": {
     "FIELD.EMAIL.PLACEHOLDER": "Email",
@@ -65,6 +66,9 @@
     "LABEL.JOBDESCRIPTION": "Job Description",
     "LABEL.LOCATION": "Location",
     "LABEL.COMPANY": "Company",
+    "LABEL.TITLE": "Title",
+    "BUTTON.FILTERCOMPANY": "Filter by company",
+    "DIALOG.FILTER.BUTTON": "Filter",
     "LABEL.TITLE": "Title",
     "TITLE.APPLICANTS": "Applicants",
     "BUTTON.VIEW.PROFILE": "View profile"

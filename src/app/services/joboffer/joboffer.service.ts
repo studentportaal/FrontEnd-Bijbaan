@@ -15,12 +15,15 @@ export class JobofferService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAllJobOffers(startNr: number, amount: number): Observable<JobOffer[]> {
+  getAllJobOffers(startNr: number, amount: number, companies: string[]): Observable<JobOffer[]> {
+    if (companies !== undefined) {
+      return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&companies=${companies.toString()}`);
+    }
     return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}`);
   }
 
   getJobOffer(id: string): Observable<JobOffer> {
-    return this.httpClient.get<JobOffer>(this.jobOfferBaseUrl + '/details/' + id);
+    return this.httpClient.get<JobOffer>(this.jobOfferBaseUrl + '/' + id);
   }
 
   getJobOfferCount() {
@@ -36,6 +39,14 @@ export class JobofferService {
   }
 
   editJoboffer(jobOffer: JobOffer): Observable<JobOffer> {
-    return this.httpClient.put<JobOffer>(this.jobOfferBaseUrl + '/' + jobOffer.id, jobOffer);
+    const newJobOffer = {
+      "salary": jobOffer.salary,
+      "id": jobOffer.id,
+      "location": jobOffer.location,
+      "title": jobOffer.title,
+      "information": jobOffer.information,
+      "function": jobOffer.function
+    };
+    return this.httpClient.put<JobOffer>(this.jobOfferBaseUrl + '/' + jobOffer.id, newJobOffer);
   }
 }

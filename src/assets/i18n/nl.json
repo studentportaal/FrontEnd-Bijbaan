@@ -4,6 +4,8 @@
     "REGISTER": "Nieuwe account",
     "EDITPROFILE": "Profiel aanpassen",
     "JOBOFFERS": "Vacatures",
+    "MYJOBOFFERS": "My posted job offers",
+    "JOBOFFERS": "Vacatures",
     "LOGIN": "Inloggen",
     "LOGOUT": "Uitloggen",
     "ADDJOBOFFER": "Vacature toevoegen"
@@ -71,8 +73,17 @@
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Annuleren",
     "LABEL.TITLE": "Aanpassen vacature",
-    "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast"
+    "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast",
     "TITLE.APPLICANTS": "Sollicitanten",
-    "BUTTON.VIEW.PROFILE": "Bekijk profiel"
+    "BUTTON.VIEW.PROFILE": "Bekijk profiel",
+    "LABEL.COMPANY": "Bedrijf",
+    "BUTTON.FILTER.COMPANY": "Filter op bedrijf",
+    "DIALOG.FILTER.BUTTON": "Filter"
+  },
+
+  "JOBOFFEREDIT": {
+    "BUTTON.CANCEL": "Annuleren",
+    "LABEL.TITLE": "Wijzigen",
+    "SNACKBAR.SUCCES.MESSAGE": "Wijzigingen succesvol opgeslagen."
   }
 }
