@@ -28,6 +28,7 @@ export class JobofferComponent implements OnInit {
 
   getJobOffer(id: string) {
     this.jobOfferService.getJobOffer(id).subscribe(offer => {
+      console.log(offer);
       this.joboffer = offer;
       this.companyService.getCompany(offer.company).subscribe(company => this.company = company);
     });

@@ -38,7 +38,7 @@ export class AuthenticationService {
   }
 
   public checkCurrentUser(id: string) {
-   return JSON.parse(localStorage.getItem('currentUser')).id === id;
+   return this.user.uuid === id;
   }
 
   public isStudent(): boolean {
