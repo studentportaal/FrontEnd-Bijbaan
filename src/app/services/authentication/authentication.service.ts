@@ -21,9 +21,6 @@ export class AuthenticationService {
     const user = JSON.parse(localStorage.getItem('currentUser'));
     const userType = JSON.parse(localStorage.getItem('currentUserType'));
 
-    console.log(user);
-    console.log(userType);
-
     if(user === null || user === undefined) {
       return;
     }
