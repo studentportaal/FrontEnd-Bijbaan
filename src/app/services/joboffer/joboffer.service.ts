@@ -46,7 +46,7 @@ export class JobofferService {
       "title": jobOffer.title,
       "information": jobOffer.information,
       "function": jobOffer.function
-    }
+    };
     return this.httpClient.put<JobOffer>(this.jobOfferBaseUrl + '/' + jobOffer.id, newJobOffer);
   }
 }
