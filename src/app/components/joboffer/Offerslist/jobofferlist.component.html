@@ -10,7 +10,7 @@
       </mat-card-title-group>
       <mat-card-content>
         <ul>
-          <li *ngFor="let JobOffer of jobOffers"><a routerLink="{{JobOffer.id}}">{{JobOffer.title}}</a></li>
+          <li *ngFor="let JobOffer of jobOffers"><a routerLink="/joboffers/details/{{JobOffer.id}}">{{JobOffer.title}}</a></li>
         </ul>
         <mat-paginator #paginator
                        [length]="length"
