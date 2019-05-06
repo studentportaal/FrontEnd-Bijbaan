@@ -2,12 +2,14 @@
   "NAVBAR": {
     "PROFILE": "Profile",
     "REGISTER": "New account",
-    "EDITPROFILE" : "Edit profile",
+    "EDITPROFILE": "Edit profile",
     "JOBOFFERS": "Joboffers",
-    "LOGIN": "Login"
+    "LOGIN": "Login",
+    "LOGOUT": "Log out",
+    "ADDJOBOFFER": "Add joboffer"
   },
   "HOME": {
-    "WELCOME.MESSAGE": "Welcome to our job portal. we don't have jobs and we don't have portals"
+    "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals."
   },
   "LOGIN": {
     "FIELD.EMAIL.PLACEHOLDER": "Email",
@@ -34,16 +36,28 @@
     "FIELD.DESCRIPTION.PLACEHOLDER": "Description"
   },
   "USERPROFILE": {
-    "TITLE" : "Profile",
-    "EDITTITLE" : "Edit profile",
-    "FIELD.FIRSTNAME" : "First name",
-    "FIELD.LASTNAME" : "Last name",
-    "FIELD.DATE" : "Date of birth",
+    "TITLE": "Profile",
+    "EDITTITLE": "Edit profile",
+    "FIELD.FIRSTNAME": "First name",
+    "FIELD.LASTNAME": "Last name",
+    "FIELD.DATE": "Date of birth",
     "FIELD.INSTITUTE": "Institute",
-    "FIELD.EMAIL" : "Email",
-    "BUTTON.CONFIRM" : "Edit profile"
+    "FIELD.EMAIL": "Email",
+    "BUTTON.CONFIRM": "Edit profile"
   },
   "JOBOFFER": {
+    "ADD": {
+      "TITLE": "Add new job offer",
+      "BUTTON": "Add job offer"
+    },
+    "FIELD": {
+      "LOCATION.PLACEHOLDER": "Location",
+      "TITLE.PLACEHOLDER": "Title",
+      "INFORMATION.PLACEHOLDER": "Information",
+      "FUNCTION.PLACEHOLDER": "Function",
+      "SALARY.PLACEHOLDER": "Salary",
+      "COMPANY.PLACEHOLDER": "Company"
+    },
     "BUTTON.APPLY": "Apply",
     "BUTTON.EDIT": "Edit",
     "LABEL.POSITION": "Position",

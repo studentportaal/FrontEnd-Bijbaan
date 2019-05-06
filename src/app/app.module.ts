@@ -15,8 +15,9 @@ import { JobofferlistComponent } from './components/joboffer/Offerslist/joboffer
 import { LoginComponent } from './components/student/login/login.component';
 import { UsereditprofileComponent } from './components/student/usereditprofile/usereditprofile.component';
 import { ApplyComponent } from './components/joboffer/apply/apply.component';
-import {JobofferComponent} from  './components/joboffer/joboffer/joboffer.component';
+import {JobofferComponent} from './components/joboffer/joboffer/joboffer.component';
 import {CompanyComponent} from './components/general/company/company/company.component';
+import { AddjobofferComponent } from './components/joboffer/addjoboffer/addjoboffer.component';
 import { EditjobofferComponent } from './components/joboffer/editjoboffer/editjoboffer.component';
 
 
@@ -34,6 +35,7 @@ import { EditjobofferComponent } from './components/joboffer/editjoboffer/editjo
     RegisterComponent,
     ApplyComponent,
     CompanyComponent,
+    AddjobofferComponent,
     EditjobofferComponent,
   ],
   imports: [
