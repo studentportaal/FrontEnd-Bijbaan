@@ -10,14 +10,10 @@ import {DialogData} from '../../../domain/DialogData';
   templateUrl: './companyfilterdialog.component.html',
   styleUrls: ['./companyfilterdialog.component.scss']
 })
-export class CompanyfilterdialogComponent implements OnInit {
+export class CompanyFilterDialogComponent implements OnInit {
 
   private companyList: Company[];
   private companyFilter: string[] = new Array();
-
-  form = new FormGroup({
-    companies: new FormArray([])
-  });
 
   constructor(private companyService: CompanyService, @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 

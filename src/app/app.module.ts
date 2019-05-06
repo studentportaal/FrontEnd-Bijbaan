@@ -19,7 +19,7 @@ import {JobofferComponent} from './components/joboffer/joboffer/joboffer.compone
 import {CompanyComponent} from './components/general/company/company/company.component';
 import { AddjobofferComponent } from './components/joboffer/addjoboffer/addjoboffer.component';
 import { EditjobofferComponent } from './components/joboffer/editjoboffer/editjoboffer.component';
-import { CompanyfilterdialogComponent } from './components/joboffer/companyfilterdialog/companyfilterdialog.component';
+import {CompanyFilterDialogComponent} from './components/joboffer/companyfilterdialog/companyfilterdialog.component';
 import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjoboffers.component';
 
 
@@ -39,7 +39,7 @@ import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjob
     CompanyComponent,
     AddjobofferComponent,
     EditjobofferComponent,
-    CompanyfilterdialogComponent,
+    CompanyFilterDialogComponent,
     OwnjoboffersComponent
   ],
   imports: [
@@ -59,7 +59,7 @@ import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjob
     })
   ],
   entryComponents: [
-    CompanyfilterdialogComponent,
+    CompanyFilterDialogComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
