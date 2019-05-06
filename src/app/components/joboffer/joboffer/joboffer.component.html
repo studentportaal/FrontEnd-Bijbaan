@@ -34,6 +34,24 @@
       </ng-container>
     </ng-container>
   </div>
+  <div class="container container-sm" *ngIf="joboffer &&
+                                             joboffer.applicants &&
+                                             authenticationService.isCompany() &&
+                                             authenticationService.checkCurrentUser(joboffer.company)">
+    <ng-container>
+      <h2>Applicants</h2>
+      <mat-list *ngFor="let student of joboffer.applicants">
+        <mat-list-item>
+          <div class="applicant-container">
+            <span> {{ student.firstName }} {{ student.lastName }}</span>
+            <a class="profile-btn" mat-raised-button color="primary" routerLink="/user/view-profile/{{student.uuid}}">
+              {{ 'JOBOFFER.BUTTON.VIEW.PROFILE' | translate }}</a>
+          </div>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </ng-container>
+  </div>
 </ng-template>
 <ng-template #editable>
   <app-editjoboffer [joboffer]="joboffer" [company]="company" (editBoolean)="receiveBoolean($boolean)"></app-editjoboffer>

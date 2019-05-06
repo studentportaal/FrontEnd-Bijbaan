@@ -12,8 +12,8 @@ import {AuthenticationService} from '../../../services/authentication/authentica
 })
 export class JobofferlistComponent implements OnInit {
 
-  private jobOffers: JobOffer[];
-  companies: string[] = new Array();
+  jobOffers: JobOffer[];
+  companies: string[] = [];
   length: number;
   pageSize: number;
   pageIndex: number;

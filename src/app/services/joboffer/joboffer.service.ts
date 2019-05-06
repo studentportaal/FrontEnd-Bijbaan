@@ -35,7 +35,7 @@ export class JobofferService {
   }
 
   applyForJob(u: Student, id: string) {
-    return this.httpClient.patch(this.jobOfferBaseUrl + '/details/' + id, u);
+    return this.httpClient.patch(this.jobOfferBaseUrl + '/' + id, u);
   }
 
   editJoboffer(jobOffer: JobOffer): Observable<JobOffer> {
