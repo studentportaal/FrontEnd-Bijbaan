@@ -30,23 +30,12 @@ export class AddjobofferComponent implements OnInit {
 
   constructor(private jobOfferService: JobofferService,
               private authenticationService: AuthenticationService,
-              private skillService: SkillService,
               private snackbar: MatSnackBar,
-              private router: Router) {
-
-    this.skillCtrl.valueChanges.subscribe((value) => {
-      this.searchSkills(value);
-    });
-
-
-  }
+              private router: Router) { }
 
   ngOnInit() {
     if (this.authenticationService.isLoggedIn() && this.authenticationService.isCompany()) {
       this.currentCompany = this.authenticationService.user as Company;
-      this.skillService.get().subscribe((response) => {
-        this.skills = response;
-      });
 
       console.log(this.authenticationService.user);
       console.log(this.currentCompany);
@@ -66,55 +55,6 @@ export class AddjobofferComponent implements OnInit {
         snackbarRef.afterDismissed().subscribe(() => {
           this.router.navigateByUrl('/');
         });
-    });
-  }
-
-  selected(event: MatAutocompleteSelectedEvent) {
-     const skill = event.option.value;
-     console.log(skill);
-     this.jobOffer.skills.push(skill);
-     this.skillInput.nativeElement.value = '';
-     this.skillCtrl.setValue(null);
-  }
-
-  add(event: MatChipInputEvent): void {
-    // To make sure this does not conflict with OptionSelected Event
-    if (!this.matAutocomplete.isOpen) {
-      const input = event.input;
-      const value = event.value;
-
-      if ((value || '').trim()) {
-        const skill = new Skill();
-        skill.name = value.trim();
-
-        this.skillService.add(skill).subscribe((response) => {
-          this.skills.push(response);
-        });
-      }
-
-      // Reset the input value
-      if (input) {
-        input.value = '';
-      }
-
-      this.skillCtrl.setValue(null);
-    }
-  }
-
-  removeSkill(skill: Skill) {
-    this.jobOffer.skills.splice(this.jobOffer.skills.indexOf(skill));
-  }
-
-  searchSkills(query: string) {
-    console.log(query);
-    if (!query) {
-      this.skillService.get().subscribe((response) => {
-        this.skills = response;
-      });
-    }
-
-    this.skillService.search(query).subscribe((response) => {
-      this.skills = response;
     });
   }
 

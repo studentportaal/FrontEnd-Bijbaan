@@ -24,6 +24,14 @@
           <mat-list-item><p><b>{{'JOBOFFER.FIELD.COMPANY.PLACEHOLDER' | translate}}: </b> <a routerLink="/company/{{company.uuid}}">{{company.name}}</a></p></mat-list-item>
           <mat-divider></mat-divider>
         </ng-container>
+        <ng-container *ngIf="joboffer.skills">
+          <mat-list-item>
+            <mat-chip-list aria-orientation="vertical" >
+              <mat-chip color="primary" *ngFor="let skill of joboffer.skills" >{{skill.name | titlecase}}</mat-chip>
+            </mat-chip-list>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </ng-container>
       </mat-list>
       <br/>
       <ng-container *ngIf="authenticationService.user">
@@ -44,7 +52,7 @@
         <mat-list-item>
           <div class="applicant-container">
             <span> {{ student.firstName }} {{ student.lastName }}</span>
-            <a class="profile-btn" mat-raised-button color="primary" routerLink="/user/view-profile/{{student.uuid}}">
+            <a class="profile-btn" mat-raised-button color="default" routerLink="/user/view-profile/{{student.uuid}}">
               {{ 'JOBOFFER.BUTTON.VIEW.PROFILE' | translate }}</a>
           </div>
           <mat-divider></mat-divider>
