@@ -4,6 +4,7 @@ import {JobOffer} from '../../domain/JobOffer';
 import {Observable} from 'rxjs';
 import {Student} from '../../domain/Student';
 import {environment} from '../../../environments/environment';
+import {Skill} from "../../domain/Skill";
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,14 @@ export class JobofferService {
 
   applyForJob(u: Student, id: string) {
     return this.httpClient.patch(this.jobOfferBaseUrl + '/' + id, u);
+  }
+
+  setSkills(skills: Skill[], id: string) {
+    const obj = {
+      "skills": skills
+    };
+
+    return this.httpClient.patch(this.jobOfferBaseUrl + '/' + id + '/skills', obj);
   }
 
   editJoboffer(jobOffer: JobOffer): Observable<JobOffer> {
