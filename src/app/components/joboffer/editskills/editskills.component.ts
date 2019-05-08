@@ -47,26 +47,29 @@ export class EditSkillsComponent implements OnInit {
 
   add(event: MatChipInputEvent): void {
     // To make sure this does not conflict with OptionSelected Event
-    if (!this.matAutocomplete.isOpen) {
-      const input = event.input;
-      const value = event.value;
-
-      if ((value || '').trim()) {
-        const skill = new Skill();
-        skill.name = value.trim();
-
-        this.skillService.add(skill).subscribe((response) => {
-          this.skills.push(response);
-        });
-      }
-
-      // Reset the input value
-      if (input) {
-        input.value = '';
-      }
-
-      this.skillCtrl.setValue(null);
+    if (this.matAutocomplete.isOpen) {
+      return;
     }
+
+    const input = event.input;
+    const value = event.value;
+
+    if ((value || '').trim()) {
+      const skill = new Skill();
+      skill.name = value.trim();
+
+      this.skillService.add(skill).subscribe((response) => {
+        this.skills.push(response);
+      });
+    }
+
+    // Reset the input value
+    if (input) {
+      input.value = '';
+    }
+
+    this.skillCtrl.setValue(null);
+
   }
 
   removeSkill(skill: Skill) {
