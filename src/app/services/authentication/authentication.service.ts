@@ -21,7 +21,7 @@ export class AuthenticationService {
     const user = JSON.parse(localStorage.getItem('currentUser'));
     const userType = JSON.parse(localStorage.getItem('currentUserType'));
 
-    if(user === null || user === undefined) {
+    if (user === null || user === undefined) {
       return;
     }
 
@@ -63,6 +63,6 @@ export class AuthenticationService {
 
   public logout() {
     localStorage.removeItem('currentUser');
-    localStorage.removeItem('currentUserType')
+    localStorage.removeItem('currentUserType');
   }
 }
