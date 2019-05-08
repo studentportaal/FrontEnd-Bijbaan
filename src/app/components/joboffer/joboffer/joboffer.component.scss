@@ -14,3 +14,14 @@ a {
   width: 100%;
 }
 
+.applicant-count{
+  margin-left: 16px;
+  margin-right: 16px;
+  color: grey;
+}
+
+.apply-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
