@@ -33,7 +33,8 @@
       <br/>
       <div class="apply-container" *ngIf="joboffer.applicants && joboffer.applicants.length > 0">
         <span class="applicant-count">{{ 'JOBOFFER.LABEL.APPLICANT.COUNT' | translate:{ count: joboffer.applicants.length} }}</span>
-        <ng-container *ngIf="authenticationService.user">
+        <ng-container *ngIf="authenticationService.user &&
+                              authenticationService.isStudent()">
           <a mat-raised-button color="primary" title="apply"
              routerLink="/joboffers/details/{{joboffer.id}}/apply">{{'JOBOFFER.BUTTON.APPLY' | translate}}</a>
         </ng-container>
