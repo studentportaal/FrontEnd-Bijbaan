@@ -9,7 +9,8 @@ before_script:
   - npm install
 
 script:
+  - ng lint
   - ng build --prod
-  
+
 notifications:
   slack: git-gud-workspace:ENPyEfwTZtAjfFDdgmJeTWe1
