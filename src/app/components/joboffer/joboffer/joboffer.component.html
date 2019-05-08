@@ -39,8 +39,9 @@
         </ng-container>
       </mat-list>
       <br/>
-      <div class="apply-container" *ngIf="joboffer.applicants && joboffer.applicants.length > 0">
-        <span class="applicant-count">{{ 'JOBOFFER.LABEL.APPLICANT.COUNT' | translate:{ count: joboffer.applicants.length} }}</span>
+      <div class="apply-container" >
+        <span  *ngIf="joboffer.applicants && joboffer.applicants.length > 0" class="applicant-count">
+          {{ 'JOBOFFER.LABEL.APPLICANT.COUNT' | translate:{ count: joboffer.applicants.length} }}</span>
         <ng-container *ngIf="authenticationService.user &&
                               authenticationService.isStudent()">
           <a mat-raised-button color="primary" title="apply"
