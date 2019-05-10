@@ -1,7 +1,7 @@
 <mat-form-field>
   <mat-chip-list #chipList>
     <mat-chip
-      *ngFor="let skill of jobOffer.skills"
+      *ngFor="let skill of element.skills"
       [selectable]="true"
       (removed)="removeSkill(skill)">
       {{skill.name | titlecase}}

@@ -4,7 +4,6 @@ import {MatAutocomplete, MatChipInputEvent} from "@angular/material";
 import {Skill} from "../../../domain/Skill";
 import {COMMA, ENTER} from "@angular/cdk/keycodes";
 import {FormControl} from "@angular/forms";
-import {JobOffer} from "../../../domain/JobOffer";
 import {SkillService} from "../../../services/skill/skill.service";
 
 @Component({
@@ -14,7 +13,7 @@ import {SkillService} from "../../../services/skill/skill.service";
 })
 export class EditSkillsComponent implements OnInit {
 
-  @Input() jobOffer: JobOffer;
+  @Input() element: any;
 
   skills: Skill[] = [];
   separatorKeysCodes: number[] = [ENTER, COMMA];
@@ -40,7 +39,7 @@ export class EditSkillsComponent implements OnInit {
   selected(event: MatAutocompleteSelectedEvent) {
     const skill = event.option.value;
     console.log(skill);
-    this.jobOffer.skills.push(skill);
+    this.element.skills.push(skill);
     this.skillInput.nativeElement.value = '';
     this.skillCtrl.setValue(null);
   }
@@ -73,8 +72,8 @@ export class EditSkillsComponent implements OnInit {
   }
 
   removeSkill(skill: Skill) {
-    this.jobOffer.skills.splice(this.jobOffer.skills.indexOf(skill, 0), 1);
-    console.log(this.jobOffer.skills);
+    this.element.skills.splice(this.element.skills.indexOf(skill, 0), 1);
+    console.log(this.element.skills);
   }
 
   searchSkills(query: string) {
