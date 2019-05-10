@@ -48,6 +48,7 @@
   },
   "JOBOFFER": {
     "JOBOFFERS": "Job offers",
+    "NOJOBOFFERS": "No job offers.",
     "ADD": {
       "TITLE": "Add new job offer",
       "BUTTON": "Add job offer"

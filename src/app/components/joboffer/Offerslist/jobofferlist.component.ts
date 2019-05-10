@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {JobOffer} from '../../../domain/JobOffer';
-import {JobofferService} from '../../../services/joboffer/joboffer.service';
-import {MatDialog, PageEvent} from '@angular/material';
-import {CompanyFilterDialogComponent} from '../companyfilterdialog/companyfilterdialog.component';
-import {AuthenticationService} from '../../../services/authentication/authentication.service';
+import { Component, OnInit } from '@angular/core';
+import { JobOffer } from '../../../domain/JobOffer';
+import {Router} from '@angular/router';
+import { JobofferService } from '../../../services/joboffer/joboffer.service';
+import { MatDialog, PageEvent } from '@angular/material';
+import { CompanyFilterDialogComponent } from '../companyfilterdialog/companyfilterdialog.component';
+import { AuthenticationService } from '../../../services/authentication/authentication.service';
+import { CompanyService } from '../../../services/company/company.service';
 
 @Component({
   selector: 'app-jobofferlist',
@@ -19,7 +21,11 @@ export class JobofferlistComponent implements OnInit {
   pageIndex: number;
   pageEvent: PageEvent;
 
-  constructor(private jobOfferService: JobofferService, private dialog: MatDialog, private authenticationService: AuthenticationService) {
+  constructor(private jobOfferService: JobofferService,
+              private dialog: MatDialog,
+              private authenticationService: AuthenticationService,
+              private companyService: CompanyService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -29,7 +35,7 @@ export class JobofferlistComponent implements OnInit {
 
   public openDialog() {
     const dialogRef = this.dialog.open(CompanyFilterDialogComponent, {
-      data: {companies: this.companies},
+      data: { companies: this.companies },
       maxHeight: '750px',
       minWidth: '500px'
     });
@@ -55,5 +61,10 @@ export class JobofferlistComponent implements OnInit {
     });
 
     return event;
+  }
+
+  public getJobOffer(joboffer: string){
+    const url : string = '/joboffers/details/' + joboffer;
+    this.router.navigateByUrl(url);
   }
 }
