@@ -1,6 +1,9 @@
 a {
   color: black;
 }
+h1{
+  font-weight: normal;
+}
 
 mat-card-actions {
   display: flex;
@@ -8,4 +11,21 @@ mat-card-actions {
 
 .shadowless{
   box-shadow: none;
+}
+.jobofferlist{
+  mat-list-item{
+    a {
+      text-decoration: none;
+      display: inline;
+      padding-left:20px;
+      padding-top:10px;
+      padding-bottom:10px;
+      &:hover{
+        padding-left:20px;
+        padding-right:20px;
+        background:rgba(0,0,0,.04);
+        border-radius: 20px;
+      }
+    }
+  }
 }

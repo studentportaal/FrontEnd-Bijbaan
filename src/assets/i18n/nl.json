@@ -5,7 +5,6 @@
     "EDITPROFILE": "Profiel aanpassen",
     "JOBOFFERS": "Vacatures",
     "MYJOBOFFERS": "My posted job offers",
-    "JOBOFFERS": "Vacatures",
     "LOGIN": "Inloggen",
     "LOGOUT": "Uitloggen",
     "ADDJOBOFFER": "Vacature toevoegen"
@@ -49,6 +48,7 @@
     "BUTTON.CONFIRM": "Aanpassen"
   },
   "JOBOFFER": {
+    "JOBOFFERS": "Vacatures",
     "ADD": {
       "TITLE": "Vacature toevoegen",
       "BUTTON": "Vacature toevoegen"

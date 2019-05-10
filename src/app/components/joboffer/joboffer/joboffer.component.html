@@ -1,5 +1,5 @@
 <ng-template [ngIf]="!editBoolean" [ngIfElse]="editable">
-  <div class="container container-sm">
+  <div class="container container-md">
     <span *ngIf="!joboffer">Loading offer...</span>
     <ng-container *ngIf="joboffer != null">
       <h1 class="mat-display-1">{{joboffer.title}}</h1>
@@ -22,7 +22,7 @@
         </ng-container>
         <ng-container *ngIf="company">
           <mat-list-item><p><b>{{'JOBOFFER.FIELD.COMPANY.PLACEHOLDER' | translate}}: </b> <a routerLink="/company/{{company.uuid}}">{{company.name}}</a></p></mat-list-item>
-          <mat-divider></mat-divider>
+  
         </ng-container>
       </mat-list>
       <br/>

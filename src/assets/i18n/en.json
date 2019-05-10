@@ -3,7 +3,7 @@
     "PROFILE": "Profile",
     "REGISTER": "New account",
     "EDITPROFILE" : "Edit profile",
-    "JOBOFFERS": "Joboffers",
+    "JOBOFFERS": "Job offers",
     "LOGIN": "Login",
     "LOGOUT": "Log out",
     "MYJOBOFFERS": "My posted job offers",
@@ -47,6 +47,7 @@
     "BUTTON.CONFIRM": "Edit profile"
   },
   "JOBOFFER": {
+    "JOBOFFERS": "Job offers",
     "ADD": {
       "TITLE": "Add new job offer",
       "BUTTON": "Add job offer"
@@ -75,6 +76,6 @@
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Cancel",
     "LABEL.TITLE": "Edit job offer",
-    "SNACKBAR.SUCCES.MESSAGE": "Succesfully updated joboffer"
+    "SNACKBAR.SUCCES.MESSAGE": "Succesfully updated job offer"
   }
 }

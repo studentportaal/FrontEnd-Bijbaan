@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container container-md">
+  <h1>Vacatures</h1>
     <mat-card class="shadowless">
       <mat-card-title-group>
-        <mat-card-title>Vacatures</mat-card-title>
         <mat-card-actions>
           <button mat-stroked-button (click)="openDialog()">
             {{'JOBOFFER.BUTTON.FILTERCOMPANY' | translate}}
@@ -9,9 +9,9 @@
         </mat-card-actions>
       </mat-card-title-group>
       <mat-card-content>
-        <ul>
-          <li *ngFor="let JobOffer of jobOffers"><a routerLink="/joboffers/details/{{JobOffer.id}}">{{JobOffer.title}}</a></li>
-        </ul>
+          <mat-list class="jobofferlist">
+              <mat-list-item *ngFor="let JobOffer of jobOffers"> <a routerLink="/joboffers/details/{{JobOffer.id}}">{{JobOffer.title | titlecase}} </a></mat-list-item>
+            </mat-list>
         <mat-paginator #paginator
                        [length]="length"
                        [pageSize]="pageSize"
