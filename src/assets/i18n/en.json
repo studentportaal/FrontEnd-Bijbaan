@@ -44,6 +44,7 @@
     "FIELD.DATE": "Date of birth",
     "FIELD.INSTITUTE": "Institute",
     "FIELD.EMAIL": "Email",
+    "FIELD.SKILLS": "Skills",
     "BUTTON.CONFIRM": "Edit profile"
   },
   "JOBOFFER": {

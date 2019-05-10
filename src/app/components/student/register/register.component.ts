@@ -52,6 +52,7 @@ export class RegisterComponent implements OnInit {
 
   registerStudent() {
     this.userService.addUser(this.student).subscribe((response: Student) => {
+      console.log(response);
       const snackbarRef = this.snackbar.open('Account successfully created', 'dismiss', {
         duration: 3000
       });

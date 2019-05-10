@@ -12,8 +12,17 @@
     <!-- <mat-divider></mat-divider>
     <mat-list-item><p><b>Leerjaar:</b> 4</p></mat-list-item> -->
     <mat-divider></mat-divider>
-
     <mat-list-item><p><b>{{'USERPROFILE.FIELD.EMAIL' | translate}}:</b> {{user.email | titlecase}}</p></mat-list-item>
+    <mat-divider></mat-divider>
+    <ng-container *ngIf="user.skills">
+      <mat-list-item>
+        <b>{{'USERPROFILE.FIELD.SKILLS' | translate}}:   </b>
+        <mat-chip-list aria-orientation="vertical" >
+          <mat-chip color="primary" *ngFor="let skill of user.skills" >{{skill.name | titlecase}}</mat-chip>
+        </mat-chip-list>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </ng-container>
   </mat-list>
 </div>
 

@@ -26,6 +26,7 @@ export class UserprofileComponent implements OnInit {
   getUserById(id: string) {
     this.userService.getUserById(id).subscribe((response: any) => {
       this.user = response;
+      console.log(this.user);
     });
   }
 }

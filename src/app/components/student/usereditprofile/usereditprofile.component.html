@@ -42,6 +42,7 @@
              [ngModelOptions]="{standalone: true}"
              name="institute">
     </mat-form-field>
+    <app-edit-skills [element]="authenticationService.user"></app-edit-skills>
     <button type="submit" mat-raised-button color="primary">{{'USERPROFILE.BUTTON.CONFIRM' | translate}}</button>
   </form>
 </div>

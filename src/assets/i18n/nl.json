@@ -46,6 +46,7 @@
     "FIELD.DATE": "Geboortedatum",
     "FIELD.INSTITUTE": "School",
     "FIELD.EMAIL": "Email",
+    "FIELD.SKILLS": "Vaardigheden",
     "BUTTON.CONFIRM": "Aanpassen"
   },
   "JOBOFFER": {
