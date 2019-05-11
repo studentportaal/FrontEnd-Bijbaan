@@ -1,44 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./vars";
 
-body{
-    margin:0;
-    background: lightgray;
-    font-family: 'Roboto', sans-serif;
+body {
+  margin: 0;
+  background: lightgray;
+  font-family: "Roboto", sans-serif;
 }
 
-.container{
-    margin:30px;
-    padding:20px;
-    border-radius: 5px;
-    background: white;
-    text-align: center;
-    border: 1px solid lightgray;
+.container {
+  margin: 30px;
+  padding: 20px;
+  border-radius: 5px;
+  background: white;
+  text-align: center;
+  border: 1px solid lightgray;
 }
 
 .container-sm {
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    width: 700px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 700px;
 }
 
-.container-md{
-    margin:auto;
-    margin-top:30px;
-    margin-bottom: 30px;
-    width: 50%;
+.container-md {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 50%;
 }
 
-mat-row{
-    &:last-child{
-        border-bottom: none;
-        margin-bottom:20px;
+mat-row {
+  &:last-child {
+    border-bottom: none;
+    // margin-bottom:20px;
+    &:hover {
+      border-bottom: solid;
+      border-bottom-width: 0.35px;
+      border-color: lightgray;
     }
+  }
+  &:nth-child(even) {
+    background-color: #bebdbd2a;
+    // background-color:#D0DCF0;
+  }
+  &:nth-child(odd) {
+    // background-color: #B9CAE8;
+  }
 }
-form{
-    button{
-        width: fit-content;    
-        align-self: center;
-    }
+
+form {
+  button {
+    width: fit-content;
+    align-self: center;
+  }
+}
+
+.primary {
+  background: $primary;
+}
+
+.nav-item-link {
+  margin-left: 15px;
+  padding-right: 15px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  &:last-child {
+    border: none;
+  }
+  .nav-icon {
+    padding-left: 5px;
+    font-size: 19px;
+    padding-right: 5px;
+  }
+  border-right: 1px solid $secondary;
+  &:hover {
+    color: $secondary-dark !important;
+  }
+}
+.pointer {
+  cursor: pointer;
 }

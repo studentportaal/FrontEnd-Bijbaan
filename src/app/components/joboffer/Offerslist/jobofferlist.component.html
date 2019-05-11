@@ -2,7 +2,7 @@
   <h1>{{'JOBOFFER.JOBOFFERS' | translate}} <button mat-stroked-button (click)="openDialog()">
     {{'JOBOFFER.BUTTON.FILTERCOMPANY' | translate}}
   </button></h1>
-      <div  *ngIf="jobOffers?.length > 0">
+      <div *ngIf="jobOffers?.length > 0">
 
         <table mat-table [dataSource]="jobOffers" class="joboffer-table">
           <ng-container matColumnDef="title">
@@ -21,7 +21,7 @@
           <mat-header-cell *matHeaderCellDef>{{'JOBOFFER.FIELD.FUNCTION.PLACEHOLDER' | translate}}</mat-header-cell>
           <mat-cell *matCellDef="let joboffer">{{joboffer.function | titlecase}}</mat-cell>
             </ng-container>
-            <mat-header-row *matHeaderRowDef="['title','function','location','company']"></mat-header-row>
+            <mat-header-row color="accent" *matHeaderRowDef="['title','function','location','company']"></mat-header-row>
             <mat-row *matRowDef="let row; columns: ['title','function','location','company'];" class="joboffer-row" (click)="getJobOffer(row.id)"></mat-row>
           </table>
         </div>
