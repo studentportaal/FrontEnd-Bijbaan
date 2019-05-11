@@ -1,6 +1,9 @@
 // a {
 //   color: black;
 // }
+h1{
+  margin:10px;
+}
 
 .profile-btn {
   margin-left: 10rem;
@@ -12,6 +15,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  
 }
 
 a {
@@ -27,4 +31,9 @@ a {
     background:rgba(0,0,0,.04);
     border-radius: 20px;
   }
+}
+mat-list{
+  margin: 50px;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }

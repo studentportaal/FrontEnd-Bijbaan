@@ -78,8 +78,13 @@ form {
   border-right: 1px solid $secondary;
   &:hover {
     color: $secondary-dark !important;
+    cursor: pointer;
   }
 }
 .pointer {
   cursor: pointer;
+}
+.default-button{
+    background: $primary-light;
+    color:white
 }
