@@ -63,8 +63,8 @@ export class JobofferlistComponent implements OnInit {
     return event;
   }
 
-  public getJobOffer(joboffer: string){
-    const url : string = '/joboffers/details/' + joboffer;
+  public getJobOffer(joboffer: string) {
+    const url: string = '/joboffers/details/' + joboffer;
     this.router.navigateByUrl(url);
   }
 }
