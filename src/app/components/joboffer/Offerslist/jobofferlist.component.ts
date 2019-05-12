@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { JobOffer } from '../../../domain/JobOffer';
-import {Router} from '@angular/router';
+import { Company } from '../../../domain/Company';
+import { Router } from '@angular/router';
 import { JobofferService } from '../../../services/joboffer/joboffer.service';
-import { MatDialog, PageEvent } from '@angular/material';
+import { MatDialog ,MatSortable, PageEvent, MatSort, MatSortModule } from '@angular/material';
 import { CompanyFilterDialogComponent } from '../companyfilterdialog/companyfilterdialog.component';
 import { AuthenticationService } from '../../../services/authentication/authentication.service';
 import { CompanyService } from '../../../services/company/company.service';
+import { MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-jobofferlist',
@@ -13,13 +15,16 @@ import { CompanyService } from '../../../services/company/company.service';
   styleUrls: ['./jobofferlist.component.scss']
 })
 export class JobofferlistComponent implements OnInit {
+  @ViewChild(MatSort) sort: MatSort;
 
   jobOffers: JobOffer[];
   companies: string[] = [];
+  companiesAsCompanies: Company[];
   length: number;
   pageSize: number;
   pageIndex: number;
   pageEvent: PageEvent;
+  dataSource = new MatTableDataSource(this.jobOffers);
 
   constructor(private jobOfferService: JobofferService,
               private dialog: MatDialog,
@@ -31,6 +36,7 @@ export class JobofferlistComponent implements OnInit {
   ngOnInit() {
     this.pageSize = 25;
     this.getServerData(null);
+    this.getCompanies();
   }
 
   public openDialog() {
@@ -46,6 +52,13 @@ export class JobofferlistComponent implements OnInit {
     });
   }
 
+  public getCompanies(){
+    this.companyService.getAllCompanies().subscribe((response) =>{
+      // @ts-ignore
+      this.companiesAsCompanies = response;
+    })
+  }
+
   public getServerData(event?: PageEvent) {
     this.jobOfferService.getJobOfferCount().subscribe((response) => {
       this.length = +response;
@@ -56,10 +69,11 @@ export class JobofferlistComponent implements OnInit {
       this.jobOfferService.getAllJobOffers((Math.imul(this.pageSize, this.pageIndex)), this.pageSize, this.companies).subscribe(
         reply => {
           this.jobOffers = reply;
+          this.dataSource = new MatTableDataSource(this.jobOffers);
+          this.dataSource.sort = this.sort;
         }
       );
     });
-
     return event;
   }
 
@@ -67,4 +81,14 @@ export class JobofferlistComponent implements OnInit {
     const url: string = '/joboffers/details/' + joboffer;
     this.router.navigateByUrl(url);
   }
+
+  getCompanyName(id: any) {
+    for(let comp of this.companiesAsCompanies)
+    {
+      if(comp.uuid == id){
+        return comp.name;
+      }
+    }
+  }
+
 }

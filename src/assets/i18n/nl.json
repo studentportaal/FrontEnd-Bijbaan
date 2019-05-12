@@ -52,6 +52,7 @@
   "JOBOFFER": {
     "JOBOFFERS": "Vacatures",
     "NOJOBOFFERS": "Geen vacatures.",
+    "TOPOFDAY": "Dagtopper",
     "ADD": {
       "TITLE": "Vacature toevoegen",
       "BUTTON": "Vacature toevoegen"

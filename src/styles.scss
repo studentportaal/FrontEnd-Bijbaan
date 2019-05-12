@@ -20,14 +20,14 @@ body {
 .container-sm {
   margin: auto;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
   width: 700px;
 }
 
 .container-md {
   margin: auto;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
   width: 50%;
 }
 
@@ -59,10 +59,6 @@ mat-row {
   }
   &:nth-child(even) {
     background-color: #bebdbd2a;
-    // background-color:#D0DCF0;
-  }
-  &:nth-child(odd) {
-    // background-color: #B9CAE8;
   }
 }
 

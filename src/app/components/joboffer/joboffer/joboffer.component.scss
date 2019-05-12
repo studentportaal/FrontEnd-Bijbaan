@@ -1,21 +1,30 @@
-// a {
-//   color: black;
-// }
+@import "../../../../vars";
+
 h1{
   margin:10px;
 }
 
 .profile-btn {
-  margin-left: 10rem;
-  justify-self: flex-end;
+  margin-left: auto;
+}
+.applicant-container{
+  mat-list-item {
+    border: 1px solid $primary-light;
+    border-radius: 10px;
+    background-color: $secondary;
+    margin-bottom: 10px;
+  }
 }
 
-.applicant-container {
+.applicant-list {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  
+  i{
+    align-self: left;
+    font-size: 25px;
+  }
 }
 
 a {

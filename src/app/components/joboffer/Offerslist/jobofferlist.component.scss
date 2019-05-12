@@ -7,6 +7,9 @@ h1{
 }
 mat-cell{
   font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 50px;
 }
 mat-card-actions {
   display: flex;
@@ -50,6 +53,18 @@ table {
     mat-header-cell{
       color:black;
       font-size: 18px;
+    }
+  }
+  .first-item{
+    flex: 0 0 75px;
+  }
+  .parent{
+    display:inline-flex;
+    .ellipsis{
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 150px;
     }
   }
 }
