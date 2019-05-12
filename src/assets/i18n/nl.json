@@ -69,7 +69,8 @@
     "LABEL.JOBDESCRIPTION": "Taakomschrijving",
     "LABEL.LOCATION": "Locatie",
     "LABEL.COMPANY": "Bedrijf",
-    "LABEL.TITLE": "Titel"
+    "LABEL.TITLE": "Titel",
+    "LABEL.APPLICANT.COUNT": "Al {{count}} mensen hebben gereageerd op deze vacature"
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Annuleren",

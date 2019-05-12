@@ -14,8 +14,8 @@ import { CompanyService } from '../../../services/company/company.service';
 })
 export class JobofferlistComponent implements OnInit {
 
-  private jobOffers: JobOffer[];
-  companies: string[] = new Array();
+  jobOffers: JobOffer[];
+  companies: string[] = [];
   length: number;
   pageSize: number;
   pageIndex: number;
