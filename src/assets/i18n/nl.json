@@ -4,11 +4,13 @@
     "REGISTER": "Registreren",
     "EDITPROFILE": "Profiel aanpassen",
     "JOBOFFERS": "Vacatures",
-    "MYJOBOFFERS": "My posted job offers",
     "LOGIN": "Inloggen",
     "LOGOUT": "Uitloggen",
+    "MYJOBOFFERS": "My posted job offers",
     "ADDJOBOFFER": "Vacature toevoegen"
-
+  },
+  "FOOTER": {
+    "SELECT.LANGUAGE": "Selecteer taal"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal! We hebben geen bijbanen :)"

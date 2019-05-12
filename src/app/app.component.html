@@ -46,3 +46,9 @@
 </mat-toolbar>
 
 <router-outlet></router-outlet>
+
+<div class="footer">
+  <div class="footer-content">
+    <p>{{'FOOTER.SELECT.LANGUAGE' | translate}}: <img src="../assets/nl.png" (click)="setLanguage('nl')"> / <img src="../assets/gb.png" (click)="setLanguage('en')"> </p>
+  </div>
+</div>

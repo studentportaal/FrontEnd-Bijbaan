@@ -31,6 +31,22 @@ body {
   width: 50%;
 }
 
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $secondary-dark;
+  color: black;
+  text-align: center;  
+  .footer-content {
+    font-size: 18px;
+  }
+  img{
+    cursor: pointer;
+  }
+}
+
 mat-row {
   &:last-child {
     border-bottom: none;
