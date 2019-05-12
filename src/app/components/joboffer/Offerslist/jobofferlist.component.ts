@@ -3,7 +3,7 @@ import { JobOffer } from '../../../domain/JobOffer';
 import { Company } from '../../../domain/Company';
 import { Router } from '@angular/router';
 import { JobofferService } from '../../../services/joboffer/joboffer.service';
-import { MatDialog ,MatSortable, PageEvent, MatSort, MatSortModule } from '@angular/material';
+import { MatDialog, MatSortable, PageEvent, MatSort, MatSortModule } from '@angular/material';
 import { CompanyFilterDialogComponent } from '../companyfilterdialog/companyfilterdialog.component';
 import { AuthenticationService } from '../../../services/authentication/authentication.service';
 import { CompanyService } from '../../../services/company/company.service';
@@ -52,11 +52,11 @@ export class JobofferlistComponent implements OnInit {
     });
   }
 
-  public getCompanies(){
-    this.companyService.getAllCompanies().subscribe((response) =>{
+  public getCompanies() {
+    this.companyService.getAllCompanies().subscribe((response) => {
       // @ts-ignore
       this.companiesAsCompanies = response;
-    })
+    });
   }
 
   public getServerData(event?: PageEvent) {
@@ -83,12 +83,10 @@ export class JobofferlistComponent implements OnInit {
   }
 
   getCompanyName(id: any) {
-    for(let comp of this.companiesAsCompanies)
-    {
-      if(comp.uuid == id){
+    for (let comp of this.companiesAsCompanies) {
+      if (comp.uuid == id) {
         return comp.name;
       }
     }
   }
-
 }
