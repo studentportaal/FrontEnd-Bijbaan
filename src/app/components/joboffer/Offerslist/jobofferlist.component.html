@@ -9,7 +9,7 @@
       matSortDisableClear class="joboffer-table">
       <ng-container matColumnDef="topOfTheDay">
         <mat-header-cell class="first-item" *matHeaderCellDef mat-sort-header> </mat-header-cell>
-        <mat-cell class="first-item" *matCellDef="let joboffer"><b ng-if="joboffer.topOfTheDay"><i
+        <mat-cell class="first-item" *matCellDef="let joboffer"><b *ngIf="joboffer.topOfTheDay"><i
               class="material-icons" title="{{'JOBOFFER.TOPOFDAY' | translate}}">star</i></b></mat-cell>
       </ng-container>
       <ng-container matColumnDef="title">
