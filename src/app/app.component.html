@@ -12,7 +12,7 @@
 
     <!-- Student links go here -->
     <ng-container *ngIf="authenticationService.isStudent()">
-        <a class="pointer nav-item-link" [mat-menu-trigger-for]="menu">{{authenticationService.user.firstName | titlecase}} {{authenticationService.user.lastName | titlecase}}<i class="material-icons nav-icon">person</i></a>
+        <a class="pointer nav-item-link" [mat-menu-trigger-for]="menu">{{authenticationService.user.firstName | titlecase}} {{authenticationService.user.lastName | titlecase}}<i class="material-icons nav-icon">school</i></a>
         <mat-menu #menu="matMenu">
           <a mat-menu-item color="default" title="{{'NAVBAR.PROFILE' | translate}}"
           routerLink="/user/view-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>

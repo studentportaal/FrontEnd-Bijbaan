@@ -1,6 +1,6 @@
 <div class="container container-md">
   <div class="login-container" id="left-login-container">
-    <h2>{{ 'LOGIN.TITLE.STUDENT' | translate}}</h2>
+    <h2>{{ 'LOGIN.TITLE.STUDENT' | translate}} <i class="material-icons">school</i></h2>
     <form class="login-form" (ngSubmit)="studentLogin()">
       <mat-form-field>
         <input matInput required
@@ -23,7 +23,7 @@
   </div>
   <mat-divider  [vertical]="true"></mat-divider>
   <div class="login-container">
-    <h2>{{'LOGIN.TITLE.COMPANY' | translate}}</h2>
+    <h2>{{'LOGIN.TITLE.COMPANY' | translate}} <i class="material-icons">business_center</i></h2>
     <form class="login-form" (ngSubmit)="companyLogin()">
       <mat-form-field>
         <input matInput required

@@ -88,3 +88,14 @@ form {
     background: $primary-light;
     color:white
 }
+.footer-buttons{
+  display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    margin-left: 25%;
+}
+i.button-icon{
+  font-size: 15px;
+  padding-right: 5px;
+}
