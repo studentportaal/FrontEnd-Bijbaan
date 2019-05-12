@@ -83,8 +83,8 @@ export class JobofferlistComponent implements OnInit {
   }
 
   getCompanyName(id: any) {
-    for (let comp of this.companiesAsCompanies) {
-      if (comp.uuid == id) {
+    for (const comp of this.companiesAsCompanies) {
+      if (comp.uuid === id) {
         return comp.name;
       }
     }
