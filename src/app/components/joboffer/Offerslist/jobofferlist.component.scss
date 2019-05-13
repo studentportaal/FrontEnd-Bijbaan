@@ -1,11 +1,70 @@
+@import "../../../../vars";
 a {
   color: black;
 }
-
+h1{
+  font-weight: normal;
+}
+mat-cell{
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 50px;
+}
 mat-card-actions {
   display: flex;
 }
+mat-paginator {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.joboffer-table{
+  width: 100%;
+  .joboffer-row{
+    &:hover{
+      cursor: pointer;
+      background: #f9f9f9;
+      // border-radius: 20px;
+    }
+  }
+}
 
-.shadowless{
-  box-shadow: none;
+.custom-button{
+  position:relative;
+  button {
+    position:absolute;
+    right: 20px;
+    top: 45px;
+  }
+}
+table {
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.25);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  mat-header-row{
+    background: $secondary;
+    // background: rgb(28, 125, 204);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    mat-header-cell{
+      color:black;
+      font-size: 18px;
+    }
+  }
+  .first-item{
+    flex: 0 0 75px;
+  }
+  .parent{
+    display:inline-flex;
+    .ellipsis{
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 150px;
+    }
+  }
 }

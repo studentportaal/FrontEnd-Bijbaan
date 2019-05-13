@@ -1,5 +1,5 @@
 
-<div class="container container-sm" *ngIf="authenticationService.user">
+<div class="container container-md" *ngIf="authenticationService.user">
   <h1 class="mat-display-1">{{'USERPROFILE.EDITTITLE' | translate}}</h1>
   <form class="user-edit-profile-form" (ngSubmit)="onSubmit()">
     <mat-form-field>
@@ -42,7 +42,7 @@
              [ngModelOptions]="{standalone: true}"
              name="institute">
     </mat-form-field>
-    <button type="submit" mat-raised-button color="primary">{{'USERPROFILE.BUTTON.CONFIRM' | translate}}</button>
+    <button type="submit" mat-raised-button class="default-button"><i class="material-icons">check</i> {{'USERPROFILE.BUTTON.CONFIRM' | translate}}</button>
   </form>
 </div>
 

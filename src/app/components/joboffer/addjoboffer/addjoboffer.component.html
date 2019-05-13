@@ -1,4 +1,4 @@
-<div class="container container-sm">
+<div class="container container-md">
   <h1 class="mat-display-1">{{'JOBOFFER.ADD.TITLE' | translate}}</h1>
   <form class="add-joboffer-form" (ngSubmit)="onSubmit()">
     <mat-form-field>
@@ -41,7 +41,7 @@
           [ngModelOptions]="{standalone: true}" 
           name="salary">
       </mat-form-field>
-      <button type="submit" mat-raised-button color="primary">{{'JOBOFFER.ADD.BUTTON' | translate}}</button>
+      <button type="submit" mat-raised-button class="default-button"> <i class="material-icons">add</i> {{'JOBOFFER.ADD.BUTTON' | translate}}</button>
 
   </form>
 

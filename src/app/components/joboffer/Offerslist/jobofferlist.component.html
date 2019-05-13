@@ -1,24 +1,59 @@
-<div class="container">
-    <mat-card class="shadowless">
-      <mat-card-title-group>
-        <mat-card-title>Vacatures</mat-card-title>
-        <mat-card-actions>
-          <button mat-stroked-button (click)="openDialog()">
-            {{'JOBOFFER.BUTTON.FILTERCOMPANY' | translate}}
-          </button>
-        </mat-card-actions>
-      </mat-card-title-group>
-      <mat-card-content>
-        <ul>
-          <li *ngFor="let JobOffer of jobOffers"><a routerLink="/joboffers/details/{{JobOffer.id}}">{{JobOffer.title}}</a></li>
-        </ul>
-        <mat-paginator #paginator
-                       [length]="length"
-                       [pageSize]="pageSize"
-                       [pageIndex]="pageIndex"
-                       [pageSizeOptions]="[5, 10, 25, 100]"
-                       (page)="pageEvent = getServerData($event)">
-        </mat-paginator>
-      </mat-card-content>
-    </mat-card>
+<div class="container container-md custom-button">
+  <h1>{{'JOBOFFER.JOBOFFERS' | translate}}
+    <button mat-stroked-button class="default-button" (click)="openDialog()">
+      {{'JOBOFFER.BUTTON.FILTERCOMPANY' | translate}}
+    </button></h1>
+  <div ng-if="jobOffers?.length > 0">
+
+    <table mat-table [dataSource]="dataSource" matSort matSortActive="title" matSortDirection="asc"
+      matSortDisableClear class="joboffer-table">
+      <ng-container matColumnDef="topOfTheDay">
+        <mat-header-cell class="first-item" *matHeaderCellDef mat-sort-header> </mat-header-cell>
+        <mat-cell class="first-item" *matCellDef="let joboffer"><b *ngIf="joboffer.topOfTheDay"><i
+              class="material-icons" title="{{'JOBOFFER.TOPOFDAY' | translate}}">star</i></b></mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>{{'JOBOFFER.FIELD.TITLE.PLACEHOLDER' | translate}}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let joboffer"><b>{{joboffer.title | titlecase}}</b></mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="location">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>{{'JOBOFFER.FIELD.LOCATION.PLACEHOLDER' | translate}}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let joboffer">{{joboffer.location | titlecase}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="function">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>{{'JOBOFFER.FIELD.FUNCTION.PLACEHOLDER' | translate}}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let joboffer">{{joboffer.function | titlecase}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="company">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>{{'JOBOFFER.FIELD.COMPANY.PLACEHOLDER' | translate}}
+        </mat-header-cell>
+          <mat-cell class="ellipsis" *matCellDef="let joboffer"><div class="parent"><div class="ellipsis">{{getCompanyName(joboffer.company)}}</div></div> </mat-cell>
+      </ng-container>
+      <mat-header-row color="accent" *matHeaderRowDef="['topOfTheDay','title','function','location','company']">
+      </mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['topOfTheDay','title','function','location','company'];" class="joboffer-row"
+        (click)="getJobOffer(row.id)"></mat-row>
+    </table>
+  </div>
+  <div *ngIf="!jobOffers?.length">
+    <p>{{ 'JOBOFFER.NOJOBOFFERS' | translate}}</p>
+    <!-- TODO: Add company filtered names: -->
+    <!-- <div class="" *ngIf="companies"> 
+              <ul>
+                <li *ngFor="let company of companies">
+                    {{company}}
+                </li>
+              </ul>
+            </div>
+            <div *ngIf="!companies">None</div> -->
+
+
+  </div>
+  <mat-paginator #paginator [length]="length" [pageSize]="pageSize" [pageIndex]="pageIndex"
+    [pageSizeOptions]="[5, 10, 25, 100]" (page)="pageEvent = getServerData($event)">
+  </mat-paginator>
+  <!-- </mat-card> -->
 </div>
