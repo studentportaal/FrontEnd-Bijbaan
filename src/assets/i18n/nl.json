@@ -47,6 +47,7 @@
     "FIELD.DATE": "Geboortedatum",
     "FIELD.INSTITUTE": "School",
     "FIELD.EMAIL": "Email",
+    "FIELD.SKILLS": "Vaardigheden",
     "BUTTON.CONFIRM": "Aanpassen"
   },
   "JOBOFFER": {
@@ -73,7 +74,8 @@
     "LABEL.LOCATION": "Locatie",
     "LABEL.COMPANY": "Bedrijf",
     "LABEL.TITLE": "Titel",
-    "LABEL.APPLICANT.COUNT": "Al {{count}} mensen hebben gereageerd op deze vacature"
+    "LABEL.APPLICANT.COUNT": "Al {{count}} mensen hebben gereageerd op deze vacature",
+    "LABEL.SKILLS": "Vaardigheden"
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Annuleren",
