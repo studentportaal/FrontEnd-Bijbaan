@@ -25,7 +25,6 @@ export class AppComponent implements OnInit {
   }
 
   setLanguage(language: string) {
-    console.log(language);
     switch (language) {
       case "nl":
           this.translate.use('nl');
