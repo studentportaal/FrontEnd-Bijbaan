@@ -1,8 +1,8 @@
 <ng-template [ngIf]="!editBoolean" [ngIfElse]="editable">
-  <div class="container container-sm">
+  <div class="container container-md">
     <span *ngIf="!joboffer">Loading offer...</span>
     <ng-container *ngIf="joboffer != null">
-      <h1 class="mat-display-1">{{joboffer.title}}</h1>
+      <h1 class="mat-display-1">{{joboffer.title | titlecase}}</h1>
       <mat-list>
         <ng-container *ngIf="joboffer.function">
           <mat-list-item><p><b>{{'JOBOFFER.FIELD.FUNCTION.PLACEHOLDER' | translate}}:</b> {{joboffer.function}}</p>
@@ -10,8 +10,7 @@
           <mat-divider></mat-divider>
         </ng-container>
         <ng-container *ngIf="joboffer.salary">
-          <mat-list-item><p><b>{{'JOBOFFER.FIELD.SALARY.PLACEHOLDER' | translate}}:</b> {{joboffer.salary}}</p>
-          </mat-list-item>
+          <mat-list-item><p><b>{{'JOBOFFER.FIELD.SALARY.PLACEHOLDER' | translate}}:</b> € {{joboffer.salary}}</p></mat-list-item>
           <mat-divider></mat-divider>
         </ng-container>
         <ng-container *ngIf="joboffer.information">
@@ -29,6 +28,9 @@
             routerLink="/company/{{company.uuid}}">{{company.name}}</a></p></mat-list-item>
           <mat-divider></mat-divider>
         </ng-container>
+            <ng-container *ngIf="joboffer.information">
+              <mat-list-item><p><b>{{'JOBOFFER.FIELD.INFORMATION.PLACEHOLDER' | translate}}:</b> {{joboffer.information}}</p></mat-list-item>
+            </ng-container>
         <ng-container *ngIf="joboffer.skills">
           <mat-list-item>
             <mat-chip-list aria-orientation="vertical" >
@@ -38,6 +40,14 @@
           <mat-divider></mat-divider>
         </ng-container>
       </mat-list>
+
+      <div class="apply-container" *ngIf="joboffer.applicants && joboffer.applicants.length > 0">
+        <span class="applicant-count">{{ 'JOBOFFER.LABEL.APPLICANT.COUNT' | translate:{ count: joboffer.applicants.length} }}</span>
+      </div>
+      <ng-container *ngIf="authenticationService.user &&
+                           authenticationService.isStudent()">
+        <button mat-stroked-button class="default-button" title="apply" routerLink="/joboffers/details/{{joboffer.id}}/apply"><i class="material-icons button-icon">check</i> {{'JOBOFFER.BUTTON.APPLY' | translate}}</button>
+      </ng-container>
       <br/>
       <div class="apply-container" >
         <span  *ngIf="joboffer.applicants && joboffer.applicants.length > 0" class="applicant-count">
@@ -52,25 +62,25 @@
                            joboffer.applicants &&
                            authenticationService.isCompany() &&
                            authenticationService.checkCurrentUser(joboffer.company)">
-        <button mat-stroked-button color="default" title="edit"
-                (click)="edit()">{{'JOBOFFER.BUTTON.EDIT' | translate}}</button>
+                           <button mat-stroked-button color="default" title="edit" (click)="edit()"><i class="material-icons button-icon">create</i> {{'JOBOFFER.BUTTON.EDIT' | translate}}</button>
+
       </ng-container>
     </ng-container>
   </div>
-  <div class="container container-sm" *ngIf="joboffer &&
+  <div class="container container-sm applicant-container" *ngIf="joboffer &&
                                              joboffer.applicants &&
                                              authenticationService.isCompany() &&
                                              authenticationService.checkCurrentUser(joboffer.company)">
     <ng-container>
       <h2>Applicants</h2>
-      <mat-list *ngFor="let student of joboffer.applicants">
-        <mat-list-item>
-          <div class="applicant-container">
-            <span> {{ student.firstName }} {{ student.lastName }}</span>
-            <a class="profile-btn" mat-raised-button color="default" routerLink="/user/view-profile/{{student.uuid}}">
-              {{ 'JOBOFFER.BUTTON.VIEW.PROFILE' | translate }}</a>
+      <mat-list class="small-list" >
+        <mat-list-item *ngFor="let student of joboffer.applicants; let last = last">
+          <div class="applicant-list">
+            <i class="material-icons">person</i><span> {{ student.firstName }} {{ student.lastName }}</span>
+            <button class="profile-btn default-button" mat-stroked-button routerLink="/user/view-profile/{{student.uuid}}">
+              {{ 'JOBOFFER.BUTTON.VIEW.PROFILE' | translate }}</button>
           </div>
-          <mat-divider></mat-divider>
+          <mat-divider *ngIf="!last"></mat-divider>
         </mat-list-item>
       </mat-list>
     </ng-container>

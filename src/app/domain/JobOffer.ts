@@ -9,6 +9,10 @@ export class JobOffer {
   function: string;
   salary: number;
   company: string;
+  topOfTheDay: Date;
   applicants: Student[];
   skills: Skill[] = [];
+
+  constructor() {
+  }
 }

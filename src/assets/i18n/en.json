@@ -1,13 +1,16 @@
 {
   "NAVBAR": {
     "PROFILE": "Profile",
-    "REGISTER": "New account",
+    "REGISTER": "Register",
     "EDITPROFILE" : "Edit profile",
-    "JOBOFFERS": "Joboffers",
+    "JOBOFFERS": "Job offers",
     "LOGIN": "Login",
     "LOGOUT": "Log out",
     "MYJOBOFFERS": "My posted job offers",
     "ADDJOBOFFER": "Add job offer"
+  },
+  "FOOTER": {
+    "SELECT.LANGUAGE": "Select language"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals"
@@ -48,6 +51,9 @@
     "BUTTON.CONFIRM": "Edit profile"
   },
   "JOBOFFER": {
+    "JOBOFFERS": "Job offers",
+    "NOJOBOFFERS": "No job offers.",
+    "TOPOFDAY": "Daily Top",
     "ADD": {
       "TITLE": "Add new job offer",
       "BUTTON": "Add job offer"
@@ -77,6 +83,6 @@
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Cancel",
     "LABEL.TITLE": "Edit job offer",
-    "SNACKBAR.SUCCES.MESSAGE": "Succesfully updated joboffer"
+    "SNACKBAR.SUCCES.MESSAGE": "Succesfully updated job offer"
   }
 }

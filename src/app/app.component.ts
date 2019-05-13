@@ -10,7 +10,7 @@ import {AuthenticationService} from './services/authentication/authentication.se
 export class AppComponent implements OnInit {
   title = 'Jobby';
 
-  constructor(translate: TranslateService, public authenticationService: AuthenticationService) {
+  constructor(public translate: TranslateService, public authenticationService: AuthenticationService) {
     // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang('en');
 
@@ -21,6 +21,20 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     if (this.authenticationService.isLoggedIn()) {
       this.authenticationService.user = JSON.parse(localStorage.getItem('currentUser'));
+    }
+  }
+
+  setLanguage(language: string) {
+    console.log(language);
+    switch (language) {
+      case "nl":
+          this.translate.use('nl');
+          break;
+      case "en":
+          this.translate.use('en');
+          break;
+      default:
+          break;
     }
   }
 }

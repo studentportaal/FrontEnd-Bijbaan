@@ -1,5 +1,5 @@
 
-<div class="container container-sm">
+<div class="container container-md">
     <h1 class="mat-display-1">{{'JOBOFFEREDIT.LABEL.TITLE' | translate}}</h1>
   <form class="edit-form">
     <mat-form-field>
@@ -31,6 +31,14 @@
     </mat-form-field>
     <mat-form-field>
       <input matInput
+             placeholder="{{'JOBOFFER.LABEL.LOCATION' | translate}}"
+             value="{{joboffer.location}}"
+             type="text"
+             [(ngModel)]="joboffer.location"
+             [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
              required
              placeholder="{{'JOBOFFER.LABEL.JOBDESCRIPTION' | translate}}"
              value="{{joboffer.information}}"
@@ -38,16 +46,10 @@
              [(ngModel)]="joboffer.information"
              [ngModelOptions]="{standalone: true}">
     </mat-form-field>
-    <mat-form-field>
-      <input matInput
-             placeholder="{{'JOBOFFER.LABEL.LOCATION' | translate}}"
-             value="{{joboffer.location}}"
-             type="text"
-             [(ngModel)]="joboffer.location"
-             [ngModelOptions]="{standalone: true}">
-    </mat-form-field>
     <app-edit-skills [element]="joboffer"></app-edit-skills>
   </form>
-  <button mat-stroked-button color="warn" (click)="cancel()">{{'JOBOFFEREDIT.BUTTON.CANCEL' | translate}}</button>
-  <button mat-stroked-button color="default" (click)="edit()">{{'JOBOFFER.BUTTON.EDIT' | translate}}</button>
+  <div class="footer-buttons">
+    <button mat-stroked-button class="default-button" (click)="edit()"><i class="material-icons button-icon">create</i> {{'JOBOFFER.BUTTON.EDIT' | translate}}</button>
+    <button mat-stroked-button (click)="cancel()"><i class="material-icons button-icon">clear</i>{{'JOBOFFEREDIT.BUTTON.CANCEL' | translate}}</button>
+  </div>
 </div>
