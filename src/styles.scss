@@ -31,18 +31,18 @@ body {
   width: 50%;
 }
 
-.footer{
+.footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   background-color: $secondary-dark;
   color: black;
-  text-align: center;  
+  text-align: center;
   .footer-content {
     font-size: 18px;
   }
-  img{
+  img {
     cursor: pointer;
   }
 }
@@ -96,18 +96,32 @@ form {
 .pointer {
   cursor: pointer;
 }
-.default-button{
-    background: $primary-light;
-    color:white
+.default-button {
+  background: $primary-light;
+  color: white;
 }
-.footer-buttons{
+.footer-buttons {
   display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 50%;
-    margin-left: 25%;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  margin-left: 25%;
 }
-i.button-icon{
+i.button-icon {
   font-size: 15px;
   padding-right: 5px;
+}
+input:-internal-autofill-selected {
+  background-color: $primary-light;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+  color: $secondary;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
