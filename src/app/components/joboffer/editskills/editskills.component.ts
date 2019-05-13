@@ -38,7 +38,6 @@ export class EditSkillsComponent implements OnInit {
 
   selected(event: MatAutocompleteSelectedEvent) {
     const skill = event.option.value;
-    console.log(skill);
     this.element.skills.push(skill);
     this.skillInput.nativeElement.value = '';
     this.skillCtrl.setValue(null);
@@ -73,11 +72,9 @@ export class EditSkillsComponent implements OnInit {
 
   removeSkill(skill: Skill) {
     this.element.skills.splice(this.element.skills.indexOf(skill, 0), 1);
-    console.log(this.element.skills);
   }
 
   searchSkills(query: string) {
-    console.log(query);
     if (!query) {
       this.skillService.get().subscribe((response) => {
         this.skills = response;

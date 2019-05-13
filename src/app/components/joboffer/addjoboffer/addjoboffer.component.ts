@@ -36,17 +36,11 @@ export class AddjobofferComponent implements OnInit {
   ngOnInit() {
     if (this.authenticationService.isLoggedIn() && this.authenticationService.isCompany()) {
       this.currentCompany = this.authenticationService.user as Company;
-
-      console.log(this.authenticationService.user);
-      console.log(this.currentCompany);
-    } else {
-      console.log('idk if ur logged in or sum?');
     }
   }
 
   onSubmit() {
     this.jobOffer.company = this.currentCompany.uuid;
-    console.log(this.jobOffer);
     this.jobOfferService.addJobOffer(this.jobOffer).subscribe((response: JobOffer) => {
         const snackbarRef = this.snackbar.open('Job offer successfully created', 'dismiss', {
           duration: 300
