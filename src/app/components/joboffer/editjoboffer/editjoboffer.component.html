@@ -46,6 +46,7 @@
              [(ngModel)]="joboffer.information"
              [ngModelOptions]="{standalone: true}">
     </mat-form-field>
+    <app-edit-skills [element]="joboffer"></app-edit-skills>
   </form>
   <div class="footer-buttons">
     <button mat-stroked-button class="default-button" (click)="edit()"><i class="material-icons button-icon">create</i> {{'JOBOFFER.BUTTON.EDIT' | translate}}</button>

@@ -62,6 +62,7 @@
                  name="passwordConfirm">
           <mat-error>Error: {{ getErrorMessage('confirm') }}</mat-error>
         </mat-form-field>
+        <app-edit-skills [element]="student"></app-edit-skills>
         <button type="submit" mat-raised-button class="default-button">{{'REGISTER.BUTTON.CONFIRM' | translate}}</button>
       </form>
     </mat-tab>

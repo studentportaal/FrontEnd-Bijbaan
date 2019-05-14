@@ -21,6 +21,7 @@ import { AddjobofferComponent } from './components/joboffer/addjoboffer/addjobof
 import { EditjobofferComponent } from './components/joboffer/editjoboffer/editjoboffer.component';
 import { CompanyFilterDialogComponent } from './components/joboffer/companyfilterdialog/companyfilterdialog.component';
 import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjoboffers.component';
+import { EditSkillsComponent } from './components/joboffer/editskills/editskills.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjob
     AddjobofferComponent,
     EditjobofferComponent,
     CompanyFilterDialogComponent,
-    OwnjoboffersComponent
+    OwnjoboffersComponent,
+    EditSkillsComponent
   ],
   imports: [
     BrowserModule,
