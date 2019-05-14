@@ -50,7 +50,7 @@
       <a mat-menu-item class="language-icon" color="default" title="{{'NAVBAR.ENGLISH' | translate}}" (click)="setLanguage('en')" ><img src="../assets/gb.png" (click)="setLanguage('en')"></a>
       <a mat-menu-item class="language-icon" color="default" title="{{'NAVBAR.DUTCH' | translate}}" (click)="setLanguage('nl')"><img src="../assets/nl.png" (click)="setLanguage('nl')"></a>
     </mat-menu>
-      <a class="pointer nav-item-link" [mat-menu-trigger-for]="menu">{{'NAVBAR.SELECT.LANGUAGE' | translate}}<i class="material-icons nav-icon">language</i></a>
+      <a class="pointer nav-item-link" [mat-menu-trigger-for]="menu"><img src="../assets/{{languageicon}}.png"></a>
     </ng-container>
 </mat-toolbar>
 
