@@ -43,12 +43,23 @@
     <a class="nav-item-link" title="{{'NAVBAR.LOGIN' | translate}}"
       routerLink="/login"> {{'NAVBAR.LOGIN' | translate}} <i class="material-icons nav-icon">account_circle</i></a>
   </ng-container>
+
+  <!-- Selecting language -->
+  <ng-container>
+    <mat-menu #menu="matMenu">
+      <a mat-menu-item class="language-icon" color="default" title="{{'NAVBAR.ENGLISH' | translate}}" (click)="setLanguage('en')" ><img src="../assets/gb.png" (click)="setLanguage('en')"></a>
+      <a mat-menu-item class="language-icon" color="default" title="{{'NAVBAR.DUTCH' | translate}}" (click)="setLanguage('nl')"><img src="../assets/nl.png" (click)="setLanguage('nl')"></a>
+    </mat-menu>
+      <a class="pointer nav-item-link" [mat-menu-trigger-for]="menu">{{'NAVBAR.SELECT.LANGUAGE' | translate}}<i class="material-icons nav-icon">language</i></a>
+    </ng-container>
 </mat-toolbar>
 
 <router-outlet></router-outlet>
 
 <div class="footer">
   <div class="footer-content">
-    <p>{{'FOOTER.SELECT.LANGUAGE' | translate}}: <img src="../assets/nl.png" (click)="setLanguage('nl')"> / <img src="../assets/gb.png" (click)="setLanguage('en')"> </p>
+    <p>
+        © Jobby       <!-- {{'FOOTER.SELECT.LANGUAGE' | translate}}: <img src="../assets/nl.png" (click)="setLanguage('nl')"> / <img src="../assets/gb.png" (click)="setLanguage('en')">  -->
+    </p>
   </div>
 </div>

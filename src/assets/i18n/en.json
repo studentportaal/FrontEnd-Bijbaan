@@ -7,10 +7,10 @@
     "LOGIN": "Login",
     "LOGOUT": "Log out",
     "MYJOBOFFERS": "My posted job offers",
-    "ADDJOBOFFER": "Add job offer"
-  },
-  "FOOTER": {
-    "SELECT.LANGUAGE": "Select language"
+    "ADDJOBOFFER": "Add job offer",
+    "SELECT.LANGUAGE": "Select language",
+    "DUTCH": "Dutch",
+    "ENGLISH": "English"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals"
