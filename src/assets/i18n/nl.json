@@ -53,6 +53,7 @@
     "JOBOFFERS": "Vacatures",
     "NOJOBOFFERS": "Geen vacatures.",
     "TOPOFDAY": "Dagtopper",
+    "TOPOFDAYS": "Daily Tops",
     "ADD": {
       "TITLE": "Vacature toevoegen",
       "BUTTON": "Vacature toevoegen"
@@ -67,25 +68,20 @@
     },
     "BUTTON.APPLY": "Solliciteren",
     "BUTTON.EDIT": "Wijzigen",
+    "BUTTON.CANCEL": "Annuleren",
     "LABEL.POSITION": "Functie",
     "LABEL.SALARY": "Salaris",
     "LABEL.JOBDESCRIPTION": "Taakomschrijving",
     "LABEL.LOCATION": "Locatie",
     "LABEL.COMPANY": "Bedrijf",
     "LABEL.TITLE": "Titel",
-    "LABEL.APPLICANT.COUNT": "Al {{count}} mensen hebben gereageerd op deze vacature"
-  },
-  "JOBOFFEREDIT": {
-    "BUTTON.CANCEL": "Annuleren",
-    "LABEL.TITLE": "Aanpassen vacature",
-    "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast",
+    "BUTTON.FILTERCOMPANY": "Filter op bedrijf",
+    "DIALOG.FILTER.BUTTON": "Filter",
     "TITLE.APPLICANTS": "Sollicitanten",
     "BUTTON.VIEW.PROFILE": "Bekijk profiel",
-    "LABEL.COMPANY": "Bedrijf",
-    "BUTTON.FILTER.COMPANY": "Filter op bedrijf",
-    "DIALOG.FILTER.BUTTON": "Filter"
+    "LABEL.APPLICANT.COUNT": "Al {{count}} mensen hebben gereageerd op deze vacature",
+    "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast"
   },
-
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Annuleren",
     "LABEL.TITLE": "Wijzigen",

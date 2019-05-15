@@ -68,3 +68,16 @@ table {
     }
   }
 }
+.topofday-table {
+  margin-bottom: 20px;
+}
+.topofday-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i.material-icons{
+    margin-left:5px;
+    font-size: 20px;
+    color: $primary-dark;
+  }
+}
