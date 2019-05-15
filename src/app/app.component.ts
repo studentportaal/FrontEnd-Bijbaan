@@ -9,6 +9,7 @@ import {AuthenticationService} from './services/authentication/authentication.se
 })
 export class AppComponent implements OnInit {
   title = 'Jobby';
+  languageicon = 'gb';
 
   constructor(public translate: TranslateService, public authenticationService: AuthenticationService) {
     // this language will be used as a fallback when a translation isn't found in the current language
@@ -27,9 +28,11 @@ export class AppComponent implements OnInit {
   setLanguage(language: string) {
     switch (language) {
       case "nl":
+          this.languageicon = 'nl';
           this.translate.use('nl');
           break;
       case "en":
+          this.languageicon = 'gb';
           this.translate.use('en');
           break;
       default:

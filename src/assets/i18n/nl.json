@@ -7,10 +7,10 @@
     "LOGIN": "Inloggen",
     "LOGOUT": "Uitloggen",
     "MYJOBOFFERS": "My posted job offers",
-    "ADDJOBOFFER": "Vacature toevoegen"
-  },
-  "FOOTER": {
-    "SELECT.LANGUAGE": "Selecteer taal"
+    "ADDJOBOFFER": "Vacature toevoegen",
+    "SELECT.LANGUAGE": "Selecteer taal",
+    "DUTCH": "Nederlands",
+    "ENGLISH": "Engels"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal! We hebben geen bijbanen :)"
@@ -47,6 +47,7 @@
     "FIELD.DATE": "Geboortedatum",
     "FIELD.INSTITUTE": "School",
     "FIELD.EMAIL": "Email",
+    "FIELD.SKILLS": "Vaardigheden",
     "BUTTON.CONFIRM": "Aanpassen"
   },
   "JOBOFFER": {
@@ -80,7 +81,8 @@
     "TITLE.APPLICANTS": "Sollicitanten",
     "BUTTON.VIEW.PROFILE": "Bekijk profiel",
     "LABEL.APPLICANT.COUNT": "Al {{count}} mensen hebben gereageerd op deze vacature",
-    "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast"
+    "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast",
+    "LABEL.SKILLS": "Vaardigheden"
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Annuleren",

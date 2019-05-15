@@ -31,6 +31,15 @@
             <ng-container *ngIf="joboffer.information">
               <mat-list-item><p><b>{{'JOBOFFER.FIELD.INFORMATION.PLACEHOLDER' | translate}}:</b> {{joboffer.information}}</p></mat-list-item>
             </ng-container>
+        <ng-container *ngIf="joboffer.skills">
+          <mat-list-item>
+            <mat-chip-list aria-orientation="vertical" >
+              <p><b>{{'JOBOFFER.LABEL.SKILLS' | translate}}</b></p>
+              <mat-chip color="primary" *ngFor="let skill of joboffer.skills" >{{skill.name | titlecase}}</mat-chip>
+            </mat-chip-list>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </ng-container>
       </mat-list>
 
       <div class="apply-container" *ngIf="joboffer.applicants && joboffer.applicants.length > 0">
@@ -40,6 +49,7 @@
                            authenticationService.isStudent()">
         <button mat-stroked-button class="default-button" title="apply" routerLink="/joboffers/details/{{joboffer.id}}/apply"><i class="material-icons button-icon">check</i> {{'JOBOFFER.BUTTON.APPLY' | translate}}</button>
       </ng-container>
+      <br/>
       <ng-container *ngIf="joboffer &&
                            joboffer.applicants &&
                            authenticationService.isCompany() &&

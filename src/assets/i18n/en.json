@@ -7,10 +7,10 @@
     "LOGIN": "Login",
     "LOGOUT": "Log out",
     "MYJOBOFFERS": "My posted job offers",
-    "ADDJOBOFFER": "Add job offer"
-  },
-  "FOOTER": {
-    "SELECT.LANGUAGE": "Select language"
+    "ADDJOBOFFER": "Add job offer",
+    "SELECT.LANGUAGE": "Select language",
+    "DUTCH": "Dutch",
+    "ENGLISH": "English"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals"
@@ -47,6 +47,7 @@
     "FIELD.DATE": "Date of birth",
     "FIELD.INSTITUTE": "Institute",
     "FIELD.EMAIL": "Email",
+    "FIELD.SKILLS": "Skills",
     "BUTTON.CONFIRM": "Edit profile"
   },
   "JOBOFFER": {
@@ -80,7 +81,8 @@
     "TITLE.APPLICANTS": "Applicants",
     "BUTTON.VIEW.PROFILE": "View profile",
     "LABEL.APPLICANT.COUNT": "{{count}} people have already applied",
-    "SNACKBAR.SUCCES.MESSAGE": "Succesfully edited job offer"
+    "SNACKBAR.SUCCES.MESSAGE": "Succesfully edited job offer",
+    "LABEL.SKILLS": "Skills"
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Cancel",

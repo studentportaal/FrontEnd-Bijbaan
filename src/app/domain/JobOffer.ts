@@ -1,7 +1,5 @@
-import { Student } from "./Student";
-import { CompanyService } from '../services/company/company.service';
-import { HttpClient } from '@angular/common/http';
-
+import {Student} from "./Student";
+import {Skill} from "./Skill";
 
 export class JobOffer {
   id: string;
@@ -13,6 +11,7 @@ export class JobOffer {
   company: string;
   topOfTheDay: Date;
   applicants: Student[];
+  skills: Skill[] = [];
 
   constructor() {
   }
