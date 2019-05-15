@@ -18,7 +18,13 @@ export class JobofferlistComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   jobOffers: JobOffer[];
-  topOfDayJobOffers: JobOffer[];
+  topOfDayJobOffers: JobOffer[] = [];
+  // pagedTopOfday: JobOffer[] = [];
+  // topOfDayPageSize: number = 3;
+  // topOfDayPageIndex: number;
+  // topOfDayLength: number;
+
+
   companies: string[] = [];
   companiesAsCompanies: Company[];
   length: number;
@@ -83,8 +89,13 @@ export class JobofferlistComponent implements OnInit {
   public getAllTopOfDaysJobOffers(){
     this.jobOfferService.getAllTopOfDaysJobOffers().subscribe((response) => {
       this.topOfDayJobOffers = response;
-      this.topOfDayDataSource = new MatTableDataSource(this.topOfDayJobOffers);
-      this.topOfDayDataSource.sort = this.sort;
+      for(var i = 0; i < 3; i++){
+        this.topOfDayJobOffers.push(response[0]);
+      }
+      // this.pagedTopOfday = this.topOfDayJobOffers.slice(0,3);
+      // this.topOfDayLength = this.topOfDayJobOffers.length;
+      // this.topOfDayDataSource = new MatTableDataSource(this.topOfDayJobOffers);
+      // this.topOfDayDataSource.sort = this.sort;
     });
   }
 
