@@ -5,6 +5,7 @@ import {CompanyService} from '../../../services/company/company.service';
 import {Company} from '../../../domain/Company';
 import {JobOffer} from '../../../domain/JobOffer';
 import {AuthenticationService} from '../../../services/authentication/authentication.service';
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'app-joboffer',
@@ -39,6 +40,21 @@ export class JobofferComponent implements OnInit {
 
   receiveBoolean($boolean) {
     this.editBoolean = $boolean;
+  }
+
+  alreadyApplied(): boolean {
+    if (this.joboffer.applications.length === 0) {
+      return false;
+    }
+
+    let hasApplied = false;
+    this.joboffer.applications.forEach((application) => {
+      if (application.applicant.uuid === this.authenticationService.user.uuid) {
+        hasApplied = true;
+      }
+    });
+
+    return hasApplied;
   }
 
 }
