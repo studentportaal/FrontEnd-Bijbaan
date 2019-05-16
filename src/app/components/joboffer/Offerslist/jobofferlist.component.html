@@ -4,7 +4,7 @@
       {{'JOBOFFER.BUTTON.FILTERCOMPANY' | translate}}
     </button></h1>
     <div class="topofday-container" *ngIf="topOfDayJobOffers?.length > 0 && topOfDayJobOffers?.length <= 3">
-      <mat-card (click)="getJobOffer(topofday.id)" class="topofday-card pointer" *ngFor="let topofday of topOfDayJobOffers">
+      <mat-card (click)="getJobOffer(topofday.id)" class="topofday-card pointer mat-elevation-z8" *ngFor="let topofday of topOfDayJobOffers">
         <mat-card-header>
           <mat-card-title>{{topofday.title | titlecase}}</mat-card-title>
           <mat-card-subtitle>{{topofday.company.name}}</mat-card-subtitle>
@@ -16,7 +16,7 @@
       </mat-card>
     </div>
     <div class="topofday-container multiple" *ngIf="topOfDayJobOffers?.length > 3">
-      <mat-card (click)="getJobOffer(topofday.id)" class="topofday-card pointer" *ngFor="let topofday of topOfDayJobOffers">
+      <mat-card (click)="getJobOffer(topofday.id)" class="topofday-card pointer mat-elevation-z8" *ngFor="let topofday of topOfDayJobOffers">
         <mat-card-header>
           <mat-card-title>{{topofday.title | titlecase}}</mat-card-title>
           <mat-card-subtitle>{{topofday.company.name}}</mat-card-subtitle>
@@ -33,7 +33,7 @@
       matSortDisableClear class="joboffer-table">
       <ng-container matColumnDef="topOfTheDay">
         <mat-header-cell class="first-item" *matHeaderCellDef mat-sort-header> </mat-header-cell>
-        <mat-cell class="first-item" *matCellDef="let joboffer"><b *ngIf="joboffer.topOfTheDay"><i
+        <mat-cell class="first-item" *matCellDef="let joboffer"><b *ngIf="isWithinOneDay(joboffer.topOfTheDay)"><i
               class="material-icons" title="{{'JOBOFFER.TOPOFDAY' | translate}}">check_circle</i></b></mat-cell>
       </ng-container>
       <ng-container matColumnDef="title">
@@ -64,20 +64,8 @@
   </div>
   <div *ngIf="!jobOffers?.length">
     <p>{{ 'JOBOFFER.NOJOBOFFERS' | translate}}</p>
-    <!-- TODO: Add company filtered names: -->
-    <!-- <div class="" *ngIf="companies"> 
-              <ul>
-                <li *ngFor="let company of companies">
-                    {{company}}
-                </li>
-              </ul>
-            </div>
-            <div *ngIf="!companies">None</div> -->
-
-
   </div>
   <mat-paginator #paginator [length]="length" [pageSize]="pageSize" [pageIndex]="pageIndex"
     [pageSizeOptions]="[5, 10, 25, 100]" (page)="pageEvent = getServerData($event)">
   </mat-paginator>
-  <!-- </mat-card> -->
 </div>

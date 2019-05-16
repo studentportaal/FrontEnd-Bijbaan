@@ -19,19 +19,12 @@ export class JobofferlistComponent implements OnInit {
 
   jobOffers: JobOffer[];
   topOfDayJobOffers: JobOffer[] = [];
-  // pagedTopOfday: JobOffer[] = [];
-  // topOfDayPageSize: number = 3;
-  // topOfDayPageIndex: number;
-  // topOfDayLength: number;
-
-
   companies: string[] = [];
   companiesAsCompanies: Company[];
   length: number;
   pageSize: number;
   pageIndex: number;
   pageEvent: PageEvent;
-  topOfDayDataSource = new MatTableDataSource(this.topOfDayJobOffers);
   dataSource = new MatTableDataSource(this.jobOffers);
 
   constructor(private jobOfferService: JobofferService,
@@ -89,13 +82,6 @@ export class JobofferlistComponent implements OnInit {
   public getAllTopOfDaysJobOffers(){
     this.jobOfferService.getAllTopOfDaysJobOffers().subscribe((response) => {
       this.topOfDayJobOffers = response;
-      // for(var i = 0; i < 2; i++){
-      //   this.topOfDayJobOffers.push(response[0]);
-      // }
-      // this.pagedTopOfday = this.topOfDayJobOffers.slice(0,3);
-      // this.topOfDayLength = this.topOfDayJobOffers.length;
-      // this.topOfDayDataSource = new MatTableDataSource(this.topOfDayJobOffers);
-      // this.topOfDayDataSource.sort = this.sort;
     });
   }
 
@@ -110,5 +96,14 @@ export class JobofferlistComponent implements OnInit {
         return comp.name;
       }
     }
+  }
+
+  isWithinOneDay(topofday){
+    let date = new Date(topofday).getTime();
+    var OneDay = new Date().getTime() - (1 * 24 * 60 * 60 * 1000);
+    if (date > OneDay) {
+      return true;
+    }
+    return false;
   }
 }
