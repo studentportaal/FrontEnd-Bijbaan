@@ -1,5 +1,6 @@
 import {Student} from "./Student";
 import {Skill} from "./Skill";
+import {Application} from "./Application";
 
 export class JobOffer {
   id: string;
@@ -10,7 +11,7 @@ export class JobOffer {
   salary: number;
   company: string;
   topOfTheDay: Date;
-  applicants: Student[];
+  applications: Application[];
   skills: Skill[] = [];
 
   constructor() {
