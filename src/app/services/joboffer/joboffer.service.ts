@@ -24,7 +24,7 @@ export class JobofferService {
     return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}`);
   }
 
-  getAllTopOfDaysJobOffers(){
+  getAllTopOfDaysJobOffers() {
     return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + '/topofday/all');
   }
 

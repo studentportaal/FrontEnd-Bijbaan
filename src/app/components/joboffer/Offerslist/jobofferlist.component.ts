@@ -79,7 +79,7 @@ export class JobofferlistComponent implements OnInit {
     return event;
   }
 
-  public getAllTopOfDaysJobOffers(){
+  public getAllTopOfDaysJobOffers() {
     this.jobOfferService.getAllTopOfDaysJobOffers().subscribe((response) => {
       this.topOfDayJobOffers = response;
     });
@@ -98,9 +98,9 @@ export class JobofferlistComponent implements OnInit {
     }
   }
 
-  isWithinOneDay(topofday){
-    let date = new Date(topofday).getTime();
-    var OneDay = new Date().getTime() - (1 * 24 * 60 * 60 * 1000);
+  isWithinOneDay(topofday) {
+    const date = new Date(topofday).getTime();
+    const OneDay = new Date().getTime() - (1 * 24 * 60 * 60 * 1000);
     if (date > OneDay) {
       return true;
     }
