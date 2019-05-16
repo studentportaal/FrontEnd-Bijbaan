@@ -89,9 +89,9 @@ export class JobofferlistComponent implements OnInit {
   public getAllTopOfDaysJobOffers(){
     this.jobOfferService.getAllTopOfDaysJobOffers().subscribe((response) => {
       this.topOfDayJobOffers = response;
-      for(var i = 0; i < 3; i++){
-        this.topOfDayJobOffers.push(response[0]);
-      }
+      // for(var i = 0; i < 2; i++){
+      //   this.topOfDayJobOffers.push(response[0]);
+      // }
       // this.pagedTopOfday = this.topOfDayJobOffers.slice(0,3);
       // this.topOfDayLength = this.topOfDayJobOffers.length;
       // this.topOfDayDataSource = new MatTableDataSource(this.topOfDayJobOffers);

@@ -88,6 +88,10 @@ table {
     align-content: center;
     align-items: center;
     // flex-direction: column;
+
+    &::-webkit-scrollbar { 
+      display: none; 
+   }
     &.multiple{
       overflow-y: hidden;
       overflow-x: auto;
