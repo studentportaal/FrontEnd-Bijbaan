@@ -66,7 +66,7 @@ export class JobofferlistComponent implements OnInit {
         this.pageSize = event.pageSize;
         this.pageIndex = event.pageIndex;
       }
-      this.jobOfferService.getAllJobOffers((Math.imul(this.pageSize, this.pageIndex)), this.pageSize, this.companies).subscribe(
+      this.jobOfferService.getAllJobOffers((Math.imul(this.pageSize, this.pageIndex)), this.pageSize, this.companies, true).subscribe(
         reply => {
           this.jobOffers = reply;
           this.dataSource = new MatTableDataSource(this.jobOffers);

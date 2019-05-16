@@ -18,9 +18,9 @@ export class JobofferService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAllJobOffers(startNr: number, amount: number, companies: string[]): Observable<JobOffer[]> {
+  getAllJobOffers(startNr: number, amount: number, companies: string[], isOpen: boolean): Observable<JobOffer[]> {
     if (companies !== undefined) {
-      return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&companies=${companies.toString()}`);
+      return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&companies=${companies.toString()}&open=${isOpen}`);
     }
     return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}`);
   }
@@ -39,6 +39,10 @@ export class JobofferService {
 
   applyForJob(a: Application, id: string) {
     return this.httpClient.patch(this.jobOfferBaseUrl + '/' + id, a);
+  }
+
+  acceptApplicant(jobOfferId: string, applicationId: string) {
+    return this.httpClient.patch(`${this.jobOfferBaseUrl}/${jobOfferId}/applications/${applicationId}`, undefined);
   }
 
   setSkills(skills: Skill[], id: string) {
