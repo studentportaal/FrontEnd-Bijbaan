@@ -79,6 +79,7 @@
     "BUTTON.FILTERCOMPANY": "Filter by company",
     "DIALOG.FILTER.BUTTON": "Filter",
     "TITLE.APPLICANTS": "Applicants",
+    "APPLICANTS.NONE": "No applicants have applied yet.",
     "BUTTON.VIEW.PROFILE": "View profile",
     "LABEL.APPLICANT.COUNT": "{{count}} people have already applied",
     "SNACKBAR.SUCCES.MESSAGE": "Succesfully edited job offer",

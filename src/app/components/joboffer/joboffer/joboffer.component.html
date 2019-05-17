@@ -71,6 +71,7 @@
           <mat-divider *ngIf="!last"></mat-divider>
         </mat-list-item>
       </mat-list>
+      <span *ngIf="joboffer.applicants?.length <= 0">{{'JOBOFFER.APPLICANTS.NONE' | translate}}</span>
     </ng-container>
   </div>
 </ng-template>

@@ -79,6 +79,7 @@
     "BUTTON.FILTERCOMPANY": "Filter op bedrijf",
     "DIALOG.FILTER.BUTTON": "Filter",
     "TITLE.APPLICANTS": "Sollicitanten",
+    "APPLICANTS.NONE": "Geen sollicitanten",
     "BUTTON.VIEW.PROFILE": "Bekijk profiel",
     "LABEL.APPLICANT.COUNT": "Al {{count}} mensen hebben gereageerd op deze vacature",
     "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast",
