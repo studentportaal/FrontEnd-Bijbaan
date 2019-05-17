@@ -5,12 +5,9 @@ import { MatAutocomplete, MatChipInputEvent, MatSnackBar } from '@angular/materi
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { Company } from 'src/app/domain/Company';
-import { SkillService } from "../../../services/skill/skill.service";
 import { Skill } from "../../../domain/Skill";
 import { COMMA, ENTER } from "@angular/cdk/keycodes";
-import { MatAutocompleteSelectedEvent } from "@angular/material/typings/esm5/autocomplete";
 import { FormControl } from "@angular/forms";
-import { map, startWith } from "rxjs/operators";
 
 @Component({
   selector: 'app-addjoboffer',
