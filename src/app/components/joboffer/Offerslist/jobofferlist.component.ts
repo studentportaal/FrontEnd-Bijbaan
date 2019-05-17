@@ -3,7 +3,7 @@ import { JobOffer } from '../../../domain/JobOffer';
 import { Company } from '../../../domain/Company';
 import { Router } from '@angular/router';
 import { JobofferService } from '../../../services/joboffer/joboffer.service';
-import { MatDialog, MatSortable, PageEvent, MatSort, MatSortModule } from '@angular/material';
+import { MatDialog, PageEvent, MatSort} from '@angular/material';
 import { CompanyFilterDialogComponent } from '../companyfilterdialog/companyfilterdialog.component';
 import { AuthenticationService } from '../../../services/authentication/authentication.service';
 import { CompanyService } from '../../../services/company/company.service';

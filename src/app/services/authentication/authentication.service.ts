@@ -23,7 +23,7 @@ export class AuthenticationService {
   constructor(private httpClient: HttpClient) {
     const user = JSON.parse(localStorage.getItem('currentUser'));
     const userType = JSON.parse(localStorage.getItem('currentUserType'));
-    if(user === null || user === undefined) {
+    if (user === null || user === undefined) {
       return;
     }
 
@@ -49,7 +49,8 @@ export class AuthenticationService {
 
 
     this.httpClient.get<string>(environment.API_BASE + '/auth/token/refresh?refreshKey=' + token['refreshKey'] + '&userId=' + token['sub']).subscribe(newToken => {
-      console.log(JSON.stringify(newToken));
+      localStorage.setItem('token', newToken);
+      this.token = newToken;
     });
   }
 
@@ -92,19 +93,13 @@ export class AuthenticationService {
   }
 
   public async logout() {
-    console.log("loggiing out");
-
     if (this.hasToken()) {
-      console.log('deleting token');
       const token = this.jwtHelper.decodeToken(this.token);
-      const result = await this.httpClient.delete(environment.API_BASE + '/auth/token/' + token['tokenId'])
+      await this.httpClient.delete(environment.API_BASE + '/auth/token/' + token['tokenId'])
         .toPromise()
         .then(res => {
-          console.log(res);
           localStorage.removeItem('token');
         }).catch(e => {
-          console.log("error!");
-          console.log(e);
           localStorage.removeItem('token');
         });
     }
