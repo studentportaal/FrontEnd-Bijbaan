@@ -43,14 +43,14 @@
       </div>
       <ng-container *ngIf="authenticationService.user &&
                            authenticationService.isStudent()">
-        <button mat-stroked-button class="default-button" title="apply" routerLink="/joboffers/details/{{joboffer.id}}/apply"><i class="material-icons button-icon">check</i> {{'JOBOFFER.BUTTON.APPLY' | translate}}</button>
+        <button mat-stroked-button class="default-button" title="apply" routerLink="/joboffers/details/{{joboffer.id}}/apply"><i class="material-icons-round button-icon">check</i> {{'JOBOFFER.BUTTON.APPLY' | translate}}</button>
       </ng-container>
       <br/>
       <ng-container *ngIf="joboffer &&
                            joboffer.applicants &&
                            authenticationService.isCompany() &&
                            authenticationService.checkCurrentUser(joboffer.company)">
-                           <button mat-stroked-button color="default" title="edit" (click)="edit()"><i class="material-icons button-icon">create</i> {{'JOBOFFER.BUTTON.EDIT' | translate}}</button>
+                           <button mat-stroked-button color="default" title="edit" (click)="edit()"><i class="material-icons-round button-icon">create</i> {{'JOBOFFER.BUTTON.EDIT' | translate}}</button>
 
       </ng-container>
     </ng-container>
@@ -64,7 +64,7 @@
       <mat-list class="small-list" >
         <mat-list-item *ngFor="let student of joboffer.applicants; let last = last">
           <div class="applicant-list">
-            <i class="material-icons">person</i><span> {{ student.firstName }} {{ student.lastName }}</span>
+            <i class="material-icons-round">person</i><span> {{ student.firstName }} {{ student.lastName }}</span>
             <button class="profile-btn default-button" mat-stroked-button routerLink="/user/view-profile/{{student.uuid}}">
               {{ 'JOBOFFER.BUTTON.VIEW.PROFILE' | translate }}</button>
           </div>
