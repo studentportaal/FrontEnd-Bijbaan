@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   title = 'Jobby';
   languageicon = 'gb';
 
-  constructor(public translate: TranslateService, private authenticationService: AuthenticationService, private route: ActivatedRoute, private snackbar: MatSnackBar, private router: Router) {
+  constructor(public translate: TranslateService, public authenticationService: AuthenticationService, private route: ActivatedRoute, private snackbar: MatSnackBar, private router: Router) {
     // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang('en');
 
