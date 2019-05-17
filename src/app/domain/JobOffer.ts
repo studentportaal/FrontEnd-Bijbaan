@@ -1,3 +1,6 @@
+import {Student} from "./Student";
+import {Skill} from "./Skill";
+
 export class JobOffer {
   id: string;
   location: string;
@@ -6,4 +9,10 @@ export class JobOffer {
   function: string;
   salary: number;
   company: string;
+  topOfTheDay: Date;
+  applicants: Student[];
+  skills: Skill[] = [];
+
+  constructor() {
+  }
 }

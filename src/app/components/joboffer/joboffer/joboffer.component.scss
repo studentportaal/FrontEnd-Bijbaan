@@ -1,3 +1,68 @@
-a {
-  color: black;
+@import "../../../../vars";
+
+h1{
+  margin:10px;
 }
+
+.profile-btn {
+  margin-left: auto;
+}
+.applicant-container{
+  mat-list-item {
+    border: 1px solid $primary-light;
+    border-radius: 10px;
+    background-color: $secondary;
+    margin-bottom: 10px;
+  }
+}
+
+.mat-chip.mat-standard-chip {
+  background-color: $primary-light;
+  color: white;
+}
+
+.applicant-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  i{
+    align-self: left;
+    font-size: 25px;
+  }
+}
+
+a {
+  color: gray;
+  text-decoration: none;
+  display: inline;
+  padding-left:10px;
+  padding-top:10px;
+  padding-bottom:10px;
+  &:hover{
+    padding-left:10px;
+    padding-right:10px;
+    background:rgba(0,0,0,.04);
+    border-radius: 20px;
+  }
+}
+
+mat-list{
+  margin: 50px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.applicant-count{
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  color: grey;
+}
+
+.apply-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+

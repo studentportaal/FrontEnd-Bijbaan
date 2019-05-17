@@ -1,13 +1,19 @@
 {
   "NAVBAR": {
     "PROFILE": "Profile",
-    "REGISTER": "New account",
+    "REGISTER": "Register",
     "EDITPROFILE" : "Edit profile",
-    "JOBOFFERS": "Joboffers",
-    "LOGIN": "Login"
+    "JOBOFFERS": "Job offers",
+    "LOGIN": "Login",
+    "LOGOUT": "Log out",
+    "MYJOBOFFERS": "My posted job offers",
+    "ADDJOBOFFER": "Add job offer",
+    "SELECT.LANGUAGE": "Select language",
+    "DUTCH": "Dutch",
+    "ENGLISH": "English"
   },
   "HOME": {
-    "WELCOME.MESSAGE": "Welcome to our job portal. we don't have jobs and we don't have portals"
+    "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals"
   },
   "LOGIN": {
     "FIELD.EMAIL.PLACEHOLDER": "Email",
@@ -34,28 +40,63 @@
     "FIELD.DESCRIPTION.PLACEHOLDER": "Description"
   },
   "USERPROFILE": {
-    "TITLE" : "Profile",
-    "EDITTITLE" : "Edit profile",
-    "FIELD.FIRSTNAME" : "First name",
-    "FIELD.LASTNAME" : "Last name",
-    "FIELD.DATE" : "Date of birth",
+    "TITLE": "Profile",
+    "EDITTITLE": "Edit profile",
+    "FIELD.FIRSTNAME": "First name",
+    "FIELD.LASTNAME": "Last name",
+    "FIELD.DATE": "Date of birth",
     "FIELD.INSTITUTE": "Institute",
-    "FIELD.EMAIL" : "Email",
-    "BUTTON.CONFIRM" : "Edit profile"
+    "FIELD.EMAIL": "Email",
+    "FIELD.SKILLS": "Skills",
+    "BUTTON.CONFIRM": "Edit profile"
   },
   "JOBOFFER": {
+    "JOBOFFERS": "Job offers",
+    "NOJOBOFFERS": "No job offers.",
+    "TOPOFDAY": "Daily Top",
+    "TOPOFDAYS": "Daily Tops",
+    "ADD": {
+      "TITLE": "Add new job offer",
+      "BUTTON": "Add job offer"
+    },
+    "FIELD": {
+      "LOCATION.PLACEHOLDER": "Location",
+      "TITLE.PLACEHOLDER": "Title",
+      "INFORMATION.PLACEHOLDER": "Information",
+      "FUNCTION.PLACEHOLDER": "Function",
+      "SALARY.PLACEHOLDER": "Salary",
+      "COMPANY.PLACEHOLDER": "Company"
+    },
+    "APPLY.TITLE": "Apply",
     "BUTTON.APPLY": "Apply",
     "BUTTON.EDIT": "Edit",
+    "BUTTON.CANCEL": "Cancel",
     "LABEL.POSITION": "Position",
     "LABEL.SALARY": "Salary",
     "LABEL.JOBDESCRIPTION": "Job Description",
     "LABEL.LOCATION": "Location",
     "LABEL.COMPANY": "Company",
-    "LABEL.TITLE": "Title"
+    "LABEL.TITLE": "Title",
+    "BUTTON.FILTERCOMPANY": "Filter by company",
+    "DIALOG.FILTER.BUTTON": "Filter",
+    "TITLE.APPLICANTS": "Applicants",
+    "APPLICANTS.NONE": "No applicants have applied yet.",
+    "BUTTON.VIEW.PROFILE": "View profile",
+    "LABEL.APPLICANT.COUNT": "{{count}} people have already applied",
+    "SNACKBAR.SUCCES.MESSAGE": "Succesfully edited job offer",
+    "LABEL.SKILLS": "Skills",
+    "SKILL.ADDTEXT": "Add skills to make your job offer findable"
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Cancel",
     "LABEL.TITLE": "Edit job offer",
-    "SNACKBAR.SUCCES.MESSAGE": "Succesfully updated joboffer"
+    "SNACKBAR.SUCCES.MESSAGE": "Succesfully updated job offer"
+  },
+  "COMPANY": {
+    "DESCRIPTION": "Description",
+    "CITY": "City",
+    "STREET": "Street",
+    "HOUSENUMBER": "House number",
+    "ZIPCODE": "Zip code"
   }
 }

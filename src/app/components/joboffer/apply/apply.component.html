@@ -1,10 +1,10 @@
 <div class="container container-sm">
-  <h1 class="mat-display-1">Solliciteren</h1>
+  <h1 class="mat-display-1">{{'JOBOFFER.APPLY.TITLE' | translate}}</h1>
   <form class="application-form" (ngSubmit)="onSubmit()">
     <mat-form-field>
       <input matInput required
              type="email"
-             placeholder="E-mail"
+             placeholder="{{'USERPROFILE.FIELD.EMAIL' | translate}}"
              [ngModel]="user.email"
              [ngModelOptions]="{standalone: true}"
              name="email">
@@ -12,7 +12,7 @@
     <mat-form-field>
       <input matInput required
              type="text"
-             placeholder="Voornaam"
+             placeholder="{{'USERPROFILE.FIELD.FIRSTNAME' | translate}}"
              [ngModel]="user.firstName"
              [ngModelOptions]="{standalone: true}"
              name="firstName">
@@ -20,7 +20,7 @@
     <mat-form-field>
       <input matInput required
              type="text"
-             placeholder="Achternaam"
+             placeholder="{{'USERPROFILE.FIELD.LASTNAME' | translate}}"
              [ngModel]="user.lastName"
              [ngModelOptions]="{standalone: true}"
              type="text">
@@ -28,11 +28,11 @@
     <mat-form-field>
       <input matInput required
              type="text"
-             placeholder="Instituut"
+             placeholder="{{'USERPROFILE.FIELD.INSTITUTE' | translate}}"
              [ngModel]="user.institute"
              [ngModelOptions]="{standalone: true}"
              name="institute">
     </mat-form-field>
-    <button type="submit" mat-raised-button color="primary">Aanmelden</button>
+    <button type="submit" mat-raised-button class="default-button"><i class="material-icons-round button-icon">check</i>{{'JOBOFFER.BUTTON.APPLY' | translate}}</button>
   </form>
 </div>

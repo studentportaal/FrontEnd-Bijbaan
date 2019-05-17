@@ -22,14 +22,16 @@ export class LoginComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
+    this.authenticationService.logout();
   }
 
   companyLogin() {
-    this.authenticationService.loginAsCompany(this.company).subscribe( (response) => {
-      const company: Company = response;
-      this.authenticationService.setSession(company, UserType.COMPANY);
+    this.authenticationService.loginAsCompany(this.company).subscribe( async (response) => {
+      const token: string = response;
+      await this.authenticationService.setSession(token, UserType.COMPANY);
       const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
-        duration: 1500});
+        duration: 1500
+      });
       snackbarRef.afterDismissed().subscribe(() => {
         this.router.navigateByUrl('/');
       });
@@ -38,11 +40,12 @@ export class LoginComponent implements OnInit {
   }
 
   studentLogin() {
-    this.authenticationService.loginAsStudent(this.user).subscribe( (response) => {
-      const user: Student = response;
-      this.authenticationService.setSession(user, UserType.STUDENT);
+    this.authenticationService.loginAsStudent(this.user).subscribe( async (response) => {
+      const token: string = response;
+      await this.authenticationService.setSession(token, UserType.STUDENT);
       const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
-        duration: 1500});
+        duration: 1500
+      });
       snackbarRef.afterDismissed().subscribe(() => {
         this.router.navigateByUrl('/');
       });

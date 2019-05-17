@@ -6,44 +6,84 @@ import {environment} from '../../../environments/environment';
 import {Company} from "../../domain/Company";
 import {User} from "../../domain/User";
 import {UserType} from "../../domain/UserType";
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
   public user: User;
-  userType: UserType;
+  public userType: UserType;
+  private token: string;
+  private jwtHelper: JwtHelperService = new JwtHelperService();
 
   private baseUrlStudent: string = environment.API_BASE + '/users';
   private baseUrlCompany: string = environment.API_BASE + '/company';
+  private fontysAuthUrl: string = environment.FONTYS_AUTH;
 
   constructor(private httpClient: HttpClient) {
-  }
-
-  public loginAsStudent(student: Student): Observable<Student> {
-    return this.httpClient.post<Student>(this.baseUrlStudent + '/login', student);
-  }
-
-  public fontysLogin(code: string): Observable<Student> {
-    return this.httpClient.get<Student>('http://localhost:5000/login?authorization=' + code);
-  }
-
-  public loginAsCompany(company: Company): Observable<Company> {
-    return this.httpClient.post<Company>(this.baseUrlCompany + '/login', company);
-  }
-
-  public setSession(user: User, type: UserType) {
-    localStorage.setItem('currentUser', JSON.stringify(user));
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    const userType = JSON.parse(localStorage.getItem('currentUserType'));
+    if (user === null || user === undefined) {
+      return;
+    }
     this.user = user;
+    this.userType = userType;
+    this.token = localStorage.getItem('token');
+  }
+
+  public isExpired() {
+    return this.jwtHelper.isTokenExpired(this.token);
+  }
+
+  public hasToken() {
+    return (this.token != null);
+  }
+
+  public getToken() {
+    return this.token;
+  }
+
+  public async refreshToken() {
+    const token = this.jwtHelper.decodeToken(this.token);
+
+
+    this.httpClient.get<string>(environment.API_BASE + '/auth/token/refresh?refreshKey=' + token['refreshKey'] + '&userId=' + token['sub']).subscribe(newToken => {
+      localStorage.setItem('token', newToken);
+      this.token = newToken;
+    });
+  }
+
+
+  public loginAsStudent(student: Student): Observable<string> {
+    return this.httpClient.post<string>(this.baseUrlStudent + '/login', student);
+  }
+
+  public loginAsCompany(company: Company): Observable<string> {
+    return this.httpClient.post<string>(this.baseUrlCompany + '/login', company);
+  }
+
+  public fontysLogin(code: string): Observable<string> {
+    return this.httpClient.get<string>(this.fontysAuthUrl + '/login?authorization=' + code);
+  }
+
+  public async setSession(token: string, type: UserType) {
+    localStorage.setItem('token', token);
+    this.token = token;
+    localStorage.setItem('currentUserType', JSON.stringify(type));
     this.userType = type;
+    await this.httpClient.get<User>(environment.API_BASE + '/auth/me').subscribe(me => {
+      this.user = me;
+      localStorage.setItem("currentUser", JSON.stringify(me));
+    });
+  }
+
+  public checkCurrentUser(id: string) {
+    return this.user.uuid === id;
   }
 
   public isLoggedIn() {
     return JSON.parse(localStorage.getItem('currentUser')) != null;
-  }
-
-  public checkCurrentUser(id: string) {
-    return JSON.parse(localStorage.getItem('currentUser')).id === id;
   }
 
   public isStudent(): boolean {
@@ -52,5 +92,21 @@ export class AuthenticationService {
 
   public isCompany(): boolean {
     return this.userType === UserType.COMPANY;
+  }
+
+  public async logout() {
+    if (this.hasToken()) {
+      const token = this.jwtHelper.decodeToken(this.token);
+      await this.httpClient.delete(environment.API_BASE + '/auth/token/' + token['tokenId'])
+        .toPromise()
+        .then(res => {
+          localStorage.removeItem('token');
+        }).catch(e => {
+          localStorage.removeItem('token');
+        });
+    }
+
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('currentUserType');
   }
 }

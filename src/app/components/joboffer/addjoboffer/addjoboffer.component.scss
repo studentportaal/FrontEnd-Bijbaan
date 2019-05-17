@@ -1,0 +1,23 @@
+h1{
+  margin:10px;
+}
+
+.container {
+  text-align: center;
+  form{
+    margin:50px;
+    margin-top:15px;
+    margin-bottom: 10px;
+  }
+}
+
+.add-joboffer-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  button{
+    width: 150px;
+    align-self: center;
+  }
+}
+

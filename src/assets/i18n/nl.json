@@ -1,13 +1,26 @@
 {
   "NAVBAR": {
     "PROFILE": "Profiel",
-    "REGISTER": "Nieuwe account",
+    "REGISTER": "Registreren",
     "EDITPROFILE": "Profiel aanpassen",
-    "JOBOFFERS": "Vacatures"
-
+    "JOBOFFERS": "Vacatures",
+    "LOGIN": "Inloggen",
+    "LOGOUT": "Uitloggen",
+    "MYJOBOFFERS": "Mijn geplaatste vacatures",
+    "ADDJOBOFFER": "Vacature toevoegen",
+    "SELECT.LANGUAGE": "Selecteer taal",
+    "DUTCH": "Nederlands",
+    "ENGLISH": "Engels"
   },
   "HOME": {
-    "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal!"
+    "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal! We hebben geen bijbanen :)"
+  },
+  "LOGIN": {
+    "FIELD.EMAIL.PLACEHOLDER": "Email",
+    "FIELD.PASSWORD.PLACEHOLDER": "Wachtwoord",
+    "BUTTON.LOGIN": "Inloggen",
+    "TITLE.STUDENT": "Inloggen als student",
+    "TITLE.COMPANY": "Inloggen als bedrijf"
   },
   "REGISTER": {
     "TITLE": "Registreren",
@@ -18,26 +31,73 @@
     "FIELD.INSTITUTE.PLACEHOLDER": "School",
     "FIELD.PASSWORD.PLACEHOLDER": "Wachtwoord",
     "FIELD.PASSWORDCONFIRM.PLACEHOLDER": "Wachtwoord bevestigen",
-    "BUTTON.CONFIRM": "Account aanmaken"
+    "BUTTON.CONFIRM": "Account aanmaken",
+    "FIELD.COMPANY.PLACEHOLDER": "Bedrijfsnaam",
+    "FIELD.CITY.PLACEHOLDER": "Stad",
+    "FIELD.POSTAL.PLACEHOLDER": "Postcode",
+    "FIELD.STREET.PLACEHOLDER": "Straat",
+    "FIELD.HOUSE.PLACEHOLDER": "Huisnummer",
+    "FIELD.DESCRIPTION.PLACEHOLDER": "Beschrijving"
   },
   "USERPROFILE": {
-    "TITLE" : "Profiel",
-    "EDITTITLE" : "Profiel aanpassen",
-    "FIELD.FIRSTNAME" : "Voornaam",
-    "FIELD.LASTNAME" : "Achternaam",
-    "FIELD.DATE" : "Geboortedatum",
+    "TITLE": "Profiel",
+    "EDITTITLE": "Profiel aanpassen",
+    "FIELD.FIRSTNAME": "Voornaam",
+    "FIELD.LASTNAME": "Achternaam",
+    "FIELD.DATE": "Geboortedatum",
     "FIELD.INSTITUTE": "School",
-    "FIELD.EMAIL" : "Email",
-    "BUTTON.CONFIRM" : "Aanpassen"
+    "FIELD.EMAIL": "Email",
+    "FIELD.SKILLS": "Vaardigheden",
+    "BUTTON.CONFIRM": "Aanpassen"
   },
-
   "JOBOFFER": {
+    "JOBOFFERS": "Vacatures",
+    "NOJOBOFFERS": "Geen vacatures.",
+    "TOPOFDAY": "Dagtopper",
+    "TOPOFDAYS": "Daily Tops",
+    "ADD": {
+      "TITLE": "Vacature toevoegen",
+      "BUTTON": "Vacature toevoegen"
+    },
+    "FIELD": {
+      "LOCATION.PLACEHOLDER": "Locatie",
+      "TITLE.PLACEHOLDER": "Titel",
+      "INFORMATION.PLACEHOLDER": "Informatie",
+      "FUNCTION.PLACEHOLDER": "Functie",
+      "SALARY.PLACEHOLDER": "Salaris",
+      "COMPANY.PLACEHOLDER": "Bedrijf"
+    },
+    "APPLY.TITLE": "Solliciteren",
     "BUTTON.APPLY": "Solliciteren",
     "BUTTON.EDIT": "Wijzigen",
+    "BUTTON.CANCEL": "Annuleren",
     "LABEL.POSITION": "Functie",
     "LABEL.SALARY": "Salaris",
     "LABEL.JOBDESCRIPTION": "Taakomschrijving",
     "LABEL.LOCATION": "Locatie",
-    "LABEL.COMPANY": "Bedrijf"
+    "LABEL.COMPANY": "Bedrijf",
+    "LABEL.TITLE": "Titel",
+    "BUTTON.FILTERCOMPANY": "Filteren op bedrijf",
+    "DIALOG.FILTER.BUTTON": "Filter",
+    "TITLE.APPLICANTS": "Sollicitanten",
+    "APPLICANTS.NONE": "Geen sollicitanten",
+    "BUTTON.VIEW.PROFILE": "Bekijk profiel",
+    "LABEL.APPLICANT.COUNT": "Al {{count}} mensen hebben gereageerd op deze vacature",
+    "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast",
+    "LABEL.SKILLS": "Vaardigheden",
+    "SKILL.ADDTEXT": "Voeg vaardigheden toe om je vacature vindbaar te maken"
+
+  },
+  "JOBOFFEREDIT": {
+    "BUTTON.CANCEL": "Annuleren",
+    "LABEL.TITLE": "Wijzigen",
+    "SNACKBAR.SUCCES.MESSAGE": "Wijzigingen succesvol opgeslagen."
+  },
+  "COMPANY": {
+    "DESCRIPTION": "Beschrijving",
+    "CITY": "Stad",
+    "STREET": "Straat",
+    "HOUSENUMBER": "Huisnummmer",
+    "ZIPCODE": "Postcode"
   }
 }

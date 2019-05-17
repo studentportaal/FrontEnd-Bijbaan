@@ -24,7 +24,7 @@ export class ApplyComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('currentUser'));
+    this.user = this.authenticationService.user as Student;
   }
 
   onSubmit() {

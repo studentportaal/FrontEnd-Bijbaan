@@ -72,7 +72,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSortModule,
     MatPaginatorModule
   ],
-  exports:[
+  exports: [
     MatCheckboxModule,
     MatCheckboxModule,
     MatButtonModule,

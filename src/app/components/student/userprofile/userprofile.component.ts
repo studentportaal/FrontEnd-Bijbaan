@@ -10,7 +10,7 @@ import {AuthenticationService} from '../../../services/authentication/authentica
 })
 export class UserprofileComponent implements OnInit {
 
-  private user: any;
+  user: any;
 
   constructor(private activatedRoute: ActivatedRoute,
               private userService: UserService,
