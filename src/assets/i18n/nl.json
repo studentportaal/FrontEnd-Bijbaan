@@ -89,5 +89,12 @@
     "BUTTON.CANCEL": "Annuleren",
     "LABEL.TITLE": "Wijzigen",
     "SNACKBAR.SUCCES.MESSAGE": "Wijzigingen succesvol opgeslagen."
+  },
+  "COMPANY": {
+    "DESCRIPTION": "Beschrijving",
+    "CITY": "Stad",
+    "STREET": "Straat",
+    "HOUSENUMBER": "Huisnummmer",
+    "ZIPCODE": "Postcode"
   }
 }

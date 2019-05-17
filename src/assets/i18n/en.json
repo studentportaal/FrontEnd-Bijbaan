@@ -89,5 +89,12 @@
     "BUTTON.CANCEL": "Cancel",
     "LABEL.TITLE": "Edit job offer",
     "SNACKBAR.SUCCES.MESSAGE": "Succesfully updated job offer"
+  },
+  "COMPANY": {
+    "DESCRIPTION": "Description",
+    "CITY": "City",
+    "STREET": "Street",
+    "HOUSENUMBER": "House number",
+    "ZIPCODE": "Zip code"
   }
 }
