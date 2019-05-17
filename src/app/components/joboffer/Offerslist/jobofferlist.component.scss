@@ -56,7 +56,8 @@ table {
     }
   }
   .first-item{
-    flex: 0 0 75px;
+    color: $primary;
+    flex: 0 0 45px;
   }
   .parent{
     display:inline-flex;
@@ -67,4 +68,80 @@ table {
       max-width: 150px;
     }
   }
+}
+.topofday-table {
+  margin-bottom: 20px;
+}
+.topofday-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i.material-icons{
+    margin-left:5px;
+    font-size: 20px;
+    color: $primary-dark;
+  }
+}
+.topofday-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    // flex-direction: column;
+
+    &::-webkit-scrollbar { 
+      display: none; 
+   }
+    &.multiple{
+      overflow-y: hidden;
+      overflow-x: auto;
+      display: -webkit-box;
+    }
+    .topofday-card{
+      height: 150px;
+      width: 33%;
+      max-width: 300px;
+      margin:15px;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      padding-bottom:15px;
+      padding-top: 25px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      mat-card-header{
+        display: block;
+        .mat-card-title{
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          color:royalblue;
+          overflow: hidden;
+          word-break: break-all;
+          height: 28px;
+        }
+      }
+      .mat-card-content{
+        word-wrap: break-word;
+        height: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow: hidden;
+      }
+      .topper-text{
+        font-size: 15px;
+        .topofday-icon{
+          margin-left: 5px;
+          font-size:20px;
+          color: $primary;
+          display: inline-flex;
+          vertical-align: top;
+          font-size: bold;
+        }
+      }
+      &:hover{
+        background-color: $secondary;
+      }
+
+    }
 }

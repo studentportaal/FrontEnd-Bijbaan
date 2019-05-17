@@ -54,6 +54,7 @@
     "JOBOFFERS": "Job offers",
     "NOJOBOFFERS": "No job offers.",
     "TOPOFDAY": "Daily Top",
+    "TOPOFDAYS": "Daily Tops",
     "ADD": {
       "TITLE": "Add new job offer",
       "BUTTON": "Add job offer"
@@ -68,6 +69,7 @@
     },
     "BUTTON.APPLY": "Apply",
     "BUTTON.EDIT": "Edit",
+    "BUTTON.CANCEL": "Cancel",
     "LABEL.POSITION": "Position",
     "LABEL.SALARY": "Salary",
     "LABEL.JOBDESCRIPTION": "Job Description",
@@ -79,6 +81,7 @@
     "TITLE.APPLICANTS": "Applicants",
     "BUTTON.VIEW.PROFILE": "View profile",
     "LABEL.APPLICANT.COUNT": "{{count}} people have already applied",
+    "SNACKBAR.SUCCES.MESSAGE": "Succesfully edited job offer",
     "LABEL.SKILLS": "Skills"
   },
   "JOBOFFEREDIT": {
