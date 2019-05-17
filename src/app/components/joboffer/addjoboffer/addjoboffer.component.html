@@ -41,10 +41,9 @@
           [ngModelOptions]="{standalone: true}" 
           name="salary">
       </mat-form-field>
+      
+      <app-edit-skills [element]="jobOffer"></app-edit-skills>
       <button type="submit" mat-raised-button class="default-button"> <i class="material-icons-round">add</i> {{'JOBOFFER.ADD.BUTTON' | translate}}</button>
-
-    <app-edit-skills [element]="jobOffer"></app-edit-skills>
-      <button type="submit" mat-raised-button color="primary">{{'JOBOFFER.ADD.BUTTON' | translate}}</button>
   </form>
 
 </div>
