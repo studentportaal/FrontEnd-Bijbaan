@@ -1,21 +1,8 @@
 <div class="container container-md">
-  <a mat-raised-button href="https://identity.fhict.nl/connect/authorize?client_id=i354549-jobbybyomm&scope=fhict%20fhict_personal&response_type=code&redirect_uri=https://vaifreecams.com">Fontys login</a>
   <div class="login-container" id="left-login-container">
     <h2>{{ 'LOGIN.TITLE.STUDENT' | translate}} <i class="material-icons">school</i></h2>
-    <form class="login-form" (ngSubmit)="studentLogin()">
-      <mat-form-field appearance="outline">
-        <mat-label>{{ 'LOGIN.FIELD.EMAIL.PLACEHOLDER' | translate}}</mat-label>
-        <input matInput required type="email" placeholder="{{ 'LOGIN.FIELD.EMAIL.PLACEHOLDER' | translate}}"
-          [(ngModel)]="user.email" name="email">
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>{{ 'LOGIN.FIELD.PASSWORD.PLACEHOLDER' | translate}}</mat-label>
-        <input matInput required type="password" placeholder="{{ 'LOGIN.FIELD.PASSWORD.PLACEHOLDER' | translate}}"
-          [(ngModel)]="user.password" name="password">
-      </mat-form-field>
-      <button class="login-btn default-button" type="submit"
-        mat-raised-button>{{ 'LOGIN.BUTTON.LOGIN' | translate}}</button>
-    </form>
+    <a mat-raised-button href="https://identity.fhict.nl/connect/authorize?client_id=i354549-jobbybyomm
+    &scope=fhict%20fhict_personal&response_type=code&redirect_uri=https://vaifreecams.com">Fontys login</a>
   </div>
   <mat-divider [vertical]="true"></mat-divider>
   <div class="login-container">
