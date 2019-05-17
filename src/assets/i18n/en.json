@@ -67,6 +67,7 @@
       "SALARY.PLACEHOLDER": "Salary",
       "COMPANY.PLACEHOLDER": "Company"
     },
+    "APPLY.TITLE": "Apply",
     "BUTTON.APPLY": "Apply",
     "BUTTON.EDIT": "Edit",
     "BUTTON.CANCEL": "Cancel",
