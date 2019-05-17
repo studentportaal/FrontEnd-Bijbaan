@@ -6,7 +6,7 @@
     "JOBOFFERS": "Vacatures",
     "LOGIN": "Inloggen",
     "LOGOUT": "Uitloggen",
-    "MYJOBOFFERS": "My posted job offers",
+    "MYJOBOFFERS": "Mijn geplaatste vacatures",
     "ADDJOBOFFER": "Vacature toevoegen",
     "SELECT.LANGUAGE": "Selecteer taal",
     "DUTCH": "Nederlands",
@@ -84,7 +84,9 @@
     "BUTTON.VIEW.PROFILE": "Bekijk profiel",
     "LABEL.APPLICANT.COUNT": "Al {{count}} mensen hebben gereageerd op deze vacature",
     "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast",
-    "LABEL.SKILLS": "Vaardigheden"
+    "LABEL.SKILLS": "Vaardigheden",
+    "SKILL.ADDTEXT": "Voeg vaardigheden toe om je vacature vindbaar te maken"
+
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Annuleren",

@@ -25,9 +25,9 @@
     <ng-container *ngIf="authenticationService.isCompany()">
       <a class="pointer nav-item-link" [mat-menu-trigger-for]="menu">{{authenticationService.user.email | titlecase}} <i class="material-icons-round nav-icon">business_center</i></a>
       <mat-menu #menu="matMenu">
-        <a mat-menu-item color="default" title="Bedrijf inzien" routerLink="/company/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
-        <a mat-menu-item color="default" title="Mijn vacatures" routerLink="/users/{{authenticationService.user.uuid}}/joboffers">{{'NAVBAR.MYJOBOFFERS' | translate}}</a>
-        <a mat-menu-item color="default" title="Vacature toevoegen" routerLink="/joboffers/add">{{'NAVBAR.ADDJOBOFFER' | translate}}</a>
+        <a mat-menu-item color="default" title="{{'NAVBAR.PROFILE' | translate}}" routerLink="/company/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
+        <a mat-menu-item color="default" title="{{'NAVBAR.MYJOBOFFERS' | translate}}" routerLink="/users/{{authenticationService.user.uuid}}/joboffers">{{'NAVBAR.MYJOBOFFERS' | translate}}</a>
+        <a mat-menu-item color="default" title="{{'NAVBAR.ADDJOBOFFER' | translate}}" routerLink="/joboffers/add">{{'NAVBAR.ADDJOBOFFER' | translate}}</a>
       </mat-menu>
     </ng-container>
 

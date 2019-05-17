@@ -84,7 +84,8 @@
     "BUTTON.VIEW.PROFILE": "View profile",
     "LABEL.APPLICANT.COUNT": "{{count}} people have already applied",
     "SNACKBAR.SUCCES.MESSAGE": "Succesfully edited job offer",
-    "LABEL.SKILLS": "Skills"
+    "LABEL.SKILLS": "Skills",
+    "SKILL.ADDTEXT": "Add skills to make your job offer findable"
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Cancel",
