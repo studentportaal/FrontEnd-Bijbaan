@@ -67,6 +67,7 @@
       "SALARY.PLACEHOLDER": "Salary",
       "COMPANY.PLACEHOLDER": "Company"
     },
+    "APPLY.TITLE": "Apply",
     "BUTTON.APPLY": "Apply",
     "BUTTON.EDIT": "Edit",
     "BUTTON.CANCEL": "Cancel",
@@ -79,14 +80,23 @@
     "BUTTON.FILTERCOMPANY": "Filter by company",
     "DIALOG.FILTER.BUTTON": "Filter",
     "TITLE.APPLICANTS": "Applicants",
+    "APPLICANTS.NONE": "No applicants have applied yet.",
     "BUTTON.VIEW.PROFILE": "View profile",
     "LABEL.APPLICANT.COUNT": "{{count}} people have already applied",
     "SNACKBAR.SUCCES.MESSAGE": "Succesfully edited job offer",
-    "LABEL.SKILLS": "Skills"
+    "LABEL.SKILLS": "Skills",
+    "SKILL.ADDTEXT": "Add skills to make your job offer findable"
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Cancel",
     "LABEL.TITLE": "Edit job offer",
     "SNACKBAR.SUCCES.MESSAGE": "Succesfully updated job offer"
+  },
+  "COMPANY": {
+    "DESCRIPTION": "Description",
+    "CITY": "City",
+    "STREET": "Street",
+    "HOUSENUMBER": "House number",
+    "ZIPCODE": "Zip code"
   }
 }

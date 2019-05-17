@@ -6,7 +6,7 @@
     "JOBOFFERS": "Vacatures",
     "LOGIN": "Inloggen",
     "LOGOUT": "Uitloggen",
-    "MYJOBOFFERS": "My posted job offers",
+    "MYJOBOFFERS": "Mijn geplaatste vacatures",
     "ADDJOBOFFER": "Vacature toevoegen",
     "SELECT.LANGUAGE": "Selecteer taal",
     "DUTCH": "Nederlands",
@@ -67,6 +67,7 @@
       "SALARY.PLACEHOLDER": "Salaris",
       "COMPANY.PLACEHOLDER": "Bedrijf"
     },
+    "APPLY.TITLE": "Solliciteren",
     "BUTTON.APPLY": "Solliciteren",
     "BUTTON.EDIT": "Wijzigen",
     "BUTTON.CANCEL": "Annuleren",
@@ -76,17 +77,27 @@
     "LABEL.LOCATION": "Locatie",
     "LABEL.COMPANY": "Bedrijf",
     "LABEL.TITLE": "Titel",
-    "BUTTON.FILTERCOMPANY": "Filter op bedrijf",
+    "BUTTON.FILTERCOMPANY": "Filteren op bedrijf",
     "DIALOG.FILTER.BUTTON": "Filter",
     "TITLE.APPLICANTS": "Sollicitanten",
+    "APPLICANTS.NONE": "Geen sollicitanten",
     "BUTTON.VIEW.PROFILE": "Bekijk profiel",
     "LABEL.APPLICANT.COUNT": "Al {{count}} mensen hebben gereageerd op deze vacature",
     "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast",
-    "LABEL.SKILLS": "Vaardigheden"
+    "LABEL.SKILLS": "Vaardigheden",
+    "SKILL.ADDTEXT": "Voeg vaardigheden toe om je vacature vindbaar te maken"
+
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Annuleren",
     "LABEL.TITLE": "Wijzigen",
     "SNACKBAR.SUCCES.MESSAGE": "Wijzigingen succesvol opgeslagen."
+  },
+  "COMPANY": {
+    "DESCRIPTION": "Beschrijving",
+    "CITY": "Stad",
+    "STREET": "Straat",
+    "HOUSENUMBER": "Huisnummmer",
+    "ZIPCODE": "Postcode"
   }
 }
