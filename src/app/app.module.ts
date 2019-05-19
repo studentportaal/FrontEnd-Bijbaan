@@ -8,7 +8,7 @@ import { UserprofileComponent } from './components/student/userprofile/userprofi
 import { HomeComponent } from './components/general/home/home.component';
 import { RegisterComponent } from './components/student/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { JobofferlistComponent } from './components/joboffer/Offerslist/jobofferlist.component';
@@ -22,6 +22,7 @@ import { EditjobofferComponent } from './components/joboffer/editjoboffer/editjo
 import { CompanyFilterDialogComponent } from './components/joboffer/companyfilterdialog/companyfilterdialog.component';
 import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjoboffers.component';
 import { EditSkillsComponent } from './components/joboffer/editskills/editskills.component';
+import {AuthenticationInterceptor} from "./interceptors/authentication/authentication.interceptor";
 
 
 @NgModule({
@@ -63,7 +64,13 @@ import { EditSkillsComponent } from './components/joboffer/editskills/editskills
   entryComponents: [
     CompanyFilterDialogComponent,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthenticationInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

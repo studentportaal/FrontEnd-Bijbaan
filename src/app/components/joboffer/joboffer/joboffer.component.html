@@ -10,8 +10,7 @@
           <mat-divider></mat-divider>
         </ng-container>
         <ng-container *ngIf="joboffer.salary">
-          <mat-list-item><p><b>{{'JOBOFFER.FIELD.SALARY.PLACEHOLDER' | translate}}:</b> € {{joboffer.salary}}</p>
-          </mat-list-item>
+          <mat-list-item><p><b>{{'JOBOFFER.FIELD.SALARY.PLACEHOLDER' | translate}}:</b> € {{joboffer.salary}}</p></mat-list-item>
           <mat-divider></mat-divider>
         </ng-container>
         <ng-container *ngIf="joboffer.information">
@@ -40,7 +39,6 @@
               <mat-chip color="primary" *ngFor="let skill of joboffer.skills">{{skill.name | titlecase}}</mat-chip>
             </mat-chip-list>
           </mat-list-item>
-          <mat-divider></mat-divider>
         </ng-container>
       </mat-list>
 
@@ -87,6 +85,7 @@
           <mat-divider *ngIf="!last"></mat-divider>
         </mat-list-item>
       </mat-list>
+      <span *ngIf="joboffer.applicants?.length <= 0">{{'JOBOFFER.APPLICANTS.NONE' | translate}}</span>
     </ng-container>
   </div>
 </ng-template>

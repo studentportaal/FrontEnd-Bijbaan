@@ -3,7 +3,7 @@ import { JobOffer } from '../../../domain/JobOffer';
 import { Company } from '../../../domain/Company';
 import { Router } from '@angular/router';
 import { JobofferService } from '../../../services/joboffer/joboffer.service';
-import { MatDialog, MatSortable, PageEvent, MatSort, MatSortModule } from '@angular/material';
+import { MatDialog, PageEvent, MatSort} from '@angular/material';
 import { CompanyFilterDialogComponent } from '../companyfilterdialog/companyfilterdialog.component';
 import { AuthenticationService } from '../../../services/authentication/authentication.service';
 import { CompanyService } from '../../../services/company/company.service';
@@ -18,6 +18,7 @@ export class JobofferlistComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   jobOffers: JobOffer[];
+  topOfDayJobOffers: JobOffer[] = [];
   companies: string[] = [];
   companiesAsCompanies: Company[];
   length: number;
@@ -37,6 +38,7 @@ export class JobofferlistComponent implements OnInit {
     this.pageSize = 25;
     this.getServerData(null);
     this.getCompanies();
+    this.getAllTopOfDaysJobOffers();
   }
 
   public openDialog() {
@@ -77,6 +79,12 @@ export class JobofferlistComponent implements OnInit {
     return event;
   }
 
+  public getAllTopOfDaysJobOffers() {
+    this.jobOfferService.getAllTopOfDaysJobOffers().subscribe((response) => {
+      this.topOfDayJobOffers = response;
+    });
+  }
+
   public getJobOffer(joboffer: string) {
     const url: string = '/joboffers/details/' + joboffer;
     this.router.navigateByUrl(url);
@@ -88,5 +96,14 @@ export class JobofferlistComponent implements OnInit {
         return comp.name;
       }
     }
+  }
+
+  isWithinOneDay(topofday) {
+    const date = new Date(topofday).getTime();
+    const OneDay = new Date().getTime() - (1 * 24 * 60 * 60 * 1000);
+    if (date > OneDay) {
+      return true;
+    }
+    return false;
   }
 }
