@@ -38,7 +38,6 @@ export class EditjobofferComponent implements OnInit {
         this.joboffer[originalJobOfferKey] = this.originalJobOffer[originalJobOfferKey];
       }
     }
-    console.log(this.joboffer)
     this.jobofferService.editJoboffer(this.joboffer).subscribe((response) => {
       const snackbarRef = this.snackBar.open('Job offer was edited', 'dismiss', {duration: 2000});
 
