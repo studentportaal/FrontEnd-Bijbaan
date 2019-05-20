@@ -20,7 +20,9 @@
     "FIELD.PASSWORD.PLACEHOLDER": "Password",
     "BUTTON.LOGIN": "Login",
     "TITLE.STUDENT": "Login as student",
-    "TITLE.COMPANY": "Login as company"
+    "TITLE.COMPANY": "Login as company",
+    "FONTYS": "Login with Fontys"
+
   },
   "REGISTER": {
     "TITLE": "Register",
