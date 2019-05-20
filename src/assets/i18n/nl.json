@@ -85,8 +85,8 @@
     "LABEL.APPLICANT.COUNT": "Al {{count}} mensen hebben gereageerd op deze vacature",
     "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast",
     "LABEL.SKILLS": "Vaardigheden",
-    "SKILL.ADDTEXT": "Voeg vaardigheden toe om je vacature vindbaar te maken"
-
+    "SKILL.ADDTEXT": "Voeg vaardigheden toe om je vacature vindbaar te maken",
+    "APPLICANTS.HEADER": "Sollicitanten"
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Annuleren",

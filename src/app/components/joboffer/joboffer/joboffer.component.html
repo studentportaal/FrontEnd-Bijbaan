@@ -32,6 +32,7 @@
           <mat-list-item><p><b>{{'JOBOFFER.FIELD.INFORMATION.PLACEHOLDER' | translate}}:</b> {{joboffer.information}}
           </p></mat-list-item>
         </ng-container>
+        <mat-divider></mat-divider>
         <ng-container *ngIf="joboffer.skills">
           <mat-list-item>
             <mat-chip-list aria-orientation="vertical">
@@ -69,7 +70,7 @@
                                              authenticationService.isCompany() &&
                                              authenticationService.checkCurrentUser(joboffer.company)">
     <ng-container>
-      <h2>Applicants</h2>
+      <h1 class="mat-display-1">{{ 'JOBOFFER.TITLE.APPLICANTS' | translate }}</h1>
       <mat-list class="small-list">
         <mat-list-item *ngFor="let application of joboffer.applications; let last = last">
           <div class="applicant-list">
@@ -85,6 +86,7 @@
           <mat-divider *ngIf="!last"></mat-divider>
         </mat-list-item>
       </mat-list>
+      <span *ngIf="joboffer.applications?.length <= 0">{{'JOBOFFER.APPLICANTS.NONE' | translate}}</span>
     </ng-container>
   </div>
 </ng-template>
