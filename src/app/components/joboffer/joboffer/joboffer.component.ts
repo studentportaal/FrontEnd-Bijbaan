@@ -5,6 +5,8 @@ import {CompanyService} from '../../../services/company/company.service';
 import {Company} from '../../../domain/Company';
 import {JobOffer} from '../../../domain/JobOffer';
 import {AuthenticationService} from '../../../services/authentication/authentication.service';
+import {forEach} from "@angular/router/src/utils/collection";
+import {MatDialog, MatSnackBar} from "@angular/material";
 
 @Component({
   selector: 'app-joboffer',
@@ -19,7 +21,8 @@ export class JobofferComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private jobOfferService: JobofferService,
               private companyService: CompanyService,
-              private authenticationService: AuthenticationService) { }
+              private authenticationService: AuthenticationService,
+              private snackbar: MatSnackBar) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -39,6 +42,28 @@ export class JobofferComponent implements OnInit {
 
   receiveBoolean($boolean) {
     this.editBoolean = $boolean;
+  }
+
+  alreadyApplied(): boolean {
+    if (this.joboffer.applications.length === 0) {
+      return false;
+    }
+
+    let hasApplied = false;
+    this.joboffer.applications.forEach((application) => {
+      if (application.applicant.uuid === this.authenticationService.user.uuid) {
+        hasApplied = true;
+      }
+    });
+
+    return hasApplied;
+  }
+
+  acceptApplication(applicationId: string) {
+    this.jobOfferService.acceptApplicant(this.joboffer.id, applicationId).subscribe((response) => {
+      const snackbarRef = this.snackbar.open('Applicant accepted', 'dismiss', {
+        duration: 1500});
+    });
   }
 
 }
