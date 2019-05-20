@@ -12,7 +12,7 @@ export class JobOffer {
   topOfTheDay: Date;
   applications: Application[];
   skills: Skill[] = [];
-  open: boolean;
+  isOpen: boolean;
 
   constructor() {
   }
