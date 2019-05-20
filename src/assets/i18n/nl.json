@@ -20,7 +20,8 @@
     "FIELD.PASSWORD.PLACEHOLDER": "Wachtwoord",
     "BUTTON.LOGIN": "Inloggen",
     "TITLE.STUDENT": "Inloggen als student",
-    "TITLE.COMPANY": "Inloggen als bedrijf"
+    "TITLE.COMPANY": "Inloggen als bedrijf",
+    "FONTYS": "Inloggen met Fontys"
   },
   "REGISTER": {
     "TITLE": "Registreren",
