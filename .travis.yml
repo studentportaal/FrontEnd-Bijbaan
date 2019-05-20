@@ -1,29 +1,21 @@
-#.travis.yml
-
 language: node_js
 node_js:
-  - "9.0"
-
+- '9.0'
 before_script:
-  - npm install -g @angular/cli
-  - npm install
-
+- npm install -g @angular/cli
+- npm install
 script:
-  - ng lint
-  - ng build --prod
-
-before_deploy:
-  - openssl aes-256-cbc -K $encrypted_f532364904ea_key -iv $encrypted_f532364904ea_iv
-    -in pts-bijbaan-service-account.json.enc -out pts-bijbaan-service-account.json
-    -d
-
+- ng lint
+- ng build --prod
 deploy:
   provider: gae
-  keyfile: pts-bijbaan-service-account.json
+  keyfile: pts6-bijbaan-d53842ba1161.json
   project: pts6-bijbaan
   skip_cleanup: true
   on:
     branch: master
-
 notifications:
   slack: git-gud-workspace:ENPyEfwTZtAjfFDdgmJeTWe1
+before_install:
+- openssl aes-256-cbc -K $encrypted_f532364904ea_key -iv $encrypted_f532364904ea_iv
+  -in pts6-bijbaan-d53842ba1161.json.enc -out pts6-bijbaan-d53842ba1161.json -d
