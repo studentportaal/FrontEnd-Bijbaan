@@ -13,19 +13,32 @@ import {MatSnackBar} from '@angular/material';
 export class EditjobofferComponent implements OnInit {
 
   @Input() joboffer: JobOffer;
+  originalJobOffer: JobOffer;
   @Input() company: Company;
   @Output() editBoolean = new EventEmitter<boolean>();
 
   constructor(private activatedRoute: ActivatedRoute,
               private jobofferService: JobofferService,
               private snackBar: MatSnackBar,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   ngOnInit() {
     this.joboffer.company = this.company.uuid;
+    this.jobofferService.getJobOffer(this.joboffer.id).subscribe(response => {
+      this.joboffer = response;
+      this.originalJobOffer = JSON.parse(JSON.stringify(response));
+      console.log(this.joboffer)
+    });
   }
 
   edit() {
+    for (const originalJobOfferKey in this.originalJobOffer) {
+      if (this.joboffer[originalJobOfferKey] == null) {
+        this.joboffer[originalJobOfferKey] = this.originalJobOffer[originalJobOfferKey];
+      }
+    }
+    console.log(this.joboffer)
     this.jobofferService.editJoboffer(this.joboffer).subscribe((response) => {
       const snackbarRef = this.snackBar.open('Job offer was edited', 'dismiss', {duration: 2000});
 

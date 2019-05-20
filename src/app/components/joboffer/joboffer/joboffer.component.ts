@@ -33,6 +33,7 @@ export class JobofferComponent implements OnInit {
     this.jobOfferService.getJobOffer(id).subscribe(offer => {
       this.joboffer = offer;
       this.companyService.getCompany(offer.company).subscribe(company => this.company = company);
+      console.log(this.joboffer);
     });
   }
 
