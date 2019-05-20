@@ -22,7 +22,7 @@ export class JobofferService {
     if (companies !== undefined) {
       return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&companies=${companies.toString()}&open=${isOpen}`);
     }
-    return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}`);
+    return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&open=${isOpen}`);
   }
 
   getAllTopOfDaysJobOffers() {
