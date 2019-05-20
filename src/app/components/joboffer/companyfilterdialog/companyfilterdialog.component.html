@@ -1,4 +1,10 @@
- <div  *ngFor="let company of companyList" id="company">
-   <mat-checkbox (change)="onChangeEvent(company.uuid)" class="checkbox-margin" value="{{company.name}}">{{company.name}}</mat-checkbox>
- </div>
- <button mat-stroked-button [mat-dialog-close]="data.companies">{{'JOBOFFER.DIALOG.FILTER.BUTTON' | translate}}</button>
+<div class="pop-up-container">
+  <p> {{'JOBOFFER.BUTTON.FILTERCOMPANY' | translate}}</p>
+  <div *ngFor="let company of companyList" id="company" class="companylist">
+    <mat-checkbox color="primary" (change)="onChangeEvent(company.uuid)"  value="{{company.name}}">
+      {{company.name}}</mat-checkbox>
+  </div>
+
+  <button mat-stroked-button
+    [mat-dialog-close]="data.companies" >{{'JOBOFFER.DIALOG.FILTER.BUTTON' | translate}}</button>
+</div>

@@ -1,13 +1,16 @@
 {
   "NAVBAR": {
     "PROFILE": "Profile",
-    "REGISTER": "New account",
+    "REGISTER": "Register",
     "EDITPROFILE" : "Edit profile",
-    "JOBOFFERS": "Joboffers",
+    "JOBOFFERS": "Job offers",
     "LOGIN": "Login",
     "LOGOUT": "Log out",
     "MYJOBOFFERS": "My posted job offers",
-    "ADDJOBOFFER": "Add job offer"
+    "ADDJOBOFFER": "Add job offer",
+    "SELECT.LANGUAGE": "Select language",
+    "DUTCH": "Dutch",
+    "ENGLISH": "English"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals"
@@ -17,7 +20,9 @@
     "FIELD.PASSWORD.PLACEHOLDER": "Password",
     "BUTTON.LOGIN": "Login",
     "TITLE.STUDENT": "Login as student",
-    "TITLE.COMPANY": "Login as company"
+    "TITLE.COMPANY": "Login as company",
+    "FONTYS": "Login with Fontys"
+
   },
   "REGISTER": {
     "TITLE": "Register",
@@ -44,9 +49,14 @@
     "FIELD.DATE": "Date of birth",
     "FIELD.INSTITUTE": "Institute",
     "FIELD.EMAIL": "Email",
+    "FIELD.SKILLS": "Skills",
     "BUTTON.CONFIRM": "Edit profile"
   },
   "JOBOFFER": {
+    "JOBOFFERS": "Job offers",
+    "NOJOBOFFERS": "No job offers.",
+    "TOPOFDAY": "Daily Top",
+    "TOPOFDAYS": "Daily Tops",
     "ADD": {
       "TITLE": "Add new job offer",
       "BUTTON": "Add job offer"
@@ -59,8 +69,10 @@
       "SALARY.PLACEHOLDER": "Salary",
       "COMPANY.PLACEHOLDER": "Company"
     },
+    "APPLY.TITLE": "Apply",
     "BUTTON.APPLY": "Apply",
     "BUTTON.EDIT": "Edit",
+    "BUTTON.CANCEL": "Cancel",
     "LABEL.POSITION": "Position",
     "LABEL.SALARY": "Salary",
     "LABEL.JOBDESCRIPTION": "Job Description",
@@ -70,11 +82,24 @@
     "BUTTON.FILTERCOMPANY": "Filter by company",
     "DIALOG.FILTER.BUTTON": "Filter",
     "TITLE.APPLICANTS": "Applicants",
-    "BUTTON.VIEW.PROFILE": "View profile"
+    "APPLICANTS.NONE": "No applicants have applied yet",
+    "BUTTON.VIEW.PROFILE": "View profile",
+    "LABEL.APPLICANT.COUNT": "{{count}} people have already applied",
+    "SNACKBAR.SUCCES.MESSAGE": "Succesfully edited job offer",
+    "LABEL.SKILLS": "Skills",
+    "SKILL.ADDTEXT": "Add skills to make your job offer findable",
+    "APPLICANTS.HEADER": "Applicants"
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Cancel",
     "LABEL.TITLE": "Edit job offer",
-    "SNACKBAR.SUCCES.MESSAGE": "Succesfully updated joboffer"
+    "SNACKBAR.SUCCES.MESSAGE": "Succesfully updated job offer"
+  },
+  "COMPANY": {
+    "DESCRIPTION": "Description",
+    "CITY": "City",
+    "STREET": "Street",
+    "HOUSENUMBER": "House number",
+    "ZIPCODE": "Zip code"
   }
 }

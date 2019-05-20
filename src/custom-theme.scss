@@ -1,0 +1,215 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+/* For use in src/lib/core/theming/_palette.scss */
+$md-primary: (
+    50 : #e9ebec,
+    100 : #c7cdd0,
+    200 : #a2acb1,
+    300 : #7c8b92,
+    400 : #60727a,
+    500 : #445963,
+    600 : #3e515b,
+    700 : #354851,
+    800 : #2d3e47,
+    900 : #1f2e35,
+    A100 : #7cd1ff,
+    A200 : #49bfff,
+    A400 : #16adff,
+    A700 : #00a4fc,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #ffffff,
+    )
+);
+
+$md-secondary: (
+    50 : #f9fafb,
+    100 : #f0f3f4,
+    200 : #e7ebed,
+    300 : #dde3e6,
+    400 : #d5dde0,
+    500 : #ced7db,
+    600 : #c9d3d7,
+    700 : #c2cdd2,
+    800 : #bcc7cd,
+    900 : #b0bec4,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #fafdff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-primarylight: (
+    50 : #eef0f2,
+    100 : #d4dbde,
+    200 : #b8c3c8,
+    300 : #9baab1,
+    400 : #8598a1,
+    500 : #708690,
+    600 : #687e88,
+    700 : #5d737d,
+    800 : #536973,
+    900 : #415661,
+    A100 : #bbe8ff,
+    A200 : #88d6ff,
+    A400 : #55c5ff,
+    A700 : #3bbcff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-primarydark: (
+    50 : #e4e6e7,
+    100 : #bbc1c4,
+    200 : #8d989c,
+    300 : #5f6e74,
+    400 : #3d4f57,
+    500 : #1b3039,
+    600 : #182b33,
+    700 : #14242c,
+    800 : #101e24,
+    900 : #081317,
+    A100 : #58cdff,
+    A200 : #25beff,
+    A400 : #00a9f1,
+    A700 : #0097d8,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-secondarylight: (
+    50 : #ffffff,
+    100 : #ffffff,
+    200 : #ffffff,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-secondarydark: (
+    50 : #f3f4f5,
+    100 : #e2e4e5,
+    200 : #ced3d4,
+    300 : #bac1c3,
+    400 : #acb3b6,
+    500 : #9da6a9,
+    600 : #959ea2,
+    700 : #8b9598,
+    800 : #818b8f,
+    900 : #6f7b7e,
+    A100 : #fdffff,
+    A200 : #cef0fc,
+    A400 : #97e5ff,
+    A700 : #7edfff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+// ,#708690,#1b3039
+// ,#ffffff,#9da6a9
+// $jobby-primary:     mat-palette(#445963);
+$jobby-primary:     mat-palette($md-primary);
+// $jobby-secondary:   mat-palette(#ced7db);
+$jobby-secondary:   mat-palette($md-primarydark, A500);
+$jobby-warn:        mat-palette($md-primarydark);
+
+$jobby-app-theme: mat-light-theme($jobby-primary, $jobby-secondary, $jobby-warn);
+
+@include angular-material-theme($jobby-app-theme);
+

@@ -5,6 +5,21 @@
   height: 60px;
 }
 
-.checkbox-margin{
-  margin: 0 10px;
+.companylist{
+  height: 35px;
+  margin-left: 15px;
+}
+
+.pop-up-container{
+  display:flex;
+  flex-direction: column;
+  button {
+    align-self: center;
+    width: fit-content;
+  }
+  p {
+    align-self: center;
+    font-weight: bold;
+    font-size: 18px; 
+  }
 }

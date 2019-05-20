@@ -1,11 +1,147 @@
+@import "../../../../vars";
 a {
   color: black;
 }
-
+h1{
+  font-weight: normal;
+}
+mat-cell{
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 50px;
+}
 mat-card-actions {
   display: flex;
 }
+mat-paginator {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.joboffer-table{
+  width: 100%;
+  .joboffer-row{
+    &:hover{
+      cursor: pointer;
+      background: #f9f9f9;
+      // border-radius: 20px;
+    }
+  }
+}
 
-.shadowless{
-  box-shadow: none;
+.custom-button{
+  position:relative;
+  button {
+    position:absolute;
+    right: 20px;
+    top: 45px;
+  }
+}
+table {
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.25);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  mat-header-row{
+    background: $secondary;
+    // background: rgb(28, 125, 204);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    mat-header-cell{
+      color:black;
+      font-size: 18px;
+    }
+  }
+  .first-item{
+    color: $primary;
+    flex: 0 0 45px;
+  }
+  .parent{
+    display:inline-flex;
+    .ellipsis{
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 150px;
+    }
+  }
+}
+.topofday-table {
+  margin-bottom: 20px;
+}
+.topofday-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i.material-icons-round {
+    margin-left:5px;
+    font-size: 20px;
+    color: $primary-dark;
+  }
+}
+.topofday-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    // flex-direction: column;
+
+    &::-webkit-scrollbar { 
+      display: none; 
+   }
+    &.multiple{
+      overflow-y: hidden;
+      overflow-x: auto;
+      display: -webkit-box;
+    }
+    .topofday-card{
+      height: 150px;
+      width: 33%;
+      max-width: 300px;
+      margin:15px;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      padding-bottom:15px;
+      padding-top: 25px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      mat-card-header{
+        display: block;
+        .mat-card-title{
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          color:royalblue;
+          overflow: hidden;
+          word-break: break-all;
+          height: 28px;
+        }
+      }
+      .mat-card-content{
+        word-wrap: break-word;
+        height: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow: hidden;
+      }
+      .topper-text{
+        font-size: 15px;
+        .topofday-icon{
+          margin-left: 5px;
+          font-size:20px;
+          color: $primary;
+          display: inline-flex;
+          vertical-align: top;
+          font-size: bold;
+        }
+      }
+      &:hover{
+        background-color: $secondary;
+      }
+
+    }
 }

@@ -3,9 +3,6 @@ mat-toolbar{
         text-decoration: none; 
         color:white;
     }
-    span{
-        margin-right: 8px;
-    }
 }
 
 
@@ -14,3 +11,8 @@ mat-toolbar{
        Every toolbar row uses a flexbox row layout. */
     flex: 1 1 auto;
   }
+.language-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

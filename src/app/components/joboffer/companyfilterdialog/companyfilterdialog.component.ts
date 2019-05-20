@@ -2,7 +2,6 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {CompanyService} from "../../../services/company/company.service";
 import {Company} from '../../../domain/Company';
 import {MAT_DIALOG_DATA} from '@angular/material';
-import {FormArray, FormGroup} from '@angular/forms';
 import {DialogData} from '../../../domain/DialogData';
 
 @Component({

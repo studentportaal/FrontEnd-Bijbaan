@@ -1,7 +1,5 @@
 .container {
-  width: 60%;
   text-align: center;
-
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -25,4 +23,12 @@
 
 mat-divider {
   background-color: grey;
+}
+h2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i{
+    margin-left: 5px;
+  }
 }

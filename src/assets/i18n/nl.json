@@ -1,15 +1,16 @@
 {
   "NAVBAR": {
     "PROFILE": "Profiel",
-    "REGISTER": "Nieuwe account",
+    "REGISTER": "Registreren",
     "EDITPROFILE": "Profiel aanpassen",
-    "JOBOFFERS": "Vacatures",
-    "MYJOBOFFERS": "My posted job offers",
     "JOBOFFERS": "Vacatures",
     "LOGIN": "Inloggen",
     "LOGOUT": "Uitloggen",
-    "ADDJOBOFFER": "Vacature toevoegen"
-
+    "MYJOBOFFERS": "Mijn geplaatste vacatures",
+    "ADDJOBOFFER": "Vacature toevoegen",
+    "SELECT.LANGUAGE": "Selecteer taal",
+    "DUTCH": "Nederlands",
+    "ENGLISH": "Engels"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal! We hebben geen bijbanen :)"
@@ -19,7 +20,8 @@
     "FIELD.PASSWORD.PLACEHOLDER": "Wachtwoord",
     "BUTTON.LOGIN": "Inloggen",
     "TITLE.STUDENT": "Inloggen als student",
-    "TITLE.COMPANY": "Inloggen als bedrijf"
+    "TITLE.COMPANY": "Inloggen als bedrijf",
+    "FONTYS": "Inloggen met Fontys"
   },
   "REGISTER": {
     "TITLE": "Registreren",
@@ -46,9 +48,14 @@
     "FIELD.DATE": "Geboortedatum",
     "FIELD.INSTITUTE": "School",
     "FIELD.EMAIL": "Email",
+    "FIELD.SKILLS": "Vaardigheden",
     "BUTTON.CONFIRM": "Aanpassen"
   },
   "JOBOFFER": {
+    "JOBOFFERS": "Vacatures",
+    "NOJOBOFFERS": "Geen vacatures.",
+    "TOPOFDAY": "Dagtopper",
+    "TOPOFDAYS": "Daily Tops",
     "ADD": {
       "TITLE": "Vacature toevoegen",
       "BUTTON": "Vacature toevoegen"
@@ -61,29 +68,37 @@
       "SALARY.PLACEHOLDER": "Salaris",
       "COMPANY.PLACEHOLDER": "Bedrijf"
     },
+    "APPLY.TITLE": "Solliciteren",
     "BUTTON.APPLY": "Solliciteren",
     "BUTTON.EDIT": "Wijzigen",
+    "BUTTON.CANCEL": "Annuleren",
     "LABEL.POSITION": "Functie",
     "LABEL.SALARY": "Salaris",
     "LABEL.JOBDESCRIPTION": "Taakomschrijving",
     "LABEL.LOCATION": "Locatie",
     "LABEL.COMPANY": "Bedrijf",
-    "LABEL.TITLE": "Titel"
-  },
-  "JOBOFFEREDIT": {
-    "BUTTON.CANCEL": "Annuleren",
-    "LABEL.TITLE": "Aanpassen vacature",
-    "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast",
+    "LABEL.TITLE": "Titel",
+    "BUTTON.FILTERCOMPANY": "Filteren op bedrijf",
+    "DIALOG.FILTER.BUTTON": "Filter",
     "TITLE.APPLICANTS": "Sollicitanten",
+    "APPLICANTS.NONE": "Geen sollicitanten",
     "BUTTON.VIEW.PROFILE": "Bekijk profiel",
-    "LABEL.COMPANY": "Bedrijf",
-    "BUTTON.FILTER.COMPANY": "Filter op bedrijf",
-    "DIALOG.FILTER.BUTTON": "Filter"
+    "LABEL.APPLICANT.COUNT": "Al {{count}} mensen hebben gereageerd op deze vacature",
+    "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast",
+    "LABEL.SKILLS": "Vaardigheden",
+    "SKILL.ADDTEXT": "Voeg vaardigheden toe om je vacature vindbaar te maken",
+    "APPLICANTS.HEADER": "Sollicitanten"
   },
-
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Annuleren",
     "LABEL.TITLE": "Wijzigen",
     "SNACKBAR.SUCCES.MESSAGE": "Wijzigingen succesvol opgeslagen."
+  },
+  "COMPANY": {
+    "DESCRIPTION": "Beschrijving",
+    "CITY": "Stad",
+    "STREET": "Straat",
+    "HOUSENUMBER": "Huisnummmer",
+    "ZIPCODE": "Postcode"
   }
 }

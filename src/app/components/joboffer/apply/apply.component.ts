@@ -4,6 +4,7 @@ import {Student} from '../../../domain/Student';
 import {ActivatedRoute, Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material";
 import {AuthenticationService} from "../../../services/authentication/authentication.service";
+import {Application} from "../../../domain/Application";
 
 @Component({
   selector: 'app-apply',
@@ -28,7 +29,11 @@ export class ApplyComponent implements OnInit {
   }
 
   onSubmit() {
-    this.jobOfferService.applyForJob(this.user, this.id).subscribe((jobofffer) => {
+    const application = new Application();
+    application.applicant = this.user;
+    application.accepted = false;
+
+    this.jobOfferService.applyForJob(application, this.id).subscribe((jobofffer) => {
       const snackbarRef = this.snackbar.open('Succesvol aangemeld voor de vacature', 'dismiss', {
         duration: 1500
       });

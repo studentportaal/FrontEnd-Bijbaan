@@ -8,19 +8,21 @@ import { UserprofileComponent } from './components/student/userprofile/userprofi
 import { HomeComponent } from './components/general/home/home.component';
 import { RegisterComponent } from './components/student/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { JobofferlistComponent } from './components/joboffer/Offerslist/jobofferlist.component';
 import { LoginComponent } from './components/student/login/login.component';
 import { UsereditprofileComponent } from './components/student/usereditprofile/usereditprofile.component';
 import { ApplyComponent } from './components/joboffer/apply/apply.component';
-import {JobofferComponent} from './components/joboffer/joboffer/joboffer.component';
-import {CompanyComponent} from './components/general/company/company/company.component';
+import { JobofferComponent } from './components/joboffer/joboffer/joboffer.component';
+import { CompanyComponent } from './components/general/company/company/company.component';
 import { AddjobofferComponent } from './components/joboffer/addjoboffer/addjoboffer.component';
 import { EditjobofferComponent } from './components/joboffer/editjoboffer/editjoboffer.component';
-import {CompanyFilterDialogComponent} from './components/joboffer/companyfilterdialog/companyfilterdialog.component';
+import { CompanyFilterDialogComponent } from './components/joboffer/companyfilterdialog/companyfilterdialog.component';
 import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjoboffers.component';
+import { EditSkillsComponent } from './components/joboffer/editskills/editskills.component';
+import {AuthenticationInterceptor} from "./interceptors/authentication/authentication.interceptor";
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjob
     AddjobofferComponent,
     EditjobofferComponent,
     CompanyFilterDialogComponent,
-    OwnjoboffersComponent
+    OwnjoboffersComponent,
+    EditSkillsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,14 +57,20 @@ import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjob
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [ HttpClient ]
+        deps: [HttpClient]
       }
     })
   ],
   entryComponents: [
     CompanyFilterDialogComponent,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthenticationInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

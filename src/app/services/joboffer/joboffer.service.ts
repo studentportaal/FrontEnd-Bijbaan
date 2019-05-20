@@ -3,6 +3,9 @@ import {HttpClient} from '@angular/common/http';
 import {JobOffer} from '../../domain/JobOffer';
 import {Observable} from 'rxjs';
 import {Student} from '../../domain/Student';
+import {environment} from '../../../environments/environment';
+import {Skill} from "../../domain/Skill";
+import {Application} from "../../domain/Application";
 
 @Injectable({
   providedIn: 'root'
@@ -10,16 +13,20 @@ import {Student} from '../../domain/Student';
 export class JobofferService {
 
 
-  private jobOfferBaseUrl = 'http://localhost:9000/joboffer';
+  private jobOfferBaseUrl = environment.API_BASE + '/joboffer';
 
   constructor(private httpClient: HttpClient) {
   }
 
-  getAllJobOffers(startNr: number, amount: number, companies: string[]): Observable<JobOffer[]> {
+  getAllJobOffers(startNr: number, amount: number, companies: string[], isOpen: boolean): Observable<JobOffer[]> {
     if (companies !== undefined) {
-      return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&companies=${companies.toString()}`);
+      return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&companies=${companies.toString()}&open=${isOpen}`);
     }
-    return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}`);
+    return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&open=${isOpen}`);
+  }
+
+  getAllTopOfDaysJobOffers() {
+    return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + '/topofday/all');
   }
 
   getJobOffer(id: string): Observable<JobOffer> {
@@ -34,8 +41,20 @@ export class JobofferService {
     return this.httpClient.post<JobOffer>(this.jobOfferBaseUrl, jobOffer);
   }
 
-  applyForJob(u: Student, id: string) {
-    return this.httpClient.patch(this.jobOfferBaseUrl + '/' + id, u);
+  applyForJob(a: Application, id: string) {
+    return this.httpClient.patch(this.jobOfferBaseUrl + '/' + id, a);
+  }
+
+  acceptApplicant(jobOfferId: string, applicationId: string) {
+    return this.httpClient.patch(`${this.jobOfferBaseUrl}/${jobOfferId}/applications/${applicationId}`, undefined);
+  }
+
+  setSkills(skills: Skill[], id: string) {
+    const obj = {
+      "skills": skills
+    };
+
+    return this.httpClient.patch(this.jobOfferBaseUrl + '/' + id + '/skills', obj);
   }
 
   editJoboffer(jobOffer: JobOffer): Observable<JobOffer> {
@@ -45,7 +64,8 @@ export class JobofferService {
       "location": jobOffer.location,
       "title": jobOffer.title,
       "information": jobOffer.information,
-      "function": jobOffer.function
+      "function": jobOffer.function,
+      "skills": jobOffer.skills
     };
     return this.httpClient.put<JobOffer>(this.jobOfferBaseUrl + '/' + jobOffer.id, newJobOffer);
   }
