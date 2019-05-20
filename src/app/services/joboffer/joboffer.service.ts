@@ -65,7 +65,9 @@ export class JobofferService {
       "title": jobOffer.title,
       "information": jobOffer.information,
       "function": jobOffer.function,
-      "skills": jobOffer.skills
+      "skills": jobOffer.skills,
+      "topOfTheDay": jobOffer.topOfTheDay,
+      "open": jobOffer.open
     };
     return this.httpClient.put<JobOffer>(this.jobOfferBaseUrl + '/' + jobOffer.id, newJobOffer);
   }
