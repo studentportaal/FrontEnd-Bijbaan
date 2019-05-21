@@ -39,7 +39,8 @@
     "FIELD.POSTAL.PLACEHOLDER": "Postal code",
     "FIELD.STREET.PLACEHOLDER": "Street name",
     "FIELD.HOUSE.PLACEHOLDER": "House number",
-    "FIELD.DESCRIPTION.PLACEHOLDER": "Description"
+    "FIELD.DESCRIPTION.PLACEHOLDER": "Description",
+    "STUDENTTEXT": "Students should log in with their school account, see login."
   },
   "USERPROFILE": {
     "TITLE": "Profile",
