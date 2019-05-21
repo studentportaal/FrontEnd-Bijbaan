@@ -1,3 +1,5 @@
+@import "../../../../vars";
+
 h1{
   margin:10px;
 }
@@ -14,4 +16,10 @@ h1{
 app-edit-skills {
   // No clue why this works
   width: 99%;
+}
+
+.link-span {
+  &:hover{
+    color: $secondary-dark;
+  }
 }
