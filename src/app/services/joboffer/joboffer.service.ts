@@ -38,6 +38,7 @@ export class JobofferService {
   }
 
   addJobOffer(jobOffer: JobOffer) {
+    jobOffer.isOpen = true;
     return this.httpClient.post<JobOffer>(this.jobOfferBaseUrl, jobOffer);
   }
 
