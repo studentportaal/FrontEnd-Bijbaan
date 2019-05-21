@@ -38,7 +38,9 @@
     "FIELD.POSTAL.PLACEHOLDER": "Postcode",
     "FIELD.STREET.PLACEHOLDER": "Straat",
     "FIELD.HOUSE.PLACEHOLDER": "Huisnummer",
-    "FIELD.DESCRIPTION.PLACEHOLDER": "Beschrijving"
+    "FIELD.DESCRIPTION.PLACEHOLDER": "Beschrijving",
+    "STUDENTTEXT": "Studenten dienen in te loggen met hun school account, zie inloggen."
+
   },
   "USERPROFILE": {
     "TITLE": "Profiel",
