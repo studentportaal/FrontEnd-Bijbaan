@@ -27,7 +27,7 @@ export class EditjobofferComponent implements OnInit {
     this.joboffer.company = this.company.uuid;
     this.jobofferService.getJobOffer(this.joboffer.id).subscribe(response => {
       this.joboffer = response;
-      this.originalJobOffer = JSON.parse(JSON.stringify(response))
+      this.originalJobOffer = JSON.parse(JSON.stringify(response));
     });
   }
 
