@@ -10,7 +10,7 @@ before_script:
 
 script:
   - ng lint
-  - ng build --prod
+  - ng build --prod --base-href="https://vaifreecams.com/"
 
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_f532364904ea_key -iv $encrypted_f532364904ea_iv
