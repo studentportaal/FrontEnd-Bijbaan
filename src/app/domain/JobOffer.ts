@@ -1,4 +1,3 @@
-import {Student} from "./Student";
 import {Skill} from "./Skill";
 import {Application} from "./Application";
 
@@ -13,6 +12,7 @@ export class JobOffer {
   topOfTheDay: Date;
   applications: Application[];
   skills: Skill[] = [];
+  isOpen: boolean;
 
   constructor() {
   }
