@@ -23,6 +23,7 @@ import { CompanyFilterDialogComponent } from './components/joboffer/companyfilte
 import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjoboffers.component';
 import { EditSkillsComponent } from './components/joboffer/editskills/editskills.component';
 import {AuthenticationInterceptor} from "./interceptors/authentication/authentication.interceptor";
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 
 @NgModule({
@@ -69,6 +70,10 @@ import {AuthenticationInterceptor} from "./interceptors/authentication/authentic
       provide: HTTP_INTERCEPTORS,
       useClass: AuthenticationInterceptor,
       multi: true
+    },
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
     }
   ],
   bootstrap: [AppComponent]
