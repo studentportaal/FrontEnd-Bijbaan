@@ -10,7 +10,8 @@
     "ADDJOBOFFER": "Add job offer",
     "SELECT.LANGUAGE": "Select language",
     "DUTCH": "Dutch",
-    "ENGLISH": "English"
+    "ENGLISH": "English",
+    "CLOSE": "Close"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals"

@@ -3,6 +3,9 @@ mat-toolbar{
         text-decoration: none; 
         color:white;
     }
+    mat-icon{
+        color: white;
+    }
 }
 
 
@@ -15,4 +18,17 @@ mat-toolbar{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.navbar-menu-items {
+    display: flex;
+}
+.mat-drawer-opened {
+    height: fit-content;
+}
+// .mat-drawer-container{
+//     position: absolute;
+// }
+mat-sidenav-content{
+    background: lightgray;
+    min-height: 100%;
 }
