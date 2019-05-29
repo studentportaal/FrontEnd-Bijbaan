@@ -65,7 +65,7 @@
 </mat-toolbar>
 <mat-sidenav-container fxFlexFill id="container" fullscreen>
   <!-- Sidenav Toolbar -->
-  <mat-sidenav #sidenav mode="push">
+  <mat-sidenav #sidenav mode="push" class="navbar-sidenav">
     <mat-nav-list>
       <a (click)="sidenav.toggle()"  title="{{'NAVBAR.JOBOFFERS' | translate}}" routerLink="/joboffers" mat-list-item>{{'NAVBAR.JOBOFFERS' | translate}}<i class="material-icons-round nav-icon">account_balance</i></a>
       <ng-container class="" *ngIf="authenticationService.isLoggedIn()">
@@ -82,7 +82,7 @@
         <!-- Company links go here -->
         <ng-container class="" *ngIf="authenticationService.isCompany()">
             <a [mat-menu-trigger-for]="menu" mat-list-item>{{authenticationService.user.email | titlecase}} <i class="material-icons-round nav-icon">business_center</i></a>
-            <mat-menu #menu="matMenu">
+            <mat-menu #menu="matMenu" (mouseenter)="matMenu.openMenu()">
               <a mat-menu-item (click)="sidenav.toggle()" color="default" title="{{'NAVBAR.PROFILE' | translate}}" routerLink="/company/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
               <a mat-menu-item (click)="sidenav.toggle()" color="default" title="{{'NAVBAR.MYJOBOFFERS' | translate}}" routerLink="/users/{{authenticationService.user.uuid}}/joboffers">{{'NAVBAR.MYJOBOFFERS' | translate}}</a>
               <a mat-menu-item (click)="sidenav.toggle()" color="default" title="{{'NAVBAR.ADDJOBOFFER' | translate}}" routerLink="/joboffers/add">{{'NAVBAR.ADDJOBOFFER' | translate}}</a>
