@@ -1,5 +1,5 @@
 <div class="container container-md custom-button">
-  <h1>{{'JOBOFFER.JOBOFFERS' | translate}}
+  <h1 class="flex-h1"><span>{{'JOBOFFER.JOBOFFERS' | translate}}</span>
     <button mat-stroked-button class="default-button" (click)="openDialog()">
       {{'JOBOFFER.BUTTON.FILTERCOMPANY' | translate}}
     </button></h1>
@@ -18,7 +18,7 @@
     <div class="topofday-container multiple" *ngIf="topOfDayJobOffers?.length > 3">
       <mat-card (click)="getJobOffer(topofday.id)" class="topofday-card pointer mat-elevation-z8" *ngFor="let topofday of topOfDayJobOffers">
         <mat-card-header>
-          <mat-card-title>{{topofday.title | titlecase}}</mat-card-title>
+          <mat-card-title>{{topofday.title}}</mat-card-title>
           <mat-card-subtitle>{{topofday.company.name}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
@@ -39,22 +39,22 @@
       <ng-container matColumnDef="title">
         <mat-header-cell *matHeaderCellDef mat-sort-header>{{'JOBOFFER.FIELD.TITLE.PLACEHOLDER' | translate}}
         </mat-header-cell>
-        <mat-cell *matCellDef="let joboffer"><b>{{joboffer.title | titlecase}}</b></mat-cell>
+        <mat-cell *matCellDef="let joboffer" attr.aria-label="{{'JOBOFFER.FIELD.TITLE.PLACEHOLDER' | translate}}"><b>{{joboffer.title}}</b></mat-cell>
       </ng-container>
       <ng-container matColumnDef="location">
         <mat-header-cell *matHeaderCellDef mat-sort-header>{{'JOBOFFER.FIELD.LOCATION.PLACEHOLDER' | translate}}
         </mat-header-cell>
-        <mat-cell *matCellDef="let joboffer">{{joboffer.location | titlecase}}</mat-cell>
+        <mat-cell *matCellDef="let joboffer" attr.aria-label="{{'JOBOFFER.FIELD.LOCATION.PLACEHOLDER' | translate}}">{{joboffer.location | titlecase}}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="function">
         <mat-header-cell *matHeaderCellDef mat-sort-header>{{'JOBOFFER.FIELD.FUNCTION.PLACEHOLDER' | translate}}
         </mat-header-cell>
-        <mat-cell *matCellDef="let joboffer">{{joboffer.function | titlecase}}</mat-cell>
+        <mat-cell *matCellDef="let joboffer" attr.aria-label="{{'JOBOFFER.FIELD.FUNCTION.PLACEHOLDER' | translate}}">{{joboffer.function | titlecase}}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="company">
         <mat-header-cell *matHeaderCellDef mat-sort-header>{{'JOBOFFER.FIELD.COMPANY.PLACEHOLDER' | translate}}
         </mat-header-cell>
-          <mat-cell class="ellipsis" *matCellDef="let joboffer"><div class="parent"><div class="ellipsis">{{getCompanyName(joboffer.company)}}</div></div> </mat-cell>
+          <mat-cell class="ellipsis" *matCellDef="let joboffer" attr.aria-label="{{'JOBOFFER.FIELD.COMPANY.PLACEHOLDER' | translate}}"><div class="parent"><div class="ellipsis">{{getCompanyName(joboffer.company)}}</div></div> </mat-cell>
       </ng-container>
       <mat-header-row color="accent" *matHeaderRowDef="['topOfTheDay','title','function','location','company']">
       </mat-header-row>

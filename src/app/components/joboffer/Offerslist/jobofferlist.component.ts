@@ -15,6 +15,7 @@ import { MatTableDataSource} from '@angular/material';
   styleUrls: ['./jobofferlist.component.scss']
 })
 export class JobofferlistComponent implements OnInit {
+
   @ViewChild(MatSort) sort: MatSort;
 
   jobOffers: JobOffer[];
