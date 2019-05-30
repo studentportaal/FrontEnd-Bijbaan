@@ -7,17 +7,20 @@
   <mat-divider [vertical]="true"></mat-divider>
   <div class="login-container">
     <h2>{{'LOGIN.TITLE.COMPANY' | translate}} <i class="material-icons-round">business_center</i></h2>
-    <form ngNativeValidate class="login-form" (ngSubmit)="companyLogin()">
+      <form ngNativeValidate class="login-form" (ngSubmit)="companyLogin()"> 
+    <!-- <form ngNativeValidate class="login-form" (ngSubmit)="studentLogin()"> -->
       <mat-form-field appearance="outline">
           <mat-label>{{ 'LOGIN.FIELD.EMAIL.PLACEHOLDER' | translate}}</mat-label>
         <input matInput required type="email" placeholder="{{ 'LOGIN.FIELD.EMAIL.PLACEHOLDER' | translate}}"
-          [(ngModel)]="company.email" name="email">
+        [(ngModel)]="company.email" name="email">
+        <!-- [(ngModel)]="user.email" name="email">     -->
       </mat-form-field>
       <mat-form-field appearance="outline">
           <mat-label>{{ 'LOGIN.FIELD.PASSWORD.PLACEHOLDER' | translate}}</mat-label>
 
         <input matInput required type="password" placeholder="{{ 'LOGIN.FIELD.PASSWORD.PLACEHOLDER' | translate}}"
-          [(ngModel)]="company.password" name="password">
+        [(ngModel)]="company.password" name="password">
+        <!-- [(ngModel)]="user.password" name="password"> -->
       </mat-form-field>
       <button class="login-btn default-button" type="submit"
         mat-raised-button>{{ 'LOGIN.BUTTON.LOGIN' | translate}}</button>
