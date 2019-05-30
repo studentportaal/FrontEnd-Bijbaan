@@ -74,4 +74,10 @@ mat-list{
   flex-direction: row;
   justify-content: center;
 }
-
+@media screen and (max-width: 850px) {
+.mat-list-item{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+}
+}

@@ -28,10 +28,6 @@
             routerLink="/company/{{company.uuid}}">{{company.name}}</a></p></mat-list-item>
           <mat-divider></mat-divider>
         </ng-container>
-        <ng-container *ngIf="joboffer.information">
-          <mat-list-item><p><b>{{'JOBOFFER.FIELD.INFORMATION.PLACEHOLDER' | translate}}:</b> {{joboffer.information}}
-          </p></mat-list-item>
-        </ng-container>
         <mat-divider></mat-divider>
         <ng-container *ngIf="joboffer.skills">
           <mat-list-item>
