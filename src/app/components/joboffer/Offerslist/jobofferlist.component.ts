@@ -40,6 +40,8 @@ export class JobofferlistComponent implements OnInit {
     this.getServerData(null);
     this.getCompanies();
     this.getAllTopOfDaysJobOffers();
+    
+    setInterval(() => this.getAllTopOfDaysJobOffers() , 20000)
   }
 
   // public openDialog() {
