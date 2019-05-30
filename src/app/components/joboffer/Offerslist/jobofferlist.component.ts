@@ -42,18 +42,18 @@ export class JobofferlistComponent implements OnInit {
     this.getAllTopOfDaysJobOffers();
   }
 
-  public openDialog() {
-    const dialogRef = this.dialog.open(CompanyFilterDialogComponent, {
-      data: { companies: this.companies },
-      maxHeight: '750px',
-      minWidth: '500px'
-    });
+  // public openDialog() {
+  //   const dialogRef = this.dialog.open(CompanyFilterDialogComponent, {
+  //     data: { companies: this.companies },
+  //     maxHeight: '750px',
+  //     minWidth: '500px'
+  //   });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      this.companies = result;
-      this.getServerData();
-    });
-  }
+  //   dialogRef.afterClosed().subscribe((result) => {
+  //     this.companies = result;
+  //     this.getServerData();
+  //   });
+  // }
 
   public getCompanies() {
     this.companyService.getAllCompanies().subscribe((response) => {

@@ -1,6 +1,6 @@
 <div class="container container-md">
   <h1 class="mat-display-1">{{'JOBOFFER.ADD.TITLE' | translate}}</h1>
-  <form class="add-joboffer-form" (ngSubmit)="onSubmit()">
+  <form ngNativeValidate class="add-joboffer-form" (ngSubmit)="onSubmit()">
     <mat-form-field>
       <input matInput required 
         type="text" 

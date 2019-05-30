@@ -1,6 +1,6 @@
 <div class="container container-sm">
   <h1 class="mat-display-1">{{'JOBOFFER.APPLY.TITLE' | translate}}</h1>
-  <form class="application-form" (ngSubmit)="onSubmit()">
+  <form ngNativeValidate class="application-form" (ngSubmit)="onSubmit()">
     <mat-form-field>
       <input matInput required
              type="email"

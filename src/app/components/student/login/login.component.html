@@ -7,7 +7,7 @@
   <mat-divider [vertical]="true"></mat-divider>
   <div class="login-container">
     <h2>{{'LOGIN.TITLE.COMPANY' | translate}} <i class="material-icons-round">business_center</i></h2>
-    <form class="login-form" (ngSubmit)="companyLogin()">
+    <form ngNativeValidate class="login-form" (ngSubmit)="companyLogin()">
       <mat-form-field appearance="outline">
           <mat-label>{{ 'LOGIN.FIELD.EMAIL.PLACEHOLDER' | translate}}</mat-label>
         <input matInput required type="email" placeholder="{{ 'LOGIN.FIELD.EMAIL.PLACEHOLDER' | translate}}"

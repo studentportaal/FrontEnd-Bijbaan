@@ -2,7 +2,7 @@
 
   <h1 class="mat-display-1">{{'REGISTER.TITLE' | translate}}</h1>
   <span routerLink="/login" class="pointer link-span">{{'REGISTER.STUDENTTEXT' | translate}} </span>
-      <form [formGroup]="form" class="register-form" (ngSubmit)="registerCompany()">
+      <form ngNativeValidate [formGroup]="form" class="register-form" (ngSubmit)="registerCompany()">
         <mat-form-field>
           <input matInput required
                  type="email"
