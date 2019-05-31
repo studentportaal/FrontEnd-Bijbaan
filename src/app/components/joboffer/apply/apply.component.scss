@@ -1,22 +1,22 @@
 h1 {
-  margin:10px;
+  margin: 10px;
 }
 
 .container {
-  text-align:center;
+  text-align: center;
 }
 
 .application-form {
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  margin:50px;
-  margin-top:10px;
-  margin-bottom:10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-@media only screen and (max-width: 850px){
+@media only screen and (max-width: 850px) {
   .application-form {
-    margin:20px;
+    margin: 20px;
   }
 }

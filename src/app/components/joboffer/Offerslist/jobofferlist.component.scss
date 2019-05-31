@@ -2,10 +2,10 @@
 a {
   color: black;
 }
-h1{
+h1 {
   font-weight: normal;
 }
-mat-cell{
+mat-cell {
   font-size: 13px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -19,10 +19,10 @@ mat-paginator {
   display: flex;
   justify-content: center;
 }
-.joboffer-table{
+.joboffer-table {
   width: 100%;
-  .joboffer-row{
-    &:hover{
+  .joboffer-row {
+    &:hover {
       cursor: pointer;
       background: #f9f9f9;
       // border-radius: 20px;
@@ -32,18 +32,18 @@ mat-paginator {
 
 table {
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,.25);
+  border: 1px solid rgba(0, 0, 0, 0.25);
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  mat-header-row{
+  mat-header-row {
     background: $secondary;
     // background: rgb(28, 125, 204);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    mat-header-cell{
-      color:black;
+    mat-header-cell {
+      color: black;
       font-size: 18px;
       i.header {
         font-size: 22px;
@@ -51,13 +51,13 @@ table {
       }
     }
   }
-  .first-item{
+  .first-item {
     color: $primary;
     flex: 0 0 45px;
   }
-  .parent{
-    display:inline-flex;
-    .ellipsis{
+  .parent {
+    display: inline-flex;
+    .ellipsis {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
@@ -68,92 +68,90 @@ table {
 .topofday-table {
   margin-bottom: 20px;
 }
-.topofday-header{
+.topofday-header {
   display: flex;
   align-items: center;
   justify-content: center;
   i.material-icons-round {
-    margin-left:5px;
+    margin-left: 5px;
     font-size: 20px;
     color: $primary-dark;
   }
 }
-.topofday-container{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    // flex-direction: column;
+.topofday-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  // flex-direction: column;
 
-    &::-webkit-scrollbar { 
-      display: none; 
-   }
-    &.multiple{
-      overflow-y: hidden;
-      overflow-x: auto;
-      display: -webkit-box;
-    }
-    .topofday-card{
-      height: 150px;
-      width: 33%;
-      max-width: 300px;
-      margin:15px;
-      margin-bottom: 30px;
-      margin-top: 30px;
-      padding-bottom:15px;
-      padding-top: 25px;
-      padding-left: 10px;
-      padding-right: 10px;
-      border-radius: 5px;
-      overflow: hidden;
-      mat-card-header{
-        display: block;
-        .mat-card-title{
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          color:royalblue;
-          overflow: hidden;
-          word-break: break-all;
-          height: 28px;
-        }
-      }
-      .mat-card-content{
-        word-wrap: break-word;
-        height: 50px;
-        padding-left: 15px;
-        padding-right: 15px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &.multiple {
+    overflow-y: hidden;
+    overflow-x: auto;
+    display: -webkit-box;
+  }
+  .topofday-card {
+    height: 150px;
+    width: 33%;
+    max-width: 300px;
+    margin: 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding-bottom: 15px;
+    padding-top: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    mat-card-header {
+      display: block;
+      .mat-card-title {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: royalblue;
         overflow: hidden;
+        word-break: break-all;
+        height: 28px;
       }
-      .topper-text{
-        font-size: 15px;
-        .topofday-icon{
-          margin-left: 5px;
-          font-size:20px;
-          color: $primary;
-          display: inline-flex;
-          vertical-align: top;
-          font-size: bold;
-        }
-      }
-      &:hover{
-        background-color: $secondary;
-      }
-
     }
+    .mat-card-content {
+      word-wrap: break-word;
+      height: 50px;
+      padding-left: 15px;
+      padding-right: 15px;
+      overflow: hidden;
+    }
+    .topper-text {
+      font-size: 15px;
+      .topofday-icon {
+        margin-left: 5px;
+        font-size: 20px;
+        color: $primary;
+        display: inline-flex;
+        vertical-align: top;
+        font-size: bold;
+      }
+    }
+    &:hover {
+      background-color: $secondary;
+    }
+  }
 }
 @media screen and (max-width: 960px) {
   .mat-table {
     border: 0;
-    vertical-align: middle
+    vertical-align: middle;
   }
 
   .mat-table caption {
     font-size: 1em;
   }
-  
-    // Enable this to hide header
+
+  // Enable this to hide header
   .mat-table .mat-header-cell {
-    
     border: 10px solid;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -161,9 +159,9 @@ table {
     padding: 0;
     position: absolute;
     width: 1px;
-    font-size:15px;
+    font-size: 15px;
   }
-  
+
   .mat-table .mat-row {
     border-bottom: 5px solid #ddd;
     display: grid;
@@ -178,7 +176,7 @@ table {
     font-size: 1em;
     text-align: right;
     font-weight: bold;
-    height:30px;
+    height: 30px;
     margin-bottom: 4%;
   }
   .mat-table .mat-cell:before {
@@ -190,42 +188,42 @@ table {
     float: left;
     text-transform: capitalize;
     font-weight: normal;
-    
-    font-size: .85em;
+
+    font-size: 0.85em;
   }
   .mat-table .mat-cell:last-child {
     border-bottom: 0;
   }
-    .mat-table .mat-cell:first-child {
+  .mat-table .mat-cell:first-child {
     margin-top: 4%;
   }
-  mat-cell{
-    &.first-item{
-    padding-left: 0px;
+  mat-cell {
+    &.first-item {
+      padding-left: 0px;
     }
     width: 100%;
   }
-  mat-row{
+  mat-row {
     &:after {
       min-height: 0px;
     }
   }
-  .topofday-container{
+  .topofday-container {
     flex-direction: column;
-    width:100%;
-    .topofday-card{
+    width: 100%;
+    .topofday-card {
       width: 90%;
       margin-bottom: 10px;
       margin-top: 10px;
-      &:last-child{
+      &:last-child {
         margin-bottom: 25px;
       }
     }
   }
 }
-.flex-h1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.flex-h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

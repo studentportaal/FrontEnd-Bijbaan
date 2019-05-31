@@ -131,35 +131,34 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
-.no-content{
-  color:gray;
+.no-content {
+  color: gray;
 }
 
 #container {
   top: 64px !important;
 }
-@media(max-width: 850px) {
+@media (max-width: 850px) {
   #container {
     top: 56px !important;
   }
 }
 
-@media only screen and (max-width: 850px){
-  body{
-    .container
-    {
+@media only screen and (max-width: 850px) {
+  body {
+    .container {
       width: stretch;
       margin-left: 0px;
       margin-right: 0px;
-      padding:5px;
+      padding: 5px;
     }
-    mat-list{
+    mat-list {
       margin: 5px !important;
     }
-    .mat-list-item{
+    .mat-list-item {
       padding-top: 5px;
       padding-bottom: 5px;
       text-align: left;
-  }
+    }
   }
 }

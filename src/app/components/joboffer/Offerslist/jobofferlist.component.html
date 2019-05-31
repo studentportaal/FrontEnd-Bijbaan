@@ -1,8 +1,5 @@
 <div class="container container-md custom-button">
   <h1 class="flex-h1"><span>{{'JOBOFFER.JOBOFFERS' | translate}}</span>
-    <!-- <button mat-stroked-button class="default-button" (click)="openDialog()">
-      {{'JOBOFFER.BUTTON.FILTERCOMPANY' | translate}}
-    </button> -->
   </h1>
     <div class="topofday-container" *ngIf="topOfDayJobOffers?.length > 0 && topOfDayJobOffers?.length <= 3">
       <mat-card (click)="getJobOffer(topofday.id)" class="topofday-card pointer mat-elevation-z8" *ngFor="let topofday of topOfDayJobOffers">
