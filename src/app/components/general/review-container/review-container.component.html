@@ -1,0 +1,6 @@
+<div class="container container-md review-container">
+  <h1 class="mat-display-1">{{ 'REVIEW.TITLE' | translate}}</h1>
+  <mat-spinner [diameter]="50" *ngIf="!reviews"></mat-spinner>
+  <p *ngIf="reviews?.length === 0">{{ 'REVIEW.NO.CONTENT' | translate}}</p>
+  <app-review *ngFor="let review of reviews" [review]="review"></app-review>
+</div>

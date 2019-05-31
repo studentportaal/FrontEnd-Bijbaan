@@ -11,7 +11,8 @@
     "SELECT.LANGUAGE": "Selecteer taal",
     "DUTCH": "Nederlands",
     "ENGLISH": "Engels",
-    "CLOSE": "Sluiten"
+    "CLOSE": "Sluiten",
+    "REVIEW": "Reviews schrijven"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal! We hebben geen bijbanen :)"
@@ -103,5 +104,15 @@
     "STREET": "Straat",
     "HOUSENUMBER": "Huisnummmer",
     "ZIPCODE": "Postcode"
+  },
+  "REVIEW": {
+    "TITLE": "Reviews",
+    "NO.CONTENT": "Er zijn nog geen reviews geschreven.",
+    "WRITE": "Review Scrijven",
+    "NO.REVIEWS": "Geen reviews om te scrhijven",
+    "SAVE": "Opslaan",
+    "LABEL.WRITE": "Schrijf je review",
+    "LABEL.STARS": "Aantal sterren",
+    "ABOUT": "Review over"
   }
 }

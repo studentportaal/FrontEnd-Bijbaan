@@ -11,7 +11,8 @@
     "SELECT.LANGUAGE": "Select language",
     "DUTCH": "Dutch",
     "ENGLISH": "English",
-    "CLOSE": "Close"
+    "CLOSE": "Close",
+    "REVIEW": "Write reviews"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals"
@@ -103,5 +104,15 @@
     "STREET": "Street",
     "HOUSENUMBER": "House number",
     "ZIPCODE": "Zip code"
+  },
+  "REVIEW": {
+    "TITLE": "Reviews",
+    "NO.CONTENT": "No reviews have been written.",
+    "WRITE": "Write reviews",
+    "NO.REVIEWS": "You have no pending reviews",
+    "SAVE": "Save",
+    "LABEL.WRITE": "Write your review",
+    "LABEL.STARS": "Stars",
+    "ABOUT": "Review about"
   }
 }
