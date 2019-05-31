@@ -104,5 +104,15 @@
     "STREET": "Street",
     "HOUSENUMBER": "House number",
     "ZIPCODE": "Zip code"
+  },
+  "REVIEW": {
+    "TITLE": "Reviews",
+    "NO.CONTENT": "No reviews have been written.",
+    "WRITE": "Write reviews",
+    "NO.REVIEWS": "You have no pending reviews",
+    "SAVE": "Save",
+    "LABEL.WRITE": "Write your review",
+    "LABEL.STARS": "Stars",
+    "ABOUT": "Review about"
   }
 }
