@@ -31,7 +31,24 @@
       </mat-menu>
     </ng-container>
 
-    <!-- Generic logged in links go here i.e. 'log out' IF WE HAD ONE -->
+    <!-- Generic logged in links go here i.e. 'log out' IF WE HAD ONE || BUT WE HAVE ONE NOW -->
+    <ng-container>
+      <a class="notification" [mat-menu-trigger-for]="notes">
+        <mat-icon matBadge="{{unread}}" matBadgeColor="warn" [matBadgeHidden]="unread < 0">notifications</mat-icon>
+        <mat-menu #notes="matMenu">
+          <ng-container *ngIf="notifications && notifications.length > 0">
+            <a mat-menu-item *ngFor="let x of notifications"
+               [ngStyle]="{
+               'background-color': x.read === true? 'white': 'lightgray'
+               }"
+               title="notification">{{x.userid}}</a>
+          </ng-container>
+          <a class="mark-read" title="markRead" (click)="editNotification()">mark as read</a>
+        </mat-menu>
+      </a>
+    </ng-container>
+
+
     <a class="nav-item-link" title="{{'NAVBAR.LOGOUT' | translate}}" routerLink="/login">{{'NAVBAR.LOGOUT' | translate}} <i class="material-icons-round nav-icon">exit_to_app</i></a>
 
   </ng-container>

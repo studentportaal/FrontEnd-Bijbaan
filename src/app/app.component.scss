@@ -16,3 +16,33 @@ mat-toolbar{
     justify-content: center;
     align-items: center;
 }
+
+.notification {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  position: relative;
+  display: flex;
+  border-radius: 2px;
+}
+
+.notification .badge {
+  font-size: 15px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  padding: 4px 4px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+
+.read{
+
+}
+
+.mark-read {
+  font-size: 11px;
+  float: right;
+  text-decoration: underline;
+}
