@@ -15,6 +15,7 @@ import { MatTableDataSource} from '@angular/material';
   styleUrls: ['./jobofferlist.component.scss']
 })
 export class JobofferlistComponent implements OnInit {
+
   @ViewChild(MatSort) sort: MatSort;
 
   jobOffers: JobOffer[];
@@ -39,19 +40,7 @@ export class JobofferlistComponent implements OnInit {
     this.getServerData(null);
     this.getCompanies();
     this.getAllTopOfDaysJobOffers();
-  }
-
-  public openDialog() {
-    const dialogRef = this.dialog.open(CompanyFilterDialogComponent, {
-      data: { companies: this.companies },
-      maxHeight: '750px',
-      minWidth: '500px'
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      this.companies = result;
-      this.getServerData();
-    });
+    setInterval(() => this.getAllTopOfDaysJobOffers() , 20000);
   }
 
   public getCompanies() {

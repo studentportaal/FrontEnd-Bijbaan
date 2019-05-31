@@ -1,18 +1,49 @@
-mat-toolbar{
-    a{
-        text-decoration: none; 
-        color:white;
-    }
+@import "../vars";
+
+mat-toolbar {
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  mat-icon {
+    color: white;
+  }
 }
 
-
 .fill-remaining-space {
-    /* This fills the remaining space, by using flexbox. 
+  /* This fills the remaining space, by using flexbox. 
        Every toolbar row uses a flexbox row layout. */
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}
 .language-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-menu-items {
+  display: flex;
+}
+.mat-drawer-opened {
+  height: fit-content;
+}
+// .mat-drawer-container{
+//     position: absolute;
+// }
+mat-sidenav-content {
+  background: lightgray;
+  min-height: 100%;
+}
+.navbar-sidenav {
+  background-color: $primary;
+  mat-nav-list {
+    a {
+      color: white;
+    }
+  }
+}
+:host /deep/ .mat-list-item-content {
+  justify-content: space-between;
+  i {
+    margin-left: 15px;
+  }
 }
