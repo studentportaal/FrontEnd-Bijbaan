@@ -2,27 +2,29 @@
 
   <span *ngIf="!company">Loading company...</span>
   <ng-container *ngIf="company">
-  <h1 class="mat-display-1">{{company.name}}</h1>
-  <mat-list>
-    <ng-container *ngIf="company.description">
-      <mat-list-item><p><b>{{'COMPANY.DESCRIPTION' | translate}}: </b> {{company.description}}</p></mat-list-item>
-      <mat-divider></mat-divider>
-    </ng-container>
-    <ng-container *ngIf="company.city">
-      <mat-list-item><p><b>{{'COMPANY.CITY' | translate}}: :</b> {{company.city}}</p></mat-list-item>
-      <mat-divider></mat-divider>
-    </ng-container>
-    <ng-container *ngIf="company.streetname">
-      <mat-list-item><p><b>{{'COMPANY.STREET' | translate}}: :</b> {{company.streetname}}</p></mat-list-item>
-      <mat-divider></mat-divider>
-    </ng-container>
-    <ng-container *ngIf="company.housenumber">
-      <mat-list-item><p><b>{{'COMPANY.HOUSENUMBER' | translate}}: :</b> {{company.housenumber}}</p></mat-list-item>
-      <mat-divider></mat-divider>
-    </ng-container>
-    <ng-container *ngIf="company.postalcode">
-      <mat-list-item><p><b>{{'COMPANY.ZIPCODE' | translate}}: :</b> {{company.postalcode}}</p></mat-list-item>
-    </ng-container>
-  </mat-list>
+    <h1 class="mat-display-1">{{company.name}}</h1>
+    <mat-list>
+      <ng-container *ngIf="company.description">
+        <mat-list-item><p><b>{{'COMPANY.DESCRIPTION' | translate}}: </b> {{company.description}}</p></mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+      <ng-container *ngIf="company.city">
+        <mat-list-item><p><b>{{'COMPANY.CITY' | translate}}: :</b> {{company.city}}</p></mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+      <ng-container *ngIf="company.streetname">
+        <mat-list-item><p><b>{{'COMPANY.STREET' | translate}}: :</b> {{company.streetname}}</p></mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+      <ng-container *ngIf="company.housenumber">
+        <mat-list-item><p><b>{{'COMPANY.HOUSENUMBER' | translate}}: :</b> {{company.housenumber}}</p></mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+      <ng-container *ngIf="company.postalcode">
+        <mat-list-item><p><b>{{'COMPANY.ZIPCODE' | translate}}: :</b> {{company.postalcode}}</p></mat-list-item>
+      </ng-container>
+    </mat-list>
   </ng-container>
 </div>
+
+<app-review-container *ngIf="company" [target]="company.uuid"></app-review-container>

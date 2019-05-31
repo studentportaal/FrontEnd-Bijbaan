@@ -25,6 +25,9 @@ import { EditSkillsComponent } from './components/joboffer/editskills/editskills
 import {AuthenticationInterceptor} from "./interceptors/authentication/authentication.interceptor";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { ReviewComponent } from './components/review/review.component';
+import { ReviewContainerComponent } from './components/general/review-container/review-container.component';
+import { WriteReviewComponent } from './components/general/write-review/write-review.component';
 
 
 @NgModule({
@@ -45,7 +48,10 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     EditjobofferComponent,
     CompanyFilterDialogComponent,
     OwnjoboffersComponent,
-    EditSkillsComponent
+    EditSkillsComponent,
+    ReviewComponent,
+    ReviewContainerComponent,
+    WriteReviewComponent
   ],
   imports: [
     BrowserModule,
