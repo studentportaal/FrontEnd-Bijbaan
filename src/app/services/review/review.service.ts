@@ -21,8 +21,7 @@ export class ReviewService {
 
   public updateReview(review: Review): Observable<any> {
     const url = `${this.baseUrl}/updateReview`;
-    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
 
-    return this.http.put(url, {body: review});
+    return this.http.patch(url, review);
   }
 }

@@ -22,6 +22,8 @@
                   routerLink="/user/view-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
                   <a mat-menu-item color="default" title="{{'NAVBAR.EDITPROFILE' | translate}}"
                   routerLink="/user/edit-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.EDITPROFILE' | translate}}</a>
+                  <a mat-menu-item color="default" title="{{'NAVBAR.REVIEWS' | translate}}" routerLink="/reviews/{{authenticationService.user.uuid}}">{{'NAVBAR.REVIEW' | translate}}</a>
+
                 </mat-menu>
             </ng-container>
         

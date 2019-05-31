@@ -16,9 +16,9 @@ export class ReviewContainerComponent implements OnInit {
   constructor(private reviewService: ReviewService) { }
 
   ngOnInit() {
-    this.reviewService.getReviews('34f70328-c183-447d-b63b-c1140311b35b', '', true).subscribe((reviews) => {
+    this.reviewService.getReviews(this.target, '', true).subscribe((reviews) => {
       this.reviews = reviews;
-    });
+    }, err => this.reviews = []);
   }
 
 }

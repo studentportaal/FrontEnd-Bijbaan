@@ -1,21 +1,23 @@
 <div class="container container-md">
-  <h1>Review schrijven</h1>
+  <h1>{{ 'REVIEW.WRITE' | translate}}</h1>
   <mat-divider></mat-divider>
-  <mat-spinner [diameter]="50" *ngIf="!reviews"></mat-spinner>
-  <h3 *ngIf="reviews?.length === 0"> Geen reviews om te schrijven</h3>
+  <div class="loader">
+    <mat-spinner [diameter]="50" *ngIf="!reviews"></mat-spinner>
+    <h4 *ngIf="reviews?.length === 0"> {{ 'REVIEW.NO.REVIEWS' | translate}}.</h4>
+  </div>
 
   <div *ngFor="let review of reviews; let i = index">
-    <h3> Review over {{targets[i]}}</h3>
+    <h3> {{ 'REVIEW.ABOUT' | translate}} {{targets[i]}}</h3>
     <form>
       <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="schrijf je review" [(ngModel)]="review.content"
+        <textarea matInput placeholder="{{ 'REVIEW.LABEL.WRITE' | translate}}" [(ngModel)]="review.content"
                   [ngModelOptions]="{standalone: true}"></textarea>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="aantal sterren" min="1" max="5" type="number" [(ngModel)]="review.stars"
+        <input matInput placeholder="{{ 'REVIEW.LABEL.STARS' | translate}}" min="1" max="5" type="number" [(ngModel)]="review.stars"
                [ngModelOptions]="{standalone: true}">
       </mat-form-field>
-      <button (click)="save(i)" mat-raised-button color="primary">Opslaan</button>
+      <button (click)="save(i)" mat-raised-button color="primary">{{ 'REVIEW.SAVE' | translate}}</button>
     </form>
     <mat-divider></mat-divider>
   </div>
