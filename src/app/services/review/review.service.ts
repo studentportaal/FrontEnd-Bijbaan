@@ -22,6 +22,6 @@ export class ReviewService {
   public updateReview(review: Review): Observable<any> {
     const url = `${this.baseUrl}/updateReview`;
 
-    return this.http.patch(url, review);
+    return this.http.put(url, review);
   }
 }

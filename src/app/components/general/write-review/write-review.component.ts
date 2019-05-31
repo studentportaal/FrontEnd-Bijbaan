@@ -53,6 +53,8 @@ export class WriteReviewComponent implements OnInit {
   save(i: number) {
     const review = this.reviews[i];
     review.written = true;
+
+    console.log(review);
     this.reviewService.updateReview(review).subscribe((response) => {
       this.showMessage('Opgeslagen');
       window.location.reload();
