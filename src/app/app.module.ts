@@ -8,7 +8,7 @@ import { UserprofileComponent } from './components/student/userprofile/userprofi
 import { HomeComponent } from './components/general/home/home.component';
 import { RegisterComponent } from './components/student/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { JobofferlistComponent } from './components/joboffer/Offerslist/jobofferlist.component';
@@ -22,9 +22,10 @@ import { EditjobofferComponent } from './components/joboffer/editjoboffer/editjo
 import { CompanyFilterDialogComponent } from './components/joboffer/companyfilterdialog/companyfilterdialog.component';
 import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjoboffers.component';
 import { EditSkillsComponent } from './components/joboffer/editskills/editskills.component';
-import {AuthenticationInterceptor} from "./interceptors/authentication/authentication.interceptor";
-import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import { AuthenticationInterceptor } from "./interceptors/authentication/authentication.interceptor";
+import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { UserjoboffersComponent } from './components/student/userjoboffers/userjoboffers.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     EditjobofferComponent,
     CompanyFilterDialogComponent,
     OwnjoboffersComponent,
-    EditSkillsComponent
+    EditSkillsComponent,
+    UserjoboffersComponent
   ],
   imports: [
     BrowserModule,

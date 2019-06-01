@@ -11,6 +11,7 @@ import { CompanyComponent } from './components/general/company/company/company.c
 import { AddjobofferComponent } from './components/joboffer/addjoboffer/addjoboffer.component';
 import { UsereditprofileComponent } from './components/student/usereditprofile/usereditprofile.component';
 import {OwnjoboffersComponent} from "./components/joboffer/ownjoboffers/ownjoboffers.component";
+import { UserjoboffersComponent } from './components/student/userjoboffers/userjoboffers.component';
 
 
 const routes: Routes = [
@@ -57,6 +58,10 @@ const routes: Routes = [
   {
     path: 'users/:id/joboffers',
     component: OwnjoboffersComponent
+  },
+  {
+    path: 'students/:id/joboffers',
+    component: UserjoboffersComponent
   }
 ];
 

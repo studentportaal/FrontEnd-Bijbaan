@@ -1,0 +1,36 @@
+<div class="container container-md" *ngIf="authenticationService.user">
+  <h1 class="mat-display-1">{{'USERPROFILE.FIELD.APPLIED' | translate}}</h1>
+  <ng-container ng-if="jobOffers">  
+    <table mat-table [dataSource]="dataSource" matSort matSortActive="title" matSortDirection="asc">
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>{{'JOBOFFER.FIELD.FUNCTION.PLACEHOLDER' | translate}}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let joboffer" attr.aria-label="{{'JOBOFFER.FIELD.FUNCTION.PLACEHOLDER' | translate}}"><b>{{joboffer.title}}</b> </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>{{'USERPROFILE.APPLICATION.DATE' | translate}}
+        </mat-header-cell>
+        <mat-cell class="ellipsis" *matCellDef="let joboffer" attr.aria-label="{{'USERPROFILE.APPLICATION.DATE' | translate}}"><span>{{joboffer.applications[0].applicationDate | date:'dd-MM-yyyy'}}</span></mat-cell>
+      </ng-container>
+  <ng-container matColumnDef="accepted">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>{{'USERPROFILE.APPLICATION.STATUS' | translate}}
+    </mat-header-cell>
+    <mat-cell class="ellipsis" *matCellDef="let joboffer" attr.aria-label="{{'USERPROFILE.APPLICATION.STATUS' | translate}}">   <ng-container *ngIf="joboffer.applications[0].accepted == false">
+      {{ 'USERPROFILE.APPLICATION.WAITINGFORREPLY' | translate}}
+    </ng-container>
+    <ng-container *ngIf="joboffer.applications[0].accepted == true">
+      {{ 'USERPROFILE.APPLICATION.ACCEPTED' | translate}}
+    </ng-container> </mat-cell>
+  </ng-container>
+  <mat-header-row color="accent" *matHeaderRowDef="['title','date','accepted']">
+  </mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['title','date','accepted'];"
+  routerLink="/joboffers/details/{{row.id}}"></mat-row>
+</table>
+</ng-container>
+
+
+<div *ngIf="!jobOffers">
+  <p>{{ 'USERPROFILE.APPLICATION.NOAPPLIED' | translate}}</p>
+</div>
+</div>

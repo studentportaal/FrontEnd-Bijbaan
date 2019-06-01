@@ -22,6 +22,8 @@
                   routerLink="/user/view-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
                   <a mat-menu-item color="default" title="{{'NAVBAR.EDITPROFILE' | translate}}"
                   routerLink="/user/edit-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.EDITPROFILE' | translate}}</a>
+                  <a mat-menu-item color="default" title="{{'NAVBAR.MYAPPLIEDJOBOFFERS' | translate}}"
+                  routerLink="/students/{{authenticationService.user.uuid}}/joboffers">{{'NAVBAR.MYAPPLIEDJOBOFFERS' | translate}}</a>
                 </mat-menu>
             </ng-container>
         
@@ -77,6 +79,8 @@
                   routerLink="/user/view-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
                   <a (click)="sidenav.toggle()" mat-menu-item color="default" title="{{'NAVBAR.EDITPROFILE' | translate}}"
                   routerLink="/user/edit-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.EDITPROFILE' | translate}}</a>
+                  <a (click)="sidenav.toggle()" mat-menu-item color="default" title="{{'NAVBAR.MYAPPLIEDJOBOFFERS' | translate}}"
+                  routerLink="/students/{{authenticationService.user.uuid}}/joboffers">{{'NAVBAR.MYAPPLIEDJOBOFFERS' | translate}}</a>
                 </mat-menu>
         </ng-container>
         <!-- Company links go here -->

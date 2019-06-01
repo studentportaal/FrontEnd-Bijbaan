@@ -7,6 +7,7 @@
     "LOGIN": "Inloggen",
     "LOGOUT": "Uitloggen",
     "MYJOBOFFERS": "Mijn geplaatste vacatures",
+    "MYAPPLIEDJOBOFFERS": "Mijn vacatures",
     "ADDJOBOFFER": "Vacature toevoegen",
     "SELECT.LANGUAGE": "Selecteer taal",
     "DUTCH": "Nederlands",
@@ -52,7 +53,15 @@
     "FIELD.INSTITUTE": "School",
     "FIELD.EMAIL": "Email",
     "FIELD.SKILLS": "Vaardigheden",
-    "BUTTON.CONFIRM": "Aanpassen"
+    "FIELD.APPLIED": "Mijn vacatures",
+    "BUTTON.CONFIRM": "Aanpassen",
+    "APPLICATION": {
+       "NOAPPLIED":  "Geen sollicitaties",
+       "ACCEPTED": "Aangenomen",
+       "WAITINGFORREPLY": "Wachten op reactie bedrijf",
+       "DATE": "Datum",
+       "STATUS":  "Status"
+    }
   },
   "JOBOFFER": {
     "JOBOFFERS": "Vacatures",

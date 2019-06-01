@@ -1,0 +1,18 @@
+a {
+  color: gray;
+  text-decoration: none;
+  display: inline;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  &:hover {
+    padding-left: 10px;
+    padding-right: 10px;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 20px;
+  }
+}
+table {
+  width: 100%;
+}
