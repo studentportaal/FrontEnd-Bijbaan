@@ -4,6 +4,7 @@ import {JobOffer} from "../../domain/JobOffer";
 import {Notification} from "../../domain/Notification";
 import {Observable} from "rxjs";
 import {User} from "../../domain/User";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class NotificationService {
   constructor(private httpClient: HttpClient) {
   }
 
+  private baseUrl = environment.NOTIFICATION_BASE;
 
 
   public createNotification(joboffer: JobOffer) {
@@ -22,7 +24,7 @@ export class NotificationService {
       notifications.push(new Notification(a.applicant.uuid, joboffer.id, joboffer.title));
     }
 
-    return this.httpClient.post("https://europe-west1-pts6-bijbaan.cloudfunctions.net/createNotification", notifications);
+    return this.httpClient.post(this.baseUrl + '/createNotification', notifications);
 
   }
 
@@ -34,10 +36,10 @@ export class NotificationService {
         update.push(x);
       }
     });
-    return this.httpClient.patch('https://europe-west1-pts6-bijbaan.cloudfunctions.net/editNotification', update);
+    return this.httpClient.patch(this.baseUrl + '/editNotification', update);
   }
 
   public getNotifications(u: User): Observable<Notification[]> {
-    return this.httpClient.get<Notification[]>('https://europe-west1-pts6-bijbaan.cloudfunctions.net/getNotifications?uid=' + u.uuid);
+    return this.httpClient.get<Notification[]>(this.baseUrl + '/getNotifications?uid=' + u.uuid);
   }
 }

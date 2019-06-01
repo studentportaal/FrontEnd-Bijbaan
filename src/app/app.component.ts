@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   title = 'Jobby';
   languageicon = 'nl';
   notifications: Notification[];
-  unread = 0;
+  unread;
 
   constructor(public translate: TranslateService,
               public authenticationService: AuthenticationService,
@@ -53,11 +53,7 @@ export class AppComponent implements OnInit {
         this.notifications = res;
 
         if (this.notifications) {
-          this.notifications.forEach(x => {
-            if (x.read === false) {
-              this.unread++;
-            }
-          });
+          this.calculateUnread(this.notifications);
         }
       });
 
@@ -71,16 +67,21 @@ export class AppComponent implements OnInit {
         this.notificationService.getNotifications(this.authenticationService.user).subscribe(newNotifications => {
           this.notifications = newNotifications;
 
-          this.unread = 0;
-          this.notifications.forEach(x => {
-            if (x.read === false) {
-              this.unread++;
-            }
-          });
+          this.calculateUnread(this.notifications);
           this.router.navigateByUrl('/');
         });
       }
     );
+  }
+
+  calculateUnread(notifications: Notification[]) {
+
+    this.unread = 0;
+    notifications.forEach(x => {
+      if (x.read === false) {
+        this.unread++;
+      }
+    });
   }
 
   setLanguage(language: string) {
