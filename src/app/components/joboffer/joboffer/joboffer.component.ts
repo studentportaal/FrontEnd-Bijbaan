@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {JobofferService} from '../../../services/joboffer/joboffer.service';
 import { ActivatedRoute } from '@angular/router';
 import {CompanyService} from '../../../services/company/company.service';
 import {Company} from '../../../domain/Company';
 import {JobOffer} from '../../../domain/JobOffer';
 import {AuthenticationService} from '../../../services/authentication/authentication.service';
-import {forEach} from "@angular/router/src/utils/collection";
 import {MatDialog, MatSnackBar} from "@angular/material";
 
 @Component({
@@ -14,8 +13,10 @@ import {MatDialog, MatSnackBar} from "@angular/material";
   styleUrls: ['./joboffer.component.scss']
 })
 export class JobofferComponent implements OnInit {
+
   joboffer: JobOffer;
   editBoolean = false;
+  paymentBoolean = false;
   private company: Company;
 
   constructor(private route: ActivatedRoute,
@@ -40,8 +41,16 @@ export class JobofferComponent implements OnInit {
     this.editBoolean = true;
   }
 
+  pay() {
+    this.paymentBoolean = true;
+  }
+
   receiveBoolean($boolean) {
     this.editBoolean = $boolean;
+  }
+
+  receivePaymentBoolean($boolean) {
+    this.paymentBoolean = $boolean;
   }
 
   alreadyApplied(): boolean {

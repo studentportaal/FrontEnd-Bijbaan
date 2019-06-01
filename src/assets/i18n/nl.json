@@ -75,6 +75,7 @@
     "BUTTON.APPLY": "Solliciteren",
     "BUTTON.EDIT": "Wijzigen",
     "BUTTON.CANCEL": "Annuleren",
+    "BUTTON.PAYMENT": "Dagtopper",
     "LABEL.POSITION": "Functie",
     "LABEL.SALARY": "Salaris",
     "LABEL.JOBDESCRIPTION": "Taakomschrijving",
@@ -103,5 +104,10 @@
     "STREET": "Straat",
     "HOUSENUMBER": "Huisnummmer",
     "ZIPCODE": "Postcode"
+  },
+  "PAYMENT": {
+    "BUTTON.PAY": "Betalen",
+    "BUTTON.CANCEL": "Annuleren",
+    "TOOLTIP": "Selecteer een betaalmethode en druk op betalen."
   }
 }

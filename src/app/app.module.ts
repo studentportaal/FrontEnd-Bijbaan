@@ -24,7 +24,8 @@ import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjob
 import { EditSkillsComponent } from './components/joboffer/editskills/editskills.component';
 import {AuthenticationInterceptor} from "./interceptors/authentication/authentication.interceptor";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {PaymentComponent} from "./components/general/company/payment/payment.component";
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     EditjobofferComponent,
     CompanyFilterDialogComponent,
     OwnjoboffersComponent,
-    EditSkillsComponent
+    EditSkillsComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

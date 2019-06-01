@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   API_BASE: 'http://localhost:9000',
-  FONTYS_AUTH: 'http://localhost:5000'
+  FONTYS_AUTH: 'http://localhost:5000',
+  API_PAYMENT: 'https://localhost:44360/api'
 };
 
 /*

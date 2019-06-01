@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       const token: string = response;
       await this.authenticationService.setSession(token, UserType.COMPANY);
       const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
-        duration: 1500
+        duration: 2500
       });
       snackbarRef.afterDismissed().subscribe(() => {
         this.router.navigateByUrl('/');
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       const token: string = response;
       await this.authenticationService.setSession(token, UserType.STUDENT);
       const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
-        duration: 1500
+        duration: 2500
       });
       snackbarRef.afterDismissed().subscribe(() => {
         this.router.navigateByUrl('/');

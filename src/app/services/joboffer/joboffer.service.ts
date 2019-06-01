@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {JobOffer} from '../../domain/JobOffer';
-import {Observable} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {Student} from '../../domain/Student';
 import {environment} from '../../../environments/environment';
 import {Skill} from "../../domain/Skill";
@@ -14,6 +14,8 @@ export class JobofferService {
 
 
   private jobOfferBaseUrl = environment.API_BASE + '/joboffer';
+  jobOfferSource = new BehaviorSubject<JobOffer>(null);
+  currentJobOffer = this.jobOfferSource.asObservable();
 
   constructor(private httpClient: HttpClient) {
   }
@@ -71,5 +73,9 @@ export class JobofferService {
       "isOpen": jobOffer.isOpen
     };
     return this.httpClient.put<JobOffer>(this.jobOfferBaseUrl + '/' + jobOffer.id, newJobOffer);
+  }
+
+  changeCurrentJobOffer(jobOffer: JobOffer) {
+    this.jobOfferSource.next(jobOffer);
   }
 }
