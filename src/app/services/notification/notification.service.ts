@@ -17,7 +17,7 @@ export class NotificationService {
 
   public createNotification(joboffer: JobOffer) {
 
-    const notifications: Notification[] = []
+    const notifications: Notification[] = [];
     for (const a of joboffer.applications) {
       notifications.push(new Notification(a.applicant.uuid, joboffer.id, joboffer.title));
     }

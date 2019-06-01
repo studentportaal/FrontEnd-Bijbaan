@@ -67,7 +67,6 @@ export class JobofferComponent implements OnInit {
         duration: 1500});
     });
     this.notificationService.createNotification(this.joboffer).subscribe((response) => {
-      console.log("notification posted");
     });
   }
 
