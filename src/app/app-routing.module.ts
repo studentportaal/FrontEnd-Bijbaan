@@ -11,6 +11,7 @@ import { CompanyComponent } from './components/general/company/company/company.c
 import { AddjobofferComponent } from './components/joboffer/addjoboffer/addjoboffer.component';
 import { UsereditprofileComponent } from './components/student/usereditprofile/usereditprofile.component';
 import {OwnjoboffersComponent} from "./components/joboffer/ownjoboffers/ownjoboffers.component";
+import {WriteReviewComponent} from "./components/general/write-review/write-review.component";
 
 
 const routes: Routes = [
@@ -57,6 +58,10 @@ const routes: Routes = [
   {
     path: 'users/:id/joboffers',
     component: OwnjoboffersComponent
+  },
+  {
+    path: 'reviews/:author',
+    component: WriteReviewComponent
   }
 ];
 

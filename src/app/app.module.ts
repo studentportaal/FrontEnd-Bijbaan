@@ -24,6 +24,10 @@ import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjob
 import { EditSkillsComponent } from './components/joboffer/editskills/editskills.component';
 import {AuthenticationInterceptor} from "./interceptors/authentication/authentication.interceptor";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { ReviewComponent } from './components/review/review.component';
+import { ReviewContainerComponent } from './components/general/review-container/review-container.component';
+import { WriteReviewComponent } from './components/general/write-review/write-review.component';
 import {MatBadgeModule} from "@angular/material";
 
 
@@ -45,7 +49,10 @@ import {MatBadgeModule} from "@angular/material";
     EditjobofferComponent,
     CompanyFilterDialogComponent,
     OwnjoboffersComponent,
-    EditSkillsComponent
+    EditSkillsComponent,
+    ReviewComponent,
+    ReviewContainerComponent,
+    WriteReviewComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +69,7 @@ import {MatBadgeModule} from "@angular/material";
         deps: [HttpClient]
       }
     }),
+    FlexLayoutModule,
     MatBadgeModule
   ],
   entryComponents: [

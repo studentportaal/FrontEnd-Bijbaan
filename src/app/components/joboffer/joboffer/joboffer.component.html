@@ -2,7 +2,7 @@
   <div class="container container-md">
     <span *ngIf="!joboffer">Loading offer...</span>
     <ng-container *ngIf="joboffer != null">
-      <h1 class="mat-display-1">{{joboffer.title | titlecase}}</h1>
+      <h1 class="mat-display-1">{{joboffer.title}}</h1>
       <mat-list>
         <ng-container *ngIf="joboffer.function">
           <mat-list-item><p><b>{{'JOBOFFER.FIELD.FUNCTION.PLACEHOLDER' | translate}}:</b> {{joboffer.function}}</p>
@@ -27,10 +27,6 @@
           <mat-list-item><p><b>{{'JOBOFFER.FIELD.COMPANY.PLACEHOLDER' | translate}}: </b> <a
             routerLink="/company/{{company.uuid}}">{{company.name}}</a></p></mat-list-item>
           <mat-divider></mat-divider>
-        </ng-container>
-        <ng-container *ngIf="joboffer.information">
-          <mat-list-item><p><b>{{'JOBOFFER.FIELD.INFORMATION.PLACEHOLDER' | translate}}:</b> {{joboffer.information}}
-          </p></mat-list-item>
         </ng-container>
         <mat-divider></mat-divider>
         <ng-container *ngIf="joboffer.skills">

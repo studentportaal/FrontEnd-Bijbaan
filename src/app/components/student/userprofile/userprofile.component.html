@@ -6,7 +6,7 @@
     <mat-divider></mat-divider>
     <mat-list-item><p><b>{{'USERPROFILE.FIELD.LASTNAME' | translate}}:</b> {{user.lastName | titlecase}}</p></mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item><p><b>{{'USERPROFILE.FIELD.DATE' | translate}}:</b> {{user.dateOfBirth | date:'dd-MM-yyyy' | titlecase}}</p></mat-list-item>
+    <mat-list-item><p><b>{{'USERPROFILE.FIELD.DATE' | translate}}:</b> {{user.dateOfBirth | date:'dd-MM-yyyy'}}</p></mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item><p><b>{{'USERPROFILE.FIELD.INSTITUTE' | translate}}:</b> {{user.institute | titlecase}}</p></mat-list-item>
     <!-- <mat-divider></mat-divider>
@@ -25,6 +25,8 @@
     </ng-container>
   </mat-list>
 </div>
+
+<app-review-container *ngIf="user" [target]="user.uuid"></app-review-container>
 
 
 <div class="container container-sm" *ngIf="!user">

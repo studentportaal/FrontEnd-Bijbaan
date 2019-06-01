@@ -1,44 +1,51 @@
-mat-toolbar{
-    a{
-        text-decoration: none; 
-        color:white;
-    }
-}
+@import "../vars";
 
+mat-toolbar {
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  mat-icon {
+    color: white;
+  }
+}
 
 .fill-remaining-space {
-    /* This fills the remaining space, by using flexbox. 
+  /* This fills the remaining space, by using flexbox.
        Every toolbar row uses a flexbox row layout. */
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}
 .language-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.notification {
-  color: white;
-  text-decoration: none;
-  padding: 15px;
-  position: relative;
   display: flex;
-  border-radius: 2px;
+  justify-content: center;
+  align-items: center;
 }
-
-.notification .badge {
-  font-size: 15px;
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  padding: 4px 4px;
-  border-radius: 50%;
-  background: red;
-  color: white;
+.navbar-menu-items {
+  display: flex;
 }
-
-.read{
-
+.mat-drawer-opened {
+  height: fit-content;
+}
+// .mat-drawer-container{
+//     position: absolute;
+// }
+mat-sidenav-content {
+  background: lightgray;
+  min-height: 100%;
+}
+.navbar-sidenav {
+  background-color: $primary;
+  mat-nav-list {
+    a {
+      color: white;
+    }
+  }
+}
+:host /deep/ .mat-list-item-content {
+  justify-content: space-between;
+  i {
+    margin-left: 15px;
+  }
 }
 
 .mark-read {

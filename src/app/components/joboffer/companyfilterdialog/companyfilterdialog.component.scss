@@ -1,17 +1,17 @@
-.checkbox-section{
+.checkbox-section {
   display: flex;
   align-content: center;
   align-items: center;
   height: 60px;
 }
 
-.companylist{
+.companylist {
   height: 35px;
   margin-left: 15px;
 }
 
-.pop-up-container{
-  display:flex;
+.pop-up-container {
+  display: flex;
   flex-direction: column;
   button {
     align-self: center;
@@ -20,6 +20,6 @@
   p {
     align-self: center;
     font-weight: bold;
-    font-size: 18px; 
+    font-size: 18px;
   }
 }
