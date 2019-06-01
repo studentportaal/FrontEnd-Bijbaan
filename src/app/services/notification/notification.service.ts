@@ -22,7 +22,7 @@ export class NotificationService {
       notifications.push(new Notification(a.applicant.uuid, joboffer.id, joboffer.title));
     }
 
-    return this.httpClient.post("https://us-central1-pts6-bijbaan.cloudfunctions.net/createNotification", notifications);
+    return this.httpClient.post("https://europe-west1-pts6-bijbaan.cloudfunctions.net/createNotification", notifications);
 
   }
 
@@ -34,11 +34,10 @@ export class NotificationService {
         update.push(x);
       }
     });
-    console.log(update)
-    return this.httpClient.patch('https://us-central1-pts6-bijbaan.cloudfunctions.net/editNotification', update);
+    return this.httpClient.patch('https://europe-west1-pts6-bijbaan.cloudfunctions.net/editNotification', update);
   }
 
   public getNotifications(u: User): Observable<Notification[]> {
-    return this.httpClient.get<Notification[]>('https://us-central1-pts6-bijbaan.cloudfunctions.net/getNotifications?uid=' + u.uuid);
+    return this.httpClient.get<Notification[]>('https://europe-west1-pts6-bijbaan.cloudfunctions.net/getNotifications?uid=' + u.uuid);
   }
 }
