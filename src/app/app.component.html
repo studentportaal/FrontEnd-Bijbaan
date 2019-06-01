@@ -11,9 +11,9 @@
 
         <div class="navbar-menu-items" fxShow="true" fxHide.lt-md>
           <a class="nav-item-link" title="{{'NAVBAR.JOBOFFERS' | translate}}" routerLink="/joboffers"><span>{{'NAVBAR.JOBOFFERS' | translate}}</span><i class="material-icons-round nav-icon">account_balance</i></a>
-        
+
           <ng-container *ngIf="authenticationService.isLoggedIn()">
-        
+
             <!-- Student links go here -->
             <ng-container *ngIf="authenticationService.isStudent()">
                 <a class="pointer nav-item-link" [mat-menu-trigger-for]="menu">{{authenticationService.user.firstName | titlecase}} {{authenticationService.user.lastName | titlecase}}<i class="material-icons-round nav-icon">school</i></a>
@@ -25,8 +25,23 @@
                   <a mat-menu-item color="default" title="{{'NAVBAR.REVIEWS' | translate}}" routerLink="/reviews/{{authenticationService.user.uuid}}">{{'NAVBAR.REVIEW' | translate}}</a>
 
                 </mat-menu>
+              <ng-container>
+                <a class="notification" [mat-menu-trigger-for]="notes">
+                  <mat-icon matBadge="{{unread}}" matBadgeColor="warn" [matBadgeHidden]="unread < 0">notifications</mat-icon>
+                  <mat-menu #notes="matMenu">
+                    <ng-container *ngIf="notifications && notifications.length > 0">
+                      <a mat-menu-item *ngFor="let x of notifications"
+                         [ngStyle]="{
+               'background-color': x.read === true? 'white': 'lightgray'
+               }"
+                         title="notification">De status van de vacature {{x.joboffername}} is veranderd</a>
+                    </ng-container>
+                    <a class="mark-read" title="markRead" (click)="editNotification()">mark as read</a>
+                  </mat-menu>
+                </a>
+              </ng-container>
             </ng-container>
-        
+
             <!-- Company links go here -->
             <ng-container *ngIf="authenticationService.isCompany()">
               <a class="pointer nav-item-link" [mat-menu-trigger-for]="menu">{{authenticationService.user.email | titlecase}} <i class="material-icons-round nav-icon">business_center</i></a>
@@ -37,12 +52,12 @@
                 <a mat-menu-item color="default" title="{{'NAVBAR.REVIEWS' | translate}}" routerLink="/reviews/{{authenticationService.user.uuid}}">{{'NAVBAR.REVIEW' | translate}}</a>
               </mat-menu>
             </ng-container>
-        
+
             <!-- Generic logged in links go here i.e. 'log out' IF WE HAD ONE -->
             <a class="nav-item-link" title="{{'NAVBAR.LOGOUT' | translate}}" routerLink="/login">{{'NAVBAR.LOGOUT' | translate}} <i class="material-icons-round nav-icon">exit_to_app</i></a>
-        
+
           </ng-container>
-        
+
           <!-- Non logged in links go here -->
           <ng-container *ngIf=!authenticationService.user>
             <a class="nav-item-link" title="{{'NAVBAR.REGISTER' | translate}}"
@@ -50,7 +65,7 @@
             <a class="nav-item-link" title="{{'NAVBAR.LOGIN' | translate}}"
               routerLink="/login"> {{'NAVBAR.LOGIN' | translate}} <i class="material-icons-round nav-icon">account_circle</i></a>
           </ng-container>
-        
+
           <!-- Selecting language -->
           <ng-container>
             <mat-menu #menu="matMenu">
@@ -93,7 +108,7 @@
         </ng-container>
         <!-- Generic logged in links go here -->
         <a (click)="sidenav.toggle()"  title="{{'NAVBAR.LOGOUT' | translate}}" routerLink="/login" mat-list-item>{{'NAVBAR.LOGOUT' | translate}} <i class="material-icons-round nav-icon">exit_to_app</i></a>
-       </ng-container> 
+       </ng-container>
        <!-- Non logged in links go here -->
        <ng-container *ngIf=!authenticationService.user>
           <a (click)="sidenav.toggle()" title="{{'NAVBAR.REGISTER' | translate}}" routerLink="/register" mat-list-item> {{'NAVBAR.REGISTER' | translate}} <i class="material-icons-round nav-icon">create<!-- add_circle --></i></a>

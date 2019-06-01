@@ -28,6 +28,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { ReviewComponent } from './components/review/review.component';
 import { ReviewContainerComponent } from './components/general/review-container/review-container.component';
 import { WriteReviewComponent } from './components/general/write-review/write-review.component';
+import {MatBadgeModule} from "@angular/material";
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { WriteReviewComponent } from './components/general/write-review/write-re
         deps: [HttpClient]
       }
     }),
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatBadgeModule
   ],
   entryComponents: [
     CompanyFilterDialogComponent,
