@@ -18,7 +18,7 @@ export class UserjoboffersComponent implements OnInit {
   dataSource = new MatTableDataSource(this.jobOffers);
 
   constructor(private userService: UserService,
-    public authenticationService: AuthenticationService) { }
+              public authenticationService: AuthenticationService) { }
 
   ngOnInit() {
     if (this.authenticationService.isStudent()) {
