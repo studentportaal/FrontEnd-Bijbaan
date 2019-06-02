@@ -26,6 +26,7 @@ import { AuthenticationInterceptor } from "./interceptors/authentication/authent
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { UserjoboffersComponent } from './components/student/userjoboffers/userjoboffers.component';
+import { MatSortModule, MatTableModule } from '@angular/material';
 
 
 @NgModule({
@@ -64,7 +65,9 @@ import { UserjoboffersComponent } from './components/student/userjoboffers/userj
         deps: [HttpClient]
       }
     }),
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSortModule,
+    MatTableModule
   ],
   entryComponents: [
     CompanyFilterDialogComponent,
