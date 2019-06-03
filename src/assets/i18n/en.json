@@ -132,5 +132,9 @@
   },
   "TOPOFDAY": {
     "INFO": "Pay €10,- to make your job offer the top of the day"
+  },
+  "NOTIFICATION": {
+    "MARKASREAD": "Mark as read",
+    "STATUSCHANGED": "The status of the Job offer {{value}} has changed"
   }
 }
