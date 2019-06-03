@@ -20,7 +20,7 @@ export class PaymentComponent implements OnInit {
 
   showDropinUI = true;
   dropinInstance: any;
-  braintreeKey: any
+  braintreeKey: any;
   transaction: Transaction = new Transaction();
 
   ngOnInit() {

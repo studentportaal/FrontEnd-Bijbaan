@@ -9,7 +9,7 @@ import {Transaction} from '../../domain/Transaction';
 })
 export class PaymentService {
 
-  private paymentURL = environment.API_PAYMENT + '/payment'
+  private paymentURL = environment.API_PAYMENT + '/payment';
 
   constructor(private httpClient: HttpClient) { }
 
