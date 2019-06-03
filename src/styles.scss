@@ -2,10 +2,15 @@
 // @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "./vars";
 
+html {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   background: lightgray;
   font-family: "Roboto", sans-serif;
+  min-height: 100%;
 }
 
 .container {
@@ -91,6 +96,9 @@ form {
   &:hover {
     color: $secondary-dark !important;
     cursor: pointer;
+    .nav-item-icon-link{
+      color: $secondary-dark !important;
+    }
   }
 }
 .pointer {
@@ -126,6 +134,34 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
-.no-content{
-  color:gray;
+.no-content {
+  color: gray;
+}
+
+#container {
+  top: 64px !important;
+}
+@media (max-width: 850px) {
+  #container {
+    top: 56px !important;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  body {
+    .container {
+      width: stretch;
+      margin-left: 0px;
+      margin-right: 0px;
+      padding: 5px;
+    }
+    mat-list {
+      margin: 5px !important;
+    }
+    .mat-list-item {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      text-align: left;
+    }
+  }
 }

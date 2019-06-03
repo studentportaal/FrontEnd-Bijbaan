@@ -8,7 +8,7 @@ import { UserprofileComponent } from './components/student/userprofile/userprofi
 import { HomeComponent } from './components/general/home/home.component';
 import { RegisterComponent } from './components/student/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { JobofferlistComponent } from './components/joboffer/Offerslist/jobofferlist.component';
@@ -22,7 +22,16 @@ import { EditjobofferComponent } from './components/joboffer/editjoboffer/editjo
 import { CompanyFilterDialogComponent } from './components/joboffer/companyfilterdialog/companyfilterdialog.component';
 import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjoboffers.component';
 import { EditSkillsComponent } from './components/joboffer/editskills/editskills.component';
-import {AuthenticationInterceptor} from "./interceptors/authentication/authentication.interceptor";
+import { AuthenticationInterceptor } from "./interceptors/authentication/authentication.interceptor";
+import { HashLocationStrategy, LocationStrategy } from "@angular/common";
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { UserjoboffersComponent } from './components/student/userjoboffers/userjoboffers.component';
+import { MatSortModule, MatTableModule } from '@angular/material';
+import { ReviewComponent } from './components/review/review.component';
+import { ReviewContainerComponent } from './components/general/review-container/review-container.component';
+import { WriteReviewComponent } from './components/general/write-review/write-review.component';
+import { MatBadgeModule } from "@angular/material";
+import { PaymentComponent } from "./components/general/company/payment/payment.component";
 
 
 @NgModule({
@@ -43,7 +52,13 @@ import {AuthenticationInterceptor} from "./interceptors/authentication/authentic
     EditjobofferComponent,
     CompanyFilterDialogComponent,
     OwnjoboffersComponent,
-    EditSkillsComponent
+    EditSkillsComponent,
+    UserjoboffersComponent,
+    ReviewComponent,
+    ReviewContainerComponent,
+    WriteReviewComponent,
+    EditSkillsComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +74,11 @@ import {AuthenticationInterceptor} from "./interceptors/authentication/authentic
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    FlexLayoutModule,
+    MatSortModule,
+    MatTableModule,
+    MatBadgeModule
   ],
   entryComponents: [
     CompanyFilterDialogComponent,
@@ -69,6 +88,10 @@ import {AuthenticationInterceptor} from "./interceptors/authentication/authentic
       provide: HTTP_INTERCEPTORS,
       useClass: AuthenticationInterceptor,
       multi: true
+    },
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
     }
   ],
   bootstrap: [AppComponent]
