@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {AuthenticationService} from '../../../services/authentication/authentication.service';
 import {Company} from "../../../domain/Company";
 import {UserType} from "../../../domain/UserType";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   user: Student = new Student();
   company: Company = new Company();
+  isProd = environment.production;
 
   constructor(private authenticationService: AuthenticationService,
               private snackbar: MatSnackBar,
