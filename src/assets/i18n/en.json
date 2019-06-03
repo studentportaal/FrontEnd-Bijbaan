@@ -129,5 +129,8 @@
     "BUTTON.PAY": "Pay",
     "BUTTON.CANCEL": "Cancel",
     "TOOLTIP": "Select a payment method and press pay."
+  },
+  "TOPOFDAY": {
+    "INFO": "Pay €10,- to make your job offer the top of the day"
   }
 }

@@ -118,7 +118,7 @@
   "REVIEW": {
     "TITLE": "Reviews",
     "NO.CONTENT": "Er zijn nog geen reviews geschreven.",
-    "WRITE": "Review Scrijven",
+    "WRITE": "Review Schrijven",
     "NO.REVIEWS": "Geen reviews om te scrhijven",
     "SAVE": "Opslaan",
     "LABEL.WRITE": "Schrijf je review",
@@ -129,5 +129,8 @@
     "BUTTON.PAY": "Betalen",
     "BUTTON.CANCEL": "Annuleren",
     "TOOLTIP": "Selecteer een betaalmethode en druk op betalen."
+  },
+  "TOPOFDAY": {
+    "INFO": "Betaal €10,- om uw vacature dagtopper te maken"
   }
 }
