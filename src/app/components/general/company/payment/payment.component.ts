@@ -5,6 +5,7 @@ import {Transaction} from "../../../../domain/Transaction";
 import {JobofferService} from "../../../../services/joboffer/joboffer.service";
 import {JobOffer} from "../../../../domain/JobOffer";
 import {MatSnackBar} from "@angular/material";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-payment',
@@ -13,7 +14,9 @@ import {MatSnackBar} from "@angular/material";
 })
 export class PaymentComponent implements OnInit {
 
-  constructor(public paymentService: PaymentService, public jobOfferService: JobofferService, public snackbar: MatSnackBar) { }
+  constructor(public paymentService: PaymentService,
+              public snackbar: MatSnackBar,
+              public router: Router) { }
 
   @Input() jobOffer: JobOffer;
   @Output() paymentBoolean = new EventEmitter<boolean>();
@@ -41,6 +44,10 @@ export class PaymentComponent implements OnInit {
         const snackbarRef = this.snackbar.open('Payment succeeded', 'dismiss', {
           duration: 1500
         });
+
+          snackbarRef.afterDismissed().subscribe(() => {
+            this.router.navigateByUrl('/joboffers');
+          });
       },
         (error: any) => {
         const snackbarRef = this.snackbar.open('Payment failed', 'dismiss', {duration: 1500});
