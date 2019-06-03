@@ -56,7 +56,7 @@ import { PaymentComponent } from "./components/general/company/payment/payment.c
     UserjoboffersComponent,
     ReviewComponent,
     ReviewContainerComponent,
-    WriteReviewComponent
+    WriteReviewComponent,
     EditSkillsComponent,
     PaymentComponent
   ],
