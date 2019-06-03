@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {Company} from '../../../../domain/Company';
 import {CompanyService} from '../../../../services/company/company.service';
+import {ReviewService} from "../../../../services/review/review.service";
+import {Review} from "../../../../domain/Review";
 
 @Component({
   selector: 'app-company',
@@ -11,10 +13,11 @@ import {CompanyService} from '../../../../services/company/company.service';
 export class CompanyComponent implements OnInit {
   company: Company;
 
-  constructor(private route: ActivatedRoute, private companyService: CompanyService) { }
+  constructor(private route: ActivatedRoute,
+              private companyService: CompanyService) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id: string = this.route.snapshot.paramMap.get('id');
     this.getCompany(id);
   }
 

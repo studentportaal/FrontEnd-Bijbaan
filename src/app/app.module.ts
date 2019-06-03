@@ -27,6 +27,10 @@ import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { UserjoboffersComponent } from './components/student/userjoboffers/userjoboffers.component';
 import { MatSortModule, MatTableModule } from '@angular/material';
+import { ReviewComponent } from './components/review/review.component';
+import { ReviewContainerComponent } from './components/general/review-container/review-container.component';
+import { WriteReviewComponent } from './components/general/write-review/write-review.component';
+import { MatBadgeModule } from "@angular/material";
 
 
 @NgModule({
@@ -48,7 +52,10 @@ import { MatSortModule, MatTableModule } from '@angular/material';
     CompanyFilterDialogComponent,
     OwnjoboffersComponent,
     EditSkillsComponent,
-    UserjoboffersComponent
+    UserjoboffersComponent,
+    ReviewComponent,
+    ReviewContainerComponent,
+    WriteReviewComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +74,8 @@ import { MatSortModule, MatTableModule } from '@angular/material';
     }),
     FlexLayoutModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    MatBadgeModule
   ],
   entryComponents: [
     CompanyFilterDialogComponent,
