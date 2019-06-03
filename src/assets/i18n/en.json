@@ -7,11 +7,13 @@
     "LOGIN": "Login",
     "LOGOUT": "Log out",
     "MYJOBOFFERS": "My posted job offers",
+    "MYAPPLIEDJOBOFFERS": "My job offers",
     "ADDJOBOFFER": "Add job offer",
     "SELECT.LANGUAGE": "Select language",
     "DUTCH": "Dutch",
     "ENGLISH": "English",
-    "CLOSE": "Close"
+    "CLOSE": "Close",
+    "REVIEW": "Write reviews"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welcome to our job portal. We don't have jobs and we don't have portals"
@@ -52,7 +54,15 @@
     "FIELD.INSTITUTE": "Institute",
     "FIELD.EMAIL": "Email",
     "FIELD.SKILLS": "Skills",
-    "BUTTON.CONFIRM": "Edit profile"
+    "FIELD.APPLIED": "My job offers",
+    "BUTTON.CONFIRM": "Edit profile",
+    "APPLICATION": {
+       "NOAPPLIED":  "No applies",
+       "ACCEPTED": "Accepted",
+       "WAITINGFORREPLY": "Waiting for response",
+       "DATE": "Date",
+       "STATUS":  "Status"
+    }
   },
   "JOBOFFER": {
     "JOBOFFERS": "Job offers",
@@ -104,6 +114,16 @@
     "STREET": "Street",
     "HOUSENUMBER": "House number",
     "ZIPCODE": "Zip code"
+  },
+  "REVIEW": {
+    "TITLE": "Reviews",
+    "NO.CONTENT": "No reviews have been written.",
+    "WRITE": "Write reviews",
+    "NO.REVIEWS": "You have no pending reviews",
+    "SAVE": "Save",
+    "LABEL.WRITE": "Write your review",
+    "LABEL.STARS": "Stars",
+    "ABOUT": "Review about"
   },
   "PAYMENT": {
     "BUTTON.PAY": "Pay",

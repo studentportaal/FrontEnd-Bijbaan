@@ -6,6 +6,7 @@ import {Company} from '../../../domain/Company';
 import {JobOffer} from '../../../domain/JobOffer';
 import {AuthenticationService} from '../../../services/authentication/authentication.service';
 import {MatDialog, MatSnackBar} from "@angular/material";
+import {NotificationService} from "../../../services/notification/notification.service";
 
 @Component({
   selector: 'app-joboffer',
@@ -23,7 +24,8 @@ export class JobofferComponent implements OnInit {
               private jobOfferService: JobofferService,
               private companyService: CompanyService,
               private authenticationService: AuthenticationService,
-              private snackbar: MatSnackBar) { }
+              private snackbar: MatSnackBar,
+              private notificationService: NotificationService) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -72,6 +74,8 @@ export class JobofferComponent implements OnInit {
     this.jobOfferService.acceptApplicant(this.joboffer.id, applicationId).subscribe((response) => {
       const snackbarRef = this.snackbar.open('Applicant accepted', 'dismiss', {
         duration: 1500});
+    });
+    this.notificationService.createNotification(this.joboffer).subscribe((response) => {
     });
   }
 

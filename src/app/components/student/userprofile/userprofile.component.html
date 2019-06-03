@@ -21,10 +21,11 @@
           <mat-chip color="primary" *ngFor="let skill of user.skills" >{{skill.name | titlecase}}</mat-chip>
         </mat-chip-list>
       </mat-list-item>
- 
     </ng-container>
   </mat-list>
 </div>
+
+<app-review-container *ngIf="user" [target]="user.uuid"></app-review-container>
 
 
 <div class="container container-sm" *ngIf="!user">

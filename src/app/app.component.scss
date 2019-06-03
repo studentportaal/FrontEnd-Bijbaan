@@ -11,7 +11,7 @@ mat-toolbar {
 }
 
 .fill-remaining-space {
-  /* This fills the remaining space, by using flexbox. 
+  /* This fills the remaining space, by using flexbox.
        Every toolbar row uses a flexbox row layout. */
   flex: 1 1 auto;
 }
@@ -46,4 +46,10 @@ mat-sidenav-content {
   i {
     margin-left: 15px;
   }
+}
+
+.mark-read {
+  font-size: 11px;
+  float: right;
+  text-decoration: underline;
 }

@@ -1,11 +1,11 @@
- import { Injectable } from '@angular/core';
- import { HttpClient } from '@angular/common/http';
- import { environment} from '../../../environments/environment';
- import { Student } from '../../domain/Student';
- import {Observable} from 'rxjs';
- import {User} from "../../domain/User";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
+import { Student } from '../../domain/Student';
+import { Observable } from 'rxjs';
+import { User } from "../../domain/User";
 
- @Injectable({
+@Injectable({
   providedIn: 'root'
 })
 export class UserService {
@@ -23,7 +23,11 @@ export class UserService {
     return this.httpClient.post<Student>(this.baseUrl, user);
   }
 
-   updateUser(user: User) {
+  updateUser(user: User) {
     return this.httpClient.put<Student>(this.baseUrl + '/' + user.uuid, user);
-   }
- }
+  }
+
+  public getAppliedApplications(id: string) {
+    return this.httpClient.get<any>(this.baseUrl + '/' + id + '/applications');
+  }
+}
