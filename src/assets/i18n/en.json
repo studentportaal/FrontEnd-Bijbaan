@@ -85,6 +85,7 @@
     "BUTTON.APPLY": "Apply",
     "BUTTON.EDIT": "Edit",
     "BUTTON.CANCEL": "Cancel",
+    "BUTTON.PAYMENT": "Top of the day",
     "LABEL.POSITION": "Position",
     "LABEL.SALARY": "Salary",
     "LABEL.JOBDESCRIPTION": "Job Description",
@@ -123,5 +124,13 @@
     "LABEL.WRITE": "Write your review",
     "LABEL.STARS": "Stars",
     "ABOUT": "Review about"
+  },
+  "PAYMENT": {
+    "BUTTON.PAY": "Pay",
+    "BUTTON.CANCEL": "Cancel",
+    "TOOLTIP": "Select a payment method and press pay."
+  },
+  "TOPOFDAY": {
+    "INFO": "Pay €10,- to make your job offer the top of the day"
   }
 }

@@ -31,7 +31,7 @@
               },
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": ["node_modules/braintree-web-drop-in/dist/browser/dropin.js"],
             "es5BrowserSupport": true
           },
           "configurations": {

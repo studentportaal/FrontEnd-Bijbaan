@@ -85,6 +85,7 @@
     "BUTTON.APPLY": "Solliciteren",
     "BUTTON.EDIT": "Wijzigen",
     "BUTTON.CANCEL": "Annuleren",
+    "BUTTON.PAYMENT": "Dagtopper",
     "LABEL.POSITION": "Functie",
     "LABEL.SALARY": "Salaris",
     "LABEL.JOBDESCRIPTION": "Taakomschrijving",
@@ -117,11 +118,19 @@
   "REVIEW": {
     "TITLE": "Reviews",
     "NO.CONTENT": "Er zijn nog geen reviews geschreven.",
-    "WRITE": "Review Scrijven",
+    "WRITE": "Review Schrijven",
     "NO.REVIEWS": "Geen reviews om te scrhijven",
     "SAVE": "Opslaan",
     "LABEL.WRITE": "Schrijf je review",
     "LABEL.STARS": "Aantal sterren",
     "ABOUT": "Review over"
+  },
+  "PAYMENT": {
+    "BUTTON.PAY": "Betalen",
+    "BUTTON.CANCEL": "Annuleren",
+    "TOOLTIP": "Selecteer een betaalmethode en druk op betalen."
+  },
+  "TOPOFDAY": {
+    "INFO": "Betaal €10,- om uw vacature dagtopper te maken"
   }
 }
