@@ -61,7 +61,8 @@
        "ACCEPTED": "Aangenomen",
        "WAITINGFORREPLY": "Wachten op reactie bedrijf",
        "DATE": "Datum",
-       "STATUS":  "Status"
+       "STATUS":  "Status",
+       "CLOSED": "Gesloten"
     }
   },
   "JOBOFFER": {
@@ -132,5 +133,9 @@
   },
   "TOPOFDAY": {
     "INFO": "Betaal €10,- om uw vacature dagtopper te maken"
+  },
+  "NOTIFICATION": {
+    "MARKASREAD": "Als gelezen markeren",
+    "STATUSCHANGED": "De status van de vacature {{value}} is veranderd"
   }
 }
