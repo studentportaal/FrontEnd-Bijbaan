@@ -61,7 +61,8 @@
        "ACCEPTED": "Accepted",
        "WAITINGFORREPLY": "Waiting for response",
        "DATE": "Date",
-       "STATUS":  "Status"
+       "STATUS":  "Status",
+       "CLOSED": "Closed"
     }
   },
   "JOBOFFER": {
