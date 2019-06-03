@@ -38,9 +38,9 @@
               <ng-container *ngIf="notifications && notifications.length > 0">
                 <a mat-menu-item *ngFor="let x of notifications" [ngStyle]="{
                'background-color': x.read === true? 'white': 'lightgray'
-               }" title="notification">De status van de vacature {{x.joboffername}} is veranderd</a>
+               }" title="notification">{{ 'NOTIFICATION.STATUSCHANGED' | translate:{value: x.joboffername} }}</a>
               </ng-container>
-              <a class="mark-read" title="markRead" (click)="editNotification()">mark as read</a>
+              <a class="mark-read" title="markRead" (click)="editNotification()">{{'NOTIFICATION.MARKASREAD' | translate }}</a>
             </mat-menu>
           </a>
         </ng-container>
@@ -126,9 +126,9 @@
             <ng-container *ngIf="notifications && notifications.length > 0">
               <a routerLink="/students/{{authenticationService.user.uuid}}/joboffers" mat-menu-item *ngFor="let x of notifications" [ngStyle]="{
                'background-color': x.read === true? 'white': 'lightgray'
-               }" title="notification">{{ 'NOTIFICATION.MARKASREAD' | translate:{value: x.joboffername} }}</a>
+               }" title="notification">{{ 'NOTIFICATION.STATUSCHANGED' | translate:{value: x.joboffername} }}</a>
             </ng-container>
-            <a class="mark-read" title="markRead" (click)="editNotification()">{{'NOTIFICATION.MAKASREAD' | translate }}mark as read</a>
+            <a class="mark-read" title="markRead" (click)="editNotification()">{{'NOTIFICATION.MARKASREAD' | translate }}</a>
           </mat-menu>
         </ng-container>
         <!-- Company links go here -->
