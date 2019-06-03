@@ -124,7 +124,7 @@
           </a>
           <mat-menu #notes="matMenu">
             <ng-container *ngIf="notifications && notifications.length > 0">
-              <a mat-menu-item *ngFor="let x of notifications" [ngStyle]="{
+              <a routerLink="/students/{{authenticationService.user.uuid}}/joboffers" mat-menu-item *ngFor="let x of notifications" [ngStyle]="{
                'background-color': x.read === true? 'white': 'lightgray'
                }" title="notification">{{ 'NOTIFICATION.MARKASREAD' | translate:{value: x.joboffername} }}</a>
             </ng-container>
