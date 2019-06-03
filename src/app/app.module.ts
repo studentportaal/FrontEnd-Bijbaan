@@ -88,10 +88,6 @@ import { PaymentComponent } from "./components/general/company/payment/payment.c
       provide: HTTP_INTERCEPTORS,
       useClass: AuthenticationInterceptor,
       multi: true
-    },
-    {
-      provide: LocationStrategy,
-      useClass: HashLocationStrategy
     }
   ],
   bootstrap: [AppComponent]
