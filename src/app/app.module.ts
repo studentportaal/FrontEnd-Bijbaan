@@ -85,10 +85,6 @@ import { MatBadgeModule } from "@angular/material";
       provide: HTTP_INTERCEPTORS,
       useClass: AuthenticationInterceptor,
       multi: true
-    },
-    {
-      provide: LocationStrategy,
-      useClass: HashLocationStrategy
     }
   ],
   bootstrap: [AppComponent]
