@@ -37,10 +37,9 @@ export class UserjoboffersComponent implements OnInit {
 
   filterOnUser() {
     if (this.jobOffers) {
-      if (this.jobOffers.filter(x => x.applications.filter(a => a.applicant.uuid === this.authenticationService.user.uuid)).length > 0) {
-        this.jobOffers = this.jobOffers.filter(x => x.applications.filter(a => a.applicant.uuid === this.authenticationService.user.uuid));
-
-      }
+      this.jobOffers.forEach(j => {
+        j.applications = j.applications.filter(a => a.applicant.uuid === this.authenticationService.user.uuid);
+      });
     }
   }
 }

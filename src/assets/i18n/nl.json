@@ -61,7 +61,8 @@
        "ACCEPTED": "Aangenomen",
        "WAITINGFORREPLY": "Wachten op reactie bedrijf",
        "DATE": "Datum",
-       "STATUS":  "Status"
+       "STATUS":  "Status",
+       "CLOSED": "Gesloten"
     }
   },
   "JOBOFFER": {

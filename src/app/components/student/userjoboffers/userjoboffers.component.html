@@ -21,12 +21,15 @@
         </mat-header-cell>
         <mat-cell class="ellipsis" *matCellDef="let joboffer"
           attr.aria-label="{{'USERPROFILE.APPLICATION.STATUS' | translate}}">
-          <ng-container *ngIf="joboffer.applications[0].accepted == false">
-            {{ 'USERPROFILE.APPLICATION.WAITINGFORREPLY' | translate}}
+          <ng-container *ngIf="!joboffer.isOpen && !joboffer.applications[0].accepted">
+            {{ 'USERPROFILE.APPLICATION.CLOSED' | translate}}
           </ng-container>
-          <ng-container *ngIf="joboffer.applications[0].accepted == true">
+          <ng-container *ngIf="!joboffer.isOpen && joboffer.applications[0].accepted">
             {{ 'USERPROFILE.APPLICATION.ACCEPTED' | translate}}
           </ng-container>
+          <ng-container *ngIf="joboffer.isOpen">
+              {{ 'USERPROFILE.APPLICATION.WAITINGFORREPLY' | translate}}
+            </ng-container>
         </mat-cell>
       </ng-container>
       <mat-header-row color="accent" *matHeaderRowDef="['title','date','accepted']">
