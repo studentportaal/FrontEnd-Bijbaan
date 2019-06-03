@@ -1,0 +1,12 @@
+<div class="container container-md">
+  <h3>{{'TOPOFDAY.INFO' | translate}}</h3>
+  <div *ngIf="showDropinUI && braintreeKey">
+    <div id ="dropin-container">
+    </div>
+    <button mat-stroked-button id="submit-button" (click)="pay()"><i class="material-icons   button-icon"></i>{{'PAYMENT.BUTTON.PAY' | translate}}</button>
+    <button mat-stroked-button (click)="cancel()">{{'PAYMENT.BUTTON.CANCEL' | translate}} </button>
+    <button mat-stroked-button matTooltipPosition="above"
+            [matTooltipClass]="'payment-tooltip'"
+            matTooltip="{{'PAYMENT.TOOLTIP' | translate}}">?</button>
+  </div>
+</div>

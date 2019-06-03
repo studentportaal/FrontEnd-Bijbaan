@@ -31,6 +31,7 @@ import { ReviewComponent } from './components/review/review.component';
 import { ReviewContainerComponent } from './components/general/review-container/review-container.component';
 import { WriteReviewComponent } from './components/general/write-review/write-review.component';
 import { MatBadgeModule } from "@angular/material";
+import { PaymentComponent } from "./components/general/company/payment/payment.component";
 
 
 @NgModule({
@@ -55,7 +56,9 @@ import { MatBadgeModule } from "@angular/material";
     UserjoboffersComponent,
     ReviewComponent,
     ReviewContainerComponent,
-    WriteReviewComponent
+    WriteReviewComponent,
+    EditSkillsComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

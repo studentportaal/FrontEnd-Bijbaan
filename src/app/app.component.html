@@ -104,9 +104,9 @@
       <ng-container class="" *ngIf="authenticationService.isLoggedIn()">
         <ng-container class="" *ngIf="authenticationService.isStudent()">
           <!-- Student links go here -->
-          <a [mat-menu-trigger-for]="menu" mat-list-item>{{authenticationService.user.firstName | titlecase}}
+          <a [mat-menu-trigger-for]="sidestudentmenu" mat-list-item>{{authenticationService.user.firstName | titlecase}}
             {{authenticationService.user.lastName | titlecase}}<i class="material-icons-round nav-icon">school</i></a>
-          <mat-menu #menu="matMenu">
+          <mat-menu #sidestudentmenu="matMenu">
             <a (click)="sidenav.toggle()" mat-menu-item color="default" title="{{'NAVBAR.PROFILE' | translate}}"
               routerLink="/user/view-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
             <a (click)="sidenav.toggle()" mat-menu-item color="default" title="{{'NAVBAR.EDITPROFILE' | translate}}"
@@ -133,9 +133,9 @@
         </ng-container>
         <!-- Company links go here -->
         <ng-container class="" *ngIf="authenticationService.isCompany()">
-          <a [mat-menu-trigger-for]="menu" mat-list-item>{{authenticationService.user.email | titlecase}} <i
+          <a [mat-menu-trigger-for]="sidecompanymenu" mat-list-item>{{authenticationService.user.email | titlecase}} <i
               class="material-icons-round nav-icon">business_center</i></a>
-          <mat-menu #menu="matMenu">
+          <mat-menu #sidecompanymenu="matMenu">
             <a mat-menu-item (click)="sidenav.toggle()" color="default" title="{{'NAVBAR.PROFILE' | translate}}"
               routerLink="/company/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
             <a mat-menu-item (click)="sidenav.toggle()" color="default" title="{{'NAVBAR.MYJOBOFFERS' | translate}}"
@@ -160,7 +160,7 @@
       </ng-container>
       <!-- Languages -->
       <ng-container>
-        <mat-menu #menu="matMenu">
+        <mat-menu #sidenavmenu="matMenu">
           <a mat-menu-item (click)="sidenav.toggle()" class="language-icon" color="default"
             title="{{'NAVBAR.DUTCH' | translate}}" (click)="setLanguage('nl')"><img src="../assets/nl.png"
               (click)="setLanguage('nl')"></a>
@@ -168,7 +168,7 @@
             title="{{'NAVBAR.ENGLISH' | translate}}" (click)="setLanguage('en')"><img src="../assets/gb.png"
               (click)="setLanguage('en')"></a>
         </mat-menu>
-        <a [mat-menu-trigger-for]="menu" mat-list-item><img src="../assets/{{languageicon}}.png"></a>
+        <a [mat-menu-trigger-for]="sidenavmenu" mat-list-item><img src="../assets/{{languageicon}}.png"></a>
       </ng-container>
       <!-- Closing side navbar -->
       <a (click)="sidenav.toggle()" mat-list-item>{{'NAVBAR.CLOSE' | translate}}</a>

@@ -28,6 +28,7 @@
     "@auth0/angular-jwt": "^2.1.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
+    "braintree-web-drop-in": "^1.18.0",
     "core-js": "^2.5.4",
     "express": "^4.16.4",
     "node-sass": "^4.12.0",
