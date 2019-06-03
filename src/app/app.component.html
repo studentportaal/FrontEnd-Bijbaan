@@ -1,83 +1,97 @@
 <mat-toolbar class="primary">
-   <!-- General Toolbar -->
+  <!-- General Toolbar -->
   <mat-toolbar-row>
-      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
-          <mat-icon>menu</mat-icon>
-        </button>
-        <a href="/">
-          <span>{{title | titlecase}}</span>
-        </a>
-        <span class="fill-remaining-space"></span>
+    <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a href="/">
+      <span>{{title | titlecase}}</span>
+    </a>
+    <span class="fill-remaining-space"></span>
 
-        <div class="navbar-menu-items" fxShow="true" fxHide.lt-md>
-          <a class="nav-item-link" title="{{'NAVBAR.JOBOFFERS' | translate}}" routerLink="/joboffers"><span>{{'NAVBAR.JOBOFFERS' | translate}}</span><i class="material-icons-round nav-icon">account_balance</i></a>
+    <div class="navbar-menu-items" fxShow="true" fxHide.lt-md>
+      <a class="nav-item-link" title="{{'NAVBAR.JOBOFFERS' | translate}}"
+        routerLink="/joboffers"><span>{{'NAVBAR.JOBOFFERS' | translate}}</span><i
+          class="material-icons-round nav-icon">account_balance</i></a>
 
-          <ng-container *ngIf="authenticationService.isLoggedIn()">
+      <ng-container *ngIf="authenticationService.isLoggedIn()">
 
-            <!-- Student links go here -->
-            <ng-container *ngIf="authenticationService.isStudent()">
-                <a class="pointer nav-item-link" [mat-menu-trigger-for]="menu">{{authenticationService.user.firstName | titlecase}} {{authenticationService.user.lastName | titlecase}}<i class="material-icons-round nav-icon">school</i></a>
-                <mat-menu #menu="matMenu">
-                  <a mat-menu-item color="default" title="{{'NAVBAR.PROFILE' | translate}}"
-                  routerLink="/user/view-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
-                  <a mat-menu-item color="default" title="{{'NAVBAR.EDITPROFILE' | translate}}"
-                  routerLink="/user/edit-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.EDITPROFILE' | translate}}</a>
-                  <a mat-menu-item color="default" title="{{'NAVBAR.REVIEWS' | translate}}" routerLink="/reviews/{{authenticationService.user.uuid}}">{{'NAVBAR.REVIEW' | translate}}</a>
-
-                </mat-menu>
-              <ng-container>
-                <a class="notification" [mat-menu-trigger-for]="notes">
-                  <mat-icon matBadge="{{unread}}" matBadgeColor="warn" [matBadgeHidden]="unread < 0">notifications</mat-icon>
-                  <mat-menu #notes="matMenu">
-                    <ng-container *ngIf="notifications && notifications.length > 0">
-                      <a mat-menu-item *ngFor="let x of notifications"
-                         [ngStyle]="{
+        <!-- Student links go here -->
+        <ng-container *ngIf="authenticationService.isStudent()">
+          <a class="pointer nav-item-link"
+            [mat-menu-trigger-for]="menu">{{authenticationService.user.firstName | titlecase}}
+            {{authenticationService.user.lastName | titlecase}}<i class="material-icons-round nav-icon">school</i></a>
+          <mat-menu #menu="matMenu">
+            <a mat-menu-item color="default" title="{{'NAVBAR.PROFILE' | translate}}"
+              routerLink="/user/view-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
+            <a mat-menu-item color="default" title="{{'NAVBAR.EDITPROFILE' | translate}}"
+              routerLink="/user/edit-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.EDITPROFILE' | translate}}</a>
+            <a mat-menu-item color="default" title="{{'NAVBAR.MYAPPLIEDJOBOFFERS' | translate}}"
+              routerLink="/students/{{authenticationService.user.uuid}}/joboffers">{{'NAVBAR.MYAPPLIEDJOBOFFERS' | translate}}</a>
+            <a mat-menu-item color="default" title="{{'NAVBAR.REVIEWS' | translate}}"
+              routerLink="/reviews/{{authenticationService.user.uuid}}">{{'NAVBAR.REVIEW' | translate}}</a>
+          </mat-menu>
+          <a class="pointer nav-item-link" [mat-menu-trigger-for]="notes">
+            <mat-icon class="nav-item-icon-link" matBadge="{{unread}}" matBadgeColor="warn"
+              [matBadgeHidden]="unread < 0">notifications</mat-icon>
+            <mat-menu #notes="matMenu">
+              <ng-container *ngIf="notifications && notifications.length > 0">
+                <a mat-menu-item *ngFor="let x of notifications" [ngStyle]="{
                'background-color': x.read === true? 'white': 'lightgray'
-               }"
-                         title="notification">De status van de vacature {{x.joboffername}} is veranderd</a>
-                    </ng-container>
-                    <a class="mark-read" title="markRead" (click)="editNotification()">mark as read</a>
-                  </mat-menu>
-                </a>
+               }" title="notification">De status van de vacature {{x.joboffername}} is veranderd</a>
               </ng-container>
-            </ng-container>
-
-            <!-- Company links go here -->
-            <ng-container *ngIf="authenticationService.isCompany()">
-              <a class="pointer nav-item-link" [mat-menu-trigger-for]="menu">{{authenticationService.user.email | titlecase}} <i class="material-icons-round nav-icon">business_center</i></a>
-              <mat-menu #menu="matMenu" >
-                <a mat-menu-item color="default" title="{{'NAVBAR.PROFILE' | translate}}" routerLink="/company/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
-                <a mat-menu-item color="default" title="{{'NAVBAR.MYJOBOFFERS' | translate}}" routerLink="/users/{{authenticationService.user.uuid}}/joboffers">{{'NAVBAR.MYJOBOFFERS' | translate}}</a>
-                <a mat-menu-item color="default" title="{{'NAVBAR.ADDJOBOFFER' | translate}}" routerLink="/joboffers/add">{{'NAVBAR.ADDJOBOFFER' | translate}}</a>
-                <a mat-menu-item color="default" title="{{'NAVBAR.REVIEWS' | translate}}" routerLink="/reviews/{{authenticationService.user.uuid}}">{{'NAVBAR.REVIEW' | translate}}</a>
-              </mat-menu>
-            </ng-container>
-
-            <!-- Generic logged in links go here i.e. 'log out' IF WE HAD ONE -->
-            <a class="nav-item-link" title="{{'NAVBAR.LOGOUT' | translate}}" routerLink="/login">{{'NAVBAR.LOGOUT' | translate}} <i class="material-icons-round nav-icon">exit_to_app</i></a>
-
-          </ng-container>
-
-          <!-- Non logged in links go here -->
-          <ng-container *ngIf=!authenticationService.user>
-            <a class="nav-item-link" title="{{'NAVBAR.REGISTER' | translate}}"
-              routerLink="/register"> {{'NAVBAR.REGISTER' | translate}} <i class="material-icons-round nav-icon">create<!-- add_circle --></i></a>
-            <a class="nav-item-link" title="{{'NAVBAR.LOGIN' | translate}}"
-              routerLink="/login"> {{'NAVBAR.LOGIN' | translate}} <i class="material-icons-round nav-icon">account_circle</i></a>
-          </ng-container>
-
-          <!-- Selecting language -->
-          <ng-container>
-            <mat-menu #menu="matMenu">
-              <a mat-menu-item class="language-icon" color="default" title="{{'NAVBAR.DUTCH' | translate}}" (click)="setLanguage('nl')"><img src="../assets/nl.png" (click)="setLanguage('nl')"></a>
-              <a mat-menu-item class="language-icon" color="default" title="{{'NAVBAR.ENGLISH' | translate}}" (click)="setLanguage('en')" ><img src="../assets/gb.png" (click)="setLanguage('en')"></a>
+              <a class="mark-read" title="markRead" (click)="editNotification()">mark as read</a>
             </mat-menu>
-              <a class="pointer nav-item-link" [mat-menu-trigger-for]="menu"><img src="../assets/{{languageicon}}.png"></a>
-            </ng-container>
+          </a>
+        </ng-container>
 
-        </div>
+        <!-- Company links go here -->
+        <ng-container *ngIf="authenticationService.isCompany()">
+          <a class="pointer nav-item-link"
+            [mat-menu-trigger-for]="menu">{{authenticationService.user.email | titlecase}} <i
+              class="material-icons-round nav-icon">business_center</i></a>
+          <mat-menu #menu="matMenu">
+            <a mat-menu-item color="default" title="{{'NAVBAR.PROFILE' | translate}}"
+              routerLink="/company/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
+            <a mat-menu-item color="default" title="{{'NAVBAR.MYJOBOFFERS' | translate}}"
+              routerLink="/users/{{authenticationService.user.uuid}}/joboffers">{{'NAVBAR.MYJOBOFFERS' | translate}}</a>
+            <a mat-menu-item color="default" title="{{'NAVBAR.ADDJOBOFFER' | translate}}"
+              routerLink="/joboffers/add">{{'NAVBAR.ADDJOBOFFER' | translate}}</a>
+            <a mat-menu-item color="default" title="{{'NAVBAR.REVIEWS' | translate}}"
+              routerLink="/reviews/{{authenticationService.user.uuid}}">{{'NAVBAR.REVIEW' | translate}}</a>
+          </mat-menu>
+        </ng-container>
 
-      </mat-toolbar-row>
+        <!-- Generic logged in links go here i.e. 'log out' IF WE HAD ONE -->
+        <a class="nav-item-link" title="{{'NAVBAR.LOGOUT' | translate}}"
+          routerLink="/login">{{'NAVBAR.LOGOUT' | translate}} <i
+            class="material-icons-round nav-icon">exit_to_app</i></a>
+
+      </ng-container>
+
+      <!-- Non logged in links go here -->
+      <ng-container *ngIf=!authenticationService.user>
+        <a class="nav-item-link" title="{{'NAVBAR.REGISTER' | translate}}" routerLink="/register">
+          {{'NAVBAR.REGISTER' | translate}} <i class="material-icons-round nav-icon">create
+            <!-- add_circle --></i></a>
+        <a class="nav-item-link" title="{{'NAVBAR.LOGIN' | translate}}" routerLink="/login">
+          {{'NAVBAR.LOGIN' | translate}} <i class="material-icons-round nav-icon">account_circle</i></a>
+      </ng-container>
+
+      <!-- Selecting language -->
+      <ng-container>
+        <mat-menu #menu="matMenu">
+          <a mat-menu-item class="language-icon" color="default" title="{{'NAVBAR.DUTCH' | translate}}"
+            (click)="setLanguage('nl')"><img src="../assets/nl.png" (click)="setLanguage('nl')"></a>
+          <a mat-menu-item class="language-icon" color="default" title="{{'NAVBAR.ENGLISH' | translate}}"
+            (click)="setLanguage('en')"><img src="../assets/gb.png" (click)="setLanguage('en')"></a>
+        </mat-menu>
+        <a class="pointer nav-item-link" [mat-menu-trigger-for]="menu"><img src="../assets/{{languageicon}}.png"></a>
+      </ng-container>
+
+    </div>
+
+  </mat-toolbar-row>
 
 
 </mat-toolbar>
@@ -85,48 +99,84 @@
   <!-- Sidenav Toolbar -->
   <mat-sidenav #sidenav mode="push" class="navbar-sidenav">
     <mat-nav-list>
-      <a (click)="sidenav.toggle()"  title="{{'NAVBAR.JOBOFFERS' | translate}}" routerLink="/joboffers" mat-list-item>{{'NAVBAR.JOBOFFERS' | translate}}<i class="material-icons-round nav-icon">account_balance</i></a>
+      <a (click)="sidenav.toggle()" title="{{'NAVBAR.JOBOFFERS' | translate}}" routerLink="/joboffers"
+        mat-list-item>{{'NAVBAR.JOBOFFERS' | translate}}<i class="material-icons-round nav-icon">account_balance</i></a>
       <ng-container class="" *ngIf="authenticationService.isLoggedIn()">
         <ng-container class="" *ngIf="authenticationService.isStudent()">
-             <!-- Student links go here -->
-            <a [mat-menu-trigger-for]="menu" mat-list-item>{{authenticationService.user.firstName | titlecase}} {{authenticationService.user.lastName | titlecase}}<i class="material-icons-round nav-icon">school</i></a>
-                <mat-menu #menu="matMenu">
-                  <a (click)="sidenav.toggle()" mat-menu-item color="default" title="{{'NAVBAR.PROFILE' | translate}}"
-                  routerLink="/user/view-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
-                  <a (click)="sidenav.toggle()" mat-menu-item color="default" title="{{'NAVBAR.EDITPROFILE' | translate}}"
-                  routerLink="/user/edit-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.EDITPROFILE' | translate}}</a>
-                </mat-menu>
+          <!-- Student links go here -->
+          <a [mat-menu-trigger-for]="menu" mat-list-item>{{authenticationService.user.firstName | titlecase}}
+            {{authenticationService.user.lastName | titlecase}}<i class="material-icons-round nav-icon">school</i></a>
+          <mat-menu #menu="matMenu">
+            <a (click)="sidenav.toggle()" mat-menu-item color="default" title="{{'NAVBAR.PROFILE' | translate}}"
+              routerLink="/user/view-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
+            <a (click)="sidenav.toggle()" mat-menu-item color="default" title="{{'NAVBAR.EDITPROFILE' | translate}}"
+              routerLink="/user/edit-profile/{{authenticationService.user.uuid}}">{{'NAVBAR.EDITPROFILE' | translate}}</a>
+            <a (click)="sidenav.toggle()" mat-menu-item color="default"
+              title="{{'NAVBAR.MYAPPLIEDJOBOFFERS' | translate}}"
+              routerLink="/students/{{authenticationService.user.uuid}}/joboffers">{{'NAVBAR.MYAPPLIEDJOBOFFERS' | translate}}</a>
+            <a (click)="sidenav.toggle()" mat-menu-item color="default" title="{{'NAVBAR.REVIEWS' | translate}}"
+              routerLink="/reviews/{{authenticationService.user.uuid}}">{{'NAVBAR.REVIEW' | translate}}</a>
+          </mat-menu>
+          <a [mat-menu-trigger-for]="notes" mat-list-item>Notifications
+            <i class="material-icons-round nav-icon" matBadge="{{unread}}" matBadgeColor="warn"
+              [matBadgeHidden]="unread < 0">notifications</i>
+            <!-- <mat-icon class="nav-item-icon-link nav-icon" matBadge="{{unread}}" matBadgeColor="warn" [matBadgeHidden]="unread < 0">notifications</mat-icon> -->
+          </a>
+          <mat-menu #notes="matMenu">
+            <ng-container *ngIf="notifications && notifications.length > 0">
+              <a mat-menu-item *ngFor="let x of notifications" [ngStyle]="{
+               'background-color': x.read === true? 'white': 'lightgray'
+               }" title="notification">De status van de vacature {{x.joboffername}} is veranderd</a>
+            </ng-container>
+            <a class="mark-read" title="markRead" (click)="editNotification()">mark as read</a>
+          </mat-menu>
         </ng-container>
         <!-- Company links go here -->
         <ng-container class="" *ngIf="authenticationService.isCompany()">
-            <a [mat-menu-trigger-for]="menu" mat-list-item>{{authenticationService.user.email | titlecase}} <i class="material-icons-round nav-icon">business_center</i></a>
-            <mat-menu #menu="matMenu">
-              <a mat-menu-item (click)="sidenav.toggle()" color="default" title="{{'NAVBAR.PROFILE' | translate}}" routerLink="/company/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
-              <a mat-menu-item (click)="sidenav.toggle()" color="default" title="{{'NAVBAR.MYJOBOFFERS' | translate}}" routerLink="/users/{{authenticationService.user.uuid}}/joboffers">{{'NAVBAR.MYJOBOFFERS' | translate}}</a>
-              <a mat-menu-item (click)="sidenav.toggle()" color="default" title="{{'NAVBAR.ADDJOBOFFER' | translate}}" routerLink="/joboffers/add">{{'NAVBAR.ADDJOBOFFER' | translate}}</a>
-            </mat-menu>
+          <a [mat-menu-trigger-for]="menu" mat-list-item>{{authenticationService.user.email | titlecase}} <i
+              class="material-icons-round nav-icon">business_center</i></a>
+          <mat-menu #menu="matMenu">
+            <a mat-menu-item (click)="sidenav.toggle()" color="default" title="{{'NAVBAR.PROFILE' | translate}}"
+              routerLink="/company/{{authenticationService.user.uuid}}">{{'NAVBAR.PROFILE' | translate}}</a>
+            <a mat-menu-item (click)="sidenav.toggle()" color="default" title="{{'NAVBAR.MYJOBOFFERS' | translate}}"
+              routerLink="/users/{{authenticationService.user.uuid}}/joboffers">{{'NAVBAR.MYJOBOFFERS' | translate}}</a>
+            <a mat-menu-item (click)="sidenav.toggle()" color="default" title="{{'NAVBAR.ADDJOBOFFER' | translate}}"
+              routerLink="/joboffers/add">{{'NAVBAR.ADDJOBOFFER' | translate}}</a>
+            <a (click)="sidenav.toggle()" mat-menu-item color="default" title="{{'NAVBAR.REVIEWS' | translate}}"
+              routerLink="/reviews/{{authenticationService.user.uuid}}">{{'NAVBAR.REVIEW' | translate}}</a>
+          </mat-menu>
         </ng-container>
         <!-- Generic logged in links go here -->
-        <a (click)="sidenav.toggle()"  title="{{'NAVBAR.LOGOUT' | translate}}" routerLink="/login" mat-list-item>{{'NAVBAR.LOGOUT' | translate}} <i class="material-icons-round nav-icon">exit_to_app</i></a>
-       </ng-container>
-       <!-- Non logged in links go here -->
-       <ng-container *ngIf=!authenticationService.user>
-          <a (click)="sidenav.toggle()" title="{{'NAVBAR.REGISTER' | translate}}" routerLink="/register" mat-list-item> {{'NAVBAR.REGISTER' | translate}} <i class="material-icons-round nav-icon">create<!-- add_circle --></i></a>
-          <a (click)="sidenav.toggle()" title="{{'NAVBAR.LOGIN' | translate}}" routerLink="/login" mat-list-item> {{'NAVBAR.LOGIN' | translate}} <i class="material-icons-round nav-icon">account_circle</i></a>
-       </ng-container>
-       <!-- Languages -->
-       <ng-container>
-         <mat-menu #menu="matMenu">
-           <a mat-menu-item (click)="sidenav.toggle()" class="language-icon" color="default" title="{{'NAVBAR.DUTCH' | translate}}" (click)="setLanguage('nl')"><img src="../assets/nl.png" (click)="setLanguage('nl')"></a>
-           <a mat-menu-item (click)="sidenav.toggle()" class="language-icon" color="default" title="{{'NAVBAR.ENGLISH' | translate}}" (click)="setLanguage('en')" ><img src="../assets/gb.png" (click)="setLanguage('en')"></a>
-          </mat-menu>
-          <a [mat-menu-trigger-for]="menu" mat-list-item><img src="../assets/{{languageicon}}.png"></a>
-        </ng-container>
-        <!-- Closing side navbar -->
-        <a (click)="sidenav.toggle()"  mat-list-item>{{'NAVBAR.CLOSE' | translate}}</a>
+        <a (click)="sidenav.toggle()" title="{{'NAVBAR.LOGOUT' | translate}}" routerLink="/login"
+          mat-list-item>{{'NAVBAR.LOGOUT' | translate}} <i class="material-icons-round nav-icon">exit_to_app</i></a>
+      </ng-container>
+      <!-- Non logged in links go here -->
+      <ng-container *ngIf=!authenticationService.user>
+        <a (click)="sidenav.toggle()" title="{{'NAVBAR.REGISTER' | translate}}" routerLink="/register" mat-list-item>
+          {{'NAVBAR.REGISTER' | translate}} <i class="material-icons-round nav-icon">create
+            <!-- add_circle --></i></a>
+        <a (click)="sidenav.toggle()" title="{{'NAVBAR.LOGIN' | translate}}" routerLink="/login" mat-list-item>
+          {{'NAVBAR.LOGIN' | translate}} <i class="material-icons-round nav-icon">account_circle</i></a>
+      </ng-container>
+      <!-- Languages -->
+      <ng-container>
+        <mat-menu #menu="matMenu">
+          <a mat-menu-item (click)="sidenav.toggle()" class="language-icon" color="default"
+            title="{{'NAVBAR.DUTCH' | translate}}" (click)="setLanguage('nl')"><img src="../assets/nl.png"
+              (click)="setLanguage('nl')"></a>
+          <a mat-menu-item (click)="sidenav.toggle()" class="language-icon" color="default"
+            title="{{'NAVBAR.ENGLISH' | translate}}" (click)="setLanguage('en')"><img src="../assets/gb.png"
+              (click)="setLanguage('en')"></a>
+        </mat-menu>
+        <a [mat-menu-trigger-for]="menu" mat-list-item><img src="../assets/{{languageicon}}.png"></a>
+      </ng-container>
+      <!-- Closing side navbar -->
+      <a (click)="sidenav.toggle()" mat-list-item>{{'NAVBAR.CLOSE' | translate}}</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content fxFlexFill><router-outlet></router-outlet></mat-sidenav-content>
+  <mat-sidenav-content fxFlexFill>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
 </mat-sidenav-container>
 
 

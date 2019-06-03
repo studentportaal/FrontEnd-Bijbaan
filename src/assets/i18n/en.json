@@ -7,6 +7,7 @@
     "LOGIN": "Login",
     "LOGOUT": "Log out",
     "MYJOBOFFERS": "My posted job offers",
+    "MYAPPLIEDJOBOFFERS": "My job offers",
     "ADDJOBOFFER": "Add job offer",
     "SELECT.LANGUAGE": "Select language",
     "DUTCH": "Dutch",
@@ -53,7 +54,15 @@
     "FIELD.INSTITUTE": "Institute",
     "FIELD.EMAIL": "Email",
     "FIELD.SKILLS": "Skills",
-    "BUTTON.CONFIRM": "Edit profile"
+    "FIELD.APPLIED": "My job offers",
+    "BUTTON.CONFIRM": "Edit profile",
+    "APPLICATION": {
+       "NOAPPLIED":  "No applies",
+       "ACCEPTED": "Accepted",
+       "WAITINGFORREPLY": "Waiting for response",
+       "DATE": "Date",
+       "STATUS":  "Status"
+    }
   },
   "JOBOFFER": {
     "JOBOFFERS": "Job offers",

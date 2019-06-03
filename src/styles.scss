@@ -96,6 +96,9 @@ form {
   &:hover {
     color: $secondary-dark !important;
     cursor: pointer;
+    .nav-item-icon-link{
+      color: $secondary-dark !important;
+    }
   }
 }
 .pointer {

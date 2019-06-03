@@ -3,11 +3,11 @@ import { JobOffer } from '../../../domain/JobOffer';
 import { Company } from '../../../domain/Company';
 import { Router } from '@angular/router';
 import { JobofferService } from '../../../services/joboffer/joboffer.service';
-import { MatDialog, PageEvent, MatSort} from '@angular/material';
+import { MatDialog, PageEvent, MatSort } from '@angular/material';
 import { CompanyFilterDialogComponent } from '../companyfilterdialog/companyfilterdialog.component';
 import { AuthenticationService } from '../../../services/authentication/authentication.service';
 import { CompanyService } from '../../../services/company/company.service';
-import { MatTableDataSource} from '@angular/material';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-jobofferlist',
@@ -29,10 +29,10 @@ export class JobofferlistComponent implements OnInit {
   dataSource = new MatTableDataSource(this.jobOffers);
 
   constructor(private jobOfferService: JobofferService,
-              private dialog: MatDialog,
-              private authenticationService: AuthenticationService,
-              private companyService: CompanyService,
-              private router: Router) {
+    private dialog: MatDialog,
+    private authenticationService: AuthenticationService,
+    private companyService: CompanyService,
+    private router: Router) {
   }
 
   ngOnInit() {
@@ -40,7 +40,7 @@ export class JobofferlistComponent implements OnInit {
     this.getServerData(null);
     this.getCompanies();
     this.getAllTopOfDaysJobOffers();
-    setInterval(() => this.getAllTopOfDaysJobOffers() , 20000);
+    setInterval(() => this.getAllTopOfDaysJobOffers(), 20000);
   }
 
   public getCompanies() {
