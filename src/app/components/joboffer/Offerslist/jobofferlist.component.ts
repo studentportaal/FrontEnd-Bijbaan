@@ -19,7 +19,6 @@ export class JobofferlistComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   jobOffers: JobOffer[];
-  topOfDayJobOffers: JobOffer[] = [];
   companies: string[] = [];
   companiesAsCompanies: Company[];
   length: number;
@@ -27,6 +26,7 @@ export class JobofferlistComponent implements OnInit {
   pageIndex: number;
   pageEvent: PageEvent;
   dataSource = new MatTableDataSource(this.jobOffers);
+  isOwnJoboffers = false;
 
   constructor(private jobOfferService: JobofferService,
     private dialog: MatDialog,
@@ -39,8 +39,6 @@ export class JobofferlistComponent implements OnInit {
     this.pageSize = 25;
     this.getServerData(null);
     this.getCompanies();
-    this.getAllTopOfDaysJobOffers();
-    setInterval(() => this.getAllTopOfDaysJobOffers(), 20000);
   }
 
   public getCompanies() {
@@ -66,12 +64,6 @@ export class JobofferlistComponent implements OnInit {
       );
     });
     return event;
-  }
-
-  public getAllTopOfDaysJobOffers() {
-    this.jobOfferService.getAllTopOfDaysJobOffers().subscribe((response) => {
-      this.topOfDayJobOffers = response;
-    });
   }
 
   public getJobOffer(joboffer: string) {

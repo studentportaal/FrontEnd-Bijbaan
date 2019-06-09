@@ -1,31 +1,9 @@
 <div class="container container-md custom-button">
   <h1 class="flex-h1"><span>{{'JOBOFFER.JOBOFFERS' | translate}}</span>
   </h1>
-    <div class="topofday-container" *ngIf="topOfDayJobOffers?.length > 0 && topOfDayJobOffers?.length <= 3">
-      <mat-card (click)="getJobOffer(topofday.id)" class="topofday-card pointer mat-elevation-z8" *ngFor="let topofday of topOfDayJobOffers">
-        <mat-card-header>
-          <mat-card-title>{{topofday.title}}</mat-card-title>
-          <mat-card-subtitle>{{topofday.company.name}}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <span> {{topofday.information}}</span>
-        </mat-card-content>
-        <mat-card-title class="topper-text"><div>{{'JOBOFFER.TOPOFDAY' | translate}}<i class="material-icons-round topofday-icon">check_circle</i></div></mat-card-title>
-      </mat-card>
-    </div>
-    <div class="topofday-container multiple" *ngIf="topOfDayJobOffers?.length > 3">
-      <mat-card (click)="getJobOffer(topofday.id)" class="topofday-card pointer mat-elevation-z8" *ngFor="let topofday of topOfDayJobOffers">
-        <mat-card-header>
-          <mat-card-title>{{topofday.title}}</mat-card-title>
-          <mat-card-subtitle>{{topofday.company.name}}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <span> {{topofday.information}}</span>
-        </mat-card-content>
-        <mat-card-title class="topper-text"><div>{{'JOBOFFER.TOPOFDAY' | translate}}<i class="material-icons-round topofday-icon">check_circle</i></div></mat-card-title>
-      </mat-card>
-    </div>
-
+  <ng-container *ngIf="!isOwnJoboffers">
+    <app-topofdays></app-topofdays>
+  </ng-container>
   <div ng-if="jobOffers?.length > 0">
     <table mat-table [dataSource]="dataSource" matSort matSortActive="title" matSortDirection="asc"
       matSortDisableClear class="joboffer-table">
