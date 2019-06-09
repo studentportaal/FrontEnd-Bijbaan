@@ -49,7 +49,7 @@ export class JobofferlistComponent implements OnInit {
   }
 
   public getServerData(event?: PageEvent) {
-    this.jobOfferService.getJobOfferCount().subscribe((response) => {
+    this.jobOfferService.getJobOfferCount(this.companies).subscribe((response) => {
       this.length = +response;
       if (event) {
         this.pageSize = event.pageSize;
