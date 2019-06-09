@@ -15,7 +15,7 @@ export class TopofdaysComponent implements OnInit {
 
   ngOnInit() {
     this.getAllTopOfDaysJobOffers();
-    this.interval = setInterval(() => this.getAllTopOfDaysJobOffers() , 5000);
+    this.interval = setInterval(() => this.getAllTopOfDaysJobOffers() , 20000);
   }
 
   public getAllTopOfDaysJobOffers() {
