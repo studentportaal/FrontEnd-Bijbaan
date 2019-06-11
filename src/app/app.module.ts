@@ -32,7 +32,7 @@ import { ReviewContainerComponent } from './components/general/review-container/
 import { WriteReviewComponent } from './components/general/write-review/write-review.component';
 import { MatBadgeModule } from "@angular/material";
 import { PaymentComponent } from "./components/general/company/payment/payment.component";
-import { TopofdaysComponent } from './components/joboffer/topofdays/topofdays.component';
+import { TopOfDaysComponent } from './components/joboffer/topofdays/topofdays.component';
 
 
 @NgModule({
@@ -60,7 +60,7 @@ import { TopofdaysComponent } from './components/joboffer/topofdays/topofdays.co
     WriteReviewComponent,
     EditSkillsComponent,
     PaymentComponent,
-    TopofdaysComponent
+    TopOfDaysComponent
   ],
   imports: [
     BrowserModule,

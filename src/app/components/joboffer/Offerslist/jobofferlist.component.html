@@ -1,8 +1,8 @@
 <div class="container container-md custom-button">
-  <h1 class="flex-h1"><span><ng-container *ngIf="!isOwnJoboffers">{{'JOBOFFER.JOBOFFERS' | translate}}</ng-container>
-      <ng-container *ngIf="isOwnJoboffers">{{'JOBOFFER.MYJOBOFFERS' | translate}}</ng-container></span>
+  <h1 class="flex-h1"><span><ng-container *ngIf="!isOwnJobOffers">{{'JOBOFFER.JOBOFFERS' | translate}}</ng-container>
+      <ng-container *ngIf="isOwnJobOffers">{{'JOBOFFER.MYJOBOFFERS' | translate}}</ng-container></span>
   </h1>
-  <ng-container *ngIf="!isOwnJoboffers">
+  <ng-container *ngIf="!isOwnJobOffers">
     <app-topofdays></app-topofdays>
   </ng-container>
   <div ng-if="jobOffers?.length > 0">
