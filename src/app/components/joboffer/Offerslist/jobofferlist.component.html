@@ -1,6 +1,6 @@
 <div class="content">
 
-  <div class="container container-sm container-search">
+  <div class="container container-sm container-search" *ngIf="!isOwnJobOffers">>
     <h1>Zoeken</h1>
     <mat-divider></mat-divider>
     <mat-accordion [class.mat-elevation-z0]="true" [multi]="true" [displayMode]="flat">

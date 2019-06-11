@@ -16,7 +16,7 @@ export class OwnjoboffersComponent implements OnInit {
 
   ngOnInit() {
     this.jobofferListComponent.isOwnJobOffers = true;
-    this.jobofferListComponent.companies.push(this.authenticationService.user.uuid);
+    this.jobofferListComponent.searchCompanies.push(this.authenticationService.user.uuid);
   }
 
 }
