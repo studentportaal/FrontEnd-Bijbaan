@@ -8,6 +8,8 @@ import { CompanyFilterDialogComponent } from '../companyfilterdialog/companyfilt
 import { AuthenticationService } from '../../../services/authentication/authentication.service';
 import { CompanyService } from '../../../services/company/company.service';
 import { MatTableDataSource } from '@angular/material';
+import {SkillService} from "../../../services/skill/skill.service";
+import {Skill} from "../../../domain/Skill";
 
 @Component({
   selector: 'app-jobofferlist',
@@ -19,7 +21,6 @@ export class JobofferlistComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   jobOffers: JobOffer[];
-  companies: string[] = [];
   companiesAsCompanies: Company[];
   length: number;
   pageSize: number;
@@ -28,10 +29,15 @@ export class JobofferlistComponent implements OnInit {
   dataSource = new MatTableDataSource(this.jobOffers);
   isOwnJobOffers = false;
 
+  companies: string[] = [];
+  skills: Skill[] = [];
+  searchQuery: string;
+
   constructor(private jobOfferService: JobofferService,
     private dialog: MatDialog,
     private authenticationService: AuthenticationService,
     private companyService: CompanyService,
+    private skillService: SkillService,
     private router: Router) {
   }
 
@@ -39,6 +45,7 @@ export class JobofferlistComponent implements OnInit {
     this.pageSize = 25;
     this.getServerData(null);
     this.getCompanies();
+    this.getSkills();
   }
 
   public getCompanies() {
@@ -55,7 +62,7 @@ export class JobofferlistComponent implements OnInit {
         this.pageSize = event.pageSize;
         this.pageIndex = event.pageIndex;
       }
-      this.jobOfferService.getAllJobOffers((Math.imul(this.pageSize, this.pageIndex)), this.pageSize, this.companies, true).subscribe(
+      this.jobOfferService.getAllJobOffers((Math.imul(this.pageSize, this.pageIndex)), this.pageSize, this.companies, true, [''], '').subscribe(
         reply => {
           this.jobOffers = reply;
           this.dataSource = new MatTableDataSource(this.jobOffers);
@@ -86,5 +93,19 @@ export class JobofferlistComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  getSkills() {
+    this.skillService.get().subscribe((skills) => {
+      this.skills = skills;
+    })
+  }
+
+  skillChange(event: any) {
+    console.log(event)
+  }
+
+  companyChange(event: any) {
+    console.log(event)
   }
 }

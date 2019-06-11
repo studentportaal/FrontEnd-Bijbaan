@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {JobOffer} from '../../domain/JobOffer';
 import {BehaviorSubject, Observable} from 'rxjs';
@@ -20,11 +20,8 @@ export class JobofferService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAllJobOffers(startNr: number, amount: number, companies: string[], isOpen: boolean): Observable<JobOffer[]> {
-    if (companies !== undefined) {
-      return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&companies=${companies.toString()}&open=${isOpen}`);
-    }
-    return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&open=${isOpen}`);
+  getAllJobOffers(startNr: number, amount: number, companies: string[], isOpen: boolean, skills: string[], title: string): Observable<JobOffer[]> {
+    return this.httpClient.get<JobOffer[]>(this.jobOfferBaseUrl + `?startNr=${startNr}&amount=${amount}&companies=${companies.toString()}&open=${isOpen}&skills=${skills.toString()}&title=${title}`);
   }
 
   getAllTopOfDaysJobOffers() {
