@@ -158,6 +158,7 @@ table {
   width: 20%;
   display: flex;
   flex-direction: column;
+  margin-bottom: auto;
 
   /deep/ .mat-expansion-panel-body {
     display: flex;

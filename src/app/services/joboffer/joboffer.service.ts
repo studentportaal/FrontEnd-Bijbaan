@@ -32,8 +32,8 @@ export class JobofferService {
     return this.httpClient.get<JobOffer>(this.jobOfferBaseUrl + '/' + id);
   }
 
-  getJobOfferCount(companies: string[]) {
-    return this.httpClient.get<string>(this.jobOfferBaseUrl + '/all/count' + `?&companies=${companies.toString()}`);
+  getJobOfferCount(companies: string[], isOpen: boolean, skills: string[], title: string) {
+    return this.httpClient.get<string>(this.jobOfferBaseUrl + '/all/count' + `?&companies=${companies.toString()}&open=${isOpen}&skills=${skills.toString()}&title=${title}`);
   }
 
   addJobOffer(jobOffer: JobOffer) {

@@ -4,7 +4,6 @@ import { Company } from '../../../domain/Company';
 import { Router } from '@angular/router';
 import { JobofferService } from '../../../services/joboffer/joboffer.service';
 import { MatDialog, PageEvent, MatSort } from '@angular/material';
-import { CompanyFilterDialogComponent } from '../companyfilterdialog/companyfilterdialog.component';
 import { AuthenticationService } from '../../../services/authentication/authentication.service';
 import { CompanyService } from '../../../services/company/company.service';
 import { MatTableDataSource } from '@angular/material';
@@ -20,8 +19,9 @@ export class JobofferlistComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
 
-  jobOffers: JobOffer[];
-  companiesAsCompanies: Company[];
+  jobOffers: JobOffer[] = [];
+  companies: Company[] = [];
+  skills: Skill[] = [];
   length: number;
   pageSize: number;
   pageIndex: number;
@@ -29,9 +29,9 @@ export class JobofferlistComponent implements OnInit {
   dataSource = new MatTableDataSource(this.jobOffers);
   isOwnJobOffers = false;
 
-  companies: string[] = [];
-  skills: Skill[] = [];
-  searchQuery: string;
+  searchCompanies: string[] = [];
+  searchSkills: string[] = [];
+  searchQuery = '';
 
   constructor(private jobOfferService: JobofferService,
     private dialog: MatDialog,
@@ -51,18 +51,18 @@ export class JobofferlistComponent implements OnInit {
   public getCompanies() {
     this.companyService.getAllCompanies().subscribe((response) => {
       // @ts-ignore
-      this.companiesAsCompanies = response;
+      this.companies = response;
     });
   }
 
   public getServerData(event?: PageEvent) {
-    this.jobOfferService.getJobOfferCount(this.companies).subscribe((response) => {
+    this.jobOfferService.getJobOfferCount(this.searchCompanies, true, this.searchSkills, this.searchQuery).subscribe((response) => {
       this.length = +response;
       if (event) {
         this.pageSize = event.pageSize;
         this.pageIndex = event.pageIndex;
       }
-      this.jobOfferService.getAllJobOffers((Math.imul(this.pageSize, this.pageIndex)), this.pageSize, this.companies, true, [''], '').subscribe(
+      this.jobOfferService.getAllJobOffers((Math.imul(this.pageSize, this.pageIndex)), this.pageSize, this.searchCompanies, true, this.searchSkills, this.searchQuery).subscribe(
         reply => {
           this.jobOffers = reply;
           this.dataSource = new MatTableDataSource(this.jobOffers);
@@ -79,7 +79,7 @@ export class JobofferlistComponent implements OnInit {
   }
 
   getCompanyName(id: any) {
-    for (const comp of this.companiesAsCompanies) {
+    for (const comp of this.companies) {
       if (comp.uuid === id) {
         return comp.name;
       }
@@ -98,14 +98,26 @@ export class JobofferlistComponent implements OnInit {
   getSkills() {
     this.skillService.get().subscribe((skills) => {
       this.skills = skills;
-    })
+    });
   }
 
   skillChange(event: any) {
-    console.log(event)
+    if (event.source.checked) {
+      this.searchSkills.push(event.source.value);
+    } else {
+      this.searchSkills.splice(this.searchSkills.indexOf(event.source.value), 1);
+    }
+
+    this.getServerData(undefined);
   }
 
   companyChange(event: any) {
-    console.log(event)
+    if (event.source.checked) {
+      this.searchCompanies.push(event.source.value);
+    } else {
+      this.searchCompanies.splice(this.searchCompanies.indexOf(event.source.value), 1);
+    }
+
+    this.getServerData(undefined);
   }
 }
