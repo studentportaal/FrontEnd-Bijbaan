@@ -6,6 +6,7 @@ import {UserType} from "./domain/UserType";
 import {MatSnackBar} from "@angular/material";
 import {NotificationService} from "./services/notification/notification.service";
 import {Notification} from "./domain/Notification";
+import {MessagingService} from "./services/messaging/messaging.service";
 
 @Component({
   selector: 'app-root',
@@ -17,13 +18,15 @@ export class AppComponent implements OnInit {
   languageicon = 'nl';
   notifications: Notification[];
   unread;
+  message;
 
   constructor(public translate: TranslateService,
               public authenticationService: AuthenticationService,
               private route: ActivatedRoute,
               private snackbar: MatSnackBar,
               private router: Router,
-              private notificationService: NotificationService) {
+              private notificationService: NotificationService,
+              private messagingService: MessagingService) {
     // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang('nl');
 
@@ -55,6 +58,10 @@ export class AppComponent implements OnInit {
         if (this.notifications) {
           this.calculateUnread(this.notifications);
         }
+
+        this.messagingService.requestPermission(this.authenticationService.user.uuid);
+        this.messagingService.receiveMessage();
+        this.message = this.messagingService.currentMessage;
       });
 
 
