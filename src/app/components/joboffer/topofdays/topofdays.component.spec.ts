@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopofdaysComponent } from './topofdays.component';
+import { TopOfDaysComponent } from './topofdays.component';
 
-describe('TopofdaysComponent', () => {
-  let component: TopofdaysComponent;
-  let fixture: ComponentFixture<TopofdaysComponent>;
+describe('TopOfDaysComponent', () => {
+  let component: TopOfDaysComponent;
+  let fixture: ComponentFixture<TopOfDaysComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TopofdaysComponent ]
+      declarations: [ TopOfDaysComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TopofdaysComponent);
+    fixture = TestBed.createComponent(TopOfDaysComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

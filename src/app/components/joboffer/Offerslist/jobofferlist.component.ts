@@ -26,7 +26,7 @@ export class JobofferlistComponent implements OnInit {
   pageIndex: number;
   pageEvent: PageEvent;
   dataSource = new MatTableDataSource(this.jobOffers);
-  isOwnJoboffers = false;
+  isOwnJobOffers = false;
 
   constructor(private jobOfferService: JobofferService,
     private dialog: MatDialog,

@@ -7,15 +7,13 @@ import { JobofferService } from 'src/app/services/joboffer/joboffer.service';
   templateUrl: './topofdays.component.html',
   styleUrls: ['./topofdays.component.scss']
 })
-export class TopofdaysComponent implements OnInit {
+export class TopOfDaysComponent implements OnInit {
 
   topOfDayJobOffers: JobOffer[] = [];
-  interval;
   constructor(private jobOfferService: JobofferService) { }
 
   ngOnInit() {
     this.getAllTopOfDaysJobOffers();
-    this.interval = setInterval(() => this.getAllTopOfDaysJobOffers() , 20000);
   }
 
   public getAllTopOfDaysJobOffers() {
@@ -23,11 +21,4 @@ export class TopofdaysComponent implements OnInit {
       this.topOfDayJobOffers = response;
     });
   }
-
-  ngOnDestroy() {
-    if (this.interval) {
-      clearInterval(this.interval);
-    }
-  }
-
 }
