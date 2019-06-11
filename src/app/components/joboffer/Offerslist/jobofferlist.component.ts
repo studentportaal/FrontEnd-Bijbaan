@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { JobOffer } from '../../../domain/JobOffer';
-import { Company } from '../../../domain/Company';
-import { Router } from '@angular/router';
-import { JobofferService } from '../../../services/joboffer/joboffer.service';
-import { MatDialog, PageEvent, MatSort } from '@angular/material';
-import { AuthenticationService } from '../../../services/authentication/authentication.service';
-import { CompanyService } from '../../../services/company/company.service';
-import { MatTableDataSource } from '@angular/material';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {JobOffer} from '../../../domain/JobOffer';
+import {Company} from '../../../domain/Company';
+import {Router} from '@angular/router';
+import {JobofferService} from '../../../services/joboffer/joboffer.service';
+import {MatDialog, PageEvent, MatSort} from '@angular/material';
+import {AuthenticationService} from '../../../services/authentication/authentication.service';
+import {CompanyService} from '../../../services/company/company.service';
+import {MatTableDataSource} from '@angular/material';
 import {SkillService} from "../../../services/skill/skill.service";
 import {Skill} from "../../../domain/Skill";
 
@@ -28,17 +28,19 @@ export class JobofferlistComponent implements OnInit {
   pageEvent: PageEvent;
   dataSource = new MatTableDataSource(this.jobOffers);
   isOwnJobOffers = false;
+  accordianStates: boolean[] = [false, false, false];
 
   searchCompanies: string[] = [];
   searchSkills: string[] = [];
   searchQuery = '';
+  getDataTimeout: any;
 
   constructor(private jobOfferService: JobofferService,
-    private dialog: MatDialog,
-    private authenticationService: AuthenticationService,
-    private companyService: CompanyService,
-    private skillService: SkillService,
-    private router: Router) {
+              private dialog: MatDialog,
+              private authenticationService: AuthenticationService,
+              private companyService: CompanyService,
+              private skillService: SkillService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -102,22 +104,35 @@ export class JobofferlistComponent implements OnInit {
   }
 
   skillChange(event: any) {
+    clearTimeout(this.getDataTimeout);
+
     if (event.source.checked) {
       this.searchSkills.push(event.source.value);
     } else {
       this.searchSkills.splice(this.searchSkills.indexOf(event.source.value), 1);
     }
 
-    this.getServerData(undefined);
+    this.getDataTimeout = setTimeout(() => {
+      this.getServerData(undefined);
+    }, 1500);
   }
 
   companyChange(event: any) {
+    clearTimeout(this.getDataTimeout);
+
     if (event.source.checked) {
       this.searchCompanies.push(event.source.value);
     } else {
       this.searchCompanies.splice(this.searchCompanies.indexOf(event.source.value), 1);
     }
 
-    this.getServerData(undefined);
+    this.getDataTimeout = setTimeout(() => {
+      this.getServerData(undefined);
+    }, 1500);
   }
+
+  setAccordian(index: number) {
+    this.accordianStates[index] = !this.accordianStates[index];
+  }
+
 }

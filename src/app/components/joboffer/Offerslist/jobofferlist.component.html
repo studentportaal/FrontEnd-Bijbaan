@@ -1,12 +1,13 @@
 <div class="content">
 
-  <div class="container container-sm container-search" *ngIf="!isOwnJobOffers">>
+  <div class="container container-sm container-search" *ngIf="!isOwnJobOffers">
     <h1>Zoeken</h1>
     <mat-divider></mat-divider>
-    <mat-accordion [class.mat-elevation-z0]="true" [multi]="true" [displayMode]="flat">
-      <mat-expansion-panel [expanded]="true" [class.mat-elevation-z0]="true">
-        <mat-expansion-panel-header>
+    <mat-accordion [class.mat-elevation-z0]="true" [multi]="true" displayMode="flat">
+      <mat-expansion-panel  [expanded]="true" [class.mat-elevation-z0]="true" [hideToggle]="true">
+        <mat-expansion-panel-header (click)="setAccordian(0)">
           <mat-panel-title>
+            <mat-icon>{{accordianStates[0]  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
             <h4>Trefwoord</h4>
           </mat-panel-title>
         </mat-expansion-panel-header>
@@ -14,17 +15,19 @@
           <input  matInput [(ngModel)]="searchQuery" (change)="getServerData(undefined)" placeholder="Zoek op trefwoord">
         </mat-form-field>
       </mat-expansion-panel>
-      <mat-expansion-panel [expanded]="true" [class.mat-elevation-z0]="true">
-        <mat-expansion-panel-header>
+      <mat-expansion-panel  [expanded]="true" [class.mat-elevation-z0]="true" [hideToggle]="true">
+        <mat-expansion-panel-header (click)="setAccordian(1)">
           <mat-panel-title>
+            <mat-icon>{{accordianStates[1]  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
             <h4>Bedrijven</h4>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-checkbox *ngFor="let company of companies" [value]="company.uuid" (change)="companyChange($event)">{{company.name}}</mat-checkbox>
       </mat-expansion-panel>
-      <mat-expansion-panel [expanded]="true" [class.mat-elevation-z0]="true">
-        <mat-expansion-panel-header>
+      <mat-expansion-panel  [expanded]="true" [class.mat-elevation-z0]="true" [hideToggle]="true">
+        <mat-expansion-panel-header (click)="setAccordian(2)">
           <mat-panel-title>
+            <mat-icon>{{accordianStates[2]  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
             <h4>Skills</h4>
           </mat-panel-title>
         </mat-expansion-panel-header>

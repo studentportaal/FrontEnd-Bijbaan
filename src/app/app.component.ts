@@ -41,7 +41,6 @@ export class AppComponent implements OnInit {
     }
 
     this.route.queryParams.subscribe(params => {
-      console.log(params);
       if (params['code'] != null) {
         this.authenticationService.fontysLogin(params['code']).subscribe((response) => {
           const token: string = response;
