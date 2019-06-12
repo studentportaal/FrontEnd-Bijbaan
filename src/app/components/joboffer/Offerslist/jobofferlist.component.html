@@ -1,25 +1,25 @@
 <div class="content">
 
   <div class="container container-sm container-search" *ngIf="!isOwnJobOffers">
-    <h1>Zoeken</h1>
+    <h1>{{ 'JOBOFFER.SEARCH.HEADER' | translate}}</h1>
     <mat-divider></mat-divider>
     <mat-accordion [class.mat-elevation-z0]="true" [multi]="true" displayMode="flat">
       <mat-expansion-panel  [expanded]="true" [class.mat-elevation-z0]="true" [hideToggle]="true">
         <mat-expansion-panel-header (click)="setAccordian(0)">
           <mat-panel-title>
             <mat-icon>{{accordianStates[0]  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
-            <h4>Trefwoord</h4>
+            <h4>{{ 'JOBOFFER.SEARCH.LABEL.QUERY' | translate}}</h4>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-form-field class="search-title">
-          <input  matInput [(ngModel)]="searchQuery" (change)="getServerData(undefined)" placeholder="Zoek op trefwoord">
+          <input  matInput [(ngModel)]="searchQuery" (change)="getServerData(undefined)" placeholder="{{ 'JOBOFFER.SEARCH.PLACEHOLDER.QUERY' | translate}}">
         </mat-form-field>
       </mat-expansion-panel>
       <mat-expansion-panel  [expanded]="true" [class.mat-elevation-z0]="true" [hideToggle]="true">
         <mat-expansion-panel-header (click)="setAccordian(1)">
           <mat-panel-title>
             <mat-icon>{{accordianStates[1]  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
-            <h4>Bedrijven</h4>
+            <h4>{{ 'JOBOFFER.LABEL.COMPANY' | translate}}</h4>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-checkbox *ngFor="let company of companies" [value]="company.uuid" (change)="companyChange($event)">{{company.name}}</mat-checkbox>
@@ -28,7 +28,7 @@
         <mat-expansion-panel-header (click)="setAccordian(2)">
           <mat-panel-title>
             <mat-icon>{{accordianStates[2]  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
-            <h4>Skills</h4>
+            <h4>{{ 'JOBOFFER.SEARCH.LABEL.SKILLS' | translate}}</h4>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-checkbox *ngFor="let skill of skills" [value]="skill.id" (change)="skillChange($event)">{{skill.name}}</mat-checkbox>
@@ -36,7 +36,7 @@
     </mat-accordion>
   </div>
 
-  <div class="container container-md custom-button">
+  <div class="container container-md container-joboffer">
     <h1 class="flex-h1"><span><ng-container *ngIf="!isOwnJobOffers">{{'JOBOFFER.JOBOFFERS' | translate}}</ng-container>
       <ng-container *ngIf="isOwnJobOffers">{{'JOBOFFER.MYJOBOFFERS' | translate}}</ng-container></span>
     </h1>

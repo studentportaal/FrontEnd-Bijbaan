@@ -104,7 +104,14 @@
     "SNACKBAR.SUCCES.MESSAGE": "Succesfully edited job offer",
     "LABEL.SKILLS": "Skills",
     "SKILL.ADDTEXT": "Add skills to make your job offer findable",
-    "APPLICANTS.HEADER": "Applicants"
+    "APPLICANTS.HEADER": "Applicants",
+    "SEARCH": {
+      "HEADER": "Search",
+      "LABEL.QUERY": "Keyword",
+      "PLACEHOLDER.QUERY": "Search by keyword",
+      "LABEL.COMPANY": "Companies",
+      "LABEL.SKILLS": "Skills"
+    }
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Cancel",

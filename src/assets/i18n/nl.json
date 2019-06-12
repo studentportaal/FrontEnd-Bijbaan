@@ -104,7 +104,14 @@
     "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast",
     "LABEL.SKILLS": "Vaardigheden",
     "SKILL.ADDTEXT": "Voeg vaardigheden toe om je vacature vindbaar te maken",
-    "APPLICANTS.HEADER": "Sollicitanten"
+    "APPLICANTS.HEADER": "Sollicitanten",
+    "SEARCH": {
+      "HEADER": "Zoeken",
+      "LABEL.QUERY": "Trefwoord",
+      "PLACEHOLDER.QUERY": "Zoek op trefwoord",
+      "LABEL.COMPANY": "Bedrijven",
+      "LABEL.SKILLS": "Vaardigheden"
+    }
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Annuleren",
