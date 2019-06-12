@@ -23,7 +23,7 @@ import { CompanyFilterDialogComponent } from './components/joboffer/companyfilte
 import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjoboffers.component';
 import { EditSkillsComponent } from './components/joboffer/editskills/editskills.component';
 import { AuthenticationInterceptor } from "./interceptors/authentication/authentication.interceptor";
-import { HashLocationStrategy, LocationStrategy } from "@angular/common";
+import {HashLocationStrategy, LocationStrategy, PathLocationStrategy} from "@angular/common";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { UserjoboffersComponent } from './components/student/userjoboffers/userjoboffers.component';
 import { MatSortModule, MatTableModule } from '@angular/material';
@@ -86,10 +86,15 @@ import { TopOfDaysComponent } from './components/joboffer/topofdays/topofdays.co
     CompanyFilterDialogComponent,
   ],
   providers: [
+    PathLocationStrategy,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthenticationInterceptor,
       multi: true
+    },
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
     }
   ],
   bootstrap: [AppComponent]

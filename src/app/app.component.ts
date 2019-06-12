@@ -6,6 +6,8 @@ import {UserType} from "./domain/UserType";
 import {MatSnackBar} from "@angular/material";
 import {NotificationService} from "./services/notification/notification.service";
 import {Notification} from "./domain/Notification";
+import {map} from "rxjs/operators";
+import {PathLocationStrategy} from "@angular/common";
 
 @Component({
   selector: 'app-root',
@@ -23,12 +25,20 @@ export class AppComponent implements OnInit {
               private route: ActivatedRoute,
               private snackbar: MatSnackBar,
               private router: Router,
+              private pathLocationStrategy: PathLocationStrategy,
               private notificationService: NotificationService) {
     // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang('nl');
 
     // the lang to use, if the lang isn't available, it will use the current loader to get them
     translate.use('nl');
+
+    const basePath = pathLocationStrategy.getBaseHref();
+    const absolutePathWithParams = pathLocationStrategy.path();
+
+    if (basePath !== absolutePathWithParams) {
+      router.navigateByUrl(absolutePathWithParams);
+    }
 
     this.route.queryParams.subscribe(params => {
       if (params['code'] != null) {

@@ -30,6 +30,20 @@ mat-paginator {
   }
 }
 
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.search-title {
+  width: 90%;
+}
+
+.container-joboffer {
+  margin-left: 10px;
+}
+
 table {
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.25);
@@ -142,4 +156,47 @@ table {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.container-search {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+  margin-right: 0;
+
+  /deep/ .mat-expansion-panel-body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  h1 {
+    align-self: flex-start;
+  }
+
+  h4 {
+    align-self: flex-start;
+    margin: 5px 0;
+  }
+
+  mat-checkbox {
+    align-self: flex-start;
+  }
+
+  mat-divider {
+    margin: 5px 0;
+  }
+
+  mat-accordion {
+    width: 100%;
+  }
+
+  mat-expansion-panel-header {
+    padding: 0;
+  }
+
+  mat-icon {
+    margin-right: 10px;
+  }
 }
