@@ -2,48 +2,42 @@
   <h1 class="mat-display-1">{{'JOBOFFER.ADD.TITLE' | translate}}</h1>
   <form ngNativeValidate class="add-joboffer-form" (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input matInput required 
-        type="text" 
-        placeholder="{{'JOBOFFER.FIELD.LOCATION.PLACEHOLDER' | translate}}"
-        [(ngModel)]="jobOffer.location" 
-        [ngModelOptions]="{standalone: true}" 
-        name="location">
+      <input matInput required
+             type="text"
+             placeholder="{{'JOBOFFER.FIELD.TITLE.PLACEHOLDER' | translate}}"
+             [(ngModel)]="jobOffer.title"
+             [ngModelOptions]="{standalone: true}"
+             name="title">
     </mat-form-field>
     <mat-form-field>
-        <input matInput required 
-          type="text" 
-          placeholder="{{'JOBOFFER.FIELD.TITLE.PLACEHOLDER' | translate}}"
-          [(ngModel)]="jobOffer.title" 
-          [ngModelOptions]="{standalone: true}" 
-          name="title">
+      <input matInput required
+             type="text"
+             placeholder="{{'JOBOFFER.FIELD.FUNCTION.PLACEHOLDER' | translate}}"
+             [(ngModel)]="jobOffer.function"
+             [ngModelOptions]="{standalone: true}"
+             name="function">
     </mat-form-field>
     <mat-form-field>
-          <input matInput required 
-            type="text" 
-            placeholder="{{'JOBOFFER.FIELD.INFORMATION.PLACEHOLDER' | translate}}"
-            [(ngModel)]="jobOffer.information" 
-            [ngModelOptions]="{standalone: true}" 
-            name="information">
+      <input matInput required
+             type="text"
+             placeholder="{{'JOBOFFER.FIELD.LOCATION.PLACEHOLDER' | translate}}"
+             [(ngModel)]="jobOffer.location"
+             [ngModelOptions]="{standalone: true}"
+             name="location">
     </mat-form-field>
     <mat-form-field>
-      <input matInput required 
-        type="text" 
-        placeholder="{{'JOBOFFER.FIELD.FUNCTION.PLACEHOLDER' | translate}}"
-        [(ngModel)]="jobOffer.function" 
-        [ngModelOptions]="{standalone: true}" 
-        name="function">
+      <input matInput required
+             type="number"
+             placeholder="{{'JOBOFFER.FIELD.SALARY.PLACEHOLDER' | translate}}"
+             [(ngModel)]="jobOffer.salary"
+             [ngModelOptions]="{standalone: true}"
+             name="salary">
     </mat-form-field>
-    <mat-form-field>
-        <input matInput required 
-          type="number" 
-          placeholder="{{'JOBOFFER.FIELD.SALARY.PLACEHOLDER' | translate}}"
-          [(ngModel)]="jobOffer.salary" 
-          [ngModelOptions]="{standalone: true}" 
-          name="salary">
-      </mat-form-field>
-      
-      <app-edit-skills [element]="jobOffer"></app-edit-skills>
-      <button type="submit" mat-raised-button class="default-button"> <i class="material-icons-round">add</i> {{'JOBOFFER.ADD.BUTTON' | translate}}</button>
+    <app-edit-skills [element]="jobOffer"></app-edit-skills>
+    <mat-label>{{'JOBOFFER.FIELD.INFORMATION.PLACEHOLDER' | translate}}:</mat-label>
+    <ckeditor [(ngModel)]="jobOffer.information" [editor]="Editor" data="" [ngModelOptions]="{standalone: true}"></ckeditor>
+    <button type="submit" mat-raised-button class="default-button"><i
+      class="material-icons-round">add</i> {{'JOBOFFER.ADD.BUTTON' | translate}}</button>
   </form>
 
 </div>
