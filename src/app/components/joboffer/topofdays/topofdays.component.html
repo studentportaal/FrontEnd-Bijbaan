@@ -1,8 +1,9 @@
-<div class="topofday-container" *ngIf="topOfDayJobOffers?.length > 0 && topOfDayJobOffers?.length <= 3">
+<div class="topofday-container container" *ngIf="topOfDayJobOffers?.length > 0 && topOfDayJobOffers?.length <= 3">
+  <h1 _ngcontent-c8 class="flex-h1">{{'JOBOFFER.TOPOFDAY' | translate}}</h1>
   <mat-card (click)="getJobOffer(topofday.id)" class="topofday-card pointer mat-elevation-z8" *ngFor="let topofday of topOfDayJobOffers">
     <mat-card-header>
       <mat-card-title>{{topofday.title}}</mat-card-title>
-      <mat-card-subtitle>{{topofday.company.name}}</mat-card-subtitle>
+      <mat-card-subtitle>{{topofday.company}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <span> {{topofday.information}}</span>
@@ -14,7 +15,7 @@
   <mat-card (click)="getJobOffer(topofday.id)" class="topofday-card pointer mat-elevation-z8" *ngFor="let topofday of topOfDayJobOffers">
     <mat-card-header>
       <mat-card-title>{{topofday.title}}</mat-card-title>
-      <mat-card-subtitle>{{topofday.company.name}}</mat-card-subtitle>
+      <mat-card-subtitle>{{topofday.company}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <span> {{topofday.information}}</span>
