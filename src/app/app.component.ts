@@ -71,9 +71,11 @@ export class AppComponent implements OnInit {
           this.calculateUnread(this.notifications);
         }
 
-        this.messagingService.requestPermission(this.authenticationService.user.uuid);
-        this.messagingService.receiveMessage();
-        this.message = this.messagingService.currentMessage;
+        if (this.authenticationService.isStudent()) {
+          this.messagingService.requestPermission(this.authenticationService.user.uuid);
+          this.messagingService.receiveMessage();
+          this.message = this.messagingService.currentMessage;
+        }
       });
 
 
