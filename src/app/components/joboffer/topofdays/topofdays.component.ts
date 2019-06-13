@@ -24,12 +24,12 @@ export class TopOfDaysComponent implements OnInit {
   }
 
   public getAllTopOfDaysJobOffers() {
-    this.jobOfferService.getAllTopOfDaysJobOffers().subscribe((response) => {
-      this.topOfDayJobOffers = response;
-    });
-
     this.companyService.getAllCompanies().subscribe ( (response) => {
       this.companies = response;
+    });
+
+    this.jobOfferService.getAllTopOfDaysJobOffers().subscribe((response) => {
+      this.topOfDayJobOffers = response;
     });
   }
 
