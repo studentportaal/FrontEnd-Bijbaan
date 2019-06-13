@@ -23,7 +23,8 @@ import { CompanyFilterDialogComponent } from './components/joboffer/companyfilte
 import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjoboffers.component';
 import { EditSkillsComponent } from './components/joboffer/editskills/editskills.component';
 import { AuthenticationInterceptor } from "./interceptors/authentication/authentication.interceptor";
-import { HashLocationStrategy, LocationStrategy } from "@angular/common";
+import {AsyncPipe} from "@angular/common";
+import {HashLocationStrategy, LocationStrategy, PathLocationStrategy} from "@angular/common";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { UserjoboffersComponent } from './components/student/userjoboffers/userjoboffers.component';
 import { MatSortModule, MatTableModule } from '@angular/material';
@@ -32,7 +33,14 @@ import { ReviewContainerComponent } from './components/general/review-container/
 import { WriteReviewComponent } from './components/general/write-review/write-review.component';
 import { MatBadgeModule } from "@angular/material";
 import { PaymentComponent } from "./components/general/company/payment/payment.component";
-
+import {AngularFireDatabaseModule} from "@angular/fire/database";
+import {AngularFireAuthModule} from "@angular/fire/auth";
+import {AngularFireMessagingModule} from "@angular/fire/messaging";
+import {AngularFireModule} from "@angular/fire";
+import {environment} from "../environments/environment";
+import {MessagingService} from "./services/messaging/messaging.service";
+import { TopOfDaysComponent } from './components/joboffer/topofdays/topofdays.component';
+import {CKEditorModule} from "@ckeditor/ckeditor5-angular";
 
 @NgModule({
   declarations: [
@@ -58,7 +66,8 @@ import { PaymentComponent } from "./components/general/company/payment/payment.c
     ReviewContainerComponent,
     WriteReviewComponent,
     EditSkillsComponent,
-    PaymentComponent
+    PaymentComponent,
+    TopOfDaysComponent
   ],
   imports: [
     BrowserModule,
@@ -78,16 +87,28 @@ import { PaymentComponent } from "./components/general/company/payment/payment.c
     FlexLayoutModule,
     MatSortModule,
     MatTableModule,
-    MatBadgeModule
+    MatBadgeModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireMessagingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    CKEditorModule
   ],
   entryComponents: [
     CompanyFilterDialogComponent,
   ],
   providers: [
+    PathLocationStrategy,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthenticationInterceptor,
       multi: true
+    },
+    MessagingService,
+    AsyncPipe,
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
     }
   ],
   bootstrap: [AppComponent]

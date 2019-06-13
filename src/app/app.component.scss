@@ -1,6 +1,11 @@
 @import "../vars";
 
 mat-toolbar {
+  position: relative;
+
+  // Allow drop shadow
+  z-index: 5;
+
   a {
     text-decoration: none;
     color: white;
@@ -42,9 +47,8 @@ mat-sidenav-content {
   }
 }
 :host /deep/ .mat-list-item-content {
-  justify-content: space-between;
   i {
-    margin-left: 15px;
+     margin-right: 15px;
   }
 }
 

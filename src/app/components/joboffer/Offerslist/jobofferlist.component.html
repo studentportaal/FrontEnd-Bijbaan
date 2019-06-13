@@ -1,69 +1,85 @@
-<div class="container container-md custom-button">
-  <h1 class="flex-h1"><span>{{'JOBOFFER.JOBOFFERS' | translate}}</span>
-  </h1>
-    <div class="topofday-container" *ngIf="topOfDayJobOffers?.length > 0 && topOfDayJobOffers?.length <= 3">
-      <mat-card (click)="getJobOffer(topofday.id)" class="topofday-card pointer mat-elevation-z8" *ngFor="let topofday of topOfDayJobOffers">
-        <mat-card-header>
-          <mat-card-title>{{topofday.title}}</mat-card-title>
-          <mat-card-subtitle>{{topofday.company.name}}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <span> {{topofday.information}}</span>
-        </mat-card-content>
-        <mat-card-title class="topper-text"><div>{{'JOBOFFER.TOPOFDAY' | translate}}<i class="material-icons-round topofday-icon">check_circle</i></div></mat-card-title>
-      </mat-card>
-    </div>
-    <div class="topofday-container multiple" *ngIf="topOfDayJobOffers?.length > 3">
-      <mat-card (click)="getJobOffer(topofday.id)" class="topofday-card pointer mat-elevation-z8" *ngFor="let topofday of topOfDayJobOffers">
-        <mat-card-header>
-          <mat-card-title>{{topofday.title}}</mat-card-title>
-          <mat-card-subtitle>{{topofday.company.name}}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <span> {{topofday.information}}</span>
-        </mat-card-content>
-        <mat-card-title class="topper-text"><div>{{'JOBOFFER.TOPOFDAY' | translate}}<i class="material-icons-round topofday-icon">check_circle</i></div></mat-card-title>
-      </mat-card>
-    </div>
+<div class="content">
+  <div class="container container-sm container-search" *ngIf="!isOwnJobOffers">
+    <h1 class="search-header">{{ 'JOBOFFER.SEARCH.HEADER' | translate}}</h1>
+    <mat-divider></mat-divider>
+    <mat-accordion [class.mat-elevation-z0]="true" [multi]="true" displayMode="flat">
+      <mat-expansion-panel  [expanded]="true" [class.mat-elevation-z0]="true" [hideToggle]="true">
+        <mat-expansion-panel-header (click)="setAccordian(0)">
+          <mat-panel-title>
+            <mat-icon>{{accordianStates[0]  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
+            <h4>{{ 'JOBOFFER.SEARCH.LABEL.QUERY' | translate}}</h4>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-form-field class="search-title">
+          <input matInput [(ngModel)]="searchQuery" (change)="getServerData(undefined)" placeholder="{{ 'JOBOFFER.SEARCH.PLACEHOLDER.QUERY' | translate}}">
+        </mat-form-field>
+      </mat-expansion-panel>
+      <mat-expansion-panel  [expanded]="true" [class.mat-elevation-z0]="true" [hideToggle]="true">
+        <mat-expansion-panel-header (click)="setAccordian(1)">
+          <mat-panel-title>
+            <mat-icon>{{accordianStates[1]  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
+            <h4>{{ 'JOBOFFER.LABEL.COMPANY' | translate}}</h4>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-checkbox *ngFor="let company of companies" [value]="company.uuid" (change)="companyChange($event)">{{company.name}}</mat-checkbox>
+      </mat-expansion-panel>
+      <mat-expansion-panel  [expanded]="true" [class.mat-elevation-z0]="true" [hideToggle]="true">
+        <mat-expansion-panel-header (click)="setAccordian(2)">
+          <mat-panel-title>
+            <mat-icon>{{accordianStates[2]  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
+            <h4>{{ 'JOBOFFER.SEARCH.LABEL.SKILLS' | translate}}</h4>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-checkbox *ngFor="let skill of skills" [value]="skill.id" (change)="skillChange($event)">{{skill.name}}</mat-checkbox>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
 
-  <div ng-if="jobOffers?.length > 0">
-    <table mat-table [dataSource]="dataSource" matSort matSortActive="title" matSortDirection="asc"
-      matSortDisableClear class="joboffer-table">
-      <ng-container matColumnDef="topOfTheDay">
-        <mat-header-cell class="first-item" *matHeaderCellDef mat-sort-header><i class="material-icons-round header" title="{{'JOBOFFER.TOPOFDAY' | translate}}">check_circle</i> </mat-header-cell>
-        <mat-cell class="first-item" *matCellDef="let joboffer"  attr.aria-label="{{'JOBOFFER.TOPOFDAY' | translate}}"><b *ngIf="isWithinOneDay(joboffer.topOfTheDay)"><i
-              class="material-icons-round" title="{{'JOBOFFER.TOPOFDAY' | translate}}">check_circle</i></b></mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="title">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>{{'JOBOFFER.FIELD.TITLE.PLACEHOLDER' | translate}}
-        </mat-header-cell>
-        <mat-cell *matCellDef="let joboffer" attr.aria-label="{{'JOBOFFER.FIELD.TITLE.PLACEHOLDER' | translate}}"><b>{{joboffer.title}}</b></mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="location">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>{{'JOBOFFER.FIELD.LOCATION.PLACEHOLDER' | translate}}
-        </mat-header-cell>
-        <mat-cell *matCellDef="let joboffer" attr.aria-label="{{'JOBOFFER.FIELD.LOCATION.PLACEHOLDER' | translate}}">{{joboffer.location | titlecase}}</mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="function">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>{{'JOBOFFER.FIELD.FUNCTION.PLACEHOLDER' | translate}}
-        </mat-header-cell>
-        <mat-cell *matCellDef="let joboffer" attr.aria-label="{{'JOBOFFER.FIELD.FUNCTION.PLACEHOLDER' | translate}}">{{joboffer.function | titlecase}}</mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="company">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>{{'JOBOFFER.FIELD.COMPANY.PLACEHOLDER' | translate}}
-        </mat-header-cell>
-          <mat-cell class="ellipsis" *matCellDef="let joboffer" attr.aria-label="{{'JOBOFFER.FIELD.COMPANY.PLACEHOLDER' | translate}}"><div class="parent"><div class="ellipsis">{{getCompanyName(joboffer.company)}}</div></div> </mat-cell>
-      </ng-container>
-      <mat-header-row color="accent" *matHeaderRowDef="['topOfTheDay','title','function','location','company']">
-      </mat-header-row>
-      <mat-row *matRowDef="let row; columns: ['topOfTheDay','title','function','location','company'];" class="joboffer-row"
-        (click)="getJobOffer(row.id)"></mat-row>
-    </table>
+  <div class="container container-md container-joboffer">
+    <h1 class="flex-h1"><span><ng-container *ngIf="!isOwnJobOffers">{{'JOBOFFER.JOBOFFERS' | translate}}</ng-container>
+      <ng-container *ngIf="isOwnJobOffers">{{'JOBOFFER.MYJOBOFFERS' | translate}}</ng-container></span>
+    </h1>
+
+    <div ng-if="jobOffers?.length > 0" *ngFor="let joboffer of jobOffers" class="pointer" (click)="getJobOfferDetails(joboffer.id)">
+      <mat-card class="mat-elevation-z0 joboffer-card">
+        <mat-card-header>
+          <mat-card-title>
+            <h2><a class="joboffer-title" routerLink="/joboffers/details/{{joboffer.id}}">{{joboffer.title}}</a></h2>
+          </mat-card-title>
+          <mat-card-subtitle class="content-left">
+            <div>
+              <h3>
+                {{findCompanyInList(joboffer.company).name}},
+                {{joboffer.location}}
+              </h3>
+            </div>
+            <div>
+              <h3>
+                {{'JOBOFFER.FIELD.SALARY.PLACEHOLDER' | translate}}:
+                €{{joboffer.salary}}
+              </h3>
+            </div>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div>
+            <h3 class="content-header">{{'JOBOFFER.FIELD.INFORMATION.PLACEHOLDER' | translate}}: </h3>
+            <p class="card-content">
+              {{joboffer.information}}
+            </p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div *ngIf="!jobOffers?.length">
+      <p>{{ 'JOBOFFER.NOJOBOFFERS' | translate}}</p>
+    </div>
+    <mat-paginator #paginator [length]="length" [pageSize]="pageSize" [pageIndex]="pageIndex"
+                   [pageSizeOptions]="[5, 10, 25, 100]" (page)="pageEvent = getServerData($event)">
+    </mat-paginator>
   </div>
-  <div *ngIf="!jobOffers?.length">
-    <p>{{ 'JOBOFFER.NOJOBOFFERS' | translate}}</p>
-  </div>
-  <mat-paginator #paginator [length]="length" [pageSize]="pageSize" [pageIndex]="pageIndex"
-    [pageSizeOptions]="[5, 10, 25, 100]" (page)="pageEvent = getServerData($event)">
-  </mat-paginator>
+
+    <ng-container *ngIf="!isOwnJobOffers" class="container-sm">
+      <app-topofdays></app-topofdays>
+    </ng-container>
 </div>

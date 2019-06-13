@@ -8,6 +8,7 @@ import { Company } from 'src/app/domain/Company';
 import { Skill } from "../../../domain/Skill";
 import { COMMA, ENTER } from "@angular/cdk/keycodes";
 import { FormControl } from "@angular/forms";
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-addjoboffer',
@@ -21,6 +22,7 @@ export class AddjobofferComponent implements OnInit {
   skills: Skill[] = [];
   separatorKeysCodes: number[] = [ENTER, COMMA];
   skillCtrl = new FormControl();
+  public Editor = ClassicEditor;
 
   @ViewChild('skillInput') skillInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
@@ -28,7 +30,9 @@ export class AddjobofferComponent implements OnInit {
   constructor(private jobOfferService: JobofferService,
               private authenticationService: AuthenticationService,
               private snackbar: MatSnackBar,
-              private router: Router) { }
+              private router: Router) {
+    this.jobOffer.information = '';
+  }
 
   ngOnInit() {
     if (this.authenticationService.isLoggedIn() && this.authenticationService.isCompany()) {
