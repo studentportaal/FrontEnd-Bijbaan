@@ -3,7 +3,7 @@
   <mat-card (click)="getJobOffer(topofday.id)" class="topofday-card pointer mat-elevation-z8" *ngFor="let topofday of topOfDayJobOffers">
     <mat-card-header>
       <mat-card-title>{{topofday.title}}</mat-card-title>
-      <mat-card-subtitle>{{topofday.company}}</mat-card-subtitle>
+      <mat-card-subtitle>{{getCompanyName(topofday.company).name}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <span> {{topofday.information}}</span>
@@ -15,7 +15,7 @@
   <mat-card (click)="getJobOffer(topofday.id)" class="topofday-card pointer mat-elevation-z8" *ngFor="let topofday of topOfDayJobOffers">
     <mat-card-header>
       <mat-card-title>{{topofday.title}}</mat-card-title>
-      <mat-card-subtitle>{{topofday.company}}</mat-card-subtitle>
+      <mat-card-subtitle>{{getCompanyName(topofday.company).name}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <span> {{topofday.information}}</span>
