@@ -41,6 +41,7 @@ export class AddjobofferComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.jobOffer)
     this.jobOffer.company = this.currentCompany.uuid;
     this.jobOfferService.addJobOffer(this.jobOffer).subscribe((response: JobOffer) => {
         const snackbarRef = this.snackbar.open('Job offer successfully created', 'dismiss', {

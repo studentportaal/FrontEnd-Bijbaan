@@ -22,6 +22,7 @@ export class JobofferlistComponent implements OnInit {
   jobOffers: JobOffer[] = [];
   companies: Company[] = [];
   skills: Skill[] = [];
+
   length: number;
   pageSize: number;
   pageIndex: number;
@@ -142,5 +143,9 @@ export class JobofferlistComponent implements OnInit {
   getJobOfferDetails(id: string) {
     const url = `/joboffers/details/${id}`;
     this.router.navigateByUrl(url);
+  }
+
+  getDescription(information: string) {
+    return information.replace(/<[^>]*>/g, '');
   }
 }
