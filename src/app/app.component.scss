@@ -1,6 +1,11 @@
 @import "../vars";
 
 mat-toolbar {
+  position: relative;
+
+  // Allow drop shadow
+  z-index: 5;
+
   a {
     text-decoration: none;
     color: white;
