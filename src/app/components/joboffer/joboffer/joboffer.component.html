@@ -57,7 +57,7 @@
                            authenticationService.checkCurrentUser(joboffer.company)">
         <button mat-stroked-button color="default" title="edit" (click)="edit()"><i class="material-icons button-icon">create</i> {{'JOBOFFER.BUTTON.EDIT' | translate}}
         </button>
-        <button mat-stroked-button *ngIf="!joboffer.topOfTheDay" color="default" (click)="pay()"><i class="material-icons button-icon">payment</i>{{'JOBOFFER.BUTTON.PAYMENT' | translate}}</button>
+        <button mat-stroked-button color="default" (click)="pay()"><i class="material-icons button-icon">payment</i>{{'JOBOFFER.BUTTON.PAYMENT' | translate}}</button>
       </ng-container>
     </ng-container>
   </div>

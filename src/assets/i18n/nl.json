@@ -77,7 +77,7 @@
       "BUTTON": "Vacature toevoegen"
     },
     "FIELD": {
-      "LOCATION.PLACEHOLDER": "Locatie",
+      "LOCATION.PLACEHOLDER": "Stad",
       "TITLE.PLACEHOLDER": "Titel",
       "INFORMATION.PLACEHOLDER": "Informatie",
       "FUNCTION.PLACEHOLDER": "Functie",

@@ -135,4 +135,12 @@ export class JobofferlistComponent implements OnInit {
     this.accordianStates[index] = !this.accordianStates[index];
   }
 
+  findCompanyInList(id: string): Company {
+    return this.companies.find( x => x.uuid === id);
+  }
+
+  getJobOfferDetails(id: string) {
+    const url = `/joboffers/details/${id}`;
+    this.router.navigateByUrl(url);
+  }
 }
