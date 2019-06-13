@@ -13,11 +13,13 @@
           <mat-list-item><p><b>{{'JOBOFFER.FIELD.SALARY.PLACEHOLDER' | translate}}:</b> € {{joboffer.salary}}</p></mat-list-item>
           <mat-divider></mat-divider>
         </ng-container>
+<!--
         <ng-container *ngIf="joboffer.information">
           <mat-list-item><p><b>{{'JOBOFFER.FIELD.INFORMATION.PLACEHOLDER' | translate}}:</b> {{joboffer.information}}
           </p></mat-list-item>
           <mat-divider></mat-divider>
         </ng-container>
+-->
         <ng-container *ngIf="joboffer.location">
           <mat-list-item><p><b>{{'JOBOFFER.FIELD.LOCATION.PLACEHOLDER' | translate}}:</b> {{joboffer.location}}</p>
           </mat-list-item>
@@ -38,6 +40,8 @@
           </mat-list-item>
         </ng-container>
       </mat-list>
+
+      <div class="information-container" [innerHTML]="joboffer.information"></div>
 
       <div class="apply-container" *ngIf="joboffer.applications && joboffer.applications.length > 0">
         <span
