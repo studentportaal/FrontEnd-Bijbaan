@@ -77,7 +77,7 @@
       "BUTTON": "Add job offer"
     },
     "FIELD": {
-      "LOCATION.PLACEHOLDER": "Location",
+      "LOCATION.PLACEHOLDER": "City",
       "TITLE.PLACEHOLDER": "Title",
       "INFORMATION.PLACEHOLDER": "Information",
       "FUNCTION.PLACEHOLDER": "Function",

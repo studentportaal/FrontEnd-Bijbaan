@@ -3,14 +3,10 @@ a {
   color: black;
 }
 h1 {
+  font-size: 30px;
   font-weight: normal;
 }
-mat-cell {
-  font-size: 13px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 50px;
-}
+
 mat-card-actions {
   display: flex;
 }
@@ -18,16 +14,6 @@ mat-paginator {
   margin-top: 10px;
   display: flex;
   justify-content: center;
-}
-.joboffer-table {
-  width: 100%;
-  .joboffer-row {
-    &:hover {
-      cursor: pointer;
-      background: #f9f9f9;
-      // border-radius: 20px;
-    }
-  }
 }
 
 .content {
@@ -42,6 +28,8 @@ mat-paginator {
 
 .container-joboffer {
   margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
 }
 
 table {
@@ -152,6 +140,7 @@ table {
   }
 }
 .flex-h1 {
+  font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,6 +153,7 @@ table {
   flex-direction: column;
   margin-bottom: auto;
   margin-right: 0;
+  margin-left: 5rem;
 
   /deep/ .mat-expansion-panel-body {
     display: flex;
@@ -172,7 +162,7 @@ table {
   }
 
   h1 {
-    align-self: flex-start;
+    font-size: 30px;
   }
 
   h4 {
@@ -199,4 +189,99 @@ table {
   mat-icon {
     margin-right: 10px;
   }
+}
+
+.mat-card {
+  border-radius:0;
+  border-bottom: 1px solid;
+}
+
+.mat-card:hover {
+  background-color: $secondary;
+  .card-content:after {
+    background-color: $secondary;
+  }
+}
+
+.content-left{
+  text-align: left;
+}
+
+.joboffer-card{
+  max-width: 400rem;
+}
+
+p {
+  margin: 0rem;
+  padding-left: 1rem;
+}
+
+.content-header{
+  text-align: left;
+  padding-left: 1rem;
+}
+
+h2 {
+  margin: 0rem;
+}
+
+h3 {
+  margin: 0rem;
+}
+
+mat-card-actions{
+  padding-left: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: royalblue;
+}
+
+//
+//.card-content {
+//  text-align: left;
+//  overflow: hidden;
+//  white-space: nowrap;
+//  text-overflow: ellipsis;
+//}
+
+.card-content {
+  overflow: hidden;
+  position: relative;
+  line-height: 1.2em;
+  max-height: 3.5em;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 2em;
+}
+.card-content:before {
+  content: '...';
+  position: absolute;
+  right: 1rem;
+  bottom: 0rem;
+}
+
+.card-content:after {
+  content: '';
+  position: absolute;
+  right: 1rem;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
+}
+
+.topofday-container {
+  margin-left: 0;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+.search-header {
+  margin-top: 0;
+  margin-bottom: 0;
+  justify-content: center;
 }
