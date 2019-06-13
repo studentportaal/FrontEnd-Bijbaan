@@ -40,7 +40,7 @@ import {AngularFireModule} from "@angular/fire";
 import {environment} from "../environments/environment";
 import {MessagingService} from "./services/messaging/messaging.service";
 import { TopOfDaysComponent } from './components/joboffer/topofdays/topofdays.component';
-
+import {CKEditorModule} from "@ckeditor/ckeditor5-angular";
 
 @NgModule({
   declarations: [
@@ -91,7 +91,8 @@ import { TopOfDaysComponent } from './components/joboffer/topofdays/topofdays.co
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireMessagingModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    CKEditorModule
   ],
   entryComponents: [
     CompanyFilterDialogComponent,

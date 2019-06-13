@@ -13,11 +13,13 @@
           <mat-list-item><p><b>{{'JOBOFFER.FIELD.SALARY.PLACEHOLDER' | translate}}:</b> € {{joboffer.salary}}</p></mat-list-item>
           <mat-divider></mat-divider>
         </ng-container>
+<!--
         <ng-container *ngIf="joboffer.information">
           <mat-list-item><p><b>{{'JOBOFFER.FIELD.INFORMATION.PLACEHOLDER' | translate}}:</b> {{joboffer.information}}
           </p></mat-list-item>
           <mat-divider></mat-divider>
         </ng-container>
+-->
         <ng-container *ngIf="joboffer.location">
           <mat-list-item><p><b>{{'JOBOFFER.FIELD.LOCATION.PLACEHOLDER' | translate}}:</b> {{joboffer.location}}</p>
           </mat-list-item>
@@ -39,6 +41,8 @@
         </ng-container>
       </mat-list>
 
+      <div class="information-container" [innerHTML]="joboffer.information"></div>
+
       <div class="apply-container" *ngIf="joboffer.applications && joboffer.applications.length > 0">
         <span
           class="applicant-count">{{ 'JOBOFFER.LABEL.APPLICANT.COUNT' | translate:{count: joboffer.applications.length} }}</span>
@@ -57,7 +61,7 @@
                            authenticationService.checkCurrentUser(joboffer.company)">
         <button mat-stroked-button color="default" title="edit" (click)="edit()"><i class="material-icons button-icon">create</i> {{'JOBOFFER.BUTTON.EDIT' | translate}}
         </button>
-        <button mat-stroked-button *ngIf="!joboffer.topOfTheDay" color="default" (click)="pay()"><i class="material-icons button-icon">payment</i>{{'JOBOFFER.BUTTON.PAYMENT' | translate}}</button>
+        <button mat-stroked-button color="default" (click)="pay()"><i class="material-icons button-icon">payment</i>{{'JOBOFFER.BUTTON.PAYMENT' | translate}}</button>
       </ng-container>
     </ng-container>
   </div>
