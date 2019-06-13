@@ -8,7 +8,15 @@ export const environment = {
   FONTYS_AUTH: 'http://localhost:5000',
   REVIEW_BASE: 'https://europe-west1-pts6-bijbaan.cloudfunctions.net',
   NOTIFICATION_BASE: 'https://europe-west1-pts6-bijbaan.cloudfunctions.net',
-  API_PAYMENT: 'https://localhost:44360/api'
+  API_PAYMENT: 'https://localhost:44360/api',
+  firebase: {
+    apiKey: "AIzaSyCuBLMv5DOg5iLfyKigAFMCD4N8iT8Evdo",
+    authDomain: "pts6-bijbaan.firebaseapp.com",
+    databaseURL: "https://pts6-bijbaan.firebaseio.com",
+    projectId: "pts6-bijbaan",
+    storageBucket: "pts6-bijbaan.appspot.com",
+    messagingSenderId: "39087493499"
+  }
 };
 
 /*
