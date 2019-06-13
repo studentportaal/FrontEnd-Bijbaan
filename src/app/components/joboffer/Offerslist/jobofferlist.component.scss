@@ -3,6 +3,7 @@ a {
   color: black;
 }
 h1 {
+  font-size: 30px;
   font-weight: normal;
 }
 
@@ -139,6 +140,7 @@ table {
   }
 }
 .flex-h1 {
+  font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,7 +162,7 @@ table {
   }
 
   h1 {
-    align-self: flex-start;
+    font-size: 30px;
   }
 
   h4 {
@@ -272,4 +274,14 @@ a {
 
 .topofday-container {
   margin-left: 0;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+.search-header {
+  margin-top: 0;
+  margin-bottom: 0;
+  justify-content: center;
 }

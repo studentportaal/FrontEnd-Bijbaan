@@ -13,7 +13,7 @@ import {CompanyService} from "../../../services/company/company.service";
 export class TopOfDaysComponent implements OnInit {
 
   topOfDayJobOffers: JobOffer[] = [];
-  companies: Company[];
+  companies: Company[] = [];
 
   constructor(private jobOfferService: JobofferService,
               public companyService: CompanyService,
@@ -39,6 +39,9 @@ export class TopOfDaysComponent implements OnInit {
   }
 
   public getCompanyName(id: string): Company {
-    return this.companies.find( x => x.uuid === id);
+    if (this.companies.length > 0 ) {
+      return this.companies.find(x => x.uuid === id);
+    }
+    return '';
   }
 }
