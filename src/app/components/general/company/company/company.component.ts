@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {Company} from '../../../../domain/Company';
 import {CompanyService} from '../../../../services/company/company.service';
@@ -12,13 +12,18 @@ import {Review} from "../../../../domain/Review";
 })
 export class CompanyComponent implements OnInit {
   company: Company;
+  @Input() companyId: string;
 
   constructor(private route: ActivatedRoute,
               private companyService: CompanyService) { }
 
   ngOnInit() {
-    const id: string = this.route.snapshot.paramMap.get('id');
-    this.getCompany(id);
+    if (this.companyId) {
+      this.getCompany(this.companyId);
+    } else {
+      const id: string = this.route.snapshot.paramMap.get('id');
+      this.getCompany(id);
+    }
   }
 
   getCompany(id: string) {

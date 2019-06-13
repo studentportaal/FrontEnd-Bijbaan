@@ -44,4 +44,9 @@ export class TopOfDaysComponent implements OnInit {
     }
     return null;
   }
+
+  getDescription(information: string) {
+    return information.replace(/<[^>]*>/g, '');
+  }
+
 }
