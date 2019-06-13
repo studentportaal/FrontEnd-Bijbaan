@@ -42,6 +42,6 @@ export class TopOfDaysComponent implements OnInit {
     if (this.companies.length > 0 ) {
       return this.companies.find(x => x.uuid === id);
     }
-    return '';
+    return null;
   }
 }
