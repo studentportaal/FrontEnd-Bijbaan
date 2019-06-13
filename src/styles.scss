@@ -36,6 +36,7 @@ body {
   width: 50%;
 }
 
+
 .footer {
   position: fixed;
   left: 0;
@@ -44,9 +45,11 @@ body {
   background-color: $secondary-dark;
   color: black;
   text-align: center;
+
   .footer-content {
     font-size: 18px;
   }
+
   img {
     cursor: pointer;
   }
@@ -62,6 +65,7 @@ mat-row {
       border-color: lightgray;
     }
   }
+
   &:nth-child(even) {
     background-color: #bebdbd2a;
   }
@@ -84,30 +88,38 @@ form {
   font-size: 16px;
   display: flex;
   align-items: center;
+
   &:last-child {
     border: none;
   }
+
   .nav-icon {
     padding-left: 5px;
     font-size: 19px;
     padding-right: 5px;
   }
+
   border-right: 1px solid $secondary;
+
   &:hover {
     color: $secondary-dark !important;
     cursor: pointer;
-    .nav-item-icon-link{
+
+    .nav-item-icon-link {
       color: $secondary-dark !important;
     }
   }
 }
+
 .pointer {
   cursor: pointer;
 }
+
 .default-button {
   background: $primary-light;
   color: white;
 }
+
 .footer-buttons {
   display: flex;
   justify-content: space-evenly;
@@ -115,10 +127,12 @@ form {
   width: 50%;
   margin-left: 25%;
 }
+
 i.button-icon {
   font-size: 15px;
   padding-right: 5px;
 }
+
 input:-internal-autofill-selected {
   background-color: $primary-light;
 }
@@ -141,6 +155,16 @@ input:-webkit-autofill:active {
 #container {
   top: 64px !important;
 }
+
+/*
+.mat-checkbox-checked {
+  .mat-checkbox-inner-container {
+    background-color: $primary;
+    border-color: $primary;
+  }
+}
+*/
+
 @media (max-width: 850px) {
   #container {
     top: 56px !important;
@@ -155,9 +179,11 @@ input:-webkit-autofill:active {
       margin-right: 0px;
       padding: 5px;
     }
+
     mat-list {
       margin: 5px !important;
     }
+
     .mat-list-item {
       padding-top: 5px;
       padding-bottom: 5px;

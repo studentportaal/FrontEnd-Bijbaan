@@ -200,14 +200,12 @@ $md-secondarydark: (
   )
 );
 
-// ,#708690,#1b3039
-// ,#ffffff,#9da6a9
 // $jobby-primary:     mat-palette(#445963);
 $jobby-primary: mat-palette($md-primary);
 // $jobby-secondary:   mat-palette(#ced7db);
-$jobby-secondary: mat-palette($md-primarydark, A500);
+$jobby-accent: mat-palette($md-primary);
 $jobby-warn: mat-palette($md-primarydark);
 
-$jobby-app-theme: mat-light-theme($jobby-primary, $jobby-secondary, $jobby-warn);
+$jobby-app-theme: mat-light-theme($jobby-primary, $jobby-accent, $jobby-warn);
 
 @include angular-material-theme($jobby-app-theme);

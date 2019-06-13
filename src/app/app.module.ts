@@ -23,7 +23,8 @@ import { CompanyFilterDialogComponent } from './components/joboffer/companyfilte
 import { OwnjoboffersComponent } from './components/joboffer/ownjoboffers/ownjoboffers.component';
 import { EditSkillsComponent } from './components/joboffer/editskills/editskills.component';
 import { AuthenticationInterceptor } from "./interceptors/authentication/authentication.interceptor";
-import {AsyncPipe, HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {AsyncPipe} from "@angular/common";
+import {HashLocationStrategy, LocationStrategy, PathLocationStrategy} from "@angular/common";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { UserjoboffersComponent } from './components/student/userjoboffers/userjoboffers.component';
 import { MatSortModule, MatTableModule } from '@angular/material';
@@ -38,6 +39,7 @@ import {AngularFireMessagingModule} from "@angular/fire/messaging";
 import {AngularFireModule} from "@angular/fire";
 import {environment} from "../environments/environment";
 import {MessagingService} from "./services/messaging/messaging.service";
+import { TopOfDaysComponent } from './components/joboffer/topofdays/topofdays.component';
 
 
 @NgModule({
@@ -64,7 +66,8 @@ import {MessagingService} from "./services/messaging/messaging.service";
     ReviewContainerComponent,
     WriteReviewComponent,
     EditSkillsComponent,
-    PaymentComponent
+    PaymentComponent,
+    TopOfDaysComponent
   ],
   imports: [
     BrowserModule,
@@ -94,13 +97,18 @@ import {MessagingService} from "./services/messaging/messaging.service";
     CompanyFilterDialogComponent,
   ],
   providers: [
+    PathLocationStrategy,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthenticationInterceptor,
       multi: true
     },
     MessagingService,
-    AsyncPipe
+    AsyncPipe,
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
   ],
   bootstrap: [AppComponent]
 })

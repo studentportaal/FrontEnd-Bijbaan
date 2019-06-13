@@ -13,7 +13,8 @@
     "DUTCH": "Nederlands",
     "ENGLISH": "Engels",
     "CLOSE": "Sluiten",
-    "REVIEW": "Reviews schrijven"
+    "REVIEW": "Reviews schrijven",
+    "NOTIFICATIONS": "Notificaties"
   },
   "HOME": {
     "WELCOME.MESSAGE": "Welkom bij onze Bijbanen Portaal! We hebben geen bijbanen :)"
@@ -67,6 +68,7 @@
   },
   "JOBOFFER": {
     "JOBOFFERS": "Vacatures",
+    "MYJOBOFFERS": "Mijn vacatures",
     "NOJOBOFFERS": "Geen vacatures.",
     "TOPOFDAY": "Dagtopper",
     "TOPOFDAYS": "Daily Tops",
@@ -102,7 +104,14 @@
     "SNACKBAR.SUCCES.MESSAGE": "Vacature succesvol aangepast",
     "LABEL.SKILLS": "Vaardigheden",
     "SKILL.ADDTEXT": "Voeg vaardigheden toe om je vacature vindbaar te maken",
-    "APPLICANTS.HEADER": "Sollicitanten"
+    "APPLICANTS.HEADER": "Sollicitanten",
+    "SEARCH": {
+      "HEADER": "Zoeken",
+      "LABEL.QUERY": "Trefwoord",
+      "PLACEHOLDER.QUERY": "Zoek op trefwoord",
+      "LABEL.COMPANY": "Bedrijven",
+      "LABEL.SKILLS": "Vaardigheden"
+    }
   },
   "JOBOFFEREDIT": {
     "BUTTON.CANCEL": "Annuleren",
