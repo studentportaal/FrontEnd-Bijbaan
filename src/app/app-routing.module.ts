@@ -18,8 +18,7 @@ import { WriteReviewComponent } from "./components/general/write-review/write-re
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/joboffers',
-    pathMatch: 'full'
+    component: HomeComponent,
   },
   {
     path: 'user/view-profile/:uuid',
