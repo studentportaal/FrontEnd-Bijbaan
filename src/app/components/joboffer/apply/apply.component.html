@@ -36,6 +36,8 @@
              [ngModelOptions]="{standalone: true}"
              name="institute">
     </mat-form-field>
+
+    <ckeditor class="ckeditor-css" [(ngModel)]="application.motivationLetter" [editor]="Editor" data="" [ngModelOptions]="{standalone: true}"></ckeditor>
     <mat-radio-group [name]="FileSelection" [(ngModel)]="this.selectedFile" [ngModelOptions]="{standalone: true}" *ngIf="fileToUpload == null" class="files-radio-group">
       <mat-radio-button class="files-radio-button"  *ngFor="let file of files" [value]="file.fileName">{{file.fileDisplayName}}</mat-radio-button>
     </mat-radio-group>

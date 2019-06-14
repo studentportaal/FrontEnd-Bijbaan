@@ -4,23 +4,38 @@ h1 {
   margin: 10px;
 }
 
-.profile-btn {
-  margin-left: auto;
-}
-
-.accept-btn {
-  margin-left: 10px;
-}
-
 .applicant-container {
+  width: 80%;
+
   mat-list-item {
     border: 1px solid $primary-light;
     border-radius: 10px;
     background-color: $secondary;
     margin-bottom: 10px;
   }
-}
 
+  mat-panel-title {
+    align-items: center;
+  }
+
+  mat-expansion-panel {
+    background-color: $secondary;
+  }
+
+  button, a {
+    margin-right: 10px;
+  }
+
+  i {
+    margin-right: 10px;
+  }
+  .applicant-expansion-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+  }
+}
 .mat-chip.mat-standard-chip {
   background-color: $primary-light;
   color: white;
@@ -30,17 +45,6 @@ mat-chip-list {
   margin-left: 4px;
 }
 
-.applicant-list {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  i {
-    align-self: left;
-    font-size: 25px;
-  }
-}
-
 a {
   color: gray;
   text-decoration: none;
@@ -48,6 +52,7 @@ a {
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+
   &:hover {
     padding-left: 10px;
     padding-right: 10px;
@@ -77,6 +82,7 @@ mat-list {
 .container-joboffer {
   text-align: start;
   width: 80%;
+  margin-bottom: 0;
 }
 
 .content {

@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   notifications: Notification[];
   unread;
   message;
+  screenWidth: number;
 
   constructor(public translate: TranslateService,
               public authenticationService: AuthenticationService,
@@ -30,6 +31,13 @@ export class AppComponent implements OnInit {
               private notificationService: NotificationService,
               private messagingService: MessagingService,
               private pathLocationStrategy: PathLocationStrategy) {
+    // set screenWidth on page load
+    this.screenWidth = window.innerWidth;
+
+    window.onresize = () => {
+      // set screenWidth on screen size change
+      this.screenWidth = window.innerWidth;
+    };
 
 
     // this language will be used as a fallback when a translation isn't found in the current language
@@ -50,12 +58,14 @@ export class AppComponent implements OnInit {
         this.authenticationService.fontysLogin(params['code']).subscribe((response) => {
           const token: string = response;
           this.authenticationService.setSession(token, UserType.STUDENT);
+
+          this.messagingService.requestPermission(this.authenticationService.user.uuid);
+          this.messagingService.receiveMessage();
+
           const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
             duration: 1500
           });
-          snackbarRef.afterDismissed().subscribe(() => {
-            this.router.navigateByUrl('/');
-          });
+          this.router.navigateByUrl('/');
         });
       }
     });
@@ -64,21 +74,20 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     if (this.authenticationService.isLoggedIn()) {
       this.authenticationService.user = JSON.parse(localStorage.getItem('currentUser'));
-      this.notificationService.getNotifications(this.authenticationService.user).subscribe((res) => {
-        this.notifications = res;
 
-        if (this.notifications) {
-          this.calculateUnread(this.notifications);
-        }
+      if (this.authenticationService.isStudent()) {
+        this.notificationService.getNotifications(this.authenticationService.user).subscribe((res) => {
+          this.notifications = res;
 
-        if (this.authenticationService.isStudent()) {
+          if (this.notifications) {
+            this.calculateUnread(this.notifications);
+          }
+
           this.messagingService.requestPermission(this.authenticationService.user.uuid);
           this.messagingService.receiveMessage();
           this.message = this.messagingService.currentMessage;
-        }
-      });
-
-
+        });
+      }
     }
   }
 

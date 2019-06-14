@@ -25,7 +25,9 @@
     "BUTTON.LOGIN": "Login",
     "TITLE.STUDENT": "Login as student",
     "TITLE.COMPANY": "Login as company",
-    "FONTYS": "Login with Fontys"
+    "FONTYS": "Login with Fontys",
+    "ERROR": "Username or password was incorrect",
+    "SUCCES": "logged in succesfully"
 
   },
   "REGISTER": {
@@ -44,7 +46,9 @@
     "FIELD.STREET.PLACEHOLDER": "Street name",
     "FIELD.HOUSE.PLACEHOLDER": "House number",
     "FIELD.DESCRIPTION.PLACEHOLDER": "Description",
-    "STUDENTTEXT": "Students should log in with their school account, see login."
+    "STUDENTTEXT": "Students should log in with their school account, see login.",
+    "SUCCES": "Registration succeeded",
+    "FAILED": "Registration failed"
   },
   "USERPROFILE": {
     "TITLE": "Profile",
@@ -146,5 +150,10 @@
   "NOTIFICATION": {
     "MARKASREAD": "Mark as read",
     "STATUSCHANGED": "The status of the Job offer {{value}} has changed"
+  },
+  "APPLICATION": {
+    "LABEL": {
+      "MOTIVATIONLETTER": "Application Letter"
+    }
   }
 }
