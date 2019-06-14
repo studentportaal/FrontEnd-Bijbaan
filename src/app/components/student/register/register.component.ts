@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 import {Company} from '../../../domain/Company';
 import {CompanyService} from '../../../services/company/company.service';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-register',
@@ -44,7 +45,8 @@ export class RegisterComponent implements OnInit {
   constructor(private userService: UserService,
               private companyService: CompanyService,
               private snackbar: MatSnackBar,
-              private router: Router) {
+              private router: Router,
+              private translateService: TranslateService) {
   }
 
   ngOnInit() {
@@ -64,12 +66,18 @@ export class RegisterComponent implements OnInit {
 
   registerCompany() {
     this.companyService.addComapny(this.company).subscribe((response: Student) => {
-      const snackbarRef = this.snackbar.open('Account successfully created', 'dismiss', {
-        duration: 3000
+      this.translateService.get('REGISTER.SUCCES').subscribe((succesResponse) => {
+        this.snackbar.open(succesResponse, 'dismiss', {
+          duration: 1500
+        });
+        this.router.navigateByUrl('/login');
       });
-
-      snackbarRef.afterDismissed().subscribe(() => {
-        this.router.navigateByUrl('/');
+    },
+      (error) => {
+      this.translateService.get('REGISTER.FAILED').subscribe( (failResponse) => {
+        this.snackbar.open(failResponse, 'dismiss', {
+          duration: 1500
+        });
       });
     });
 

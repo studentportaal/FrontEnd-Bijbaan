@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
               private translateService: TranslateService) {
     if (authenticationService.isLoggedIn()) {
       this.authenticationService.logout().then(() => {
-        window.location.reload()
+        window.location.reload();
       });
     }
   }
