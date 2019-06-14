@@ -18,11 +18,11 @@ mat-paginator {
 }
 
 .text-limit-custom {
-  padding-right: 4em;
+  padding-right: 1.5em;
 }
 
 .text-content-height {
-  max-height: 4.5em!important;
+  max-height: 4.8em!important;
 }
 
 .mat-card-subtitle-custom {
@@ -40,7 +40,7 @@ mat-paginator {
   justify-content: space-evenly;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .content {
     flex-direction: column-reverse;
   }
@@ -177,10 +177,10 @@ table {
     flex-direction: column;
     margin-bottom: auto;
     margin-right: 0;
-    margin-left: 5rem;
+    margin-left: 0;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 900px) {
     .container-search {
       display: none;
 
