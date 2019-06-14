@@ -43,14 +43,6 @@
       accept    = "application/pdf"
       type="file"
       ngf [(file)]="fileToUpload" />
-    <ngfUploadStatus
-      [(percent)] = "uploadPercent"
-      [httpEvent] = "httpEvent"
-    ></ngfUploadStatus>
-
-    <div *ngIf="uploadPercent">
-      Upload Progress: {{ uploadPercent }}%
-    </div>
     <button *ngIf="jobOffer" type="submit" mat-raised-button class="default-button"><i class="material-icons-round button-icon">check</i>{{'JOBOFFER.BUTTON.APPLY' | translate}}</button>
   </form>
 </div>
