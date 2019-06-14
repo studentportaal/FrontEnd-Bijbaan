@@ -64,21 +64,21 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     if (this.authenticationService.isLoggedIn()) {
       this.authenticationService.user = JSON.parse(localStorage.getItem('currentUser'));
-      this.notificationService.getNotifications(this.authenticationService.user).subscribe((res) => {
-        this.notifications = res;
 
-        if (this.notifications) {
-          this.calculateUnread(this.notifications);
-        }
 
-        if (this.authenticationService.isStudent()) {
+      if (this.authenticationService.isStudent()) {
+        this.notificationService.getNotifications(this.authenticationService.user).subscribe((res) => {
+          this.notifications = res;
+
+          if (this.notifications) {
+            this.calculateUnread(this.notifications);
+          }
+
           this.messagingService.requestPermission(this.authenticationService.user.uuid);
           this.messagingService.receiveMessage();
           this.message = this.messagingService.currentMessage;
-        }
-      });
-
-
+        });
+      }
     }
   }
 
