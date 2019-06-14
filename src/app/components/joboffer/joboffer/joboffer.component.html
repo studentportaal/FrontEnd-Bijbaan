@@ -49,7 +49,14 @@
                   routerLink="/joboffers/details/{{joboffer.id}}/apply"><i
             class="material-icons button-icon">check</i> {{'JOBOFFER.BUTTON.APPLY' | translate}}</button>
         </ng-container>
-
+        <ng-container *ngIf="joboffer &&
+                           authenticationService.isCompany() &&
+                           authenticationService.checkCurrentUser(joboffer.company)">
+          <button mat-stroked-button color="default" title="edit" (click)="edit()"><i class="material-icons button-icon">create</i> {{'JOBOFFER.BUTTON.EDIT' | translate}}
+          </button>
+          <button mat-stroked-button color="default" (click)="pay()"><i
+            class="material-icons button-icon">payment</i>{{'JOBOFFER.BUTTON.PAYMENT' | translate}}</button>
+        </ng-container>
       </div>
 
       <div class="container container-md container-joboffer">
@@ -61,16 +68,6 @@
 
 
       <br/>
-
-      <ng-container *ngIf="joboffer &&
-                           joboffer.applications &&
-                           authenticationService.isCompany() &&
-                           authenticationService.checkCurrentUser(joboffer.company)">
-        <button mat-stroked-button color="default" title="edit" (click)="edit()"><i class="material-icons button-icon">create</i> {{'JOBOFFER.BUTTON.EDIT' | translate}}
-        </button>
-        <button mat-stroked-button color="default" (click)="pay()"><i
-          class="material-icons button-icon">payment</i>{{'JOBOFFER.BUTTON.PAYMENT' | translate}}</button>
-      </ng-container>
 
       <div class="container container-sm applicant-container" *ngIf="joboffer &&
                                              joboffer.applications &&
