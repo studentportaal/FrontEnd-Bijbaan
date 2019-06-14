@@ -36,6 +36,20 @@
             </ng-container>
           </mat-list>
         </ng-container>
+        <div class="apply-container" *ngIf="joboffer && joboffer.applications && joboffer.applications.length > 0">
+          <span
+            class="applicant-count">{{ 'JOBOFFER.LABEL.APPLICANT.COUNT' | translate:{count: joboffer.applications.length} }}</span>
+
+        </div>
+        <ng-container *ngIf="joboffer &&
+                            authenticationService.user &&
+                           authenticationService.isStudent() &&
+                           !alreadyApplied()">
+          <button mat-stroked-button class="default-button" title="apply"
+                  routerLink="/joboffers/details/{{joboffer.id}}/apply"><i
+            class="material-icons button-icon">check</i> {{'JOBOFFER.BUTTON.APPLY' | translate}}</button>
+        </ng-container>
+
       </div>
 
       <div class="container container-md container-joboffer">
@@ -45,18 +59,6 @@
         </ng-container>
       </div>
 
-      <div class="apply-container" *ngIf="joboffer && joboffer.applications && joboffer.applications.length > 0">
-        <span
-          class="applicant-count">{{ 'JOBOFFER.LABEL.APPLICANT.COUNT' | translate:{count: joboffer.applications.length} }}</span>
-      </div>
-
-      <ng-container *ngIf="authenticationService.user &&
-                           authenticationService.isStudent() &&
-                           !alreadyApplied()">
-        <button mat-stroked-button class="default-button" title="apply"
-                routerLink="/joboffers/details/{{joboffer.id}}/apply"><i
-          class="material-icons button-icon">check</i> {{'JOBOFFER.BUTTON.APPLY' | translate}}</button>
-      </ng-container>
 
       <br/>
 
@@ -80,6 +82,12 @@
             <div class="applicant-list">
               <i
                 class="material-icons">person</i><span> {{ application.applicant.firstName }} {{ application.applicant.lastName }}</span>
+              <ng-container *ngIf="application.cvDownloadUrl != null">
+                <a href="{{application.cvDownloadUrl}}">
+                  <button class="profile-btn default-button" mat-stroked-button>
+                    <i class="material-icons-round cv-icon">file_copy</i>
+                  </button>
+                </a></ng-container>
               <button class="profile-btn default-button" mat-stroked-button
                       routerLink="/user/view-profile/{{application.applicant.uuid}}">
                 {{ 'JOBOFFER.BUTTON.VIEW.PROFILE' | translate }}</button>
@@ -105,3 +113,5 @@
     </div>
   </div>
 </ng-template>
+
+

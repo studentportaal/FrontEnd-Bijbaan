@@ -34,9 +34,9 @@ export class LoginComponent implements OnInit {
       const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
         duration: 2500
       });
-      snackbarRef.afterDismissed().subscribe(() => {
+      // snackbarRef.afterDismissed().subscribe(() => {
         this.router.navigateByUrl('/');
-      });
+     // });
     });
 
   }
@@ -48,9 +48,9 @@ export class LoginComponent implements OnInit {
       const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
         duration: 2500
       });
-      snackbarRef.afterDismissed().subscribe(() => {
+     // snackbarRef.afterDismissed().subscribe(() => {
         this.router.navigateByUrl('/');
-      });
+    //  });
     });
   }
 }

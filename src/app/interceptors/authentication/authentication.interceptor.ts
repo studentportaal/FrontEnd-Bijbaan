@@ -10,9 +10,10 @@ export class AuthenticationInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    if (req.url.includes("auth/token/refresh")) {
+      return next.handle(req); }
     if (this.authenticationService.hasToken()) {
       if (this.authenticationService.isExpired()) {
-
         this.authenticationService.refreshToken().then(() => {
            req = req.clone({
              setHeaders: {

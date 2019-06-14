@@ -33,6 +33,7 @@ import { ReviewContainerComponent } from './components/general/review-container/
 import { WriteReviewComponent } from './components/general/write-review/write-review.component';
 import { MatBadgeModule } from "@angular/material";
 import { PaymentComponent } from "./components/general/company/payment/payment.component";
+import {ngfModule} from "angular-file";
 import {AngularFireDatabaseModule} from "@angular/fire/database";
 import {AngularFireAuthModule} from "@angular/fire/auth";
 import {AngularFireMessagingModule} from "@angular/fire/messaging";
@@ -70,13 +71,6 @@ import {CKEditorModule} from "@ckeditor/ckeditor5-angular";
     TopOfDaysComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialcustomModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -84,6 +78,14 @@ import {CKEditorModule} from "@ckeditor/ckeditor5-angular";
         deps: [HttpClient]
       }
     }),
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialcustomModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ngfModule,
     FlexLayoutModule,
     MatSortModule,
     MatTableModule,
