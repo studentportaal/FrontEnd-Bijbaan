@@ -43,7 +43,7 @@
     <div ng-if="jobOffers?.length > 0" *ngFor="let joboffer of jobOffers" class="pointer" (click)="getJobOfferDetails(joboffer.id)">
       <mat-card class="mat-elevation-z0 joboffer-card">
         <mat-card-header>
-          <mat-card-title>
+          <mat-card-title class="joboffer-titles">
             <h2><a class="joboffer-title" routerLink="/joboffers/details/{{joboffer.id}}">{{joboffer.title}}</a></h2>
           </mat-card-title>
           <mat-card-subtitle class="content-left mat-card-custom mat-card-subtitle-custom">
