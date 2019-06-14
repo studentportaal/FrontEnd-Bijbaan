@@ -25,7 +25,9 @@
     "BUTTON.LOGIN": "Inloggen",
     "TITLE.STUDENT": "Inloggen als student",
     "TITLE.COMPANY": "Inloggen als bedrijf",
-    "FONTYS": "Inloggen met Fontys"
+    "FONTYS": "Inloggen met Fontys",
+    "ERROR": "Gebruikersnaam of wachtwoord onjuist",
+    "SUCCES": "Succesvol ingelogd"
   },
   "REGISTER": {
     "TITLE": "Registreren",
@@ -43,7 +45,9 @@
     "FIELD.STREET.PLACEHOLDER": "Straat",
     "FIELD.HOUSE.PLACEHOLDER": "Huisnummer",
     "FIELD.DESCRIPTION.PLACEHOLDER": "Beschrijving",
-    "STUDENTTEXT": "Studenten dienen in te loggen met hun school account, zie inloggen."
+    "STUDENTTEXT": "Studenten dienen in te loggen met hun school account, zie inloggen.",
+    "SUCCES": "Registratie succesvol",
+    "FAILED": "Regisratie mislukt"
 
   },
   "USERPROFILE": {
