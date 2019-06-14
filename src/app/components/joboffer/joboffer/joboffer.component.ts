@@ -1,6 +1,6 @@
 import {Component, OnInit, Output} from '@angular/core';
 import {JobofferService} from '../../../services/joboffer/joboffer.service';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CompanyService} from '../../../services/company/company.service';
 import {Company} from '../../../domain/Company';
 import {JobOffer} from '../../../domain/JobOffer';
@@ -28,7 +28,8 @@ export class JobofferComponent implements OnInit {
               private authenticationService: AuthenticationService,
               private cvService: CvService,
               private snackbar: MatSnackBar,
-              private notificationService: NotificationService) { }
+              private notificationService: NotificationService,
+              private router: Router) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -89,6 +90,7 @@ export class JobofferComponent implements OnInit {
     });
     this.notificationService.createNotification(this.joboffer).subscribe((response) => {
     });
+    this.router.navigateByUrl('/users/{{authenticationService.user.uuid}}/joboffers')
   }
 
 }
