@@ -23,15 +23,16 @@ export class LoginComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService,
               private snackbar: MatSnackBar,
               private router: Router,
-              private translateService: TranslateService)
-  { }
+              private translateService: TranslateService) {
+
+  }
 
   ngOnInit() {
     this.authenticationService.logout();
   }
 
   companyLogin() {
-    this.authenticationService.loginAsCompany(this.company).subscribe( async (response) => {
+    this.authenticationService.loginAsCompany(this.company).subscribe(async (response) => {
       const token: string = response;
       await this.authenticationService.setSession(token, UserType.COMPANY);
       this.translateService.get('LOGIN.SUCCES').subscribe((succesTranslation) => {
@@ -52,15 +53,15 @@ export class LoginComponent implements OnInit {
   }
 
   studentLogin() {
-    this.authenticationService.loginAsStudent(this.user).subscribe( async (response) => {
+    this.authenticationService.loginAsStudent(this.user).subscribe(async (response) => {
       const token: string = response;
       await this.authenticationService.setSession(token, UserType.STUDENT);
       const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
         duration: 2500
       });
-     // snackbarRef.afterDismissed().subscribe(() => {
-        this.router.navigateByUrl('/');
-    //  });
+      // snackbarRef.afterDismissed().subscribe(() => {
+      this.router.navigateByUrl('/');
+      //  });
     });
   }
 }
