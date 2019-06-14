@@ -46,7 +46,9 @@
     "FIELD.STREET.PLACEHOLDER": "Street name",
     "FIELD.HOUSE.PLACEHOLDER": "House number",
     "FIELD.DESCRIPTION.PLACEHOLDER": "Description",
-    "STUDENTTEXT": "Students should log in with their school account, see login."
+    "STUDENTTEXT": "Students should log in with their school account, see login.",
+    "SUCCES": "Registration succeeded",
+    "FAILED": "Registration failed"
   },
   "USERPROFILE": {
     "TITLE": "Profile",
