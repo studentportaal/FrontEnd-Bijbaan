@@ -24,11 +24,15 @@ export class LoginComponent implements OnInit {
               private snackbar: MatSnackBar,
               private router: Router,
               private translateService: TranslateService) {
-
+    if (authenticationService.isLoggedIn()) {
+      this.authenticationService.logout().then(() => {
+        window.location.reload()
+      });
+    }
   }
 
-  ngOnInit() {
-    this.authenticationService.logout();
+
+    ngOnInit() {
   }
 
   companyLogin() {
