@@ -13,6 +13,8 @@ h1 {
 }
 
 .applicant-container {
+  width: 80%;
+
   mat-list-item {
     border: 1px solid $primary-light;
     border-radius: 10px;
@@ -35,6 +37,7 @@ mat-chip-list {
   flex-direction: row;
   align-items: center;
   width: 100%;
+
   i {
     align-self: left;
     font-size: 25px;
@@ -48,6 +51,7 @@ a {
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+
   &:hover {
     padding-left: 10px;
     padding-right: 10px;
@@ -57,7 +61,6 @@ a {
 }
 
 mat-list {
-  margin: 50px;
   margin-top: 10px;
   margin-bottom: 5px;
 }
@@ -73,4 +76,16 @@ mat-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.container-joboffer {
+  text-align: start;
+  width: 80%;
+  margin-bottom: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

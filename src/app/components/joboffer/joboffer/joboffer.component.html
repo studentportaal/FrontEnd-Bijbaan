@@ -1,101 +1,114 @@
 <ng-template [ngIf]="!editBoolean && !paymentBoolean">
-  <div class="container container-md">
-    <span *ngIf="!joboffer">Loading offer...</span>
-    <ng-container *ngIf="joboffer != null">
-      <h1 class="mat-display-1">{{joboffer.title}}</h1>
-      <mat-list>
-        <ng-container *ngIf="joboffer.function">
-          <mat-list-item><p><b>{{'JOBOFFER.FIELD.FUNCTION.PLACEHOLDER' | translate}}:</b> {{joboffer.function}}</p>
-          </mat-list-item>
-          <mat-divider></mat-divider>
+  <div class="content">
+    <div>
+      <div class="container container-md container-joboffer">
+        <span *ngIf="!joboffer">Loading offer...</span>
+        <ng-container *ngIf="joboffer != null">
+          <h1 class="mat-display-1">{{joboffer.title}}</h1>
+          <mat-list>
+            <ng-container *ngIf="joboffer.function">
+              <mat-list-item><p><b>{{'JOBOFFER.FIELD.FUNCTION.PLACEHOLDER' | translate}}:</b> {{joboffer.function}}</p>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+            </ng-container>
+            <ng-container *ngIf="joboffer.salary">
+              <mat-list-item><p><b>{{'JOBOFFER.FIELD.SALARY.PLACEHOLDER' | translate}}:</b> € {{joboffer.salary}}</p>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+            </ng-container>
+            <ng-container *ngIf="joboffer.location">
+              <mat-list-item><p><b>{{'JOBOFFER.FIELD.LOCATION.PLACEHOLDER' | translate}}:</b> {{joboffer.location}}</p>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+            </ng-container>
+            <ng-container *ngIf="company">
+              <mat-list-item><p><b>{{'JOBOFFER.FIELD.COMPANY.PLACEHOLDER' | translate}}: </b> <a
+                routerLink="/company/{{company.uuid}}">{{company.name}}</a></p></mat-list-item>
+            </ng-container>
+            <ng-container *ngIf="joboffer?.skills.length > 0">
+              <mat-divider></mat-divider>
+              <mat-list-item>
+                <mat-chip-list aria-orientation="vertical">
+                  <p><b>{{'JOBOFFER.LABEL.SKILLS' | translate}}</b></p>
+                  <mat-chip color="primary" *ngFor="let skill of joboffer.skills">{{skill.name | titlecase}}</mat-chip>
+                </mat-chip-list>
+              </mat-list-item>
+            </ng-container>
+          </mat-list>
         </ng-container>
-        <ng-container *ngIf="joboffer.salary">
-          <mat-list-item><p><b>{{'JOBOFFER.FIELD.SALARY.PLACEHOLDER' | translate}}:</b> € {{joboffer.salary}}</p></mat-list-item>
-          <mat-divider></mat-divider>
-        </ng-container>
-<!--
-        <ng-container *ngIf="joboffer.information">
-          <mat-list-item><p><b>{{'JOBOFFER.FIELD.INFORMATION.PLACEHOLDER' | translate}}:</b> {{joboffer.information}}
-          </p></mat-list-item>
-          <mat-divider></mat-divider>
-        </ng-container>
--->
-        <ng-container *ngIf="joboffer.location">
-          <mat-list-item><p><b>{{'JOBOFFER.FIELD.LOCATION.PLACEHOLDER' | translate}}:</b> {{joboffer.location}}</p>
-          </mat-list-item>
-          <mat-divider></mat-divider>
-        </ng-container>
-        <ng-container *ngIf="company">
-          <mat-list-item><p><b>{{'JOBOFFER.FIELD.COMPANY.PLACEHOLDER' | translate}}: </b> <a
-            routerLink="/company/{{company.uuid}}">{{company.name}}</a></p></mat-list-item>
-          <mat-divider></mat-divider>
-        </ng-container>
-        <mat-divider></mat-divider>
-        <ng-container *ngIf="joboffer.skills">
-          <mat-list-item>
-            <mat-chip-list aria-orientation="vertical">
-              <p><b>{{'JOBOFFER.LABEL.SKILLS' | translate}}</b></p>
-              <mat-chip color="primary" *ngFor="let skill of joboffer.skills">{{skill.name | titlecase}}</mat-chip>
-            </mat-chip-list>
-          </mat-list-item>
-        </ng-container>
-      </mat-list>
+        <div class="apply-container" *ngIf="joboffer && joboffer.applications && joboffer.applications.length > 0">
+          <span
+            class="applicant-count">{{ 'JOBOFFER.LABEL.APPLICANT.COUNT' | translate:{count: joboffer.applications.length} }}</span>
 
-      <div class="information-container" [innerHTML]="joboffer.information"></div>
-
-      <div class="apply-container" *ngIf="joboffer.applications && joboffer.applications.length > 0">
-        <span
-          class="applicant-count">{{ 'JOBOFFER.LABEL.APPLICANT.COUNT' | translate:{count: joboffer.applications.length} }}</span>
-      </div>
-      <ng-container *ngIf="authenticationService.user &&
+        </div>
+        <ng-container *ngIf="joboffer &&
+                            authenticationService.user &&
                            authenticationService.isStudent() &&
                            !alreadyApplied()">
-        <button mat-stroked-button class="default-button" title="apply"
-                routerLink="/joboffers/details/{{joboffer.id}}/apply"><i
-          class="material-icons button-icon">check</i> {{'JOBOFFER.BUTTON.APPLY' | translate}}</button>
-      </ng-container>
-      <br/>
-      <ng-container *ngIf="joboffer &&
-                           joboffer.applications &&
+          <button mat-stroked-button class="default-button" title="apply"
+                  routerLink="/joboffers/details/{{joboffer.id}}/apply"><i
+            class="material-icons button-icon">check</i> {{'JOBOFFER.BUTTON.APPLY' | translate}}</button>
+        </ng-container>
+        <ng-container *ngIf="joboffer &&
                            authenticationService.isCompany() &&
                            authenticationService.checkCurrentUser(joboffer.company)">
-        <button mat-stroked-button color="default" title="edit" (click)="edit()"><i class="material-icons button-icon">create</i> {{'JOBOFFER.BUTTON.EDIT' | translate}}
-        </button>
-        <button mat-stroked-button color="default" (click)="pay()"><i class="material-icons button-icon">payment</i>{{'JOBOFFER.BUTTON.PAYMENT' | translate}}</button>
-      </ng-container>
-    </ng-container>
-  </div>
-  <div class="container container-sm applicant-container" *ngIf="joboffer &&
+          <button mat-stroked-button color="default" title="edit" (click)="edit()"><i class="material-icons button-icon">create</i> {{'JOBOFFER.BUTTON.EDIT' | translate}}
+          </button>
+          <button mat-stroked-button color="default" (click)="pay()"><i
+            class="material-icons button-icon">payment</i>{{'JOBOFFER.BUTTON.PAYMENT' | translate}}</button>
+        </ng-container>
+      </div>
+
+      <div class="container container-md container-joboffer">
+        <span *ngIf="!joboffer">Loading offer...</span>
+        <ng-container *ngIf="joboffer != null">
+          <div class="information-container" [innerHTML]="joboffer.information"></div>
+        </ng-container>
+      </div>
+
+
+      <br/>
+
+      <div class="container container-sm applicant-container" *ngIf="joboffer &&
                                              joboffer.applications &&
                                              authenticationService.isCompany() &&
                                              authenticationService.checkCurrentUser(joboffer.company)">
-    <ng-container>
-      <h1 class="mat-display-1">{{ 'JOBOFFER.TITLE.APPLICANTS' | translate }}</h1>
-      <mat-list class="small-list">
-        <mat-list-item *ngFor="let application of joboffer.applications; let last = last">
-          <div class="applicant-list">
-            <i
-              class="material-icons">person</i><span> {{ application.applicant.firstName }} {{ application.applicant.lastName }}</span>
+        <h1 class="mat-display-1">{{ 'JOBOFFER.TITLE.APPLICANTS' | translate }}</h1>
+        <mat-list class="small-list">
+          <mat-list-item *ngFor="let application of joboffer.applications; let last = last">
+            <div class="applicant-list">
+              <i
+                class="material-icons">person</i><span> {{ application.applicant.firstName }} {{ application.applicant.lastName }}</span>
+              <ng-container *ngIf="application.cvDownloadUrl != null">
+                <a href="{{application.cvDownloadUrl}}">
+                  <button class="profile-btn default-button" mat-stroked-button>
+                    <i class="material-icons-round cv-icon">file_copy</i>
+                  </button>
+                </a></ng-container>
               <button class="profile-btn default-button" mat-stroked-button
                       routerLink="/user/view-profile/{{application.applicant.uuid}}">
                 {{ 'JOBOFFER.BUTTON.VIEW.PROFILE' | translate }}</button>
               <button class="accept-btn default-button" mat-stroked-button (click)="acceptApplication(application.id)">
                 accept applicant
               </button>
-          </div>
-          <mat-divider *ngIf="!last"></mat-divider>
-        </mat-list-item>
-      </mat-list>
-      <span *ngIf="joboffer.applications?.length <= 0">{{'JOBOFFER.APPLICANTS.NONE' | translate}}</span>
-    </ng-container>
+            </div>
+            <mat-divider *ngIf="!last"></mat-divider>
+          </mat-list-item>
+        </mat-list>
+        <span *ngIf="joboffer.applications?.length <= 0">{{'JOBOFFER.APPLICANTS.NONE' | translate}}</span>
+      </div>
+
+      <ng-template [ngIf]="editBoolean">
+        <app-editjoboffer [joboffer]="joboffer" [company]="company"
+                          (editBoolean)="receiveBoolean($boolean)"></app-editjoboffer>
+      </ng-template>
+      <ng-template [ngIf]="paymentBoolean">
+        <app-payment [jobOffer]="joboffer" (paymentBoolean)="receivePaymentBoolean($boolean)"></app-payment>
+      </ng-template>
+
+
+    </div>
   </div>
-</ng-template>
-<ng-template [ngIf]="editBoolean">
-  <app-editjoboffer [joboffer]="joboffer" [company]="company"
-                    (editBoolean)="receiveBoolean($boolean)"></app-editjoboffer>
-</ng-template>
-<ng-template [ngIf]="paymentBoolean">
-  <app-payment [jobOffer]="joboffer" (paymentBoolean)="receivePaymentBoolean($boolean)"></app-payment>
 </ng-template>
 
 

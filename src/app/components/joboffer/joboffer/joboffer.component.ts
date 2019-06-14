@@ -7,6 +7,8 @@ import {JobOffer} from '../../../domain/JobOffer';
 import {AuthenticationService} from '../../../services/authentication/authentication.service';
 import {MatDialog, MatSnackBar} from "@angular/material";
 import {NotificationService} from "../../../services/notification/notification.service";
+import {Application} from "../../../domain/Application";
+import {CvService} from "../../../services/cvs/cv.service";
 
 @Component({
   selector: 'app-joboffer',
@@ -24,6 +26,7 @@ export class JobofferComponent implements OnInit {
               private jobOfferService: JobofferService,
               private companyService: CompanyService,
               private authenticationService: AuthenticationService,
+              private cvService: CvService,
               private snackbar: MatSnackBar,
               private notificationService: NotificationService) { }
 
@@ -35,8 +38,17 @@ export class JobofferComponent implements OnInit {
   getJobOffer(id: string) {
     this.jobOfferService.getJobOffer(id).subscribe(offer => {
       this.joboffer = offer;
+      this.addCvsToApplicants();
       this.companyService.getCompany(offer.company).subscribe(company => this.company = company);
     });
+  }
+
+  async addCvsToApplicants() {
+    for (const application of this.joboffer.applications) {
+      this.cvService.getCvForApplication(this.joboffer.id, application.applicant.uuid).subscribe(url => {
+        application.cvDownloadUrl = url;
+      });
+    }
   }
 
   edit() {
@@ -56,7 +68,7 @@ export class JobofferComponent implements OnInit {
   }
 
   alreadyApplied(): boolean {
-    if (this.joboffer.applications.length === 0) {
+    if (!this.joboffer || this.joboffer.applications.length === 0) {
       return false;
     }
 

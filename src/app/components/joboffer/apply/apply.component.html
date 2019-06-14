@@ -10,7 +10,8 @@
              name="email">
     </mat-form-field>
     <mat-form-field>
-      <input matInput required
+      <input matInput
+             disabled
              type="text"
              placeholder="{{'USERPROFILE.FIELD.FIRSTNAME' | translate}}"
              [ngModel]="user.firstName"
@@ -18,7 +19,8 @@
              name="firstName">
     </mat-form-field>
     <mat-form-field>
-      <input matInput required
+      <input matInput
+             disabled
              type="text"
              placeholder="{{'USERPROFILE.FIELD.LASTNAME' | translate}}"
              [ngModel]="user.lastName"
@@ -26,13 +28,21 @@
              type="text">
     </mat-form-field>
     <mat-form-field>
-      <input matInput required
+      <input matInput
+             disabled
              type="text"
              placeholder="{{'USERPROFILE.FIELD.INSTITUTE' | translate}}"
              [ngModel]="user.institute"
              [ngModelOptions]="{standalone: true}"
              name="institute">
     </mat-form-field>
-    <button type="submit" mat-raised-button class="default-button"><i class="material-icons-round button-icon">check</i>{{'JOBOFFER.BUTTON.APPLY' | translate}}</button>
+    <mat-radio-group [name]="FileSelection" [(ngModel)]="this.selectedFile" [ngModelOptions]="{standalone: true}" *ngIf="fileToUpload == null" class="files-radio-group">
+      <mat-radio-button class="files-radio-button"  *ngFor="let file of files" [value]="file.fileName">{{file.fileDisplayName}}</mat-radio-button>
+    </mat-radio-group>
+    <input
+      accept    = "application/pdf"
+      type="file"
+      ngf [(file)]="fileToUpload" />
+    <button *ngIf="jobOffer" type="submit" mat-raised-button class="default-button"><i class="material-icons-round button-icon">check</i>{{'JOBOFFER.BUTTON.APPLY' | translate}}</button>
   </form>
 </div>
