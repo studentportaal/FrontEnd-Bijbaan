@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   notifications: Notification[];
   unread;
   message;
+  screenWidth: number;
 
   constructor(public translate: TranslateService,
               public authenticationService: AuthenticationService,
@@ -30,6 +31,13 @@ export class AppComponent implements OnInit {
               private notificationService: NotificationService,
               private messagingService: MessagingService,
               private pathLocationStrategy: PathLocationStrategy) {
+    // set screenWidth on page load
+    this.screenWidth = window.innerWidth;
+
+    window.onresize = () => {
+      // set screenWidth on screen size change
+      this.screenWidth = window.innerWidth;
+    };
 
 
     // this language will be used as a fallback when a translation isn't found in the current language
@@ -57,9 +65,7 @@ export class AppComponent implements OnInit {
           const snackbarRef = this.snackbar.open('logged in succesfully', 'dismiss', {
             duration: 1500
           });
-          snackbarRef.afterDismissed().subscribe(() => {
-            this.router.navigateByUrl('/');
-          });
+          this.router.navigateByUrl('/');
         });
       }
     });
