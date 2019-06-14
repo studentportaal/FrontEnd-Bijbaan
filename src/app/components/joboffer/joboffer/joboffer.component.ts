@@ -68,7 +68,7 @@ export class JobofferComponent implements OnInit {
   }
 
   alreadyApplied(): boolean {
-    if (this.joboffer.applications.length === 0) {
+    if (!this.joboffer && this.joboffer.applications.length === 0) {
       return false;
     }
 
