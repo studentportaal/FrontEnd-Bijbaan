@@ -25,7 +25,9 @@
     "BUTTON.LOGIN": "Inloggen",
     "TITLE.STUDENT": "Inloggen als student",
     "TITLE.COMPANY": "Inloggen als bedrijf",
-    "FONTYS": "Inloggen met Fontys"
+    "FONTYS": "Inloggen met Fontys",
+    "ERROR": "Gebruikersnaam of wachtwoord onjuist",
+    "SUCCES": "Succesvol ingelogd"
   },
   "REGISTER": {
     "TITLE": "Registreren",
