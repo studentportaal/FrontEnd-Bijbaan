@@ -90,7 +90,7 @@ export class JobofferComponent implements OnInit {
     });
     this.notificationService.createNotification(this.joboffer).subscribe((response) => {
     });
-    this.router.navigateByUrl('/users/{{authenticationService.user.uuid}}/joboffers')
+    this.router.navigateByUrl(`/users/${this.authenticationService.user.uuid}/joboffers`)
   }
 
 }
