@@ -25,7 +25,9 @@
     "BUTTON.LOGIN": "Login",
     "TITLE.STUDENT": "Login as student",
     "TITLE.COMPANY": "Login as company",
-    "FONTYS": "Login with Fontys"
+    "FONTYS": "Login with Fontys",
+    "ERROR": "Username or password was incorrect",
+    "SUCCES": "logged in succesfully"
 
   },
   "REGISTER": {
