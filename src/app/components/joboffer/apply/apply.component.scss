@@ -14,11 +14,20 @@ h1 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 .files-radio-group {
   display: flex;
   flex-direction: column;
   margin: 15px 0;
   align-items: baseline;
+}
+
+:host ::ng-deep .ck-editor__editable_inline {
+  min-height: 300px !important;
+}
+
+.ckeditor-css {
+  text-align: left;
 }
 
 .files-radio-button {

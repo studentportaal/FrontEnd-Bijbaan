@@ -146,5 +146,10 @@
   "NOTIFICATION": {
     "MARKASREAD": "Als gelezen markeren",
     "STATUSCHANGED": "De status van de vacature {{value}} is veranderd"
+  },
+  "APPLICATION": {
+    "LABEL": {
+      "MOTIVATIONLETTER": "Motivatiebrief"
+    }
   }
 }

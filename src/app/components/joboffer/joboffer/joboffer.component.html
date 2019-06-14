@@ -1,6 +1,6 @@
 <ng-template [ngIf]="!editBoolean && !paymentBoolean">
   <div class="content">
-    <div>
+    <div class="container-joboffer">
       <div class="container container-md container-joboffer">
         <span *ngIf="!joboffer">Loading offer...</span>
         <ng-container *ngIf="joboffer != null">
@@ -91,6 +91,9 @@
               <button class="accept-btn default-button" mat-stroked-button (click)="acceptApplication(application.id)">
                 accept applicant
               </button>
+
+
+              <div [innerHTML]="application.motivationLetter"></div>
             </div>
             <mat-divider *ngIf="!last"></mat-divider>
           </mat-list-item>

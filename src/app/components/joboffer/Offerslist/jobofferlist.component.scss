@@ -10,10 +10,28 @@ h1 {
 mat-card-actions {
   display: flex;
 }
+
 mat-paginator {
   margin-top: 10px;
   display: flex;
   justify-content: center;
+}
+
+.text-limit-custom {
+  padding-right: 4em;
+}
+
+.text-content-height {
+  max-height: 4.5em!important;
+}
+
+.mat-card-subtitle-custom {
+  margin-bottom: 8px;
+}
+
+.mat-card-custom {
+  color: rgba(0, 0, 0, 0.29);
+  font-size: 0.7em;
 }
 
 .content {

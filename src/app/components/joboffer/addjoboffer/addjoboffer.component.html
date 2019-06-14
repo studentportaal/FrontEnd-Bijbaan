@@ -35,7 +35,7 @@
     </mat-form-field>
     <app-edit-skills [element]="jobOffer"></app-edit-skills>
     <mat-label>{{'JOBOFFER.FIELD.INFORMATION.PLACEHOLDER' | translate}}:</mat-label>
-    <ckeditor [(ngModel)]="jobOffer.information" [editor]="Editor" data="" [ngModelOptions]="{standalone: true}"></ckeditor>
+    <ckeditor class="ckeditor-css" [(ngModel)]="jobOffer.information" [editor]="Editor" data="" [ngModelOptions]="{standalone: true}"></ckeditor>
     <button type="submit" mat-raised-button class="default-button"><i
       class="material-icons-round">add</i> {{'JOBOFFER.ADD.BUTTON' | translate}}</button>
   </form>

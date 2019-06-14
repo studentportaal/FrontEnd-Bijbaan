@@ -146,5 +146,10 @@
   "NOTIFICATION": {
     "MARKASREAD": "Mark as read",
     "STATUSCHANGED": "The status of the Job offer {{value}} has changed"
+  },
+  "APPLICATION": {
+    "LABEL": {
+      "MOTIVATIONLETTER": "Application Letter"
+    }
   }
 }
