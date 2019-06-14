@@ -51,7 +51,6 @@ export class AuthenticationService {
     const token = this.jwtHelper.decodeToken(this.token);
 
     this.httpClient.get<string>(environment.API_BASE + '/auth/token/refresh?refreshKey=' + token['refreshKey'] + '&userId=' + token['sub']).subscribe(newToken => {
-      console.log(newToken);
       localStorage.setItem('token', newToken);
       this.token = newToken;
       this.isRefreshing = false;
