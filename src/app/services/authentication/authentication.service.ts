@@ -15,6 +15,7 @@ export class AuthenticationService {
   public user: User;
   public userType: UserType;
   private token: string;
+  private isRefreshing = false;
   private jwtHelper: JwtHelperService = new JwtHelperService();
 
   private baseUrlStudent: string = environment.API_BASE + '/users';
@@ -29,6 +30,7 @@ export class AuthenticationService {
     }
     this.user = user;
     this.userType = userType;
+
     this.token = localStorage.getItem('token');
   }
 
@@ -45,12 +47,14 @@ export class AuthenticationService {
   }
 
   public async refreshToken() {
+    this.isRefreshing = true;
     const token = this.jwtHelper.decodeToken(this.token);
 
-
     this.httpClient.get<string>(environment.API_BASE + '/auth/token/refresh?refreshKey=' + token['refreshKey'] + '&userId=' + token['sub']).subscribe(newToken => {
+      console.log(newToken);
       localStorage.setItem('token', newToken);
       this.token = newToken;
+      this.isRefreshing = false;
     });
   }
 

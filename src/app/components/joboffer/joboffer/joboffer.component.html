@@ -80,6 +80,10 @@
             <div class="applicant-list">
               <i
                 class="material-icons">person</i><span> {{ application.applicant.firstName }} {{ application.applicant.lastName }}</span>
+              <ng-container *ngIf="application.cvDownloadUrl != null">
+                <a href="{{application.cvDownloadUrl}}"><button class="profile-btn default-button" mat-stroked-button>
+                  <i class="material-icons-round cv-icon">file_copy</i>
+                </button></a></ng-container>
               <button class="profile-btn default-button" mat-stroked-button
                       routerLink="/user/view-profile/{{application.applicant.uuid}}">
                 {{ 'JOBOFFER.BUTTON.VIEW.PROFILE' | translate }}</button>
@@ -105,3 +109,5 @@
     </div>
   </div>
 </ng-template>
+
+
