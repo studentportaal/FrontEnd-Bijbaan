@@ -52,7 +52,8 @@
         <ng-container *ngIf="joboffer &&
                            authenticationService.isCompany() &&
                            authenticationService.checkCurrentUser(joboffer.company)">
-          <button mat-stroked-button color="default" title="edit" (click)="edit()"><i class="material-icons button-icon">create</i> {{'JOBOFFER.BUTTON.EDIT' | translate}}
+          <button mat-stroked-button color="default" title="edit" (click)="edit()"><i
+            class="material-icons button-icon">create</i> {{'JOBOFFER.BUTTON.EDIT' | translate}}
           </button>
           <button mat-stroked-button color="default" (click)="pay()"><i
             class="material-icons button-icon">payment</i>{{'JOBOFFER.BUTTON.PAYMENT' | translate}}</button>
@@ -73,14 +74,20 @@
                                              authenticationService.isCompany() &&
                                              authenticationService.checkCurrentUser(joboffer.company)">
         <h1 class="mat-display-1">{{ 'JOBOFFER.TITLE.APPLICANTS' | translate }}</h1>
-        <mat-list class="small-list">
-          <mat-list-item *ngFor="let application of joboffer.applications; let last = last">
-            <div class="applicant-list">
-              <i
-                class="material-icons">person</i><span> {{ application.applicant.firstName }} {{ application.applicant.lastName }}</span>
+
+        <mat-accordion>
+          <mat-expansion-panel *ngFor="let application of joboffer.applications;">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <i class="material-icons">person</i>
+                {{application.applicant.firstName}} {{ application.applicant.lastName }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="applicant-expansion-container">
+              <div>
               <ng-container *ngIf="application.cvDownloadUrl != null">
                 <a href="{{application.cvDownloadUrl}}">
-                    <i class="material-icons-round cv-icon">file_copy</i>
+                  <i class="material-icons-round cv-icon">file_copy</i>
                 </a></ng-container>
               <button class="profile-btn default-button" mat-stroked-button
                       routerLink="/user/view-profile/{{application.applicant.uuid}}">
@@ -88,13 +95,12 @@
               <button class="accept-btn default-button" mat-stroked-button (click)="acceptApplication(application.id)">
                 accept applicant
               </button>
-
-
+              </div>
               <div [innerHTML]="application.motivationLetter"></div>
             </div>
-            <mat-divider *ngIf="!last"></mat-divider>
-          </mat-list-item>
-        </mat-list>
+
+          </mat-expansion-panel>
+        </mat-accordion>
         <span *ngIf="joboffer.applications?.length <= 0">{{'JOBOFFER.APPLICANTS.NONE' | translate}}</span>
       </div>
     </div>
